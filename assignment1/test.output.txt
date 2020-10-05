@@ -1,0 +1,434 @@
+>> testing binary string recognition/accepance of even number
+
+default transition --> S1
+stream : 
+last   :^
+current:^
+
+>> rejected
+>> rolling back
+stream : 
+last   :^
+current:^
+
+
+default transition --> S1
+stream : 0001
+last   :^
+current:^
+transition S1 -|0|-> S2
+stream : 0001
+last   :^
+current: ^
+transition S2 -|0|-> S2
+stream : 0001
+last   :^
+current:  ^
+transition S2 -|0|-> S2
+stream : 0001
+last   :^
+current:   ^
+transition S2 -|1|-> S3
+stream : 0001
+last   :^
+current:    ^
+
+>> rejected
+>> rolling back
+stream : 0001
+last   :^
+current:^
+
+
+default transition --> S1
+stream : 0101
+last   :^
+current:^
+transition S1 -|0|-> S2
+stream : 0101
+last   :^
+current: ^
+transition S2 -|1|-> S3
+stream : 0101
+last   :^
+current:  ^
+transition S3 -|0|-> S2
+stream : 0101
+last   :^
+current:   ^
+transition S2 -|1|-> S3
+stream : 0101
+last   :^
+current:    ^
+
+>> rejected
+>> rolling back
+stream : 0101
+last   :^
+current:^
+
+
+default transition --> S1
+stream : 11111
+last   :^
+current:^
+transition S1 -|1|-> S3
+stream : 11111
+last   :^
+current: ^
+transition S3 -|1|-> S3
+stream : 11111
+last   :^
+current:  ^
+transition S3 -|1|-> S3
+stream : 11111
+last   :^
+current:   ^
+transition S3 -|1|-> S3
+stream : 11111
+last   :^
+current:    ^
+transition S3 -|1|-> S3
+stream : 11111
+last   :^
+current:     ^
+
+>> rejected
+>> rolling back
+stream : 11111
+last   :^
+current:^
+
+>> testing floating point number recognition/computation of value
+
+default transition --> S1
+stream : .
+last   :^
+current:^
+transition S1 -|.|-> S3
+stream : .
+last   :^
+current: ^
+
+>> rejected
+>> rolling back
+stream : .
+last   :^
+current:^
+
+
+default transition --> S1
+stream : 12
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 12
+last   :^
+current: ^
+transition S2 -|2|-> S2
+stream : 12
+last   :^
+current:  ^
+
+>> recognized 12E0
+>> committing
+stream : 12
+last   :  ^
+current:  ^
+
+
+default transition --> S1
+stream : 12.3e+1
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 12.3e+1
+last   :^
+current: ^
+transition S2 -|2|-> S2
+stream : 12.3e+1
+last   :^
+current:  ^
+transition S2 -|.|-> S4
+stream : 12.3e+1
+last   :^
+current:   ^
+transition S4 -|3|-> S4
+stream : 12.3e+1
+last   :^
+current:    ^
+transition S4 -|e|-> S5
+stream : 12.3e+1
+last   :^
+current:     ^
+transition S5 -|+|-> S6
+stream : 12.3e+1
+last   :^
+current:      ^
+transition S6 -|1|-> S7
+stream : 12.3e+1
+last   :^
+current:       ^
+
+>> recognized 12.3E1
+>> committing
+stream : 12.3e+1
+last   :       ^
+current:       ^
+
+
+default transition --> S1
+stream : 12.3e1
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 12.3e1
+last   :^
+current: ^
+transition S2 -|2|-> S2
+stream : 12.3e1
+last   :^
+current:  ^
+transition S2 -|.|-> S4
+stream : 12.3e1
+last   :^
+current:   ^
+transition S4 -|3|-> S4
+stream : 12.3e1
+last   :^
+current:    ^
+transition S4 -|e|-> S5
+stream : 12.3e1
+last   :^
+current:     ^
+transition S5 -|1|-> S7
+stream : 12.3e1
+last   :^
+current:      ^
+
+>> recognized 12.3E1
+>> committing
+stream : 12.3e1
+last   :      ^
+current:      ^
+
+
+default transition --> S1
+stream : e3
+last   :^
+current:^
+transition S1 -|e
+stream : e3
+last   :^
+current:^
+
+>> rejected
+>> rolling back
+stream : e3
+last   :^
+current:^
+
+
+default transition --> S1
+stream : 10ab
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 10ab
+last   :^
+current: ^
+transition S2 -|0|-> S2
+stream : 10ab
+last   :^
+current:  ^
+transition S2 -|a
+stream : 10ab
+last   :^
+current:  ^
+
+>> recognized 10E0
+>> committing
+stream : 10ab
+last   :  ^
+current:  ^
+
+
+default transition --> S1
+stream : 10e3
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 10e3
+last   :^
+current: ^
+transition S2 -|0|-> S2
+stream : 10e3
+last   :^
+current:  ^
+transition S2 -|e|-> S5
+stream : 10e3
+last   :^
+current:   ^
+transition S5 -|3|-> S7
+stream : 10e3
+last   :^
+current:    ^
+
+>> recognized 10E3
+>> committing
+stream : 10e3
+last   :    ^
+current:    ^
+
+
+default transition --> S1
+stream : 10E-3
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 10E-3
+last   :^
+current: ^
+transition S2 -|0|-> S2
+stream : 10E-3
+last   :^
+current:  ^
+transition S2 -|E|-> S5
+stream : 10E-3
+last   :^
+current:   ^
+transition S5 -|-|-> S6
+stream : 10E-3
+last   :^
+current:    ^
+transition S6 -|3|-> S7
+stream : 10E-3
+last   :^
+current:     ^
+
+>> recognized 10E-3
+>> committing
+stream : 10E-3
+last   :     ^
+current:     ^
+
+
+default transition --> S1
+stream : .10
+last   :^
+current:^
+transition S1 -|.|-> S3
+stream : .10
+last   :^
+current: ^
+transition S3 -|1|-> S4
+stream : .10
+last   :^
+current:  ^
+transition S4 -|0|-> S4
+stream : .10
+last   :^
+current:   ^
+
+>> recognized 0.1E0
+>> committing
+stream : .10
+last   :   ^
+current:   ^
+
+
+default transition --> S1
+stream : .10e3
+last   :^
+current:^
+transition S1 -|.|-> S3
+stream : .10e3
+last   :^
+current: ^
+transition S3 -|1|-> S4
+stream : .10e3
+last   :^
+current:  ^
+transition S4 -|0|-> S4
+stream : .10e3
+last   :^
+current:   ^
+transition S4 -|e|-> S5
+stream : .10e3
+last   :^
+current:    ^
+transition S5 -|3|-> S7
+stream : .10e3
+last   :^
+current:     ^
+
+>> recognized 0.1E3
+>> committing
+stream : .10e3
+last   :     ^
+current:     ^
+
+
+default transition --> S1
+stream : 10.
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 10.
+last   :^
+current: ^
+transition S2 -|0|-> S2
+stream : 10.
+last   :^
+current:  ^
+transition S2 -|.|-> S4
+stream : 10.
+last   :^
+current:   ^
+
+>> recognized 10E0
+>> committing
+stream : 10.
+last   :   ^
+current:   ^
+
+
+default transition --> S1
+stream : 10.3e44
+last   :^
+current:^
+transition S1 -|1|-> S2
+stream : 10.3e44
+last   :^
+current: ^
+transition S2 -|0|-> S2
+stream : 10.3e44
+last   :^
+current:  ^
+transition S2 -|.|-> S4
+stream : 10.3e44
+last   :^
+current:   ^
+transition S4 -|3|-> S4
+stream : 10.3e44
+last   :^
+current:    ^
+transition S4 -|e|-> S5
+stream : 10.3e44
+last   :^
+current:     ^
+transition S5 -|4|-> S7
+stream : 10.3e44
+last   :^
+current:      ^
+transition S7 -|4|-> S7
+stream : 10.3e44
+last   :^
+current:       ^
+
+>> recognized 10.3E44
+>> committing
+stream : 10.3e44
+last   :       ^
+current:       ^
+
