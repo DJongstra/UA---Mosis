@@ -1,0 +1,64 @@
+<html>
+ <!-- MoSIS Assignments template -->
+
+ <title>MoSIS Assignment 1</title>
+
+ <body bgcolor="#ffffff">
+
+ <hr noshade>
+
+   <h1>MoSIS Assignment 1</h1>
+
+    <h2>Team</h2>
+     <pre>
+      Name       :	Daniëlle Jongstra
+      Student ID :	20172260
+      e-mail     :	Danielle.jongstra@student.uantwerpen.be
+
+      Name       :
+      Student ID :
+      e-mail     :
+
+      Time spent on this assignment (in hours):
+     </pre>
+
+    <h2>The assignment</h2>
+     <p>
+     Possibly some of your own clarifications or extra assumptions.
+     </p>
+ 
+    <h2>Solution part 1</h2>
+	
+	
+	<figure>
+		<img src="ClassDiagram.png">
+		<figcaption>Class diagram corresponding to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+	</figure> 
+	
+	<p>
+	For the class diagram the implementation given in <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a> is followed as much as possible.
+	The class, or static, attributes in the Chatroom and Client classes are underlined. The other attributes are initialized for each instance of the classes and are therefore not underlined.
+	All the attributes and methods are considered public in this class diagram. It is not possible to declare either the attributes or the methods private in python, 
+	but it is seen as a safe assumption since the convention is to use an underscore as the first character in the name for a method or attribute that would in other programming languages be declared private.
+	<br><br>
+	The cardinalities in the diagram are assigned between the classes of Chatroom and Client.
+	For each Client there is 0 or 1 Chatroom, as a client can either be in one chat room or in no chat room when he/she still has to connect to one.
+	The textual description on <a href="http://msdl.cs.mcgill.ca/people/hv/teaching/MoSIS/assignments/requirementsChecking"><tt>the assignment web page</tt></a> specifies that a chat room can accept at most four clients. 
+	The cardinality constraint 0...4 in the diagram specifies this.
+	<br><br>
+	The relationship between Manager and Client is a normal association. It is clearly not a realization or generalization. 
+	The relationship is also not a dependency, as neither of the classes are an attribute of the other class. 
+	If we do not look too closely at the implementation, it could be an has-a relationship. The Manager has (a list of) client(s) in that case. 
+	Considering that the relationship between Chatroom and Manager is similar to the relationship of Manager and Client, the same thought process is followed for this relationship.
+	Now we should also keep in mind that the class Chatroom also calls methods of the class Manager. 
+	In a has-a relationship the Manager would know about the Chatroom, but not the other way around. Because the similarity of the relationships, neither of the relationships with the Manager class are specified as a has-a relationship. 
+	</p>
+	
+    <h2>Solution part 2</h2>
+     
+    <h2>...</h2>
+
+ <hr noshade>
+
+ </body>
+</html>
