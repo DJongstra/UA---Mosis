@@ -16,6 +16,7 @@ class Scanner:
  """
  def __init__(self, stream):
   self.set_stream(stream)
+  self.pos = -1
   self.current_state=None
   self.accepting_states=[]
 
@@ -31,10 +32,13 @@ class Scanner:
 
   while 1:
     # look ahead at the next character in the input stream
-    next_char = self.stream.showNextChar()
+    self.pos += 1
+    if self.pos >= len(self.stream): break
+    next_char = self.stream[self.pos]
+
 
     # stop if this is the end of the input stream
-    if next_char == None: break
+
 
     if __trace__:
       print(str(self.stream))
@@ -59,8 +63,8 @@ class Scanner:
       # perform the new state's entry action (if any)
       self.entry(self.current_state, next_char)
 
-    # now, actually consume the next character in the input stream 
-    next_char = self.stream.getNextChar()
+    # now, actually consume the next character in the input stream
+    next_char = self.stream[self.pos]
 
   if __trace__:
     print(str(self.stream)+"\n")
@@ -68,8 +72,8 @@ class Scanner:
   # now check whether to accept consumed characters
   success = self.current_state in self.accepting_states
   if success:
-   self.stream.commit()
+    return success
   else:
-   self.stream.rollback()
+   pass
   return success
 
