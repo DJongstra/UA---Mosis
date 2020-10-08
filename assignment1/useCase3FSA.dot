@@ -9,10 +9,6 @@ digraph G {
 	S3_3 -> S3_4 [ label = "\' \'" ];
 	S3_4 -> S3_5 [ label = "\'0\'\\store.m1 = \'0\'" ];
 	S3_4 -> S3_5 [ label = "\'1\'\\store.m1 = \'1\'" ];
-	S3_4 -> S3_5 [ label = "\'2\'\\store.m1 = \'2\'" ];
-	S3_4 -> S3_5 [ label = "\'3\'\\store.m1 = \'3\'" ];
-	S3_4 -> S3_5 [ label = "\'4\'\\store.m1 = \'4\'" ];
-	S3_4 -> S3_5 [ label = "\'5\'\\store.m1 = \'5\'" ];
 	S3_5 -> S3_6 [ label = "\')\'" ];
 	S3_6 -> S3_7 [ label = "\' \'" ];
 	S3_7 -> S3_8 [ label = "\'A\'" ];

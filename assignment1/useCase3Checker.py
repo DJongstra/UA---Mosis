@@ -10,7 +10,7 @@ def makeDot():
     graph.write_png('useCase3FSA.png')
 
 
-from scanner import *
+from scannerNew import *
 
 __trace__ = False
 
@@ -68,18 +68,6 @@ class Automaton(Scanner):
                 return "S3_5"
             elif input == '1':
                 self.m1 = '1'
-                return "S3_5"
-            elif input == '2':
-                self.m1 = '2'
-                return "S3_5"
-            elif input == '3':
-                self.m1 = '3'
-                return "S3_5"
-            elif input == '4':
-                self.m1 = '4'
-                return "S3_5"
-            elif input == '5':
-                self.m1 = '5'
                 return "S3_5"
             else:
                 return None
