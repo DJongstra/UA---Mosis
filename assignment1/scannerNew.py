@@ -1,3 +1,6 @@
+### !!Scanner is edited because there was not an import charStream and I couldn't find anywhere how to install it
+
+
 #
 # scanner.py
 #
