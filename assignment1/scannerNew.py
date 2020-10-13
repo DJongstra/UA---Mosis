@@ -9,8 +9,8 @@
 import string
 
 # trace FSA dynamics (True | False)
-#__trace__ = False 
-__trace__ = True 
+#__trace__ = False
+__trace__ = True
 
 class Scanner:
  """
@@ -44,23 +44,24 @@ class Scanner:
 
 
     if __trace__:
-      print(str(self.stream))
+      #print(str(self.stream))
       if self.current_state != None:
         print("transition "+self.current_state+" -|"+next_char, end = '')
-   
-    # perform transition and its action to the appropriate new state 
+
+    # perform transition and its action to the appropriate new state
     next_state = self.transition(self.current_state, next_char)
 
     if __trace__:
-      if next_state == None: 
+      if next_state == None:
         print()
       else:
         print("|-> "+next_state)
-    
+
 
     # stop if a transition was not possible
-    if next_state == None: 
-      break
+    if next_state == None or next_state in self.accepting_states:
+        self.current_state = next_state
+        break
     else:
       self.current_state = next_state
       # perform the new state's entry action (if any)
@@ -68,9 +69,6 @@ class Scanner:
 
     # now, actually consume the next character in the input stream
     next_char = self.stream[self.pos]
-
-  if __trace__:
-    print(str(self.stream)+"\n")
 
   # now check whether to accept consumed characters
   success = self.current_state in self.accepting_states
