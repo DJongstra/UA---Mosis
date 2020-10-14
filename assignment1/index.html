@@ -15,9 +15,9 @@
       Student ID :	20172260
       e-mail     :	Danielle.jongstra@student.uantwerpen.be
 
-      Name       :
-      Student ID :
-      e-mail     :
+      Name       :	Joanna Kisaakye
+      Student ID :	20205490
+      e-mail     :	joanna.kisaakye@student.uantwerpen.be
 
       Time spent on this assignment (in hours):
      </pre>
@@ -27,12 +27,12 @@
      Possibly some of your own clarifications or extra assumptions.
      </p>
  
-    <h2>Solution part 1</h2>
+    <h2>Solution part 1 : Class Diagram</h2>
 	
 	
 	<figure>
 		<img src="ClassDiagram.png">
-		<figcaption>Class diagram corresponding to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+		<figcaption>Figure 1: Class diagram corresponding to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
 	</figure> 
 	
 	<p>
@@ -54,9 +54,53 @@
 	In a has-a relationship the Manager would know about the Chatroom, but not the other way around. Because the similarity of the relationships, neither of the relationships with the Manager class are specified as a has-a relationship. 
 	</p>
 	
-    <h2>Solution part 2</h2>
+    <h2>Solution part 2 : Sequence Diagrams</h2>
      
-    <h2>...</h2>
+    <figure>
+		<img src="SequenceDiagram1.png">
+		<figcaption>Figure 2: Sequence diagram corresponding Use Case 3 according to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+	</figure>
+    <p>
+        According to the implementation in chatProtocolSimulation.py, a chat room accepts a client within its request method by calling the accept method of the Manager. The Manager then calls the accept method of the client which is responsible for changing the clients state to reflect that it is now connected to a chatroom. The Manager also updates its state, within its own accept method, by appending the client, room pair to its map of connections.
+        <br>
+        Since none of the accept methods of the Client or Manager return anything to the caller, the Chatroom proceeds to dump to the output by printing the Manager.
+    </p>
+    <figure>
+		<img src="SequenceDiagram2.png">
+		<figcaption>Figure 3: Sequence diagram corresponding Use Case 7 according to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+	</figure>
+    <p>
+        According to the implementation in chatProtocolSimulation.py, when a Manager receives a call to its sendMessage method, it in turn calls the sendMessage method of the chatroom. That sendMessage method calls the broadcast method of the Manager.
+        <br>
+        Within the Manager, the broadcast method calls the broadcast method of all connected clients. This diverts from the use case because there is supposed to be a check to ensure that the client that sent the message does not receive the message, as shown in the sequence diagram in Figure 3 above.
+    </p>
+
+    <h2>Solution part 3 : Regular Expressions and Finite State Automata</h2>
+
+    <figure>
+		<img src="useCase3FSA.png">
+		<figcaption>Figure 4: Use Case 3 Finite State Automata according to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+	</figure>
+    <p>
+        <br>
+    </p>
+    <figure>
+		<img src="useCase7FSA.png">
+		<figcaption>Figure 5: Use Case 7 Finite State Automata according to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+	</figure>
+    <p>
+        <br>
+    </p>
+
+    <h2>Solution part 4 : Implementation Bug Fix</h2>
+
+    <figure>
+		<img src="Bug fix screenshot.png">
+		<figcaption>Figure 6: Fixed code in <a href="./chatProtocolSimulationFixed.py"><tt>chatProtocolSimulationFixed.py</tt></a></figcaption>
+	</figure>
+    <p>
+        To fix the implementation bug present in chatProtocolSimulation.py, we add an extra line to the broadcast method of the manager that checks that the client Id of the client receiving the message is not the same as the sender Id.
+    </p>
 
  <hr noshade>
 
