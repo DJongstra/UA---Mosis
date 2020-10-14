@@ -22,10 +22,6 @@
       Time spent on this assignment (in hours):
      </pre>
 
-    <h2>The assignment</h2>
-     <p>
-     Possibly some of your own clarifications or extra assumptions.
-     </p>
 	 
     <h2>Solution part 1 : Class Diagram</h2>
 	
@@ -75,17 +71,42 @@
     </p>
 
     <h2>Solution part 3 : Regular Expressions and Finite State Automata</h2>
+	<p>
+	The third use case can be recognized by the RegEx:<i> \(CR ([0-1])\) AC ([0-5])\.\n\(CL \2\) AB \1\.\n </i>. <br>
+	In this RegEx the room number has to be either 0 or 1, as there are only 2 rooms. The client number has to be between 0 and 5, because there are 6 clients. 
+	The capture groups are referenced by \1 and \2. The corresponding FSA is depicted in figure 4. In a transition the character to read to take the transition is in the part before the slash, while the part after the slash denotes what to save into memory.
+	If no slash is present, it only shows what character to read to take the transition. A memory location is accessed by using store.<i>memoryLocation</i>. 
+	After the slash it can occur to put something in the memory location. It is also used to show that the same character should be read as the one present in the memory location to take the transition.
+	Memory location <i>m1</i> is used for the capture group 1 in the RegEx and memory location <i>m2</i> is used for the capture group 2 in the RegEx. Accepting state S3_26 recognizes the same strings as the RegEx.
+	This FSA is implemented in <a href="./useCase3Checker.py"><tt>useCase3Checker.py</tt></a> and tested in <a href="./test.py"><tt>test.py</tt></a>, along with the automata of use case 7.
+	</p>
 
     <figure>
 		<img src="useCase3FSA.png">
-		<figcaption>Figure 4: Use Case 3 Finite State Automata according to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+		<figcaption>Figure 4: Use Case 3 Finite State Automata</figcaption>
 	</figure>
     <p>
         <br>
+		The FSA for use case 7 is shown in figure 5. This corresponds to the RegEx <i> \(CL ([0-5])\) RM (?!\1)[0-5]\:.*\n</i>.<br>
+		In this RegEx the client number is again between 0 and 5. The part <i>(?!\1)[0-5]</i> contains a negative lookahead on the capture group, so that the receiver is not the same as the sender and a check to see if the receiver is still a client between 0 and 5.
+		Before the newline symbol every character can be matched zero or more times. By this, we assume that a client could send an empty message. The FSA uses a forward slash to denote a collection without an element.
+		For example, the transition <i>[0-5]/store.m1</i> is for having a number between 0 and 5, but not the number the is stored in store.m1. The FSA is implemented in <a href="./useCase7Checker.py"><tt>useCase7Checker.py</tt></a> and tested in <a href="./test.py"><tt>test.py</tt></a> as well.
     </p>
     <figure>
 		<img src="useCase7FSA.png">
-		<figcaption>Figure 5: Use Case 7 Finite State Automata according to the implementation of <a href="./chatProtocolSimulation.py"><tt>chatProtocolSimulation.py</tt></a></figcaption>
+		<figcaption>Figure 5: Use Case 7 Finite State Automata</figcaption>
+	</figure>
+    <p>
+        <br>
+		To check the trace for mistakes, the FSAs of use case 3 and 7 are combined into 1 as shown in figure 6. In this FSA, instead of the accepting states shown in the previous FSAs, 
+		the transition that should go to the accepting goes back to start state. This way we can check the entire trace in one run. Not shown in figure 6 are the transitions to a state <i>Sfail</i> to prevent the figure from getting too many transitions. 
+		There is a transition from every state to this state if there is not another transition that can be taken. The FSA with the fail state is implemented in <a href="./fullChecker.py"><tt>fullChecker.py</tt></a>. The scanner in <a href="./scannerNew.py"><tt>scannerNew.py</tt></a> stops running the FSA if is in this fail state. 
+		This way we know we have found a mistake. The mistake we found was in use case 7.
+		
+    </p>
+	<figure>
+		<img src="fullFSA.png">
+		<figcaption>Figure 6: Combination of the FSAs of both use case 3 and 7</figcaption>
 	</figure>
     <p>
         <br>
@@ -95,7 +116,7 @@
 
     <figure>
 		<img src="Bug fix screenshot.png">
-		<figcaption>Figure 6: Fixed code in <a href="./chatProtocolSimulationFixed.py"><tt>chatProtocolSimulationFixed.py</tt></a></figcaption>
+		<figcaption>Figure 7: Fixed code in <a href="./chatProtocolSimulationFixed.py"><tt>chatProtocolSimulationFixed.py</tt></a></figcaption>
 	</figure>
     <p>
         To fix the implementation bug present in chatProtocolSimulation.py, we add an extra line to the broadcast method of the manager that checks that the client Id of the client receiving the message is not the same as the sender Id.

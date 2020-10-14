@@ -2,7 +2,7 @@ from preprocess import preprocess
 
 toCheck = preprocess()
 
-# RE: \(CR (\d+)\) AC (\d+)\.\n\(CL \\2\) AB \\1\.\n
+# RE: \(CR ([0-1])\) AC ([0-5])\.\n\(CL \2\) AB \1\.\n
 
 def makeDot():
     import pydot

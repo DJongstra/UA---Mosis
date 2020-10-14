@@ -3,7 +3,7 @@ import string
 
 toCheck = preprocess()
 
-# RE: \(CL (\d+)\) RM (?!\1)[0-5]\:.*\n
+# RE: \(CL ([0-5])\) RM (?!\1)[0-5]\:.*\n
 
 def makeDot():
     import pydot
