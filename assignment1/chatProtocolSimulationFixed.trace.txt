@@ -21,70 +21,70 @@
 ## SM := Sent message to all connected clients except client
 ## ============= Running =============
 ## --- time = 0 --------------------------------------------------------------------------
-## (Client 2) A connection request is sent to chat room 1.
-(CL 2) RS 1.
-## (Chat room 1) Received connection request from client 2.
-(CR 1) RR 2.
-## (Chat room 1) Accepted client 2.
-(CR 1) AC 2.
-## (Client 2) Accepted by chat room 1.
-(CL 2) AB 1.
+## (Client 4) A connection request is sent to chat room 0.
+(CL 4) RS 0.
+## (Chat room 0) Received connection request from client 4.
+(CR 0) RR 4.
+## (Chat room 0) Accepted client 4.
+(CR 0) AC 4.
+## (Client 4) Accepted by chat room 0.
+(CL 4) AB 0.
 ## Connections dumping:
-## Client 2 <--> Chat room 1
+## Client 4 <--> Chat room 0
+## (Client 4) Says: What's up?
+(CL 4) SY: What's up?
+## (Chat room 0) Received message from client 4: What's up?
+(CR 0) RM 4: What's up?
+## (Chat room 0) Sent message to all connected clients except client 4: What's up?
+(CR 0) SM 4: What's up?
+## --- time = 1 --------------------------------------------------------------------------
+## (Client 3) A connection request is sent to chat room 1.
+(CL 3) RS 1.
+## (Chat room 1) Received connection request from client 3.
+(CR 1) RR 3.
+## (Chat room 1) Accepted client 3.
+(CR 1) AC 3.
+## (Client 3) Accepted by chat room 1.
+(CL 3) AB 1.
+## Connections dumping:
+## Client 4 <--> Chat room 0
+## Client 3 <--> Chat room 1
+## (Client 3) Says: Nothing much going on ...
+(CL 3) SY: Nothing much going on ...
+## (Chat room 1) Received message from client 3: Nothing much going on ...
+(CR 1) RM 3: Nothing much going on ...
+## (Chat room 1) Sent message to all connected clients except client 3: Nothing much going on ...
+(CR 1) SM 3: Nothing much going on ...
+## --- time = 2 --------------------------------------------------------------------------
+## (Client 2) A connection request is sent to chat room 0.
+(CL 2) RS 0.
+## (Chat room 0) Received connection request from client 2.
+(CR 0) RR 2.
+## (Chat room 0) Accepted client 2.
+(CR 0) AC 2.
+## (Client 2) Accepted by chat room 0.
+(CL 2) AB 0.
+## Connections dumping:
+## Client 4 <--> Chat room 0
+## Client 3 <--> Chat room 1
+## Client 2 <--> Chat room 0
+## (Client 2) Says: Bla Bla Bla ...
+(CL 2) SY: Bla Bla Bla ...
+## (Chat room 0) Received message from client 2: Bla Bla Bla ...
+(CR 0) RM 2: Bla Bla Bla ...
+## (Chat room 0) Sent message to all connected clients except client 2: Bla Bla Bla ...
+(CR 0) SM 2: Bla Bla Bla ...
+## (Client 4) Received message from client 2: Bla Bla Bla ...
+(CL 4) RM 2: Bla Bla Bla ...
+## --- time = 3 --------------------------------------------------------------------------
 ## (Client 2) Says: Howdy
 (CL 2) SY: Howdy
-## (Chat room 1) Received message from client 2: Howdy
-(CR 1) RM 2: Howdy
-## (Chat room 1) Sent message to all connected clients except client 2: Howdy
-(CR 1) SM 2: Howdy
-## --- time = 1 --------------------------------------------------------------------------
-## (Client 0) A connection request is sent to chat room 0.
-(CL 0) RS 0.
-## (Chat room 0) Received connection request from client 0.
-(CR 0) RR 0.
-## (Chat room 0) Accepted client 0.
-(CR 0) AC 0.
-## (Client 0) Accepted by chat room 0.
-(CL 0) AB 0.
-## Connections dumping:
-## Client 2 <--> Chat room 1
-## Client 0 <--> Chat room 0
-## (Client 0) Says: Bla Bla Bla ...
-(CL 0) SY: Bla Bla Bla ...
-## (Chat room 0) Received message from client 0: Bla Bla Bla ...
-(CR 0) RM 0: Bla Bla Bla ...
-## (Chat room 0) Sent message to all connected clients except client 0: Bla Bla Bla ...
-(CR 0) SM 0: Bla Bla Bla ...
-## --- time = 2 --------------------------------------------------------------------------
-## (Client 3) A connection request is sent to chat room 0.
-(CL 3) RS 0.
-## (Chat room 0) Received connection request from client 3.
-(CR 0) RR 3.
-## (Chat room 0) Accepted client 3.
-(CR 0) AC 3.
-## (Client 3) Accepted by chat room 0.
-(CL 3) AB 0.
-## Connections dumping:
-## Client 2 <--> Chat room 1
-## Client 0 <--> Chat room 0
-## Client 3 <--> Chat room 0
-## (Client 3) Says: Nice to meet you!
-(CL 3) SY: Nice to meet you!
-## (Chat room 0) Received message from client 3: Nice to meet you!
-(CR 0) RM 3: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 3: Nice to meet you!
-(CR 0) SM 3: Nice to meet you!
-## (Client 0) Received message from client 3: Nice to meet you!
-(CL 0) RM 3: Nice to meet you!
-## --- time = 3 --------------------------------------------------------------------------
-## (Client 3) Says: Nice to meet you!
-(CL 3) SY: Nice to meet you!
-## (Chat room 0) Received message from client 3: Nice to meet you!
-(CR 0) RM 3: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 3: Nice to meet you!
-(CR 0) SM 3: Nice to meet you!
-## (Client 0) Received message from client 3: Nice to meet you!
-(CL 0) RM 3: Nice to meet you!
+## (Chat room 0) Received message from client 2: Howdy
+(CR 0) RM 2: Howdy
+## (Chat room 0) Sent message to all connected clients except client 2: Howdy
+(CR 0) SM 2: Howdy
+## (Client 4) Received message from client 2: Howdy
+(CL 4) RM 2: Howdy
 ## --- time = 4 --------------------------------------------------------------------------
 ## (Client 5) A connection request is sent to chat room 0.
 (CL 5) RS 0.
@@ -95,43 +95,72 @@
 ## (Client 5) Accepted by chat room 0.
 (CL 5) AB 0.
 ## Connections dumping:
-## Client 2 <--> Chat room 1
-## Client 0 <--> Chat room 0
-## Client 3 <--> Chat room 0
+## Client 4 <--> Chat room 0
+## Client 3 <--> Chat room 1
+## Client 2 <--> Chat room 0
 ## Client 5 <--> Chat room 0
+## (Client 5) Says: Nothing much going on ...
+(CL 5) SY: Nothing much going on ...
+## (Chat room 0) Received message from client 5: Nothing much going on ...
+(CR 0) RM 5: Nothing much going on ...
+## (Chat room 0) Sent message to all connected clients except client 5: Nothing much going on ...
+(CR 0) SM 5: Nothing much going on ...
+## (Client 4) Received message from client 5: Nothing much going on ...
+(CL 4) RM 5: Nothing much going on ...
+## (Client 2) Received message from client 5: Nothing much going on ...
+(CL 2) RM 5: Nothing much going on ...
+## --- time = 5 --------------------------------------------------------------------------
+## (Client 4) Says: Nice to meet you!
+(CL 4) SY: Nice to meet you!
+## (Chat room 0) Received message from client 4: Nice to meet you!
+(CR 0) RM 4: Nice to meet you!
+## (Chat room 0) Sent message to all connected clients except client 4: Nice to meet you!
+(CR 0) SM 4: Nice to meet you!
+## (Client 2) Received message from client 4: Nice to meet you!
+(CL 2) RM 4: Nice to meet you!
+## (Client 5) Received message from client 4: Nice to meet you!
+(CL 5) RM 4: Nice to meet you!
+## --- time = 6 --------------------------------------------------------------------------
+## (Client 5) Says: Nothing much going on ...
+(CL 5) SY: Nothing much going on ...
+## (Chat room 0) Received message from client 5: Nothing much going on ...
+(CR 0) RM 5: Nothing much going on ...
+## (Chat room 0) Sent message to all connected clients except client 5: Nothing much going on ...
+(CR 0) SM 5: Nothing much going on ...
+## (Client 4) Received message from client 5: Nothing much going on ...
+(CL 4) RM 5: Nothing much going on ...
+## (Client 2) Received message from client 5: Nothing much going on ...
+(CL 2) RM 5: Nothing much going on ...
+## --- time = 7 --------------------------------------------------------------------------
+## (Client 3) Says: Nice to meet you!
+(CL 3) SY: Nice to meet you!
+## (Chat room 1) Received message from client 3: Nice to meet you!
+(CR 1) RM 3: Nice to meet you!
+## (Chat room 1) Sent message to all connected clients except client 3: Nice to meet you!
+(CR 1) SM 3: Nice to meet you!
+## --- time = 8 --------------------------------------------------------------------------
+## (Client 2) Says: What's up?
+(CL 2) SY: What's up?
+## (Chat room 0) Received message from client 2: What's up?
+(CR 0) RM 2: What's up?
+## (Chat room 0) Sent message to all connected clients except client 2: What's up?
+(CR 0) SM 2: What's up?
+## (Client 4) Received message from client 2: What's up?
+(CL 4) RM 2: What's up?
+## (Client 5) Received message from client 2: What's up?
+(CL 5) RM 2: What's up?
+## --- time = 9 --------------------------------------------------------------------------
 ## (Client 5) Says: Bla Bla Bla ...
 (CL 5) SY: Bla Bla Bla ...
 ## (Chat room 0) Received message from client 5: Bla Bla Bla ...
 (CR 0) RM 5: Bla Bla Bla ...
 ## (Chat room 0) Sent message to all connected clients except client 5: Bla Bla Bla ...
 (CR 0) SM 5: Bla Bla Bla ...
-## (Client 0) Received message from client 5: Bla Bla Bla ...
-(CL 0) RM 5: Bla Bla Bla ...
-## (Client 3) Received message from client 5: Bla Bla Bla ...
-(CL 3) RM 5: Bla Bla Bla ...
-## --- time = 5 --------------------------------------------------------------------------
-## (Client 0) Says: Howdy
-(CL 0) SY: Howdy
-## (Chat room 0) Received message from client 0: Howdy
-(CR 0) RM 0: Howdy
-## (Chat room 0) Sent message to all connected clients except client 0: Howdy
-(CR 0) SM 0: Howdy
-## (Client 3) Received message from client 0: Howdy
-(CL 3) RM 0: Howdy
-## (Client 5) Received message from client 0: Howdy
-(CL 5) RM 0: Howdy
-## --- time = 6 --------------------------------------------------------------------------
-## (Client 3) Says: Bla Bla Bla ...
-(CL 3) SY: Bla Bla Bla ...
-## (Chat room 0) Received message from client 3: Bla Bla Bla ...
-(CR 0) RM 3: Bla Bla Bla ...
-## (Chat room 0) Sent message to all connected clients except client 3: Bla Bla Bla ...
-(CR 0) SM 3: Bla Bla Bla ...
-## (Client 0) Received message from client 3: Bla Bla Bla ...
-(CL 0) RM 3: Bla Bla Bla ...
-## (Client 5) Received message from client 3: Bla Bla Bla ...
-(CL 5) RM 3: Bla Bla Bla ...
-## --- time = 7 --------------------------------------------------------------------------
+## (Client 4) Received message from client 5: Bla Bla Bla ...
+(CL 4) RM 5: Bla Bla Bla ...
+## (Client 2) Received message from client 5: Bla Bla Bla ...
+(CL 2) RM 5: Bla Bla Bla ...
+## --- time = 10 --------------------------------------------------------------------------
 ## (Client 1) A connection request is sent to chat room 0.
 (CL 1) RS 0.
 ## (Chat room 0) Received connection request from client 1.
@@ -141,9 +170,9 @@
 ## (Client 1) Accepted by chat room 0.
 (CL 1) AB 0.
 ## Connections dumping:
-## Client 2 <--> Chat room 1
-## Client 0 <--> Chat room 0
-## Client 3 <--> Chat room 0
+## Client 4 <--> Chat room 0
+## Client 3 <--> Chat room 1
+## Client 2 <--> Chat room 0
 ## Client 5 <--> Chat room 0
 ## Client 1 <--> Chat room 0
 ## (Client 1) Says: Howdy
@@ -152,534 +181,473 @@
 (CR 0) RM 1: Howdy
 ## (Chat room 0) Sent message to all connected clients except client 1: Howdy
 (CR 0) SM 1: Howdy
-## (Client 0) Received message from client 1: Howdy
-(CL 0) RM 1: Howdy
-## (Client 3) Received message from client 1: Howdy
-(CL 3) RM 1: Howdy
+## (Client 4) Received message from client 1: Howdy
+(CL 4) RM 1: Howdy
+## (Client 2) Received message from client 1: Howdy
+(CL 2) RM 1: Howdy
 ## (Client 5) Received message from client 1: Howdy
 (CL 5) RM 1: Howdy
-## --- time = 8 --------------------------------------------------------------------------
-## (Client 5) Says: Howdy
-(CL 5) SY: Howdy
-## (Chat room 0) Received message from client 5: Howdy
-(CR 0) RM 5: Howdy
-## (Chat room 0) Sent message to all connected clients except client 5: Howdy
-(CR 0) SM 5: Howdy
-## (Client 0) Received message from client 5: Howdy
-(CL 0) RM 5: Howdy
-## (Client 3) Received message from client 5: Howdy
-(CL 3) RM 5: Howdy
-## (Client 1) Received message from client 5: Howdy
-(CL 1) RM 5: Howdy
-## --- time = 9 --------------------------------------------------------------------------
-## (Client 0) Says: Howdy
-(CL 0) SY: Howdy
-## (Chat room 0) Received message from client 0: Howdy
-(CR 0) RM 0: Howdy
-## (Chat room 0) Sent message to all connected clients except client 0: Howdy
-(CR 0) SM 0: Howdy
-## (Client 3) Received message from client 0: Howdy
-(CL 3) RM 0: Howdy
-## (Client 5) Received message from client 0: Howdy
-(CL 5) RM 0: Howdy
-## (Client 1) Received message from client 0: Howdy
-(CL 1) RM 0: Howdy
-## --- time = 10 --------------------------------------------------------------------------
-## (Client 0) Says: Bla Bla Bla ...
-(CL 0) SY: Bla Bla Bla ...
-## (Chat room 0) Received message from client 0: Bla Bla Bla ...
-(CR 0) RM 0: Bla Bla Bla ...
-## (Chat room 0) Sent message to all connected clients except client 0: Bla Bla Bla ...
-(CR 0) SM 0: Bla Bla Bla ...
-## (Client 3) Received message from client 0: Bla Bla Bla ...
-(CL 3) RM 0: Bla Bla Bla ...
-## (Client 5) Received message from client 0: Bla Bla Bla ...
-(CL 5) RM 0: Bla Bla Bla ...
-## (Client 1) Received message from client 0: Bla Bla Bla ...
-(CL 1) RM 0: Bla Bla Bla ...
 ## --- time = 11 --------------------------------------------------------------------------
-## (Client 1) Says: Bla Bla Bla ...
-(CL 1) SY: Bla Bla Bla ...
-## (Chat room 0) Received message from client 1: Bla Bla Bla ...
-(CR 0) RM 1: Bla Bla Bla ...
-## (Chat room 0) Sent message to all connected clients except client 1: Bla Bla Bla ...
-(CR 0) SM 1: Bla Bla Bla ...
-## (Client 0) Received message from client 1: Bla Bla Bla ...
-(CL 0) RM 1: Bla Bla Bla ...
-## (Client 3) Received message from client 1: Bla Bla Bla ...
-(CL 3) RM 1: Bla Bla Bla ...
-## (Client 5) Received message from client 1: Bla Bla Bla ...
-(CL 5) RM 1: Bla Bla Bla ...
-## --- time = 12 --------------------------------------------------------------------------
-## (Client 1) Says: Bla Bla Bla ...
-(CL 1) SY: Bla Bla Bla ...
-## (Chat room 0) Received message from client 1: Bla Bla Bla ...
-(CR 0) RM 1: Bla Bla Bla ...
-## (Chat room 0) Sent message to all connected clients except client 1: Bla Bla Bla ...
-(CR 0) SM 1: Bla Bla Bla ...
-## (Client 0) Received message from client 1: Bla Bla Bla ...
-(CL 0) RM 1: Bla Bla Bla ...
-## (Client 3) Received message from client 1: Bla Bla Bla ...
-(CL 3) RM 1: Bla Bla Bla ...
-## (Client 5) Received message from client 1: Bla Bla Bla ...
-(CL 5) RM 1: Bla Bla Bla ...
-## --- time = 13 --------------------------------------------------------------------------
-## (Client 5) Says: Nice to meet you!
-(CL 5) SY: Nice to meet you!
-## (Chat room 0) Received message from client 5: Nice to meet you!
-(CR 0) RM 5: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 5: Nice to meet you!
-(CR 0) SM 5: Nice to meet you!
-## (Client 0) Received message from client 5: Nice to meet you!
-(CL 0) RM 5: Nice to meet you!
-## (Client 3) Received message from client 5: Nice to meet you!
-(CL 3) RM 5: Nice to meet you!
-## (Client 1) Received message from client 5: Nice to meet you!
-(CL 1) RM 5: Nice to meet you!
-## --- time = 14 --------------------------------------------------------------------------
-## (Client 3) Says: Nothing much going on ...
-(CL 3) SY: Nothing much going on ...
-## (Chat room 0) Received message from client 3: Nothing much going on ...
-(CR 0) RM 3: Nothing much going on ...
-## (Chat room 0) Sent message to all connected clients except client 3: Nothing much going on ...
-(CR 0) SM 3: Nothing much going on ...
-## (Client 0) Received message from client 3: Nothing much going on ...
-(CL 0) RM 3: Nothing much going on ...
-## (Client 5) Received message from client 3: Nothing much going on ...
-(CL 5) RM 3: Nothing much going on ...
-## (Client 1) Received message from client 3: Nothing much going on ...
-(CL 1) RM 3: Nothing much going on ...
-## --- time = 15 --------------------------------------------------------------------------
-## (Client 3) Says: Nothing much going on ...
-(CL 3) SY: Nothing much going on ...
-## (Chat room 0) Received message from client 3: Nothing much going on ...
-(CR 0) RM 3: Nothing much going on ...
-## (Chat room 0) Sent message to all connected clients except client 3: Nothing much going on ...
-(CR 0) SM 3: Nothing much going on ...
-## (Client 0) Received message from client 3: Nothing much going on ...
-(CL 0) RM 3: Nothing much going on ...
-## (Client 5) Received message from client 3: Nothing much going on ...
-(CL 5) RM 3: Nothing much going on ...
-## (Client 1) Received message from client 3: Nothing much going on ...
-(CL 1) RM 3: Nothing much going on ...
-## --- time = 16 --------------------------------------------------------------------------
-## (Client 4) A connection request is sent to chat room 1.
-(CL 4) RS 1.
-## (Chat room 1) Received connection request from client 4.
-(CR 1) RR 4.
-## (Chat room 1) Accepted client 4.
-(CR 1) AC 4.
-## (Client 4) Accepted by chat room 1.
-(CL 4) AB 1.
+## (Client 0) A connection request is sent to chat room 0.
+(CL 0) RS 0.
+## (Chat room 0) Received connection request from client 0.
+(CR 0) RR 0.
+## (Chat room 0) Rejected client 0.
+(CR 0) RC 0.
+## (Client 0) Rejected by chat room 0.
+(CL 0) RB 0.
 ## Connections dumping:
-## Client 2 <--> Chat room 1
-## Client 0 <--> Chat room 0
-## Client 3 <--> Chat room 0
+## Client 4 <--> Chat room 0
+## Client 3 <--> Chat room 1
+## Client 2 <--> Chat room 0
 ## Client 5 <--> Chat room 0
 ## Client 1 <--> Chat room 0
-## Client 4 <--> Chat room 1
-## (Client 4) Says: Nothing much going on ...
-(CL 4) SY: Nothing much going on ...
-## (Chat room 1) Received message from client 4: Nothing much going on ...
-(CR 1) RM 4: Nothing much going on ...
-## (Chat room 1) Sent message to all connected clients except client 4: Nothing much going on ...
-(CR 1) SM 4: Nothing much going on ...
-## (Client 2) Received message from client 4: Nothing much going on ...
-(CL 2) RM 4: Nothing much going on ...
-## --- time = 17 --------------------------------------------------------------------------
-## (Client 5) Says: Howdy
-(CL 5) SY: Howdy
-## (Chat room 0) Received message from client 5: Howdy
-(CR 0) RM 5: Howdy
-## (Chat room 0) Sent message to all connected clients except client 5: Howdy
-(CR 0) SM 5: Howdy
-## (Client 0) Received message from client 5: Howdy
-(CL 0) RM 5: Howdy
-## (Client 3) Received message from client 5: Howdy
-(CL 3) RM 5: Howdy
-## (Client 1) Received message from client 5: Howdy
-(CL 1) RM 5: Howdy
-## --- time = 18 --------------------------------------------------------------------------
+## --- time = 12 --------------------------------------------------------------------------
+## (Client 0) A connection request is sent to chat room 1.
+(CL 0) RS 1.
+## (Chat room 1) Received connection request from client 0.
+(CR 1) RR 0.
+## (Chat room 1) Accepted client 0.
+(CR 1) AC 0.
+## (Client 0) Accepted by chat room 1.
+(CL 0) AB 1.
+## Connections dumping:
+## Client 4 <--> Chat room 0
+## Client 3 <--> Chat room 1
+## Client 2 <--> Chat room 0
+## Client 5 <--> Chat room 0
+## Client 1 <--> Chat room 0
+## Client 0 <--> Chat room 1
+## (Client 0) Says: What's up?
+(CL 0) SY: What's up?
+## (Chat room 1) Received message from client 0: What's up?
+(CR 1) RM 0: What's up?
+## (Chat room 1) Sent message to all connected clients except client 0: What's up?
+(CR 1) SM 0: What's up?
+## (Client 3) Received message from client 0: What's up?
+(CL 3) RM 0: What's up?
+## --- time = 13 --------------------------------------------------------------------------
+## (Client 3) Says: Bla Bla Bla ...
+(CL 3) SY: Bla Bla Bla ...
+## (Chat room 1) Received message from client 3: Bla Bla Bla ...
+(CR 1) RM 3: Bla Bla Bla ...
+## (Chat room 1) Sent message to all connected clients except client 3: Bla Bla Bla ...
+(CR 1) SM 3: Bla Bla Bla ...
+## (Client 0) Received message from client 3: Bla Bla Bla ...
+(CL 0) RM 3: Bla Bla Bla ...
+## --- time = 14 --------------------------------------------------------------------------
+## (Client 0) Says: Nice to meet you!
+(CL 0) SY: Nice to meet you!
+## (Chat room 1) Received message from client 0: Nice to meet you!
+(CR 1) RM 0: Nice to meet you!
+## (Chat room 1) Sent message to all connected clients except client 0: Nice to meet you!
+(CR 1) SM 0: Nice to meet you!
+## (Client 3) Received message from client 0: Nice to meet you!
+(CL 3) RM 0: Nice to meet you!
+## --- time = 15 --------------------------------------------------------------------------
 ## (Client 3) Says: What's up?
 (CL 3) SY: What's up?
-## (Chat room 0) Received message from client 3: What's up?
-(CR 0) RM 3: What's up?
-## (Chat room 0) Sent message to all connected clients except client 3: What's up?
-(CR 0) SM 3: What's up?
+## (Chat room 1) Received message from client 3: What's up?
+(CR 1) RM 3: What's up?
+## (Chat room 1) Sent message to all connected clients except client 3: What's up?
+(CR 1) SM 3: What's up?
 ## (Client 0) Received message from client 3: What's up?
 (CL 0) RM 3: What's up?
-## (Client 5) Received message from client 3: What's up?
-(CL 5) RM 3: What's up?
-## (Client 1) Received message from client 3: What's up?
-(CL 1) RM 3: What's up?
+## --- time = 16 --------------------------------------------------------------------------
+## (Client 3) Says: What's up?
+(CL 3) SY: What's up?
+## (Chat room 1) Received message from client 3: What's up?
+(CR 1) RM 3: What's up?
+## (Chat room 1) Sent message to all connected clients except client 3: What's up?
+(CR 1) SM 3: What's up?
+## (Client 0) Received message from client 3: What's up?
+(CL 0) RM 3: What's up?
+## --- time = 17 --------------------------------------------------------------------------
+## (Client 3) Says: Nice to meet you!
+(CL 3) SY: Nice to meet you!
+## (Chat room 1) Received message from client 3: Nice to meet you!
+(CR 1) RM 3: Nice to meet you!
+## (Chat room 1) Sent message to all connected clients except client 3: Nice to meet you!
+(CR 1) SM 3: Nice to meet you!
+## (Client 0) Received message from client 3: Nice to meet you!
+(CL 0) RM 3: Nice to meet you!
+## --- time = 18 --------------------------------------------------------------------------
+## (Client 0) Says: Howdy
+(CL 0) SY: Howdy
+## (Chat room 1) Received message from client 0: Howdy
+(CR 1) RM 0: Howdy
+## (Chat room 1) Sent message to all connected clients except client 0: Howdy
+(CR 1) SM 0: Howdy
+## (Client 3) Received message from client 0: Howdy
+(CL 3) RM 0: Howdy
 ## --- time = 19 --------------------------------------------------------------------------
-## (Client 5) Says: Howdy
-(CL 5) SY: Howdy
-## (Chat room 0) Received message from client 5: Howdy
-(CR 0) RM 5: Howdy
-## (Chat room 0) Sent message to all connected clients except client 5: Howdy
-(CR 0) SM 5: Howdy
-## (Client 0) Received message from client 5: Howdy
-(CL 0) RM 5: Howdy
-## (Client 3) Received message from client 5: Howdy
-(CL 3) RM 5: Howdy
-## (Client 1) Received message from client 5: Howdy
-(CL 1) RM 5: Howdy
+## (Client 2) Says: Howdy
+(CL 2) SY: Howdy
+## (Chat room 0) Received message from client 2: Howdy
+(CR 0) RM 2: Howdy
+## (Chat room 0) Sent message to all connected clients except client 2: Howdy
+(CR 0) SM 2: Howdy
+## (Client 4) Received message from client 2: Howdy
+(CL 4) RM 2: Howdy
+## (Client 5) Received message from client 2: Howdy
+(CL 5) RM 2: Howdy
+## (Client 1) Received message from client 2: Howdy
+(CL 1) RM 2: Howdy
 ## --- time = 20 --------------------------------------------------------------------------
-## (Client 5) Says: What's up?
-(CL 5) SY: What's up?
-## (Chat room 0) Received message from client 5: What's up?
-(CR 0) RM 5: What's up?
-## (Chat room 0) Sent message to all connected clients except client 5: What's up?
-(CR 0) SM 5: What's up?
-## (Client 0) Received message from client 5: What's up?
-(CL 0) RM 5: What's up?
-## (Client 3) Received message from client 5: What's up?
-(CL 3) RM 5: What's up?
-## (Client 1) Received message from client 5: What's up?
-(CL 1) RM 5: What's up?
+## (Client 4) Says: Nice to meet you!
+(CL 4) SY: Nice to meet you!
+## (Chat room 0) Received message from client 4: Nice to meet you!
+(CR 0) RM 4: Nice to meet you!
+## (Chat room 0) Sent message to all connected clients except client 4: Nice to meet you!
+(CR 0) SM 4: Nice to meet you!
+## (Client 2) Received message from client 4: Nice to meet you!
+(CL 2) RM 4: Nice to meet you!
+## (Client 5) Received message from client 4: Nice to meet you!
+(CL 5) RM 4: Nice to meet you!
+## (Client 1) Received message from client 4: Nice to meet you!
+(CL 1) RM 4: Nice to meet you!
 ## --- time = 21 --------------------------------------------------------------------------
+## (Client 4) Says: Howdy
+(CL 4) SY: Howdy
+## (Chat room 0) Received message from client 4: Howdy
+(CR 0) RM 4: Howdy
+## (Chat room 0) Sent message to all connected clients except client 4: Howdy
+(CR 0) SM 4: Howdy
+## (Client 2) Received message from client 4: Howdy
+(CL 2) RM 4: Howdy
+## (Client 5) Received message from client 4: Howdy
+(CL 5) RM 4: Howdy
+## (Client 1) Received message from client 4: Howdy
+(CL 1) RM 4: Howdy
+## --- time = 22 --------------------------------------------------------------------------
 ## (Client 5) Says: Nothing much going on ...
 (CL 5) SY: Nothing much going on ...
 ## (Chat room 0) Received message from client 5: Nothing much going on ...
 (CR 0) RM 5: Nothing much going on ...
 ## (Chat room 0) Sent message to all connected clients except client 5: Nothing much going on ...
 (CR 0) SM 5: Nothing much going on ...
-## (Client 0) Received message from client 5: Nothing much going on ...
-(CL 0) RM 5: Nothing much going on ...
-## (Client 3) Received message from client 5: Nothing much going on ...
-(CL 3) RM 5: Nothing much going on ...
+## (Client 4) Received message from client 5: Nothing much going on ...
+(CL 4) RM 5: Nothing much going on ...
+## (Client 2) Received message from client 5: Nothing much going on ...
+(CL 2) RM 5: Nothing much going on ...
 ## (Client 1) Received message from client 5: Nothing much going on ...
 (CL 1) RM 5: Nothing much going on ...
-## --- time = 22 --------------------------------------------------------------------------
-## (Client 3) Says: Nice to meet you!
-(CL 3) SY: Nice to meet you!
-## (Chat room 0) Received message from client 3: Nice to meet you!
-(CR 0) RM 3: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 3: Nice to meet you!
-(CR 0) SM 3: Nice to meet you!
-## (Client 0) Received message from client 3: Nice to meet you!
-(CL 0) RM 3: Nice to meet you!
-## (Client 5) Received message from client 3: Nice to meet you!
-(CL 5) RM 3: Nice to meet you!
-## (Client 1) Received message from client 3: Nice to meet you!
-(CL 1) RM 3: Nice to meet you!
 ## --- time = 23 --------------------------------------------------------------------------
-## (Client 4) Says: Howdy
-(CL 4) SY: Howdy
-## (Chat room 1) Received message from client 4: Howdy
-(CR 1) RM 4: Howdy
-## (Chat room 1) Sent message to all connected clients except client 4: Howdy
-(CR 1) SM 4: Howdy
-## (Client 2) Received message from client 4: Howdy
-(CL 2) RM 4: Howdy
+## (Client 0) Says: Bla Bla Bla ...
+(CL 0) SY: Bla Bla Bla ...
+## (Chat room 1) Received message from client 0: Bla Bla Bla ...
+(CR 1) RM 0: Bla Bla Bla ...
+## (Chat room 1) Sent message to all connected clients except client 0: Bla Bla Bla ...
+(CR 1) SM 0: Bla Bla Bla ...
+## (Client 3) Received message from client 0: Bla Bla Bla ...
+(CL 3) RM 0: Bla Bla Bla ...
 ## --- time = 24 --------------------------------------------------------------------------
+## (Client 4) Says: Nothing much going on ...
+(CL 4) SY: Nothing much going on ...
+## (Chat room 0) Received message from client 4: Nothing much going on ...
+(CR 0) RM 4: Nothing much going on ...
+## (Chat room 0) Sent message to all connected clients except client 4: Nothing much going on ...
+(CR 0) SM 4: Nothing much going on ...
+## (Client 2) Received message from client 4: Nothing much going on ...
+(CL 2) RM 4: Nothing much going on ...
+## (Client 5) Received message from client 4: Nothing much going on ...
+(CL 5) RM 4: Nothing much going on ...
+## (Client 1) Received message from client 4: Nothing much going on ...
+(CL 1) RM 4: Nothing much going on ...
+## --- time = 25 --------------------------------------------------------------------------
+## (Client 3) Says: What's up?
+(CL 3) SY: What's up?
+## (Chat room 1) Received message from client 3: What's up?
+(CR 1) RM 3: What's up?
+## (Chat room 1) Sent message to all connected clients except client 3: What's up?
+(CR 1) SM 3: What's up?
+## (Client 0) Received message from client 3: What's up?
+(CL 0) RM 3: What's up?
+## --- time = 26 --------------------------------------------------------------------------
+## (Client 0) Says: Howdy
+(CL 0) SY: Howdy
+## (Chat room 1) Received message from client 0: Howdy
+(CR 1) RM 0: Howdy
+## (Chat room 1) Sent message to all connected clients except client 0: Howdy
+(CR 1) SM 0: Howdy
+## (Client 3) Received message from client 0: Howdy
+(CL 3) RM 0: Howdy
+## --- time = 27 --------------------------------------------------------------------------
+## (Client 5) Says: Nothing much going on ...
+(CL 5) SY: Nothing much going on ...
+## (Chat room 0) Received message from client 5: Nothing much going on ...
+(CR 0) RM 5: Nothing much going on ...
+## (Chat room 0) Sent message to all connected clients except client 5: Nothing much going on ...
+(CR 0) SM 5: Nothing much going on ...
+## (Client 4) Received message from client 5: Nothing much going on ...
+(CL 4) RM 5: Nothing much going on ...
+## (Client 2) Received message from client 5: Nothing much going on ...
+(CL 2) RM 5: Nothing much going on ...
+## (Client 1) Received message from client 5: Nothing much going on ...
+(CL 1) RM 5: Nothing much going on ...
+## --- time = 28 --------------------------------------------------------------------------
+## (Client 4) Says: Nice to meet you!
+(CL 4) SY: Nice to meet you!
+## (Chat room 0) Received message from client 4: Nice to meet you!
+(CR 0) RM 4: Nice to meet you!
+## (Chat room 0) Sent message to all connected clients except client 4: Nice to meet you!
+(CR 0) SM 4: Nice to meet you!
+## (Client 2) Received message from client 4: Nice to meet you!
+(CL 2) RM 4: Nice to meet you!
+## (Client 5) Received message from client 4: Nice to meet you!
+(CL 5) RM 4: Nice to meet you!
+## (Client 1) Received message from client 4: Nice to meet you!
+(CL 1) RM 4: Nice to meet you!
+## --- time = 29 --------------------------------------------------------------------------
+## (Client 0) Says: Nothing much going on ...
+(CL 0) SY: Nothing much going on ...
+## (Chat room 1) Received message from client 0: Nothing much going on ...
+(CR 1) RM 0: Nothing much going on ...
+## (Chat room 1) Sent message to all connected clients except client 0: Nothing much going on ...
+(CR 1) SM 0: Nothing much going on ...
+## (Client 3) Received message from client 0: Nothing much going on ...
+(CL 3) RM 0: Nothing much going on ...
+## --- time = 30 --------------------------------------------------------------------------
+## (Client 5) Says: Nothing much going on ...
+(CL 5) SY: Nothing much going on ...
+## (Chat room 0) Received message from client 5: Nothing much going on ...
+(CR 0) RM 5: Nothing much going on ...
+## (Chat room 0) Sent message to all connected clients except client 5: Nothing much going on ...
+(CR 0) SM 5: Nothing much going on ...
+## (Client 4) Received message from client 5: Nothing much going on ...
+(CL 4) RM 5: Nothing much going on ...
+## (Client 2) Received message from client 5: Nothing much going on ...
+(CL 2) RM 5: Nothing much going on ...
+## (Client 1) Received message from client 5: Nothing much going on ...
+(CL 1) RM 5: Nothing much going on ...
+## --- time = 31 --------------------------------------------------------------------------
+## (Client 1) Says: Howdy
+(CL 1) SY: Howdy
+## (Chat room 0) Received message from client 1: Howdy
+(CR 0) RM 1: Howdy
+## (Chat room 0) Sent message to all connected clients except client 1: Howdy
+(CR 0) SM 1: Howdy
+## (Client 4) Received message from client 1: Howdy
+(CL 4) RM 1: Howdy
+## (Client 2) Received message from client 1: Howdy
+(CL 2) RM 1: Howdy
+## (Client 5) Received message from client 1: Howdy
+(CL 5) RM 1: Howdy
+## --- time = 32 --------------------------------------------------------------------------
+## (Client 1) Says: Bla Bla Bla ...
+(CL 1) SY: Bla Bla Bla ...
+## (Chat room 0) Received message from client 1: Bla Bla Bla ...
+(CR 0) RM 1: Bla Bla Bla ...
+## (Chat room 0) Sent message to all connected clients except client 1: Bla Bla Bla ...
+(CR 0) SM 1: Bla Bla Bla ...
+## (Client 4) Received message from client 1: Bla Bla Bla ...
+(CL 4) RM 1: Bla Bla Bla ...
+## (Client 2) Received message from client 1: Bla Bla Bla ...
+(CL 2) RM 1: Bla Bla Bla ...
+## (Client 5) Received message from client 1: Bla Bla Bla ...
+(CL 5) RM 1: Bla Bla Bla ...
+## --- time = 33 --------------------------------------------------------------------------
 ## (Client 5) Says: Bla Bla Bla ...
 (CL 5) SY: Bla Bla Bla ...
 ## (Chat room 0) Received message from client 5: Bla Bla Bla ...
 (CR 0) RM 5: Bla Bla Bla ...
 ## (Chat room 0) Sent message to all connected clients except client 5: Bla Bla Bla ...
 (CR 0) SM 5: Bla Bla Bla ...
-## (Client 0) Received message from client 5: Bla Bla Bla ...
-(CL 0) RM 5: Bla Bla Bla ...
-## (Client 3) Received message from client 5: Bla Bla Bla ...
-(CL 3) RM 5: Bla Bla Bla ...
+## (Client 4) Received message from client 5: Bla Bla Bla ...
+(CL 4) RM 5: Bla Bla Bla ...
+## (Client 2) Received message from client 5: Bla Bla Bla ...
+(CL 2) RM 5: Bla Bla Bla ...
 ## (Client 1) Received message from client 5: Bla Bla Bla ...
 (CL 1) RM 5: Bla Bla Bla ...
-## --- time = 25 --------------------------------------------------------------------------
-## (Client 0) Says: Nice to meet you!
-(CL 0) SY: Nice to meet you!
-## (Chat room 0) Received message from client 0: Nice to meet you!
-(CR 0) RM 0: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 0: Nice to meet you!
-(CR 0) SM 0: Nice to meet you!
-## (Client 3) Received message from client 0: Nice to meet you!
-(CL 3) RM 0: Nice to meet you!
-## (Client 5) Received message from client 0: Nice to meet you!
-(CL 5) RM 0: Nice to meet you!
-## (Client 1) Received message from client 0: Nice to meet you!
-(CL 1) RM 0: Nice to meet you!
-## --- time = 26 --------------------------------------------------------------------------
-## (Client 0) Says: Nice to meet you!
-(CL 0) SY: Nice to meet you!
-## (Chat room 0) Received message from client 0: Nice to meet you!
-(CR 0) RM 0: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 0: Nice to meet you!
-(CR 0) SM 0: Nice to meet you!
-## (Client 3) Received message from client 0: Nice to meet you!
-(CL 3) RM 0: Nice to meet you!
-## (Client 5) Received message from client 0: Nice to meet you!
-(CL 5) RM 0: Nice to meet you!
-## (Client 1) Received message from client 0: Nice to meet you!
-(CL 1) RM 0: Nice to meet you!
-## --- time = 27 --------------------------------------------------------------------------
-## (Client 5) Says: What's up?
-(CL 5) SY: What's up?
-## (Chat room 0) Received message from client 5: What's up?
-(CR 0) RM 5: What's up?
-## (Chat room 0) Sent message to all connected clients except client 5: What's up?
-(CR 0) SM 5: What's up?
-## (Client 0) Received message from client 5: What's up?
-(CL 0) RM 5: What's up?
-## (Client 3) Received message from client 5: What's up?
-(CL 3) RM 5: What's up?
-## (Client 1) Received message from client 5: What's up?
-(CL 1) RM 5: What's up?
-## --- time = 28 --------------------------------------------------------------------------
-## (Client 0) Says: What's up?
-(CL 0) SY: What's up?
-## (Chat room 0) Received message from client 0: What's up?
-(CR 0) RM 0: What's up?
-## (Chat room 0) Sent message to all connected clients except client 0: What's up?
-(CR 0) SM 0: What's up?
-## (Client 3) Received message from client 0: What's up?
-(CL 3) RM 0: What's up?
-## (Client 5) Received message from client 0: What's up?
-(CL 5) RM 0: What's up?
-## (Client 1) Received message from client 0: What's up?
-(CL 1) RM 0: What's up?
-## --- time = 29 --------------------------------------------------------------------------
-## (Client 3) Says: Nice to meet you!
-(CL 3) SY: Nice to meet you!
-## (Chat room 0) Received message from client 3: Nice to meet you!
-(CR 0) RM 3: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 3: Nice to meet you!
-(CR 0) SM 3: Nice to meet you!
-## (Client 0) Received message from client 3: Nice to meet you!
-(CL 0) RM 3: Nice to meet you!
-## (Client 5) Received message from client 3: Nice to meet you!
-(CL 5) RM 3: Nice to meet you!
-## (Client 1) Received message from client 3: Nice to meet you!
-(CL 1) RM 3: Nice to meet you!
-## --- time = 30 --------------------------------------------------------------------------
-## (Client 3) Says: Nothing much going on ...
-(CL 3) SY: Nothing much going on ...
-## (Chat room 0) Received message from client 3: Nothing much going on ...
-(CR 0) RM 3: Nothing much going on ...
-## (Chat room 0) Sent message to all connected clients except client 3: Nothing much going on ...
-(CR 0) SM 3: Nothing much going on ...
-## (Client 0) Received message from client 3: Nothing much going on ...
-(CL 0) RM 3: Nothing much going on ...
-## (Client 5) Received message from client 3: Nothing much going on ...
-(CL 5) RM 3: Nothing much going on ...
-## (Client 1) Received message from client 3: Nothing much going on ...
-(CL 1) RM 3: Nothing much going on ...
-## --- time = 31 --------------------------------------------------------------------------
-## (Client 5) Says: Nothing much going on ...
-(CL 5) SY: Nothing much going on ...
-## (Chat room 0) Received message from client 5: Nothing much going on ...
-(CR 0) RM 5: Nothing much going on ...
-## (Chat room 0) Sent message to all connected clients except client 5: Nothing much going on ...
-(CR 0) SM 5: Nothing much going on ...
-## (Client 0) Received message from client 5: Nothing much going on ...
-(CL 0) RM 5: Nothing much going on ...
-## (Client 3) Received message from client 5: Nothing much going on ...
-(CL 3) RM 5: Nothing much going on ...
-## (Client 1) Received message from client 5: Nothing much going on ...
-(CL 1) RM 5: Nothing much going on ...
-## --- time = 32 --------------------------------------------------------------------------
-## (Client 2) Says: Nice to meet you!
-(CL 2) SY: Nice to meet you!
-## (Chat room 1) Received message from client 2: Nice to meet you!
-(CR 1) RM 2: Nice to meet you!
-## (Chat room 1) Sent message to all connected clients except client 2: Nice to meet you!
-(CR 1) SM 2: Nice to meet you!
-## (Client 4) Received message from client 2: Nice to meet you!
-(CL 4) RM 2: Nice to meet you!
-## --- time = 33 --------------------------------------------------------------------------
-## (Client 5) Says: Howdy
-(CL 5) SY: Howdy
-## (Chat room 0) Received message from client 5: Howdy
-(CR 0) RM 5: Howdy
-## (Chat room 0) Sent message to all connected clients except client 5: Howdy
-(CR 0) SM 5: Howdy
-## (Client 0) Received message from client 5: Howdy
-(CL 0) RM 5: Howdy
-## (Client 3) Received message from client 5: Howdy
-(CL 3) RM 5: Howdy
-## (Client 1) Received message from client 5: Howdy
-(CL 1) RM 5: Howdy
 ## --- time = 34 --------------------------------------------------------------------------
-## (Client 3) Says: Howdy
-(CL 3) SY: Howdy
-## (Chat room 0) Received message from client 3: Howdy
-(CR 0) RM 3: Howdy
-## (Chat room 0) Sent message to all connected clients except client 3: Howdy
-(CR 0) SM 3: Howdy
-## (Client 0) Received message from client 3: Howdy
-(CL 0) RM 3: Howdy
-## (Client 5) Received message from client 3: Howdy
-(CL 5) RM 3: Howdy
-## (Client 1) Received message from client 3: Howdy
-(CL 1) RM 3: Howdy
+## (Client 0) Says: Howdy
+(CL 0) SY: Howdy
+## (Chat room 1) Received message from client 0: Howdy
+(CR 1) RM 0: Howdy
+## (Chat room 1) Sent message to all connected clients except client 0: Howdy
+(CR 1) SM 0: Howdy
+## (Client 3) Received message from client 0: Howdy
+(CL 3) RM 0: Howdy
 ## --- time = 35 --------------------------------------------------------------------------
-## (Client 1) Says: What's up?
-(CL 1) SY: What's up?
-## (Chat room 0) Received message from client 1: What's up?
-(CR 0) RM 1: What's up?
-## (Chat room 0) Sent message to all connected clients except client 1: What's up?
-(CR 0) SM 1: What's up?
-## (Client 0) Received message from client 1: What's up?
-(CL 0) RM 1: What's up?
-## (Client 3) Received message from client 1: What's up?
-(CL 3) RM 1: What's up?
-## (Client 5) Received message from client 1: What's up?
-(CL 5) RM 1: What's up?
-## --- time = 36 --------------------------------------------------------------------------
-## (Client 0) Says: Nothing much going on ...
-(CL 0) SY: Nothing much going on ...
-## (Chat room 0) Received message from client 0: Nothing much going on ...
-(CR 0) RM 0: Nothing much going on ...
-## (Chat room 0) Sent message to all connected clients except client 0: Nothing much going on ...
-(CR 0) SM 0: Nothing much going on ...
-## (Client 3) Received message from client 0: Nothing much going on ...
-(CL 3) RM 0: Nothing much going on ...
-## (Client 5) Received message from client 0: Nothing much going on ...
-(CL 5) RM 0: Nothing much going on ...
-## (Client 1) Received message from client 0: Nothing much going on ...
-(CL 1) RM 0: Nothing much going on ...
-## --- time = 37 --------------------------------------------------------------------------
-## (Client 4) Says: What's up?
-(CL 4) SY: What's up?
-## (Chat room 1) Received message from client 4: What's up?
-(CR 1) RM 4: What's up?
-## (Chat room 1) Sent message to all connected clients except client 4: What's up?
-(CR 1) SM 4: What's up?
-## (Client 2) Received message from client 4: What's up?
-(CL 2) RM 4: What's up?
-## --- time = 38 --------------------------------------------------------------------------
-## (Client 2) Says: What's up?
-(CL 2) SY: What's up?
-## (Chat room 1) Received message from client 2: What's up?
-(CR 1) RM 2: What's up?
-## (Chat room 1) Sent message to all connected clients except client 2: What's up?
-(CR 1) SM 2: What's up?
-## (Client 4) Received message from client 2: What's up?
-(CL 4) RM 2: What's up?
-## --- time = 39 --------------------------------------------------------------------------
-## (Client 4) Says: Nice to meet you!
-(CL 4) SY: Nice to meet you!
-## (Chat room 1) Received message from client 4: Nice to meet you!
-(CR 1) RM 4: Nice to meet you!
-## (Chat room 1) Sent message to all connected clients except client 4: Nice to meet you!
-(CR 1) SM 4: Nice to meet you!
-## (Client 2) Received message from client 4: Nice to meet you!
-(CL 2) RM 4: Nice to meet you!
-## --- time = 40 --------------------------------------------------------------------------
-## (Client 2) Says: Howdy
-(CL 2) SY: Howdy
-## (Chat room 1) Received message from client 2: Howdy
-(CR 1) RM 2: Howdy
-## (Chat room 1) Sent message to all connected clients except client 2: Howdy
-(CR 1) SM 2: Howdy
-## (Client 4) Received message from client 2: Howdy
-(CL 4) RM 2: Howdy
-## --- time = 41 --------------------------------------------------------------------------
-## (Client 1) Says: Nice to meet you!
-(CL 1) SY: Nice to meet you!
-## (Chat room 0) Received message from client 1: Nice to meet you!
-(CR 0) RM 1: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 1: Nice to meet you!
-(CR 0) SM 1: Nice to meet you!
-## (Client 0) Received message from client 1: Nice to meet you!
-(CL 0) RM 1: Nice to meet you!
-## (Client 3) Received message from client 1: Nice to meet you!
-(CL 3) RM 1: Nice to meet you!
-## (Client 5) Received message from client 1: Nice to meet you!
-(CL 5) RM 1: Nice to meet you!
-## --- time = 42 --------------------------------------------------------------------------
-## (Client 0) Says: What's up?
-(CL 0) SY: What's up?
-## (Chat room 0) Received message from client 0: What's up?
-(CR 0) RM 0: What's up?
-## (Chat room 0) Sent message to all connected clients except client 0: What's up?
-(CR 0) SM 0: What's up?
-## (Client 3) Received message from client 0: What's up?
-(CL 3) RM 0: What's up?
-## (Client 5) Received message from client 0: What's up?
-(CL 5) RM 0: What's up?
-## (Client 1) Received message from client 0: What's up?
-(CL 1) RM 0: What's up?
-## --- time = 43 --------------------------------------------------------------------------
-## (Client 3) Says: Nice to meet you!
-(CL 3) SY: Nice to meet you!
-## (Chat room 0) Received message from client 3: Nice to meet you!
-(CR 0) RM 3: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 3: Nice to meet you!
-(CR 0) SM 3: Nice to meet you!
-## (Client 0) Received message from client 3: Nice to meet you!
-(CL 0) RM 3: Nice to meet you!
-## (Client 5) Received message from client 3: Nice to meet you!
-(CL 5) RM 3: Nice to meet you!
-## (Client 1) Received message from client 3: Nice to meet you!
-(CL 1) RM 3: Nice to meet you!
-## --- time = 44 --------------------------------------------------------------------------
-## (Client 2) Says: Nothing much going on ...
-(CL 2) SY: Nothing much going on ...
-## (Chat room 1) Received message from client 2: Nothing much going on ...
-(CR 1) RM 2: Nothing much going on ...
-## (Chat room 1) Sent message to all connected clients except client 2: Nothing much going on ...
-(CR 1) SM 2: Nothing much going on ...
-## (Client 4) Received message from client 2: Nothing much going on ...
-(CL 4) RM 2: Nothing much going on ...
-## --- time = 45 --------------------------------------------------------------------------
-## (Client 5) Says: Howdy
-(CL 5) SY: Howdy
-## (Chat room 0) Received message from client 5: Howdy
-(CR 0) RM 5: Howdy
-## (Chat room 0) Sent message to all connected clients except client 5: Howdy
-(CR 0) SM 5: Howdy
-## (Client 0) Received message from client 5: Howdy
-(CL 0) RM 5: Howdy
-## (Client 3) Received message from client 5: Howdy
-(CL 3) RM 5: Howdy
-## (Client 1) Received message from client 5: Howdy
-(CL 1) RM 5: Howdy
-## --- time = 46 --------------------------------------------------------------------------
-## (Client 3) Says: Nice to meet you!
-(CL 3) SY: Nice to meet you!
-## (Chat room 0) Received message from client 3: Nice to meet you!
-(CR 0) RM 3: Nice to meet you!
-## (Chat room 0) Sent message to all connected clients except client 3: Nice to meet you!
-(CR 0) SM 3: Nice to meet you!
-## (Client 0) Received message from client 3: Nice to meet you!
-(CL 0) RM 3: Nice to meet you!
-## (Client 5) Received message from client 3: Nice to meet you!
-(CL 5) RM 3: Nice to meet you!
-## (Client 1) Received message from client 3: Nice to meet you!
-(CL 1) RM 3: Nice to meet you!
-## --- time = 47 --------------------------------------------------------------------------
-## (Client 4) Says: Nothing much going on ...
-(CL 4) SY: Nothing much going on ...
-## (Chat room 1) Received message from client 4: Nothing much going on ...
-(CR 1) RM 4: Nothing much going on ...
-## (Chat room 1) Sent message to all connected clients except client 4: Nothing much going on ...
-(CR 1) SM 4: Nothing much going on ...
-## (Client 2) Received message from client 4: Nothing much going on ...
-(CL 2) RM 4: Nothing much going on ...
-## --- time = 48 --------------------------------------------------------------------------
 ## (Client 5) Says: Nice to meet you!
 (CL 5) SY: Nice to meet you!
 ## (Chat room 0) Received message from client 5: Nice to meet you!
 (CR 0) RM 5: Nice to meet you!
 ## (Chat room 0) Sent message to all connected clients except client 5: Nice to meet you!
 (CR 0) SM 5: Nice to meet you!
-## (Client 0) Received message from client 5: Nice to meet you!
-(CL 0) RM 5: Nice to meet you!
-## (Client 3) Received message from client 5: Nice to meet you!
-(CL 3) RM 5: Nice to meet you!
+## (Client 4) Received message from client 5: Nice to meet you!
+(CL 4) RM 5: Nice to meet you!
+## (Client 2) Received message from client 5: Nice to meet you!
+(CL 2) RM 5: Nice to meet you!
 ## (Client 1) Received message from client 5: Nice to meet you!
 (CL 1) RM 5: Nice to meet you!
-## --- time = 49 --------------------------------------------------------------------------
+## --- time = 36 --------------------------------------------------------------------------
+## (Client 4) Says: Howdy
+(CL 4) SY: Howdy
+## (Chat room 0) Received message from client 4: Howdy
+(CR 0) RM 4: Howdy
+## (Chat room 0) Sent message to all connected clients except client 4: Howdy
+(CR 0) SM 4: Howdy
+## (Client 2) Received message from client 4: Howdy
+(CL 2) RM 4: Howdy
+## (Client 5) Received message from client 4: Howdy
+(CL 5) RM 4: Howdy
+## (Client 1) Received message from client 4: Howdy
+(CL 1) RM 4: Howdy
+## --- time = 37 --------------------------------------------------------------------------
+## (Client 4) Says: What's up?
+(CL 4) SY: What's up?
+## (Chat room 0) Received message from client 4: What's up?
+(CR 0) RM 4: What's up?
+## (Chat room 0) Sent message to all connected clients except client 4: What's up?
+(CR 0) SM 4: What's up?
+## (Client 2) Received message from client 4: What's up?
+(CL 2) RM 4: What's up?
+## (Client 5) Received message from client 4: What's up?
+(CL 5) RM 4: What's up?
+## (Client 1) Received message from client 4: What's up?
+(CL 1) RM 4: What's up?
+## --- time = 38 --------------------------------------------------------------------------
+## (Client 3) Says: What's up?
+(CL 3) SY: What's up?
+## (Chat room 1) Received message from client 3: What's up?
+(CR 1) RM 3: What's up?
+## (Chat room 1) Sent message to all connected clients except client 3: What's up?
+(CR 1) SM 3: What's up?
+## (Client 0) Received message from client 3: What's up?
+(CL 0) RM 3: What's up?
+## --- time = 39 --------------------------------------------------------------------------
+## (Client 4) Says: Bla Bla Bla ...
+(CL 4) SY: Bla Bla Bla ...
+## (Chat room 0) Received message from client 4: Bla Bla Bla ...
+(CR 0) RM 4: Bla Bla Bla ...
+## (Chat room 0) Sent message to all connected clients except client 4: Bla Bla Bla ...
+(CR 0) SM 4: Bla Bla Bla ...
+## (Client 2) Received message from client 4: Bla Bla Bla ...
+(CL 2) RM 4: Bla Bla Bla ...
+## (Client 5) Received message from client 4: Bla Bla Bla ...
+(CL 5) RM 4: Bla Bla Bla ...
+## (Client 1) Received message from client 4: Bla Bla Bla ...
+(CL 1) RM 4: Bla Bla Bla ...
+## --- time = 40 --------------------------------------------------------------------------
+## (Client 1) Says: Nothing much going on ...
+(CL 1) SY: Nothing much going on ...
+## (Chat room 0) Received message from client 1: Nothing much going on ...
+(CR 0) RM 1: Nothing much going on ...
+## (Chat room 0) Sent message to all connected clients except client 1: Nothing much going on ...
+(CR 0) SM 1: Nothing much going on ...
+## (Client 4) Received message from client 1: Nothing much going on ...
+(CL 4) RM 1: Nothing much going on ...
+## (Client 2) Received message from client 1: Nothing much going on ...
+(CL 2) RM 1: Nothing much going on ...
+## (Client 5) Received message from client 1: Nothing much going on ...
+(CL 5) RM 1: Nothing much going on ...
+## --- time = 41 --------------------------------------------------------------------------
+## (Client 4) Says: Nice to meet you!
+(CL 4) SY: Nice to meet you!
+## (Chat room 0) Received message from client 4: Nice to meet you!
+(CR 0) RM 4: Nice to meet you!
+## (Chat room 0) Sent message to all connected clients except client 4: Nice to meet you!
+(CR 0) SM 4: Nice to meet you!
+## (Client 2) Received message from client 4: Nice to meet you!
+(CL 2) RM 4: Nice to meet you!
+## (Client 5) Received message from client 4: Nice to meet you!
+(CL 5) RM 4: Nice to meet you!
+## (Client 1) Received message from client 4: Nice to meet you!
+(CL 1) RM 4: Nice to meet you!
+## --- time = 42 --------------------------------------------------------------------------
+## (Client 1) Says: What's up?
+(CL 1) SY: What's up?
+## (Chat room 0) Received message from client 1: What's up?
+(CR 0) RM 1: What's up?
+## (Chat room 0) Sent message to all connected clients except client 1: What's up?
+(CR 0) SM 1: What's up?
+## (Client 4) Received message from client 1: What's up?
+(CL 4) RM 1: What's up?
+## (Client 2) Received message from client 1: What's up?
+(CL 2) RM 1: What's up?
+## (Client 5) Received message from client 1: What's up?
+(CL 5) RM 1: What's up?
+## --- time = 43 --------------------------------------------------------------------------
+## (Client 1) Says: Nothing much going on ...
+(CL 1) SY: Nothing much going on ...
+## (Chat room 0) Received message from client 1: Nothing much going on ...
+(CR 0) RM 1: Nothing much going on ...
+## (Chat room 0) Sent message to all connected clients except client 1: Nothing much going on ...
+(CR 0) SM 1: Nothing much going on ...
+## (Client 4) Received message from client 1: Nothing much going on ...
+(CL 4) RM 1: Nothing much going on ...
+## (Client 2) Received message from client 1: Nothing much going on ...
+(CL 2) RM 1: Nothing much going on ...
+## (Client 5) Received message from client 1: Nothing much going on ...
+(CL 5) RM 1: Nothing much going on ...
+## --- time = 44 --------------------------------------------------------------------------
+## (Client 5) Says: What's up?
+(CL 5) SY: What's up?
+## (Chat room 0) Received message from client 5: What's up?
+(CR 0) RM 5: What's up?
+## (Chat room 0) Sent message to all connected clients except client 5: What's up?
+(CR 0) SM 5: What's up?
+## (Client 4) Received message from client 5: What's up?
+(CL 4) RM 5: What's up?
+## (Client 2) Received message from client 5: What's up?
+(CL 2) RM 5: What's up?
+## (Client 1) Received message from client 5: What's up?
+(CL 1) RM 5: What's up?
+## --- time = 45 --------------------------------------------------------------------------
+## (Client 4) Says: Howdy
+(CL 4) SY: Howdy
+## (Chat room 0) Received message from client 4: Howdy
+(CR 0) RM 4: Howdy
+## (Chat room 0) Sent message to all connected clients except client 4: Howdy
+(CR 0) SM 4: Howdy
+## (Client 2) Received message from client 4: Howdy
+(CL 2) RM 4: Howdy
+## (Client 5) Received message from client 4: Howdy
+(CL 5) RM 4: Howdy
+## (Client 1) Received message from client 4: Howdy
+(CL 1) RM 4: Howdy
+## --- time = 46 --------------------------------------------------------------------------
+## (Client 0) Says: Howdy
+(CL 0) SY: Howdy
+## (Chat room 1) Received message from client 0: Howdy
+(CR 1) RM 0: Howdy
+## (Chat room 1) Sent message to all connected clients except client 0: Howdy
+(CR 1) SM 0: Howdy
+## (Client 3) Received message from client 0: Howdy
+(CL 3) RM 0: Howdy
+## --- time = 47 --------------------------------------------------------------------------
+## (Client 3) Says: Nice to meet you!
+(CL 3) SY: Nice to meet you!
+## (Chat room 1) Received message from client 3: Nice to meet you!
+(CR 1) RM 3: Nice to meet you!
+## (Chat room 1) Sent message to all connected clients except client 3: Nice to meet you!
+(CR 1) SM 3: Nice to meet you!
+## (Client 0) Received message from client 3: Nice to meet you!
+(CL 0) RM 3: Nice to meet you!
+## --- time = 48 --------------------------------------------------------------------------
 ## (Client 1) Says: Howdy
 (CL 1) SY: Howdy
 ## (Chat room 0) Received message from client 1: Howdy
 (CR 0) RM 1: Howdy
 ## (Chat room 0) Sent message to all connected clients except client 1: Howdy
 (CR 0) SM 1: Howdy
-## (Client 0) Received message from client 1: Howdy
-(CL 0) RM 1: Howdy
-## (Client 3) Received message from client 1: Howdy
-(CL 3) RM 1: Howdy
+## (Client 4) Received message from client 1: Howdy
+(CL 4) RM 1: Howdy
+## (Client 2) Received message from client 1: Howdy
+(CL 2) RM 1: Howdy
 ## (Client 5) Received message from client 1: Howdy
 (CL 5) RM 1: Howdy
+## --- time = 49 --------------------------------------------------------------------------
+## (Client 5) Says: Howdy
+(CL 5) SY: Howdy
+## (Chat room 0) Received message from client 5: Howdy
+(CR 0) RM 5: Howdy
+## (Chat room 0) Sent message to all connected clients except client 5: Howdy
+(CR 0) SM 5: Howdy
+## (Client 4) Received message from client 5: Howdy
+(CL 4) RM 5: Howdy
+## (Client 2) Received message from client 5: Howdy
+(CL 2) RM 5: Howdy
+## (Client 1) Received message from client 5: Howdy
+(CL 1) RM 5: Howdy
