@@ -6,6 +6,11 @@ from scannerNew import *
 
 __trace__ = False
 
+def makeDot():
+    import pydot
+    (graph,) = pydot.graph_from_dot_file('./fullFSA.dot')
+    graph.write_png('fullFSA.png')
+
 
 class Automaton(Scanner):
 
@@ -303,6 +308,7 @@ class Automaton(Scanner):
 
 
 if __name__ == '__main__':
+    #makeDot()
     str = preprocess.preprocess()
     sc = Automaton(str)
     success = sc.scan()
@@ -311,4 +317,3 @@ if __name__ == '__main__':
         print(">> aborting")
     else:
         print(">> correct run")
-    print("")
