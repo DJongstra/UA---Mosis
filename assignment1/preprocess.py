@@ -2,6 +2,7 @@ import re
 
 def preprocess():
     file = open("./chatProtocolSimulation.trace.txt", "r")
+    #file = open("./chatProtocolSimulationFixed.trace.txt", "r")
     filetext = file.read()
 
     re.DOTALL   # to be able to also match newline characters
