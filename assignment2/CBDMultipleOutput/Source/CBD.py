@@ -1,5 +1,5 @@
 import math
-import naivelog
+import CBDMultipleOutput.Source.naivelog as naivelog #TODO originally only naivelog
 from collections import namedtuple
 from functools import reduce
 
@@ -178,7 +178,8 @@ class InverterBlock(BaseBlock):
         BaseBlock.__init__(self, block_name, ["IN1"], ["OUT1"])
 
     def compute(self, curIteration):
-        # TO IMPLEMENT
+        # DJ -> TODO what about an in that's 0?
+        self.appendToSignal(1/self.getInputSignal(curIteration, "IN1").value)
 
 
 class AdderBlock(BaseBlock):
@@ -190,7 +191,8 @@ class AdderBlock(BaseBlock):
         BaseBlock.__init__(self, block_name, ["IN1", "IN2"], ["OUT1"])
 
     def compute(self, curIteration):
-        # TO IMPLEMENT
+        # DJ
+        self.appendToSignal(self.getInputSignal(curIteration, "IN1").value + self.getInputSignal(curIteration, "IN2").value)
 
 
 class ProductBlock(BaseBlock):
@@ -202,7 +204,8 @@ class ProductBlock(BaseBlock):
         BaseBlock.__init__(self, block_name, ["IN1", "IN2"], ["OUT1"])
 
     def compute(self, curIteration):
-        # TO IMPLEMENT
+        # DJ
+        self.appendToSignal(self.getInputSignal(curIteration, "IN1").value * self.getInputSignal(curIteration, "IN2").value)
 
 
 class ABSBlock(BaseBlock):
@@ -213,7 +216,8 @@ class ABSBlock(BaseBlock):
         BaseBlock.__init__(self, block_name, ["IN1"], ["OUT1"])
 
     def compute(self, curIteration):
-        # TO IMPLEMENT
+        # DJ
+        self.appendToSignal(abs(self.getInputSignal(curIteration, "IN1").value))
 
 
 class GenericBlock(BaseBlock):
@@ -268,6 +272,7 @@ class ModuloBlock(BaseBlock):
     def compute(self, curIteration):
         # TO IMPLEMENT
         # Use 'math.fmod' for validity with C w.r.t. negative values AND floats
+        pass
 
 
 class DelayBlock(BaseBlock):
@@ -285,6 +290,7 @@ class DelayBlock(BaseBlock):
         # This overrides getDependencies defined in BaseBlock 
         # Take into account that for this block, the dependencies depend on curIteration
         # (note that curIteration starts from 0)
+        pass
 
     def compute(self, curIteration):
         if curIteration == 0:
