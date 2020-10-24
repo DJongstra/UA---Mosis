@@ -1,0 +1,277 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>drawio2cbd module &#8212; drawio2cbd  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">drawio2cbd  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-drawio2cbd">
+<span id="drawio2cbd-module"></span><h1>drawio2cbd module<a class="headerlink" href="#module-drawio2cbd" title="Permalink to this headline">¶</a></h1>
+<p>This script generates a Python-consistent CBD from an XML file, as
+constructed in draw.io / diagrams.net .</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Randy Paredis</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Python Version:</th><td class="field-body">3.6+</td>
+</tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="drawio2cbd.IGNORE">
+<code class="descclassname">drawio2cbd.</code><code class="descname">IGNORE</code><em class="property"> = ['id', 'label', 'placeholders', 'symbol', 'class_name', 'block_name', '__docstring__']</em><a class="headerlink" href="#drawio2cbd.IGNORE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Properties to ignore when parsing.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="drawio2cbd.PLOT_FORMATS">
+<code class="descclassname">drawio2cbd.</code><code class="descname">PLOT_FORMATS</code><em class="property"> = ['mpl', 'matplotlib', 'bokeh', 'csv', 'off', 'false']</em><a class="headerlink" href="#drawio2cbd.PLOT_FORMATS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ways to plot the data.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="drawio2cbd.ParseException">
+<em class="property">exception </em><code class="descclassname">drawio2cbd.</code><code class="descname">ParseException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.ParseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Semantic exceptions when parsing.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="drawio2cbd.Parser">
+<em class="property">class </em><code class="descclassname">drawio2cbd.</code><code class="descname">Parser</code><span class="sig-paren">(</span><em>inputfile</em>, <em>outputfile=None</em>, <em>all_=False</em>, <em>ports=False</em><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Parses a draw.io XML file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inputfile</strong> (<em>str</em>) – Filename for the input.</li>
+<li><strong>outputfile</strong> (<em>str</em>) – When a string, this is the output filename.
+When None, the console will be used.</li>
+<li><strong>all</strong> (<em>bool</em>) – Whether or not to add empty CBD diagrams to the
+generated file.</li>
+<li><strong>ports</strong> (<em>bool</em>) – Some port names can be identified from the context.
+By default, the generated code allows the CBD framework
+to do so. When this param is True, even those ports will
+explicitly be set.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="drawio2cbd.Parser.convert">
+<code class="descname">convert</code><span class="sig-paren">(</span><em>command</em>, <em>entry='main'</em>, <em>delta=None</em>, <em>time=10</em>, <em>draw=None</em>, <em>latex=None</em>, <em>plot=None</em><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.Parser.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does the conversion and creates a file or prints to the console.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>command</strong> (<em>str</em>) – The command that was used to run this script.</li>
+<li><strong>entry</strong> (<em>str</em>) – The main class entry point.</li>
+<li><strong>delta</strong> (<em>float</em>) – The timestep size. This is 1 for Discrete-Time CBDs.</li>
+<li><strong>time</strong> (<em>int</em>) – How long the simulation should run.</li>
+<li><strong>draw</strong> – List of blocks to draw. None indicates the empty list.</li>
+<li><strong>latex</strong> – List of blocks to generate LaTeX for. None indicates the empty list.</li>
+<li><strong>plot</strong> (<em>str</em>) – The plotting format to use. None indicates no plotting.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="drawio2cbd.Parser.create_class">
+<code class="descname">create_class</code><span class="sig-paren">(</span><em>root</em>, <em>class_name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.Parser.create_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>root</strong> – The root element for this class. Must be the document.
+Is used to find links with other classes.</li>
+<li><strong>class_name</strong> (<em>str</em>) – The name for the class.</li>
+<li><strong>**kwargs</strong> – Additional class parameters as set in the Properties window.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A class as a string.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="drawio2cbd.Parser.create_file">
+<code class="descname">create_file</code><span class="sig-paren">(</span><em>command</em>, <em>entry='main'</em>, <em>delta=None</em>, <em>time=10</em>, <em>draw=None</em>, <em>latex=None</em>, <em>plot=None</em><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.Parser.create_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the full file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>command</strong> (<em>str</em>) – The command that was used to run this script.</li>
+<li><strong>entry</strong> (<em>str</em>) – The main class entry point.</li>
+<li><strong>delta</strong> (<em>float</em>) – The timestep size. This is 1 for Discrete-Time CBDs.</li>
+<li><strong>time</strong> (<em>int</em>) – How long the simulation should run.</li>
+<li><strong>draw</strong> – List of blocks to draw. None indicates the empty list.</li>
+<li><strong>latex</strong> – List of blocks to generate LaTeX for. None indicates the empty list.</li>
+<li><strong>plot</strong> (<em>str</em>) – The plotting format to use. None indicates no plotting.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The file as a string.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="drawio2cbd.Parser.decode_and_deflate">
+<em class="property">static </em><code class="descname">decode_and_deflate</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.Parser.decode_and_deflate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw.io compresses each page as follows:
+First, all data is url-encoded
+Next, it is compressed/deflated
+Finally, it is encoded according to base64.</p>
+<p>To obtain the page data, we have to do the reverse.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Uncompressed and decoded data as a string.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="drawio2cbd.Parser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.Parser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does the actual file parsing.</p>
+<p>If the file is compressed, we uncompress and work from there.
+If it wasn’t compressed, we can work with the whole tree.</p>
+<p>Only looks at “Custom Class” shapes that have a “class_name”
+set.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">An iterator of all classes that must be generated.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="drawio2cbd.Parser.signal">
+<em class="property">static </em><code class="descname">signal</code><span class="sig-paren">(</span><em>format: str</em>, <em>ct=False</em><span class="sig-paren">)</span><a class="headerlink" href="#drawio2cbd.Parser.signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a draw_signals function and corresponing imports, based on
+the given format. Accepted formats are ‘matplotlib’ (or ‘mpl’ for short),
+‘bokeh’ and ‘csv’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>format</strong> (<em>str</em>) – How the signal must be outputted.
+Can be one of [‘matplotlib’, ‘mpl’, ‘bokeh’, ‘csv’]</li>
+<li><strong>ct</strong> (<em>bool</em>) – Whether or not the plot indicates a continuous-time
+simulation. When it does, a line-plot will be used
+for the plots, otherwise a dotted plot is used. For
+CSV and XML this attribute has no effect.
+Defaults to ‘False’.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A string, including a ‘plot_signal’ function for the generated file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">drawio2cbd  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Randy Paredis.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
