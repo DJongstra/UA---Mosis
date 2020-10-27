@@ -273,8 +273,7 @@ class ModuloBlock(BaseBlock):
     def compute(self, curIteration):
         # TO IMPLEMENT
         # Use 'math.fmod' for validity with C w.r.t. negative values AND floats
-        self.appendToSignal(
-            math.fmod(self.getInputSignal(curIteration, "IN1").value, self.getInputSignal(curIteration, "IN2").value))
+        pass
 
 
 class DelayBlock(BaseBlock):
@@ -292,11 +291,7 @@ class DelayBlock(BaseBlock):
         # This overrides getDependencies defined in BaseBlock 
         # Take into account that for this block, the dependencies depend on curIteration
         # (note that curIteration starts from 0)
-        if curIteration == 0:
-            return [self._linksIn["IC"].block]
-
-        else:
-            return []
+        pass
 
     def compute(self, curIteration):
         if curIteration == 0:

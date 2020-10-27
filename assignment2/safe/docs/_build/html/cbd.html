@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CBD Simulator Development Kit &#8212; drawio2cbd  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">drawio2cbd  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cbd-simulator-development-kit">
+<h1>CBD Simulator Development Kit<a class="headerlink" href="#cbd-simulator-development-kit" title="Permalink to this headline">¶</a></h1>
+<p>Python-based framework for CBD modeling and simulation.</p>
+<div class="toctree-wrapper compound">
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authors:</th><td class="field-body"><ul class="first simple">
+<li>Marc Provost</li>
+<li>Hans Vangheluwe</li>
+<li>Joachim Denil</li>
+<li>Claudio Gomes</li>
+<li>Randy Paredis</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Python Version:</th><td class="field-body"><p class="first last">&gt;= 3.6</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>The following packages are required to run simulations using this framework:</p>
+<ul>
+<li><p class="first"><em>Standard Python Modules:</em> <code class="code docutils literal notranslate"><span class="pre">unittest</span></code>, <code class="code docutils literal notranslate"><span class="pre">math</span></code>, <code class="code docutils literal notranslate"><span class="pre">collections</span></code> (for <code class="code docutils literal notranslate"><span class="pre">collections.namedtuple</span></code>),
+<code class="code docutils literal notranslate"><span class="pre">os</span></code>, <code class="code docutils literal notranslate"><span class="pre">sys</span></code>, <code class="code docutils literal notranslate"><span class="pre">datetime</span></code></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://bokeh.org">bokeh</a> for plotting. To install bokeh for python, follow
+<a class="reference external" href="https://bokeh.pydata.org/en/latest/docs/user_guide/quickstart.html#installation">these instructions</a>.</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://graphviz.org/">GraphViz</a> to display the dependency structure of the CBD. To install Graphviz,
+follow these steps:</p>
+<ol class="arabic simple">
+<li>Download and install Graphviz: <a class="reference external" href="https://www.graphviz.org/download/">https://www.graphviz.org/download/</a></li>
+<li>Make sure the Graphviz binaries are accessible in the PATH environment variable.
+For example, on windows there should be an entry in the PATH with: <code class="file docutils literal notranslate"><span class="pre">C:\Graphviz2.38\bin</span></code></li>
+<li>Install <code class="code docutils literal notranslate"><span class="pre">graphviz</span></code> for Python: <a class="reference external" href="https://graphviz.readthedocs.io/en/stable/manual.html">https://graphviz.readthedocs.io/en/stable/manual.html</a></li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For anaconda users, use <a class="reference external" href="https://anaconda.org/anaconda/graphviz">https://anaconda.org/anaconda/graphviz</a></p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="running-the-tests">
+<h2>Running the Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h2>
+<p>From the root directory of the CBD Simulator Framework (i.e., where this README file resides), execute:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m unittest discover -v CBDMultipleOutput.Test <span class="s2">&quot;*.py&quot;</span>
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">testDerivatorBlock</span></code> and <code class="code docutils literal notranslate"><span class="pre">testIntegratorBlock</span></code> will fail while working on the Discrete-Time CBD simulator.</p>
+</div>
+<div class="section" id="running-examples">
+<h2>Running Examples<a class="headerlink" href="#running-examples" title="Permalink to this headline">¶</a></h2>
+<p>Make sure that PYTHONPATH includes the root directory of the CBD Simulator Framework.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> examples/EvenNumberGen/
+python EvenNumberGen.py
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> examples/Fibonacci/
+python Fibonacci.py
+</pre></div>
+</div>
+<p>Both will generate an HTML document containing a bokeh plot in the current directory.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CBD Simulator Development Kit</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#running-the-tests">Running the Tests</a></li>
+<li><a class="reference internal" href="#running-examples">Running Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">drawio2cbd  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Randy Paredis.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

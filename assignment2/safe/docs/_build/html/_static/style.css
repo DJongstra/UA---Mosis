@@ -1,0 +1,13 @@
+/*
+ * Additional Styling
+ */
+ 
+span.menuselection {
+	font-weight: bold;
+	color: #555;
+}
+
+div.hint {
+	background-color: #ffc;
+	border: 1px solid #ff6;
+}
