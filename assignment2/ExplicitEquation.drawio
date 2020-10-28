@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-28T19:35:52.842Z" agent="5.0 (Windows)" etag="Qtiib6noxFdlTeg0zKxm" version="13.8.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-28T19:37:08.785Z" agent="5.0 (Windows)" etag="H4eF1N_Tg-C4Wfdt5gHA" version="13.8.5" type="github">
   <diagram id="uKUjF6vS5Xv77ZoEmZ9C" name="Page-1">
     <mxGraphModel dx="1483" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="1" shadow="0">
       <root>
@@ -314,10 +314,10 @@
             <mxGeometry x="795.5263157894736" y="249.63185185185182" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-117">
+        <object label="%name%" placeholders="1" name="sinOut" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-117">
           <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-116">
             <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
-              <mxPoint x="5" y="-7" as="offset" />
+              <mxPoint x="11" y="-11" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
