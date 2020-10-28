@@ -1,1 +1,0 @@
-python ../../drawio2cbd.py Fibonacci.xml Fibonacci.py -e FibonacciGen

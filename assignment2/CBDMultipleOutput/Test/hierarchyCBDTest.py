@@ -4,7 +4,7 @@
 
 import unittest
 from CBDMultipleOutput.Source.CBD import *
-from basicCBDTest import BasicCBDTestCase
+from CBDMultipleOutput.Test.basicCBDTest import BasicCBDTestCase
 
 class HierarchyCBDTest(unittest.TestCase):
 	def setUp(self):

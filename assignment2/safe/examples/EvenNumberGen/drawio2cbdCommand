@@ -1,1 +1,0 @@
-python ../../drawio2cbd.py EvenNumberGen.xml EvenNumberGen.py -e EvenNumberGen

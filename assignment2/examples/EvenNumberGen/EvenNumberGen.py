@@ -3,7 +3,6 @@
 #   ../../drawio2cbd.py EvenNumberGen.xml EvenNumberGen.py -e EvenNumberGen
 
 from CBDMultipleOutput.Source.CBD import *
-
 from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Dark2_5 as palette
 import itertools

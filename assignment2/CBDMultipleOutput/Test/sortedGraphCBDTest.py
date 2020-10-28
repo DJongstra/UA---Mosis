@@ -4,7 +4,7 @@
 
 import unittest
 from CBDMultipleOutput.Source.CBD import *
-from basicCBDTest import BasicCBDTestCase
+from CBDMultipleOutput.Test.basicCBDTest import BasicCBDTestCase
 
 class SortedGraphCBDTest(unittest.TestCase):
 	def setUp(self):
