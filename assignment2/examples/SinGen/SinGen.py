@@ -52,7 +52,7 @@ class SinGen(CBD):
 
 if __name__ == '__main__':
 	cbd = SinGen("SinGen")
-	print(cbd.latex())
+	#print(cbd.latex())
 
 
 	# Run the simulation

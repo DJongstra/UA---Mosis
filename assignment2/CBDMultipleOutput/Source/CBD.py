@@ -725,9 +725,9 @@ class CBD(BaseBlock):
         nonLinear = ["ModuloBlock", "AndBlock", "EqualsBlock", "GenericBlock", "LessThanBlock", "NotBlock", "OrBlock", "RootBlock"]
         for block in strongComponent:
             type = block.getBlockType()
-            if block.getBlockType() in nonLinear:
+            if type in nonLinear:
                 return False
-            elif block.getBlockType() is "ProductBlock":
+            elif type is "ProductBlock":
                 (incoming_block1, out_port_name1) = block._linksIn['IN1']
                 (incoming_block2, out_port_name2) = block._linksIn['IN2']
                 if not incoming_block1.getSignal(out_port_name1) and not incoming_block2.getSignal(out_port_name2):
