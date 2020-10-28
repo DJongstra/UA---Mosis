@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-28T19:31:06.994Z" agent="5.0 (Windows)" etag="LAiqWwUp8JujlY8HyiqW" version="13.8.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-28T19:34:09.959Z" agent="5.0 (Windows)" etag="FeWbG7Ts_ePuo9xfiGXj" version="13.8.5" type="github">
   <diagram id="uKUjF6vS5Xv77ZoEmZ9C" name="Page-1">
     <mxGraphModel dx="1483" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="1" shadow="0">
       <root>
@@ -309,7 +309,7 @@
         <mxCell id="iNKWLlbWB6Y6OhxowDSD-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.147;entryY=0.592;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-54" target="iNKWLlbWB6Y6OhxowDSD-61">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <object label="%symbol%" placeholders="1" symbol="sin" class_name="SinFunc" block_name="" id="iNKWLlbWB6Y6OhxowDSD-116">
+        <object label="%symbol%" placeholders="1" symbol="sin" class_name="SinFunc" block_name="sin" id="iNKWLlbWB6Y6OhxowDSD-116">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
             <mxGeometry x="795.5263157894736" y="249.63185185185182" width="80" height="80" as="geometry" />
           </mxCell>
@@ -363,7 +363,7 @@
             <mxRectangle x="10" y="70" width="50" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <object label="	%symbol%" class_name="TimeBlock" block_name="" placeholders="1" symbol="&amp;#128336;" id="iNKWLlbWB6Y6OhxowDSD-87">
+        <object label="	%symbol%" class_name="TimeBlock" block_name="time" placeholders="1" symbol="&amp;#128336;" id="iNKWLlbWB6Y6OhxowDSD-87">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;connectable=0;allowArrows=0;container=1;collapsible=0;resizable=0;fontSize=45;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
             <mxGeometry x="70" y="70" width="80" height="80" as="geometry" />
           </mxCell>
@@ -375,7 +375,7 @@
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="%symbol%" placeholders="1" symbol="&amp;prod;" class_name="ProductBlock" block_name="" id="iNKWLlbWB6Y6OhxowDSD-93">
+        <object label="%symbol%" placeholders="1" symbol="&amp;prod;" class_name="ProductBlock" block_name="prodSin" id="iNKWLlbWB6Y6OhxowDSD-93">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
             <mxGeometry x="280" y="118" width="80" height="80" as="geometry" />
           </mxCell>
