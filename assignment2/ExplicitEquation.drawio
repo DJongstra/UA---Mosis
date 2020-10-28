@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-28T19:34:09.959Z" agent="5.0 (Windows)" etag="FeWbG7Ts_ePuo9xfiGXj" version="13.8.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-28T19:35:52.842Z" agent="5.0 (Windows)" etag="Qtiib6noxFdlTeg0zKxm" version="13.8.5" type="github">
   <diagram id="uKUjF6vS5Xv77ZoEmZ9C" name="Page-1">
     <mxGraphModel dx="1483" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="1" shadow="0">
       <root>
@@ -407,7 +407,7 @@
         <mxCell id="iNKWLlbWB6Y6OhxowDSD-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-86" source="iNKWLlbWB6Y6OhxowDSD-100" target="iNKWLlbWB6Y6OhxowDSD-96">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <object label="%name%" placeholders="1" name="D" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-100">
+        <object label="%name%" placeholders="1" name="Din" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-100">
           <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
             <mxGeometry x="95" y="220" width="10" height="15" as="geometry">
               <mxPoint x="-4" y="-8" as="offset" />
@@ -451,7 +451,7 @@
             <mxGeometry x="80" y="790" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-111">
+        <object label="%name%" placeholders="1" name="sinOut" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-111">
           <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-110">
             <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
               <mxPoint x="5" y="-7" as="offset" />
