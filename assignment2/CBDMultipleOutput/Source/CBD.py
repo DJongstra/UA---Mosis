@@ -722,7 +722,7 @@ class CBD(BaseBlock):
         As input you get the detected loop in a list.
         If the loop is linear return True, else False
         """
-        nonLinear = [ModuloBlock, AndBlock, EqualsBlock, GenericBlock, LessThanBlock, NotBlock, OrBlock, RootBlock]
+        nonLinear = ["ModuloBlock", "AndBlock", "EqualsBlock", "GenericBlock", "LessThanBlock", "NotBlock", "OrBlock", "RootBlock"]
         for block in strongComponent:
             type = block.getBlockType()
             if block.getBlockType() in nonLinear:
