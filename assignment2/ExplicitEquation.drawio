@@ -1,29 +1,29 @@
-<mxfile host="app.diagrams.net" modified="2020-10-28T19:19:49.135Z" agent="5.0 (Windows)" etag="8-Ci6XBwOLVHwhbMG8F_" version="13.8.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-28T19:31:06.994Z" agent="5.0 (Windows)" etag="LAiqWwUp8JujlY8HyiqW" version="13.8.5" type="github">
   <diagram id="uKUjF6vS5Xv77ZoEmZ9C" name="Page-1">
-    <mxGraphModel dx="1221" dy="649" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="690" pageHeight="980" math="1" shadow="0">
+    <mxGraphModel dx="1483" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <object label="" placeholders="1" class_name="Explicit" id="iNKWLlbWB6Y6OhxowDSD-1">
           <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;container=0;connectable=0;allowArrows=0;treeFolding=0;moveCells=0;treeMoving=0;comic=0;rotatable=0;expand=1;" vertex="1" parent="1">
-            <mxGeometry x="30" y="10" width="1130" height="1090" as="geometry">
+            <mxGeometry x="30" y="10" width="1100" height="680" as="geometry">
               <mxRectangle x="40" y="400" width="50" height="40" as="alternateBounds" />
             </mxGeometry>
           </mxCell>
         </object>
         <object label="%class_name%" placeholders="1" id="iNKWLlbWB6Y6OhxowDSD-2">
           <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;fontSize=18;connectable=0;allowArrows=0;rotatable=0;cloneable=0;deletable=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-1">
-            <mxGeometry x="14.868421052631579" y="40.37037037037037" width="1100.263157894737" height="80.74074074074073" as="geometry" />
+            <mxGeometry x="14.473684210526317" y="25.185185185185187" width="1071.0526315789475" height="50.370370370370374" as="geometry" />
           </mxCell>
         </object>
         <mxCell id="iNKWLlbWB6Y6OhxowDSD-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;connectable=0;allowArrows=0;container=1;collapsible=0;portConstraintRotation=0;rotatable=0;cloneable=0;deletable=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-1">
-          <mxGeometry x="14.868421052631579" y="141.2962962962963" width="1100.263157894737" height="928.5185185185185" as="geometry">
+          <mxGeometry x="14.473684210526317" y="88.14814814814815" width="1071.0526315789475" height="579.2592592592592" as="geometry">
             <mxRectangle x="10" y="70" width="50" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <object label="%symbol%" placeholders="1" symbol="D" class_name="DelayBlock" block_name="x" id="iNKWLlbWB6Y6OhxowDSD-4">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="180.31339712918663" y="227.380174291939" width="80" height="80" as="geometry" />
+            <mxGeometry x="175.5263157894737" y="141.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-5">
@@ -49,7 +49,7 @@
         </object>
         <object label="%value%" placeholders="1" value="0" block_name="x0" class_name="ConstantBlock" id="iNKWLlbWB6Y6OhxowDSD-8">
           <mxCell style="ellipse;whiteSpace=wrap;html=1;comic=0;fillColor=#ffffff;fontSize=24;align=center;allowArrows=0;connectable=0;container=1;collapsible=0;recursiveResize=1;direction=west;resizable=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="26.222488038277515" y="83.11546840958604" width="80" height="80" as="geometry" />
+            <mxGeometry x="25.526315789473685" y="51.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-9">
@@ -64,7 +64,7 @@
         </mxCell>
         <object label="%symbol%" placeholders="1" symbol="D" class_name="DelayBlock" block_name="y" id="iNKWLlbWB6Y6OhxowDSD-11">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="211.13157894736844" y="499.88017429193894" width="80" height="80" as="geometry" />
+            <mxGeometry x="205.5263157894737" y="311.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-12">
@@ -90,7 +90,7 @@
         </object>
         <object label="%value%" placeholders="1" value="1" block_name="y0" class_name="ConstantBlock" id="iNKWLlbWB6Y6OhxowDSD-15">
           <mxCell style="ellipse;whiteSpace=wrap;html=1;comic=0;fillColor=#ffffff;fontSize=24;align=center;allowArrows=0;connectable=0;container=1;collapsible=0;recursiveResize=1;direction=west;resizable=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="36.4952153110048" y="419.7331154684096" width="80" height="80" as="geometry" />
+            <mxGeometry x="35.5263157894737" y="261.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-16">
@@ -105,7 +105,7 @@
         </mxCell>
         <object label="%value%" placeholders="1" value="0.1" block_name="D" class_name="ConstantBlock" id="iNKWLlbWB6Y6OhxowDSD-23">
           <mxCell style="ellipse;whiteSpace=wrap;html=1;comic=0;fillColor=#ffffff;fontSize=24;align=center;allowArrows=0;connectable=0;container=1;collapsible=0;recursiveResize=1;direction=west;resizable=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="221.4043062200957" y="692.2331154684096" width="80" height="80" as="geometry" />
+            <mxGeometry x="215.5263157894737" y="431.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-24">
@@ -117,7 +117,7 @@
         </object>
         <object label="%symbol%" placeholders="1" symbol="&amp;prod;" class_name="ProductBlock" block_name="mulX" id="iNKWLlbWB6Y6OhxowDSD-27">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="498.76794258373207" y="531.9389978213507" width="80" height="80" as="geometry" />
+            <mxGeometry x="485.5263157894737" y="331.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-28">
@@ -149,7 +149,7 @@
         </mxCell>
         <object label="%symbol%" placeholders="1" symbol="&amp;sum;" class_name="AdderBlock" block_name="sumX" id="iNKWLlbWB6Y6OhxowDSD-33">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="642.5861244019138" y="227.380174291939" width="80" height="80" as="geometry" />
+            <mxGeometry x="625.5263157894736" y="141.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-34">
@@ -179,9 +179,19 @@
         <mxCell id="iNKWLlbWB6Y6OhxowDSD-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-28" target="iNKWLlbWB6Y6OhxowDSD-36">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-34" target="iNKWLlbWB6Y6OhxowDSD-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="726" y="182" />
+              <mxPoint x="726" y="82" />
+              <mxPoint x="156" y="82" />
+              <mxPoint x="156" y="197" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <object label="%name%" placeholders="1" name="xi" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-41">
           <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="971.3133971291866" y="279.4757625272331" width="10" height="15" as="geometry">
+            <mxGeometry x="945.5263157894736" y="174.35185185185185" width="10" height="15" as="geometry">
               <mxPoint x="5" y="-7" as="offset" />
             </mxGeometry>
           </mxCell>
@@ -191,7 +201,7 @@
         </mxCell>
         <object label="%symbol%" placeholders="1" symbol="&amp;prod;" class_name="ProductBlock" block_name="mulY" id="iNKWLlbWB6Y6OhxowDSD-43">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="385.76794258373207" y="344.3948801742919" width="80" height="80" as="geometry" />
+            <mxGeometry x="375.5263157894737" y="214.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-44">
@@ -223,7 +233,7 @@
         </mxCell>
         <object label="%symbol%" placeholders="1" symbol="-" class_name="NegatorBlock" block_name="negDX" id="iNKWLlbWB6Y6OhxowDSD-49">
           <mxCell style="triangle;whiteSpace=wrap;html=1;comic=0;fontSize=36;align=center;allowArrows=0;recursiveResize=0;resizable=0;fillColor=#FFFFFF;points=[];spacingLeft=-5;container=1;collapsible=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="509.04066985645926" y="344.3948801742919" width="60" height="80" as="geometry" />
+            <mxGeometry x="495.52631578947364" y="214.85185185185185" width="60" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-50">
@@ -245,7 +255,7 @@
         </mxCell>
         <object label="%symbol%" placeholders="1" symbol="&amp;sum;" class_name="AdderBlock" block_name="sumY" id="iNKWLlbWB6Y6OhxowDSD-53">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="825.1297607655501" y="608.7042919389977" width="80" height="80" as="geometry" />
+            <mxGeometry x="785.5263157894736" y="411.85185185185185" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-54">
@@ -272,9 +282,7 @@
         <mxCell id="iNKWLlbWB6Y6OhxowDSD-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-12" target="iNKWLlbWB6Y6OhxowDSD-55">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="291" y="639" />
-              <mxPoint x="294" y="639" />
-              <mxPoint x="294" y="634" />
+              <mxPoint x="286" y="437" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -284,111 +292,179 @@
         <mxCell id="iNKWLlbWB6Y6OhxowDSD-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-54" target="iNKWLlbWB6Y6OhxowDSD-14">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="905" y="725" />
-              <mxPoint x="910" y="725" />
-              <mxPoint x="910" y="789" />
-              <mxPoint x="191" y="789" />
-              <mxPoint x="191" y="588" />
-              <mxPoint x="211" y="588" />
+              <mxPoint x="886" y="452" />
+              <mxPoint x="886" y="542" />
+              <mxPoint x="186" y="542" />
+              <mxPoint x="186" y="367" />
             </Array>
           </mxGeometry>
         </mxCell>
         <object label="%name%" placeholders="1" name="yi" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-61">
           <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="985.127033492823" y="478.70193899782123" width="10" height="15" as="geometry">
+            <mxGeometry x="995.5263157894736" y="451.85185185185185" width="10" height="15" as="geometry">
               <mxPoint x="11" y="-16" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <mxCell id="iNKWLlbWB6Y6OhxowDSD-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.667;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-54" target="iNKWLlbWB6Y6OhxowDSD-61">
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.147;entryY=0.592;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-54" target="iNKWLlbWB6Y6OhxowDSD-61">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iNKWLlbWB6Y6OhxowDSD-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-34" target="iNKWLlbWB6Y6OhxowDSD-7">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="743" y="267" />
-              <mxPoint x="743" y="169" />
-              <mxPoint x="160" y="169" />
-              <mxPoint x="160" y="282" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <object label="	%symbol%" class_name="TimeBlock" block_name="time" placeholders="1" symbol="&amp;#128336;" id="iNKWLlbWB6Y6OhxowDSD-68">
-          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;connectable=0;allowArrows=0;container=1;collapsible=0;resizable=0;fontSize=45;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="201.13157894736844" y="828.7037037037037" width="80" height="80" as="geometry" />
+        <object label="%symbol%" placeholders="1" symbol="sin" class_name="SinFunc" block_name="" id="iNKWLlbWB6Y6OhxowDSD-116">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
+            <mxGeometry x="795.5263157894736" y="249.63185185185182" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-69">
-          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-68">
-            <mxGeometry x="70" y="33" width="10" height="15" as="geometry">
-              <mxPoint x="5" y="-7" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
-        <object label="math:&lt;br&gt;&lt;b&gt;%block_operator%&lt;/b&gt;" placeholders="1" class_name="GenericBlock" block_name="sin" block_operator="&quot;sin&quot;" id="iNKWLlbWB6Y6OhxowDSD-70">
-          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=14;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="635.1315789473684" y="828.7037037037037" width="80" height="80" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-71">
-          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-70">
+        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-117">
+          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-116">
             <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
               <mxPoint x="5" y="-7" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="IN1" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-72">
-          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-70">
+        <object label="%name%" placeholders="1" name="Din" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-118">
+          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-116">
             <mxGeometry y="32.5" width="10" height="15" as="geometry">
               <mxPoint x="-4" y="-8" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="sinOut" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-73">
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-24" target="iNKWLlbWB6Y6OhxowDSD-118">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="726" y="472" />
+              <mxPoint x="726" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <object label="%name%" placeholders="1" name="sinOut" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-120">
           <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="765.1315789473684" y="860.7037037037037" width="10" height="15" as="geometry">
+            <mxGeometry x="955.5263157894736" y="281.85185185185185" width="10" height="15" as="geometry">
               <mxPoint x="5" y="-7" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="%symbol%" placeholders="1" symbol="&amp;prod;" class_name="ProductBlock" block_name="iD" id="iNKWLlbWB6Y6OhxowDSD-74">
-          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-3">
-            <mxGeometry x="415.13157894736844" y="829.7037037037037" width="80" height="80" as="geometry" />
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-121" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.129;entryY=0.638;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-117" target="iNKWLlbWB6Y6OhxowDSD-120">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object label="" placeholders="1" class_name="SinFunc" id="iNKWLlbWB6Y6OhxowDSD-84">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;container=0;connectable=0;allowArrows=0;treeFolding=0;moveCells=0;treeMoving=0;comic=0;rotatable=0;expand=1;" vertex="1" parent="1">
+            <mxGeometry x="80" y="870" width="760" height="540" as="geometry">
+              <mxRectangle x="40" y="400" width="50" height="40" as="alternateBounds" />
+            </mxGeometry>
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-75">
-          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-74">
+        <object label="%class_name%" placeholders="1" id="iNKWLlbWB6Y6OhxowDSD-85">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;fontSize=18;connectable=0;allowArrows=0;rotatable=0;cloneable=0;deletable=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-84">
+            <mxGeometry x="10" y="20" width="740" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-86" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;connectable=0;allowArrows=0;container=1;collapsible=0;portConstraintRotation=0;rotatable=0;cloneable=0;deletable=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-84">
+          <mxGeometry x="10" y="70" width="740" height="460" as="geometry">
+            <mxRectangle x="10" y="70" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <object label="	%symbol%" class_name="TimeBlock" block_name="" placeholders="1" symbol="&amp;#128336;" id="iNKWLlbWB6Y6OhxowDSD-87">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;connectable=0;allowArrows=0;container=1;collapsible=0;resizable=0;fontSize=45;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
+            <mxGeometry x="70" y="70" width="80" height="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-88">
+          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-87">
+            <mxGeometry x="70" y="33" width="10" height="15" as="geometry">
+              <mxPoint x="5" y="-7" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="%symbol%" placeholders="1" symbol="&amp;prod;" class_name="ProductBlock" block_name="" id="iNKWLlbWB6Y6OhxowDSD-93">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;spacingTop=-6;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
+            <mxGeometry x="280" y="118" width="80" height="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-94">
+          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-93">
             <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
               <mxPoint x="5" y="-7" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="IN1" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-76">
-          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-74">
+        <object label="%name%" placeholders="1" name="IN1" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-95">
+          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-93">
             <mxGeometry y="17.5" width="10" height="15" as="geometry">
               <mxPoint x="-4" y="-8" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="%name%" placeholders="1" name="IN2" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-77">
-          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-74">
+        <object label="%name%" placeholders="1" name="IN2" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-96">
+          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-93">
             <mxGeometry y="47.5" width="10" height="15" as="geometry">
               <mxPoint x="-4" y="-8" as="offset" />
             </mxGeometry>
           </mxCell>
         </object>
-        <mxCell id="iNKWLlbWB6Y6OhxowDSD-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-24" target="iNKWLlbWB6Y6OhxowDSD-76">
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-86" source="iNKWLlbWB6Y6OhxowDSD-88" target="iNKWLlbWB6Y6OhxowDSD-95">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iNKWLlbWB6Y6OhxowDSD-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-69" target="iNKWLlbWB6Y6OhxowDSD-77">
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-86" source="iNKWLlbWB6Y6OhxowDSD-100" target="iNKWLlbWB6Y6OhxowDSD-96">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iNKWLlbWB6Y6OhxowDSD-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-75" target="iNKWLlbWB6Y6OhxowDSD-70">
+        <object label="%name%" placeholders="1" name="D" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-100">
+          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
+            <mxGeometry x="95" y="220" width="10" height="15" as="geometry">
+              <mxPoint x="-4" y="-8" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="math:&lt;br&gt;&lt;b&gt;%block_operator%&lt;/b&gt;" placeholders="1" class_name="GenericBlock" block_name="sin" block_operator="&quot;sin&quot;" id="iNKWLlbWB6Y6OhxowDSD-102">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=14;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
+            <mxGeometry x="480" y="118" width="80" height="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-103">
+          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-102">
+            <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
+              <mxPoint x="5" y="-7" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="%name%" placeholders="1" name="IN1" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-104">
+          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-102">
+            <mxGeometry y="32.5" width="10" height="15" as="geometry">
+              <mxPoint x="-4" y="-8" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-86" source="iNKWLlbWB6Y6OhxowDSD-94" target="iNKWLlbWB6Y6OhxowDSD-104">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iNKWLlbWB6Y6OhxowDSD-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.076;entryY=0.482;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-3" source="iNKWLlbWB6Y6OhxowDSD-71" target="iNKWLlbWB6Y6OhxowDSD-73">
+        <object label="%name%" placeholders="1" name="sinOut" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-107">
+          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-86">
+            <mxGeometry x="670" y="150.5" width="10" height="15" as="geometry">
+              <mxPoint x="5" y="-7" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <mxCell id="iNKWLlbWB6Y6OhxowDSD-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.129;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="iNKWLlbWB6Y6OhxowDSD-86" source="iNKWLlbWB6Y6OhxowDSD-103" target="iNKWLlbWB6Y6OhxowDSD-107">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <object label="%symbol%" placeholders="1" symbol="sin" class_name="SinFunc" block_name="" id="iNKWLlbWB6Y6OhxowDSD-110">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="1">
+            <mxGeometry x="80" y="790" width="80" height="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-111">
+          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-110">
+            <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
+              <mxPoint x="5" y="-7" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="%name%" placeholders="1" name="Din" class_name="InputPortBlock" id="iNKWLlbWB6Y6OhxowDSD-112">
+          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="iNKWLlbWB6Y6OhxowDSD-110">
+            <mxGeometry y="32.5" width="10" height="15" as="geometry">
+              <mxPoint x="-4" y="-8" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
       </root>
     </mxGraphModel>
   </diagram>
