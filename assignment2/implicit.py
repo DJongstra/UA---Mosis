@@ -98,5 +98,3 @@ if __name__ == '__main__':
 	cbd.run(steps)
 	plot_signal(cbd, ['xi', 'yi', 'sinOut'], 'Implicit')
 
-	# process simulation results
-	# TODO: process your results
