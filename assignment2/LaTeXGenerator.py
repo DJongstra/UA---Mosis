@@ -18,10 +18,11 @@ class LaTeXGenerator:
         cbdName = cbd.getBlockName()
         print("Generating LaTeX for : " + cbdName)
         print(cbdName)
-        blocks = cbd.getBlocks()
 
         # Flatten the CBD here
         cbd.flatten()
+
+        blocks = cbd.getBlocks()
 
         # For all blocks
         # In the first round, we assign variable letters and create equations for input ports and output ports
