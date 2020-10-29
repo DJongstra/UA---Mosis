@@ -62,6 +62,55 @@
 	</p>
 	
 	<h2>Solution 6: Explicit vs. Implicit Equations - Daniëlle</h2>
+	<p>
+	<figure>
+		<img src="./img/sinCBD.png">
+		<figcaption>Figure 2: The CBD for the sinus function</figcaption>
+	</figure> 
+	The result of the implicit and explicit equations needs to be compared to values of the sinus function. The CBD for this sinus function is in figure 2. The value of D is multiplied with the clock value to get the right steps size.
+	The rest of the CBD if the same as the same as the example <a href="./examples/SinGen/SinGen.xml"><tt>SinGen.xml</tt></a>.
+	<br><br>
+	<figure>
+		<img src="./img/explicitCBD.png">
+		<figcaption>Figure 3: The CBD for the set of explicit equations</figcaption>
+	</figure> 
+	The CBD for the explicit equations is shown in figure 3 and is also in <a href="./ExplicitEquation.drawio"><tt>ExplicitEquation.drawio</tt></a>. The delay blocks contain the values of x and y.
+	For the explicit equations, the values that the delay blocks output are immediately used to calculate the next value of x and y. The value of D is a constant 0.1 in figure 3, however it can change and for this the same approach is used as for x0 in part 5 of the assignment.
+	The outputs for every iteration i are the value of x(i), y(i) and sinus(Di).
+	<figure>
+		<img src="./img/explicit1.png">
+		<figcaption>Figure 4: The results of the simulation for the explicit equations using D = 0.1</figcaption>
+	</figure> 
+	<figure>
+		<img src="./img/explicit2.png">
+		<figcaption>Figure 5: The results of the simulation for the explicit equations using D = 0.001</figcaption>
+	</figure> 
+	The python simulation of the explicit CBD can be found in <a href="./explicit.py"><tt>explicit.py</tt></a>. The results for D=0.1 and D=0.001 are in figure 4 and figure 5.
+	It can be seen that D=0.001 almost falls together with the actual sinus function. For D=0.1 the difference is quite big, approximately 0.25. 
+	<br><br>
+	
+	<figure>
+		<img src="./img/implicitCBD.png">
+		<figcaption>Figure 6: The CBD for the set of implicit equations</figcaption>
+	</figure> 
+	The CBD for the implicit equations is shown in figure 6 and is also in <a href="./ImplicitEquation.drawio"><tt>ExplicitEquation.drawio</tt></a>. These equations do not immediately use the values of x and y,
+	but first calculate the next value of y to calculate x, and x to calculate y. Because of this, there is a strong component in the CBD. For the value of D in this CBD, the same thing applies as for D in the explicit CBD.
+	The outputs for every iteration i are the value of x(i), y(i) and sinus(Di).
+	<figure>
+		<img src="./img/implicit1.png">
+		<figcaption>Figure 7: The results of the simulation for the implicit equations using D = 0.1</figcaption>
+	</figure> 
+	<figure>
+		<img src="./img/implicit2.png">
+		<figcaption>Figure 8: The results of the simulation for the implicit equations using D = 0.001</figcaption>
+	</figure> 
+	The python simulation of the implicit CBD can be found in <a href="./implicit.py"><tt>implicit.py</tt></a>. The results for D=0.1 and D=0.001 are in figure 7 and figure 8.
+	For D=0.001 the values again almost fall together with the sinus function, just as in the simulation for the explicit equations. For D=0.1, the difference with the sinus function is approximately 0.25.
+	<br><br>
+	In conclusion, D approaching but not equal to zero is better to model the sinus function than a larger D. There is not a big difference in error for using implicit equations or explicit equations.
+	However, the implicit equations model stays within the bounds of the sinus while the explicit equations model does not. This might be important, depending on in what situation the model is used.
+	
+	</p>
 
  <hr noshade>
 
