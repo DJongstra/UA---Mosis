@@ -729,7 +729,7 @@ class CBD(BaseBlock):
             type = block.getBlockType()
             if type in nonLinear:
                 return False
-            elif type is "ProductBlock":
+            elif type == "ProductBlock":
                 (incoming_block1, out_port_name1) = block._linksIn['IN1']
                 (incoming_block2, out_port_name2) = block._linksIn['IN2']
                 if not incoming_block1.getSignal(out_port_name1) and not incoming_block2.getSignal(out_port_name2):
