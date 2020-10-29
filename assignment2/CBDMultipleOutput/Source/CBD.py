@@ -530,12 +530,13 @@ class CBD(BaseBlock):
                 blocksToRemove.append(childBlock)
                 blocksToAdd.append(wb)
 
-                for b in self.getBlocks():
-                    for input_name, output_port in [(x, y.output_port) for (x, y) in b._linksIn.items() if y.block == childBlock]:
-                        b._linksIn[input_name] = InputLink(wb, "OUT1")
+                if parent is not None:
+                    for b in self.getBlocks():
+                        for input_name, output_port in [(x, y.output_port) for (x, y) in b._linksIn.items() if y.block == childBlock]:
+                            b._linksIn[input_name] = InputLink(wb, "OUT1")
 
-                input = self._linksIn[wb.getBlockName()]
-                parent.addConnection(input.block, wb, output_port_name=input.output_port)
+                    input = self._linksIn[wb.getBlockName()]
+                    parent.addConnection(input.block, wb, output_port_name=input.output_port)
             elif isinstance(childBlock, OutputPortBlock):
                 # Replace OutputPortBlock with WireBlock
                 wb = WireBlock(childBlock.getBlockName())
@@ -545,11 +546,12 @@ class CBD(BaseBlock):
                 for (x, y) in childBlock._linksIn.items():
                     wb._linksIn[x] = y
 
-                # blocks connected to this output
-                for b in parent.__blocks:
-                    for (portname, input) in b._linksIn.items():
-                        if input.block == self and input.output_port == wb.getBlockName():
-                            b._linksIn[portname] = InputLink(wb, "OUT1")
+                if parent is not None:
+                    # blocks connected to this output
+                    for b in parent.__blocks:
+                        for (portname, input) in b._linksIn.items():
+                            if input.block == self and input.output_port == wb.getBlockName():
+                                b._linksIn[portname] = InputLink(wb, "OUT1")
 
         for childBlock in self.__blocks:
             if isinstance(childBlock, CBD):

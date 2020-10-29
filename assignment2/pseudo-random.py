@@ -7,6 +7,8 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Dark2_5 as palette
 import itertools
 
+from LaTeXGenerator import LaTeXGenerator
+
 
 def plot_signal(block, signals, title):
     colors = itertools.cycle(palette)
@@ -72,5 +74,9 @@ if __name__ == '__main__':
         output = ([v for _, v in tvpl])
         ind = len(output) - 1 - output[::-1].index(output[0])
         print("period of seed " + str(x0) + " = " + str(ind))
+
+        generator = LaTeXGenerator()
+        # generate the LateX
+        generator.generateLateX(cbd)
 
 

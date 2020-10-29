@@ -7,6 +7,8 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Dark2_5 as palette
 import itertools
 
+from LaTeXGenerator import LaTeXGenerator
+
 
 def plot_signal(block, signals, title):
     colors = itertools.cycle(palette)
@@ -97,4 +99,8 @@ if __name__ == '__main__':
 	# Run the simulation
 	cbd.run(steps)
 	plot_signal(cbd, ['xi', 'yi', 'sinOut'], 'Implicit')
+
+	generator = LaTeXGenerator()
+	# generate the LateX
+	generator.generateLateX(cbd)
 

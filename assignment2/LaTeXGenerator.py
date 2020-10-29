@@ -1,7 +1,7 @@
+#JK
 import re
 import string
 import subprocess, os
-from CBDMultipleOutput.Source.CBD import *
 from examples.EvenNumberGen.EvenNumberGen import EvenNumberGen
 from examples.Fibonacci.Fibonacci import FibonacciGen
 from examples.SinGen.SinGen import SinGen
