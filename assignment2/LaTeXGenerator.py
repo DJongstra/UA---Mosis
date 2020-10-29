@@ -74,6 +74,11 @@ class LaTeXGenerator:
             file.write("\\end{array}\n")
             file.write("\\right.\n")
             file.write("\\]\n")
+            file.write("Given: ")
+            file.write("\\begin{itemize}")
+            for blockName, variableName in self.__blockNameDict.items():
+                file.write("\\item Block \\textbf{" + blockName + "} is represented by variable \\textbf{" + variableName + "}\n")
+            file.write("\\end{itemize}")
             file.write("\\end{document}\n")
 
         # We go further an create the PDF
