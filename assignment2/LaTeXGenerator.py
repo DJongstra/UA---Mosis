@@ -293,9 +293,9 @@ class LaTeXGenerator:
     Constructs operator equation for Root Block
     """
     def constructRootEquation(self, variableDict, block):
-        operatorFirstPart = "\\sqrt[\\leftroot{-2}\\uproot{2}"
-        operatorSecondPart = "]{"
-        operatorThirdPart = "}"
+        operatorFirstPart = "("
+        operatorSecondPart = ")^{\\dfrac{1}{"
+        operatorThirdPart = "}}"
 
         inputs = block.getLinksIn()
         firstInputName = list(inputs)[0]
@@ -305,7 +305,7 @@ class LaTeXGenerator:
 
         equationStrings = []
         for outputVariable in self.getOutputVariables(variableDict, block):
-            equationString = outputVariable + " & = & " +operatorFirstPart + secondVariable + operatorSecondPart + firstVariable + operatorThirdPart
+            equationString = outputVariable + " & = & " + operatorFirstPart + firstVariable + operatorSecondPart + secondVariable + operatorThirdPart
             equationStrings.append(equationString)
         return equationStrings
 
