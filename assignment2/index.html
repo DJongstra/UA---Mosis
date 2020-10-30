@@ -56,7 +56,7 @@
         <br><br/>
         During the second round of looping through the blocks is when the equations for the operators represented by the blocks are added to the equation array. This second loop is necessary because in the first loop not all the blocks and ports have been
         assigned variables. For each block, the constructOperatorEquation() function is called, which categorises block operations according to where the operator is positioned with regard to the operands (in accordance to LaTeX syntax) and calls the appropriate helper function among these;
-        constructOperatorInBetweenEquation(), constructOperatorGoesBeforeEquation(), constructOperatorSurroundsEquation(), constructInverterEquation(), constructRootEquation(), constructConstantAssignmentEquation(). Each of those functions, loops through the inputs and creates a
+        constructOperatorInBetweenEquation(), constructOperatorGoesBeforeEquation(), constructOperatorSurroundsEquation(), constructInverterEquation(), constructRootEquation(), constructConstantAssignmentEquation() and constructDelayBlockAssignmentEquation(). Each of those functions, loops through the inputs and creates a
         string that represents the equation of the block in a format that is acceptable to LaTeX.
         <br><br/>
         Once we have all our equation strings, we simply create a LaTeX file using Python File operations and write to the file. Finally, we also include a subprocess call to generate a PDF from the LaTeX file.

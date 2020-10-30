@@ -41,9 +41,18 @@ class LaTeXGenerator:
                 blockInputChar = self.getAssignedBlockCharacter(blockInput.getBlockName())
 
                 # Assign a variable for the input link
-                self.__variableDict[block.getBlockName() + "." + inputName] = self.generateVariableName(blockChar, inputName)
+                if block.getBlockType() == "DelayBlock":
+                    self.__variableDict[block.getBlockName() + "." + inputName] = self.generateVariableNameForDelay(blockChar, inputName)
+                else:
+                    self.__variableDict[block.getBlockName() + "." + inputName] = self.generateVariableName(blockChar, inputName)
+
                 # Assign a variable for the output port of the block connected to this input
                 self.__variableDict[blockInput.getBlockName() + "." + inputs[inputName].output_port] = self.generateVariableName(blockInputChar, inputs[inputName].output_port)
+                if blockInput.getBlockType() == "DelayBlock":
+                    # If this is a Delay Block, there is an extra output for the initial state
+                    self.__variableDict[
+                        blockInput.getBlockName() + "." + inputs[inputName].output_port + ".0"] = self.generateVariableNameDelayOutput(
+                        blockInputChar, inputs[inputName].output_port)
 
                 # Create an assignment equation that maps the output port to this input port
                 self.__equationArray.append(self.constructAssignmentEquation(
@@ -127,7 +136,26 @@ class LaTeXGenerator:
     """
     def generateVariableName(self, blockNameChar, portName):
         portIdentifier = ("_" + re.sub("[^0-9]", "", portName), "_" + portName[1:2])[re.match("[a-zA-Z]*[0-9]+", portName) == None]
-        variableString = "var(" + blockNameChar + "." + portName[0] + portIdentifier + ")"
+        variableString = "var(" + blockNameChar + "." + portName[0] + portIdentifier + ")^{[s+1]}"
+        return variableString
+
+    """
+    Generates a variable name for a port based on the Block Name Character
+    """
+    def generateVariableNameForDelay(self, blockNameChar, portName):
+        portIdentifier = ("_" + re.sub("[^0-9]", "", portName), "_" + portName[1:2])[re.match("[a-zA-Z]*[0-9]+", portName) == None]
+        if portName == "IC":
+            variableString = "var(" + blockNameChar + "." + portName[0] + portIdentifier + ")^{[0]}"
+        else:
+            variableString = "var(" + blockNameChar + "." + portName[0] + portIdentifier + ")^{[s]}"
+        return variableString
+
+    """
+    Generates a variable name for a port based on the Block Name Character
+    """
+    def generateVariableNameDelayOutput(self, blockNameChar, portName):
+        portIdentifier = ("_" + re.sub("[^0-9]", "", portName), "_" + portName[1:2])[re.match("[a-zA-Z]*[0-9]+", portName) == None]
+        variableString = "var(" + blockNameChar + "." + portName[0] + portIdentifier + ")^{[0]}"
         return variableString
 
     """
@@ -146,7 +174,7 @@ class LaTeXGenerator:
                                     "LessThanBlock","EqualsBlock","OrBlock","AndBlock"]
         operatorsThatGoBefore = ["NegatorBlock","NotBlock"]
         blocksWithoutOperations = ["InputPortBlock", "OutputPortBlock", "WireBlock", "TimeBlock",
-                                   "LoggingBlock", "SequenceBlock", "DelayBlock"]
+                                   "LoggingBlock", "SequenceBlock"]
         operatorsThatSurround = ["ABSBlock","GenericBlock"]
 
         blockType = block.getBlockType()
@@ -163,6 +191,8 @@ class LaTeXGenerator:
             equationString = self.constructRootEquation(variableDict, block)
         elif (blockType == "ConstantBlock"):
             equationString = self.constructConstantAssignmentEquation(variableDict, block)
+        elif (blockType == "DelayBlock"):
+            equationString = self.constructDelayBlockAssignmentEquation(variableDict, block)
 
         return equationString
 
@@ -277,6 +307,27 @@ class LaTeXGenerator:
         for outputVariable in self.getOutputVariables(variableDict, block):
             equationString = outputVariable + " & = & " +operatorFirstPart + secondVariable + operatorSecondPart + firstVariable + operatorThirdPart
             equationStrings.append(equationString)
+        return equationStrings
+
+
+    """
+    Constructs operator equation for Delay Block
+    """
+    def constructDelayBlockAssignmentEquation(self, variableDict, block):
+
+        inputs = block.getLinksIn()
+        initialConditionInput = inputs["IC"]
+        initialConditionVariable = variableDict[block.getBlockName() + ".IC"]
+        normalInput = inputs["IN1"]
+        normalInputVariable = variableDict[block.getBlockName() + ".IN1"]
+
+        equationStrings = []
+        outputVariables = self.getOutputVariables(variableDict, block)
+        equationString = outputVariables[0] + " & = & " + normalInputVariable
+        equationStrings.append(equationString)
+        equationString = outputVariables[1] + " & = & " + initialConditionVariable
+        equationStrings.append(equationString)
+
         return equationStrings
 
 if __name__ == '__main__':
