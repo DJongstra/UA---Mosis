@@ -884,14 +884,71 @@ class AddOneBlock(CBD):
         self.addConnection("OneConstant", "PlusOne")
         self.addConnection("PlusOne", "OUT1")
 
+
+class DerivedIC(CBD):
+    def __init__(self, block_name):
+        CBD.__init__(self, block_name, input_ports=['IC', 'IN1', 'delta_t'], output_ports=['dIC'])
+
+        # Create the blocks
+        self.addBlock(ProductBlock(block_name='product'))
+        self.addBlock(NegatorBlock(block_name='negative'))
+        self.addBlock(AdderBlock(block_name='sum'))
+
+        # Connect the blocks
+        self.addConnection('IC', 'product')
+        self.addConnection('IN1', 'sum')
+        self.addConnection('delta_t', 'product')
+        self.addConnection('product', 'negative')
+        self.addConnection('negative', 'sum')
+        self.addConnection('sum', 'dIC')
+
 class DerivatorBlock(CBD):
     """
     The derivator block is a CBD that calculates the derivative
     """
     def __init__(self, block_name):
         CBD.__init__(self, block_name, ["IN1", "delta_t", "IC"], ["OUT1"])
-        # Will be modelled as a hierarchical block containing a discretization/approximation 
+        # Will be modelled as a hierarchical block containing a discretization/approximation
 
+        # Create the blocks
+        self.addBlock(DelayBlock(block_name='delay'))
+        self.addBlock(DerivedIC(block_name='derivedIC'))
+        self.addBlock(NegatorBlock(block_name='negator'))
+        self.addBlock(AdderBlock(block_name='xRnvEjVIsQNWptp_Bo56-33'))
+        self.addBlock(ProductBlock(block_name='product'))
+        self.addBlock(InverterBlock(block_name='inverter'))
+
+        # Connect the blocks
+        self.addConnection('IN1', 'derivedIC')
+        self.addConnection('IN1', 'delay')
+        self.addConnection('IN1', 'xRnvEjVIsQNWptp_Bo56-33')
+        self.addConnection('IC', 'derivedIC', input_port_name='IC')
+        self.addConnection('delta_t', 'derivedIC', input_port_name='delta_t')
+        self.addConnection('delta_t', 'inverter')
+        self.addConnection('derivedIC', 'delay', input_port_name='IC', output_port_name='dIC')
+        self.addConnection('delay', 'negator')
+        self.addConnection('negator', 'xRnvEjVIsQNWptp_Bo56-33')
+        self.addConnection('xRnvEjVIsQNWptp_Bo56-33', 'product')
+        self.addConnection('inverter', 'product')
+        self.addConnection('product', 'OUT1')
+
+
+class IntegratedIC(CBD):
+    def __init__(self, block_name):
+        CBD.__init__(self, block_name, input_ports=['delta_t', 'IC', 'IN1'], output_ports=['OUT1'])
+
+        # Create the blocks
+        self.addBlock(ProductBlock(block_name='2XOIrNULSFbv1QRsnGYl-43'))
+        self.addBlock(NegatorBlock(block_name='2XOIrNULSFbv1QRsnGYl-49'))
+        self.addBlock(AdderBlock(block_name='2XOIrNULSFbv1QRsnGYl-53'))
+
+        # Connect the blocks
+        self.addConnection('delta_t', '2XOIrNULSFbv1QRsnGYl-43')
+        self.addConnection('IC', '2XOIrNULSFbv1QRsnGYl-53')
+        self.addConnection('IN1', '2XOIrNULSFbv1QRsnGYl-43')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-43', '2XOIrNULSFbv1QRsnGYl-49')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-49', '2XOIrNULSFbv1QRsnGYl-53')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-53', 'OUT1')
 
 class IntegratorBlock(CBD):
     """
@@ -900,7 +957,25 @@ class IntegratorBlock(CBD):
 
     def __init__(self, block_name):
         CBD.__init__(self, block_name, ["IN1", "delta_t", "IC"], ["OUT1"])
-        # Will be modelled as a hierarchical block containing a discretization/approximation 
+        # Will be modelled as a hierarchical block containing a discretization/approximation
+
+        # Create the blocks
+        self.addBlock(ProductBlock(block_name='2XOIrNULSFbv1QRsnGYl-13'))
+        self.addBlock(AdderBlock(block_name='2XOIrNULSFbv1QRsnGYl-20'))
+        self.addBlock(DelayBlock(block_name='2XOIrNULSFbv1QRsnGYl-26'))
+        self.addBlock(IntegratedIC(block_name='2XOIrNULSFbv1QRsnGYl-70'))
+
+        # Connect the blocks
+        self.addConnection('IN1', '2XOIrNULSFbv1QRsnGYl-13')
+        self.addConnection('IN1', '2XOIrNULSFbv1QRsnGYl-70')
+        self.addConnection('delta_t', '2XOIrNULSFbv1QRsnGYl-13')
+        self.addConnection('delta_t', '2XOIrNULSFbv1QRsnGYl-70', input_port_name='delta_t')
+        self.addConnection('IC', '2XOIrNULSFbv1QRsnGYl-70', input_port_name='IC')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-13', '2XOIrNULSFbv1QRsnGYl-20')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-20', '2XOIrNULSFbv1QRsnGYl-26')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-26', '2XOIrNULSFbv1QRsnGYl-20')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-20', 'OUT1')
+        self.addConnection('2XOIrNULSFbv1QRsnGYl-70', '2XOIrNULSFbv1QRsnGYl-26', input_port_name='IC')
 
 
 """ This module implements a dependency graph
