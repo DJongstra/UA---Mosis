@@ -950,24 +950,22 @@ class IntegratedIC(CBD):
         self.addConnection('2XOIrNULSFbv1QRsnGYl-49', '2XOIrNULSFbv1QRsnGYl-53')
         self.addConnection('2XOIrNULSFbv1QRsnGYl-53', 'OUT1')
 
-class IntegratorBlock(CBD):
-    """
-    The integrator block is a CBD that calculates the integration
-    """
 
+class IntegratorBlock(CBD):
     def __init__(self, block_name):
-        CBD.__init__(self, block_name, ["IN1", "delta_t", "IC"], ["OUT1"])
-        # Will be modelled as a hierarchical block containing a discretization/approximation
+        CBD.__init__(self, block_name, input_ports=['IN1', 'delta_t', 'IC'], output_ports=['OUT1'])
 
         # Create the blocks
         self.addBlock(ProductBlock(block_name='2XOIrNULSFbv1QRsnGYl-13'))
         self.addBlock(AdderBlock(block_name='2XOIrNULSFbv1QRsnGYl-20'))
         self.addBlock(DelayBlock(block_name='2XOIrNULSFbv1QRsnGYl-26'))
         self.addBlock(IntegratedIC(block_name='2XOIrNULSFbv1QRsnGYl-70'))
+        self.addBlock(DelayBlock(block_name='m2JUptWFHnOxhU3OeOcB-1'))
 
         # Connect the blocks
-        self.addConnection('IN1', '2XOIrNULSFbv1QRsnGYl-13')
         self.addConnection('IN1', '2XOIrNULSFbv1QRsnGYl-70')
+        self.addConnection('IN1', 'm2JUptWFHnOxhU3OeOcB-1')
+        self.addConnection('IN1', 'm2JUptWFHnOxhU3OeOcB-1', input_port_name='IC')
         self.addConnection('delta_t', '2XOIrNULSFbv1QRsnGYl-13')
         self.addConnection('delta_t', '2XOIrNULSFbv1QRsnGYl-70', input_port_name='delta_t')
         self.addConnection('IC', '2XOIrNULSFbv1QRsnGYl-70', input_port_name='IC')
@@ -976,6 +974,7 @@ class IntegratorBlock(CBD):
         self.addConnection('2XOIrNULSFbv1QRsnGYl-26', '2XOIrNULSFbv1QRsnGYl-20')
         self.addConnection('2XOIrNULSFbv1QRsnGYl-20', 'OUT1')
         self.addConnection('2XOIrNULSFbv1QRsnGYl-70', '2XOIrNULSFbv1QRsnGYl-26', input_port_name='IC')
+        self.addConnection('m2JUptWFHnOxhU3OeOcB-1', '2XOIrNULSFbv1QRsnGYl-13')
 
 
 """ This module implements a dependency graph
