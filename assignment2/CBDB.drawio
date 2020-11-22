@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-22T14:36:54.926Z" agent="5.0 (Windows)" etag="G1dksQ-YRHC2yv47qZjK" version="13.10.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-22T14:51:27.024Z" agent="5.0 (Windows)" etag="rhGw7JAril9muwPmdNEA" version="13.10.0" type="github">
   <diagram id="ODKguLwyJrUyJXhsilvs" name="Page-1">
     <mxGraphModel dx="1038" dy="552" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
       <root>
@@ -219,30 +219,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <object label="%symbol%" placeholders="1" symbol="-" class_name="NegatorBlock" block_name="" id="7IsC0muY9sn0-m5gdAO--1">
-          <mxCell style="triangle;whiteSpace=wrap;html=1;comic=0;fontSize=36;align=center;allowArrows=0;recursiveResize=0;resizable=0;fillColor=#FFFFFF;points=[];spacingLeft=-5;container=1;collapsible=0;spacingTop=-6;" vertex="1" parent="WgBMcyxID5A1E6gqlP3p-3">
-            <mxGeometry x="416.4473684210526" y="13.148148148148152" width="60" height="80" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="7IsC0muY9sn0-m5gdAO--2">
-          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="7IsC0muY9sn0-m5gdAO--1">
-            <mxGeometry x="50" y="32.5" width="10" height="15" as="geometry">
-              <mxPoint x="5" y="-7" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="IN1" class_name="InputPortBlock" id="7IsC0muY9sn0-m5gdAO--3">
-          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="7IsC0muY9sn0-m5gdAO--1">
-            <mxGeometry y="32.5" width="10" height="15" as="geometry">
-              <mxPoint x="-5" y="-7" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
-        <mxCell id="7IsC0muY9sn0-m5gdAO--4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-24" target="7IsC0muY9sn0-m5gdAO--3">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="7IsC0muY9sn0-m5gdAO--5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WgBMcyxID5A1E6gqlP3p-3" source="7IsC0muY9sn0-m5gdAO--2" target="WgBMcyxID5A1E6gqlP3p-19">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="7IsC0muY9sn0-m5gdAO--6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-9" target="WgBMcyxID5A1E6gqlP3p-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="96" y="13" />
+              <mxPoint x="536" y="13" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
