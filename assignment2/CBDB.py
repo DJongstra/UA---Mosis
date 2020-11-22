@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # This file was automatically generated from drawio2cbd with the command:
-#   drawio2cbd.py -e CBDB CBDB CBDB.py
+#   drawio2cbd.py -e CBDB CBDB.drawio CBDB.py
 
 from CBDMultipleOutput.Source.CBD import *
 from bokeh.plotting import figure, output_file, show
@@ -39,23 +39,23 @@ class CBDB(CBD):
 		# Create the blocks
 		self.addBlock(DelayBlock(block_name='x'))
 		self.addBlock(ConstantBlock(block_name='x0', value=(0)))
-		self.addBlock(DerivatorBlock(block_name='WgBMcyxID5A1E6gqlP3p-11'))
-		self.addBlock(DerivatorBlock(block_name='WgBMcyxID5A1E6gqlP3p-17'))
 		self.addBlock(ConstantBlock(block_name='initdxdt', value=(1)))
 		self.addBlock(NegatorBlock(block_name='WgBMcyxID5A1E6gqlP3p-31'))
 		self.addBlock(ConstantBlock(block_name='deltaT', value=(deltaT)))
+		self.addBlock(IntegratorBlock(block_name='7IsC0muY9sn0-m5gdAO--8'))
+		self.addBlock(IntegratorBlock(block_name='7IsC0muY9sn0-m5gdAO--14'))
 		
 		# Connect the blocks
 		self.addConnection('x0', 'x', input_port_name='IC')
-		self.addConnection('x', 'WgBMcyxID5A1E6gqlP3p-11')
-		self.addConnection('WgBMcyxID5A1E6gqlP3p-11', 'WgBMcyxID5A1E6gqlP3p-17')
-		self.addConnection('initdxdt', 'WgBMcyxID5A1E6gqlP3p-11', input_port_name='IC')
-		self.addConnection('WgBMcyxID5A1E6gqlP3p-17', 'WgBMcyxID5A1E6gqlP3p-31')
-		self.addConnection('WgBMcyxID5A1E6gqlP3p-31', 'x')
+		self.addConnection('deltaT', '7IsC0muY9sn0-m5gdAO--8', input_port_name='delta_t')
+		self.addConnection('deltaT', '7IsC0muY9sn0-m5gdAO--14', input_port_name='delta_t')
+		self.addConnection('7IsC0muY9sn0-m5gdAO--14', 'WgBMcyxID5A1E6gqlP3p-31')
 		self.addConnection('WgBMcyxID5A1E6gqlP3p-31', 'OUT1')
-		self.addConnection('deltaT', 'WgBMcyxID5A1E6gqlP3p-11', input_port_name='delta_t')
-		self.addConnection('deltaT', 'WgBMcyxID5A1E6gqlP3p-17', input_port_name='delta_t')
-		self.addConnection('WgBMcyxID5A1E6gqlP3p-11', 'WgBMcyxID5A1E6gqlP3p-17', input_port_name='IC')
+		self.addConnection('x', '7IsC0muY9sn0-m5gdAO--8')
+		self.addConnection('initdxdt', '7IsC0muY9sn0-m5gdAO--8', input_port_name='IC')
+		self.addConnection('x0', '7IsC0muY9sn0-m5gdAO--14', input_port_name='IC')
+		self.addConnection('7IsC0muY9sn0-m5gdAO--8', '7IsC0muY9sn0-m5gdAO--14')
+		self.addConnection('WgBMcyxID5A1E6gqlP3p-31', 'x')
 
 
 if __name__ == '__main__':
@@ -66,4 +66,4 @@ if __name__ == '__main__':
 	cbd.run(100)
 
 	# process simulation results
-	plot_signal(cbd, ['OUT1'], 'Harmonic B')
+	plot_signal(cbd, ['OUT1'], 'Harmonic A')
