@@ -33,29 +33,29 @@ def get_block(block, path=""):
 
 
 class CBDA(CBD):
-	def __init__(self, block_name):
+	def __init__(self, block_name, deltaT=0.1):
 		CBD.__init__(self, block_name, input_ports=[], output_ports=['OUT1'])
 		
 		# Create the blocks
 		self.addBlock(DelayBlock(block_name='x'))
 		self.addBlock(ConstantBlock(block_name='x0', value=(0)))
-		self.addBlock(NegatorBlock(block_name='D4JAX8ncgs_pSIwaS6ev-20'))
-		self.addBlock(ConstantBlock(block_name='D4JAX8ncgs_pSIwaS6ev-36', value=(0)))
-		self.addBlock(ConstantBlock(block_name='deltaT', value=(0.1)))
-		self.addBlock(DerivatorBlock(block_name='GYybEmwy0_EpeJW6xFp3-1'))
-		self.addBlock(DerivatorBlock(block_name='GYybEmwy0_EpeJW6xFp3-6'))
+		self.addBlock(ConstantBlock(block_name='initdxdt', value=(-1)))
+		self.addBlock(NegatorBlock(block_name='WgBMcyxID5A1E6gqlP3p-31'))
+		self.addBlock(ConstantBlock(block_name='deltaT', value=(deltaT)))
+		self.addBlock(IntegratorBlock(block_name='7IsC0muY9sn0-m5gdAO--8'))
+		self.addBlock(IntegratorBlock(block_name='7IsC0muY9sn0-m5gdAO--14'))
 		
 		# Connect the blocks
 		self.addConnection('x0', 'x', input_port_name='IC')
-		self.addConnection('x', 'D4JAX8ncgs_pSIwaS6ev-20')
-		self.addConnection('GYybEmwy0_EpeJW6xFp3-6', 'OUT1')
-		self.addConnection('deltaT', 'GYybEmwy0_EpeJW6xFp3-6', input_port_name='delta_t')
-		self.addConnection('deltaT', 'GYybEmwy0_EpeJW6xFp3-1', input_port_name='delta_t')
-		self.addConnection('D4JAX8ncgs_pSIwaS6ev-20', 'GYybEmwy0_EpeJW6xFp3-1')
-		self.addConnection('GYybEmwy0_EpeJW6xFp3-1', 'GYybEmwy0_EpeJW6xFp3-6')
-		self.addConnection('D4JAX8ncgs_pSIwaS6ev-36', 'GYybEmwy0_EpeJW6xFp3-1', input_port_name='IC')
-		self.addConnection('x0', 'GYybEmwy0_EpeJW6xFp3-6', input_port_name='IC')
-		self.addConnection('GYybEmwy0_EpeJW6xFp3-6', 'x')
+		self.addConnection('deltaT', '7IsC0muY9sn0-m5gdAO--8', input_port_name='delta_t')
+		self.addConnection('deltaT', '7IsC0muY9sn0-m5gdAO--14', input_port_name='delta_t')
+		self.addConnection('7IsC0muY9sn0-m5gdAO--14', 'WgBMcyxID5A1E6gqlP3p-31')
+		self.addConnection('WgBMcyxID5A1E6gqlP3p-31', 'OUT1')
+		self.addConnection('x', '7IsC0muY9sn0-m5gdAO--8')
+		self.addConnection('initdxdt', '7IsC0muY9sn0-m5gdAO--8', input_port_name='IC')
+		self.addConnection('x0', '7IsC0muY9sn0-m5gdAO--14', input_port_name='IC')
+		self.addConnection('7IsC0muY9sn0-m5gdAO--8', '7IsC0muY9sn0-m5gdAO--14')
+		self.addConnection('WgBMcyxID5A1E6gqlP3p-31', 'x')
 
 
 if __name__ == '__main__':
