@@ -33,7 +33,7 @@ def get_block(block, path=""):
 
 
 class CBDB(CBD):
-	def __init__(self, block_name, deltaT=0.1):
+	def __init__(self, block_name):
 		CBD.__init__(self, block_name, input_ports=[], output_ports=['OUT1'])
 		
 		# Create the blocks
@@ -41,21 +41,21 @@ class CBDB(CBD):
 		self.addBlock(ConstantBlock(block_name='x0', value=(0)))
 		self.addBlock(ConstantBlock(block_name='initdxdt', value=(1)))
 		self.addBlock(NegatorBlock(block_name='WgBMcyxID5A1E6gqlP3p-31'))
-		self.addBlock(ConstantBlock(block_name='deltaT', value=(deltaT)))
-		self.addBlock(IntegratorBlock(block_name='7IsC0muY9sn0-m5gdAO--8'))
-		self.addBlock(IntegratorBlock(block_name='7IsC0muY9sn0-m5gdAO--14'))
+		self.addBlock(ConstantBlock(block_name='deltaT', value=(0.1)))
+		self.addBlock(DerivatorBlock(block_name='CZ0sbhZwY290FykPwCE_-1'))
+		self.addBlock(DerivatorBlock(block_name='CZ0sbhZwY290FykPwCE_-6'))
 		
 		# Connect the blocks
 		self.addConnection('x0', 'x', input_port_name='IC')
-		self.addConnection('deltaT', '7IsC0muY9sn0-m5gdAO--8', input_port_name='delta_t')
-		self.addConnection('deltaT', '7IsC0muY9sn0-m5gdAO--14', input_port_name='delta_t')
-		self.addConnection('7IsC0muY9sn0-m5gdAO--14', 'WgBMcyxID5A1E6gqlP3p-31')
 		self.addConnection('WgBMcyxID5A1E6gqlP3p-31', 'OUT1')
-		self.addConnection('x', '7IsC0muY9sn0-m5gdAO--8')
-		self.addConnection('initdxdt', '7IsC0muY9sn0-m5gdAO--8', input_port_name='IC')
-		self.addConnection('x0', '7IsC0muY9sn0-m5gdAO--14', input_port_name='IC')
-		self.addConnection('7IsC0muY9sn0-m5gdAO--8', '7IsC0muY9sn0-m5gdAO--14')
 		self.addConnection('WgBMcyxID5A1E6gqlP3p-31', 'x')
+		self.addConnection('CZ0sbhZwY290FykPwCE_-6', 'WgBMcyxID5A1E6gqlP3p-31')
+		self.addConnection('CZ0sbhZwY290FykPwCE_-1', 'CZ0sbhZwY290FykPwCE_-6')
+		self.addConnection('x', 'CZ0sbhZwY290FykPwCE_-1')
+		self.addConnection('deltaT', 'CZ0sbhZwY290FykPwCE_-1', input_port_name='delta_t')
+		self.addConnection('deltaT', 'CZ0sbhZwY290FykPwCE_-6', input_port_name='delta_t')
+		self.addConnection('initdxdt', 'CZ0sbhZwY290FykPwCE_-1', input_port_name='IC')
+		self.addConnection('x0', 'CZ0sbhZwY290FykPwCE_-6', input_port_name='IC')
 
 
 if __name__ == '__main__':
@@ -66,4 +66,4 @@ if __name__ == '__main__':
 	cbd.run(100)
 
 	# process simulation results
-	plot_signal(cbd, ['OUT1'], 'Harmonic A')
+	plot_signal(cbd, ['OUT1'], 'Harmonic B')
