@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-22T21:42:35.738Z" agent="5.0 (Windows)" etag="H6bssZP_ptKMT30pXR9J" version="13.10.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-23T10:34:44.154Z" agent="5.0 (Windows)" etag="HnuEOU6zO1S1MHRCw4LK" version="13.10.1" type="github">
   <diagram id="ODKguLwyJrUyJXhsilvs" name="Page-1">
     <mxGraphModel dx="1038" dy="552" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
       <root>
@@ -21,35 +21,9 @@
             <mxRectangle x="10" y="70" width="50" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <object label="%symbol%" placeholders="1" symbol="D" class_name="DelayBlock" block_name="x" id="WgBMcyxID5A1E6gqlP3p-4">
-          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" parent="WgBMcyxID5A1E6gqlP3p-3" vertex="1">
-            <mxGeometry x="166.44736842105263" y="113.14814814814815" width="80" height="80" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="WgBMcyxID5A1E6gqlP3p-5">
-          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" parent="WgBMcyxID5A1E6gqlP3p-4" vertex="1">
-            <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
-              <mxPoint x="5" y="-7" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="IC" class_name="InputPortBlock" id="WgBMcyxID5A1E6gqlP3p-6">
-          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" parent="WgBMcyxID5A1E6gqlP3p-4" vertex="1">
-            <mxGeometry y="17.5" width="10" height="15" as="geometry">
-              <mxPoint x="-4" y="-8" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="IN1" class_name="InputPortBlock" id="WgBMcyxID5A1E6gqlP3p-7">
-          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" parent="WgBMcyxID5A1E6gqlP3p-4" vertex="1">
-            <mxGeometry y="47.5" width="10" height="15" as="geometry">
-              <mxPoint x="-4" y="-8" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
         <object label="%value%" placeholders="1" value="0" block_name="x0" class_name="ConstantBlock" id="WgBMcyxID5A1E6gqlP3p-8">
           <mxCell style="ellipse;whiteSpace=wrap;html=1;comic=0;fillColor=#ffffff;fontSize=24;align=center;allowArrows=0;connectable=0;container=1;collapsible=0;recursiveResize=1;direction=west;resizable=0;" parent="WgBMcyxID5A1E6gqlP3p-3" vertex="1">
-            <mxGeometry x="16.44736842105263" y="13.148148148148152" width="80" height="80" as="geometry" />
+            <mxGeometry x="396.4473684210526" y="13.148148148148152" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="WgBMcyxID5A1E6gqlP3p-9">
@@ -59,9 +33,6 @@
             </mxGeometry>
           </mxCell>
         </object>
-        <mxCell id="WgBMcyxID5A1E6gqlP3p-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-9" target="WgBMcyxID5A1E6gqlP3p-6" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <object label="%value%" placeholders="1" value="1" block_name="initdxdt" class_name="ConstantBlock" id="WgBMcyxID5A1E6gqlP3p-23">
           <mxCell style="ellipse;whiteSpace=wrap;html=1;comic=0;fillColor=#ffffff;fontSize=24;align=center;allowArrows=0;connectable=0;container=1;collapsible=0;recursiveResize=1;direction=west;resizable=0;" parent="WgBMcyxID5A1E6gqlP3p-3" vertex="1">
             <mxGeometry x="226.44736842105263" y="13.148148148148152" width="80" height="80" as="geometry" />
@@ -102,7 +73,7 @@
         </object>
         <object label="0.1" placeholders="1" value="0.1" block_name="deltaT" class_name="ConstantBlock" id="WgBMcyxID5A1E6gqlP3p-61">
           <mxCell style="ellipse;whiteSpace=wrap;html=1;comic=0;fillColor=#ffffff;fontSize=24;align=center;allowArrows=0;connectable=0;container=1;collapsible=0;recursiveResize=1;direction=west;resizable=0;" parent="WgBMcyxID5A1E6gqlP3p-3" vertex="1">
-            <mxGeometry x="46.44736842105263" y="393.14814814814815" width="80" height="80" as="geometry" />
+            <mxGeometry x="136.44736842105263" y="393.14814814814815" width="80" height="80" as="geometry" />
           </mxCell>
         </object>
         <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="WgBMcyxID5A1E6gqlP3p-62">
@@ -114,16 +85,6 @@
         </object>
         <mxCell id="7IsC0muY9sn0-m5gdAO--64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.2;entryY=0.567;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-32" target="WgBMcyxID5A1E6gqlP3p-36" edge="1">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="7IsC0muY9sn0-m5gdAO--70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-32" target="WgBMcyxID5A1E6gqlP3p-7" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="756" y="153" />
-              <mxPoint x="756" y="263" />
-              <mxPoint x="146" y="263" />
-              <mxPoint x="146" y="168" />
-            </Array>
-          </mxGeometry>
         </mxCell>
         <object label="%symbol%" placeholders="1" symbol="&amp;part;" class_name="DerivatorBlock" block_name="" id="CZ0sbhZwY290FykPwCE_-1">
           <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" parent="WgBMcyxID5A1E6gqlP3p-3" vertex="1">
@@ -197,9 +158,6 @@
         <mxCell id="CZ0sbhZwY290FykPwCE_-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="CZ0sbhZwY290FykPwCE_-2" target="CZ0sbhZwY290FykPwCE_-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CZ0sbhZwY290FykPwCE_-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-5" target="CZ0sbhZwY290FykPwCE_-4" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="CZ0sbhZwY290FykPwCE_-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-62" target="CZ0sbhZwY290FykPwCE_-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
@@ -219,12 +177,16 @@
         <mxCell id="CZ0sbhZwY290FykPwCE_-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-24" target="CZ0sbhZwY290FykPwCE_-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="CZ0sbhZwY290FykPwCE_-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-9" target="CZ0sbhZwY290FykPwCE_-8" edge="1">
+        <mxCell id="HZwcf3je5Jy93hGd9WJ9-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-9" target="CZ0sbhZwY290FykPwCE_-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HZwcf3je5Jy93hGd9WJ9-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WgBMcyxID5A1E6gqlP3p-3" source="WgBMcyxID5A1E6gqlP3p-32" target="CZ0sbhZwY290FykPwCE_-4">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="96" y="3" />
-              <mxPoint x="466" y="3" />
-              <mxPoint x="466" y="121" />
+              <mxPoint x="756" y="153" />
+              <mxPoint x="756" y="283" />
+              <mxPoint x="196" y="283" />
+              <mxPoint x="196" y="153" />
             </Array>
           </mxGeometry>
         </mxCell>
