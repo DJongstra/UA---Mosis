@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-27T12:37:03.968Z" agent="5.0 (Windows)" etag="xa8pecj5EH6YRlvreJ-1" version="13.10.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-27T12:42:49.057Z" agent="5.0 (Windows)" etag="OQOTpmSPb9WiZRjj6BP2" version="13.10.3" type="github">
   <diagram id="HS0Vx-BH-4y3R0FxvZpo" name="Page-1">
     <mxGraphModel dx="528" dy="538" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
       <root>
@@ -40,28 +40,6 @@
             </mxGeometry>
           </mxCell>
         </object>
-        <object label="%symbol%" placeholders="1" symbol="C" class_name="ComputerBlock" block_name="" id="es2zOFlgJacaEg_o47Cl-33">
-          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;comic=0;fillColor=#FFFFFF;fontSize=36;align=center;resizable=0;container=1;collapsible=0;points=[];allowArrows=0;" vertex="1" parent="es2zOFlgJacaEg_o47Cl-3">
-            <mxGeometry x="400" y="190" width="80" height="80" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="OUT1" class_name="OutputPortBlock" id="es2zOFlgJacaEg_o47Cl-34">
-          <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="es2zOFlgJacaEg_o47Cl-33">
-            <mxGeometry x="70" y="32.5" width="10" height="15" as="geometry">
-              <mxPoint x="5" y="-7" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
-        <object label="%name%" placeholders="1" name="IN1" class_name="InputPortBlock" id="es2zOFlgJacaEg_o47Cl-35">
-          <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="es2zOFlgJacaEg_o47Cl-33">
-            <mxGeometry y="32.5" width="10" height="15" as="geometry">
-              <mxPoint x="-4" y="-8" as="offset" />
-            </mxGeometry>
-          </mxCell>
-        </object>
-        <mxCell id="es2zOFlgJacaEg_o47Cl-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="es2zOFlgJacaEg_o47Cl-3" source="es2zOFlgJacaEg_o47Cl-31" target="es2zOFlgJacaEg_o47Cl-35">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <object label="%name%" placeholders="1" name="speed" class_name="OutputPortBlock" id="es2zOFlgJacaEg_o47Cl-37">
           <mxCell style="triangle;fillColor=#ffffff;fontSize=14;points=[[1,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=left;spacingLeft=4;spacingRight=0;html=1;comic=0;treeFolding=0;treeMoving=0;movable=1;resizable=0;rotatable=1;deletable=1;editable=1;connectable=1;movableLabel=1;spacing=2;aspect=fixed;" vertex="1" parent="es2zOFlgJacaEg_o47Cl-3">
             <mxGeometry x="620" y="223" width="10" height="15" as="geometry">
@@ -69,7 +47,7 @@
             </mxGeometry>
           </mxCell>
         </object>
-        <mxCell id="es2zOFlgJacaEg_o47Cl-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.2;entryY=0.533;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="es2zOFlgJacaEg_o47Cl-3" source="es2zOFlgJacaEg_o47Cl-34" target="es2zOFlgJacaEg_o47Cl-37">
+        <mxCell id="es2zOFlgJacaEg_o47Cl-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="es2zOFlgJacaEg_o47Cl-3" source="es2zOFlgJacaEg_o47Cl-31" target="es2zOFlgJacaEg_o47Cl-37">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="" placeholders="1" class_name="Time" id="es2zOFlgJacaEg_o47Cl-4">
