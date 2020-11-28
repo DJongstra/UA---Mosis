@@ -4,7 +4,7 @@ from CBDMultipleOutput.Source.CBD import BaseBlock
 class ComputerBlock(BaseBlock):
 
     """
-    The combuter block implements a predefined trajectory over time
+    The computer block implements a predefined trajectory over time
     """
 
     def __init__(self, block_name):
