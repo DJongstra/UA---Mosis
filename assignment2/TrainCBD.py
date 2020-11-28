@@ -4,6 +4,26 @@
 
 from CBDMultipleOutput.Source.CBD import *
 from ComputerBlock import ComputerBlock
+from bokeh.plotting import figure, output_file, show
+from bokeh.palettes import Dark2_5 as palette
+import itertools
+
+def plot_signal(block, signals, title):
+    colors = itertools.cycle(palette)
+    times = []
+    outputs = []
+
+    for signal in signals:
+        tvpl = block.getSignal(signal)
+        times = [t for t, _ in tvpl]
+        outputs.append([v for _, v in tvpl])
+
+    # Plot
+    output_file("%s.html" % title.replace(' ', '_').lower(), title=title)
+    p = figure(title=title, x_axis_label='time', y_axis_label='N')
+    for i in range(len(signals)):
+        p.circle(x=times, y=outputs[i], legend_label=signals[i], color=next(colors))
+    show(p)
 
 
 def get_block(block, path=""):
@@ -72,10 +92,11 @@ class TrainCBD(CBD):
 		self.addConnection('pid1', 'pl1', input_port_name='F_Traction', output_port_name='OUT_TRACTION')
 		self.addConnection('pl1', 'V_TRAIN', output_port_name='OUT_vtrain')
 		self.addConnection('ttb1', 'cb1')
+		self.addConnection('cb1', 'OUT_CB')
 
 
 class TrainTimeBlock(CBD):
-	def __init__(self, block_name, h=(0.1)):
+	def __init__(self, block_name, h=(1.0)):
 		CBD.__init__(self, block_name, input_ports=[], output_ports=['OUT_DELTA', 'OUT1'])
 		
 		# Create the blocks
@@ -149,7 +170,7 @@ if __name__ == '__main__':
 
 
 	# Run the simulation
-	cbd.run(10)
+	cbd.run(350)
 
 	# process simulation results
-	# TODO: process your results
+	plot_signal(cbd, ['V_TRAIN', 'OUT_CB'], 'TrainCBD')

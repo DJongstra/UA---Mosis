@@ -89,6 +89,7 @@ class BaseBlock:
         input_port = "IN1" if input_port is None else input_port
         curIteration = -1 if curIteration is None else curIteration
 
+        print(self.getBlockName())
         (incoming_block, out_port_name) = self._linksIn[input_port]
         return incoming_block.getSignal(out_port_name)[curIteration]
 
@@ -959,22 +960,19 @@ class IntegratorBlock(CBD):
         self.addBlock(ProductBlock(block_name='2XOIrNULSFbv1QRsnGYl-13'))
         self.addBlock(AdderBlock(block_name='2XOIrNULSFbv1QRsnGYl-20'))
         self.addBlock(DelayBlock(block_name='2XOIrNULSFbv1QRsnGYl-26'))
-        self.addBlock(IntegratedIC(block_name='2XOIrNULSFbv1QRsnGYl-70'))
         self.addBlock(DelayBlock(block_name='m2JUptWFHnOxhU3OeOcB-1'))
+        self.addBlock(ConstantBlock(block_name='DRaCiBpXahiLFgHaOBvQ-2', value=(0)))
 
         # Connect the blocks
-        self.addConnection('IN1', '2XOIrNULSFbv1QRsnGYl-70')
         self.addConnection('IN1', 'm2JUptWFHnOxhU3OeOcB-1')
-        self.addConnection('IN1', 'm2JUptWFHnOxhU3OeOcB-1', input_port_name='IC')
         self.addConnection('delta_t', '2XOIrNULSFbv1QRsnGYl-13')
-        self.addConnection('delta_t', '2XOIrNULSFbv1QRsnGYl-70', input_port_name='delta_t')
-        self.addConnection('IC', '2XOIrNULSFbv1QRsnGYl-70', input_port_name='IC')
+        self.addConnection('IC', '2XOIrNULSFbv1QRsnGYl-26', input_port_name='IC')
         self.addConnection('2XOIrNULSFbv1QRsnGYl-13', '2XOIrNULSFbv1QRsnGYl-20')
         self.addConnection('2XOIrNULSFbv1QRsnGYl-20', '2XOIrNULSFbv1QRsnGYl-26')
         self.addConnection('2XOIrNULSFbv1QRsnGYl-26', '2XOIrNULSFbv1QRsnGYl-20')
         self.addConnection('2XOIrNULSFbv1QRsnGYl-20', 'OUT1')
-        self.addConnection('2XOIrNULSFbv1QRsnGYl-70', '2XOIrNULSFbv1QRsnGYl-26', input_port_name='IC')
         self.addConnection('m2JUptWFHnOxhU3OeOcB-1', '2XOIrNULSFbv1QRsnGYl-13')
+        self.addConnection('DRaCiBpXahiLFgHaOBvQ-2', 'm2JUptWFHnOxhU3OeOcB-1', input_port_name='IC')
 
 
 """ This module implements a dependency graph
