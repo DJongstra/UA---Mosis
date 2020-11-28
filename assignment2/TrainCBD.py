@@ -8,6 +8,9 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Dark2_5 as palette
 import itertools
 
+from TrainCostModelBlock import CostFunctionBlock
+
+
 def plot_signal(block, signals, title):
     colors = itertools.cycle(palette)
     times = []
@@ -35,13 +38,10 @@ def get_block(block, path=""):
 
 
 class PIDControllerBlock(CBD):
-	def __init__(self, block_name, Kp=(200), Ki=(0), Kd=(0)):
-		CBD.__init__(self, block_name, input_ports=['delta_v', 'delta_t'], output_ports=['OUT_TRACTION'])
+	def __init__(self, block_name):
+		CBD.__init__(self, block_name, input_ports=['delta_v', 'delta_t', 'Kd', 'Ki', 'Kp'], output_ports=['OUT_TRACTION'])
 		
 		# Create the blocks
-		self.addBlock(ConstantBlock(block_name='KI', value=(Ki)))
-		self.addBlock(ConstantBlock(block_name='KP', value=(Kp)))
-		self.addBlock(ConstantBlock(block_name='KD', value=(Kd)))
 		self.addBlock(ProductBlock(block_name='prodKpDv'))
 		self.addBlock(IntegratorBlock(block_name='integral'))
 		self.addBlock(ProductBlock(block_name='prodKiIntDvDt'))
@@ -56,12 +56,12 @@ class PIDControllerBlock(CBD):
 		self.addConnection('delta_v', 'integral')
 		self.addConnection('delta_v', 'derivative', input_port_name='IC')
 		self.addConnection('delta_v', 'integral', input_port_name='IC')
-		self.addConnection('KP', 'prodKpDv')
+		self.addConnection('Kp', 'prodKpDv')
 		self.addConnection('delta_t', 'integral', input_port_name='delta_t')
 		self.addConnection('delta_t', 'derivative', input_port_name='delta_t')
 		self.addConnection('integral', 'prodKiIntDvDt')
-		self.addConnection('KI', 'prodKiIntDvDt')
-		self.addConnection('KD', 'prodKdDvdt')
+		self.addConnection('Ki', 'prodKiIntDvDt')
+		self.addConnection('Kd', 'prodKdDvdt')
 		self.addConnection('derivative', 'prodKdDvdt')
 		self.addConnection('prodKpDv', 'sum1')
 		self.addConnection('prodKiIntDvDt', 'sum1')
@@ -71,28 +71,36 @@ class PIDControllerBlock(CBD):
 
 
 class TrainCBD(CBD):
-	def __init__(self, block_name):
-		CBD.__init__(self, block_name, input_ports=[], output_ports=['V_TRAIN', 'OUT_CB'])
+	def __init__(self, block_name, Kd=(0), Ki=(0), Kp=(200)):
+		CBD.__init__(self, block_name, input_ports=[], output_ports=['V_TRAIN', 'OUT_CB', 'X_PASSENGER', 'OUT_DELTA'])
 		
 		# Create the blocks
 		self.addBlock(TrainTimeBlock(block_name='ttb1'))
-		self.addBlock(PlantBlock(block_name='pl1'))
-		self.addBlock(PIDControllerBlock(block_name='pid1'))
 		self.addBlock(ComputerBlock(block_name='cb1'))
 		self.addBlock(AdderBlock(block_name='sum1'))
 		self.addBlock(NegatorBlock(block_name='negator1'))
+		self.addBlock(PlantBlock(block_name='pl1'))
+		self.addBlock(PIDControllerBlock(block_name='VedtGfHMBqIz2XoiqKa8-12'))
+		self.addBlock(ConstantBlock(block_name='KI', value=(Ki)))
+		self.addBlock(ConstantBlock(block_name='KD', value=(Kd)))
+		self.addBlock(ConstantBlock(block_name='KP', value=(Kp)))
 		
 		# Connect the blocks
 		self.addConnection('cb1', 'sum1')
-		self.addConnection('pl1', 'negator1', output_port_name='OUT_vtrain')
-		self.addConnection('sum1', 'pid1', input_port_name='delta_v')
-		self.addConnection('ttb1', 'pid1', input_port_name='delta_t', output_port_name='OUT_DELTA')
+		self.addConnection('sum1', 'VedtGfHMBqIz2XoiqKa8-12', input_port_name='delta_v')
+		self.addConnection('ttb1', 'VedtGfHMBqIz2XoiqKa8-12', input_port_name='delta_t', output_port_name='OUT_DELTA')
 		self.addConnection('ttb1', 'pl1', input_port_name='delta_t', output_port_name='OUT_DELTA')
 		self.addConnection('negator1', 'sum1')
-		self.addConnection('pid1', 'pl1', input_port_name='F_Traction', output_port_name='OUT_TRACTION')
-		self.addConnection('pl1', 'V_TRAIN', output_port_name='OUT_vtrain')
+		self.addConnection('VedtGfHMBqIz2XoiqKa8-12', 'pl1', input_port_name='F_Traction', output_port_name='OUT_TRACTION')
 		self.addConnection('ttb1', 'cb1')
 		self.addConnection('cb1', 'OUT_CB')
+		self.addConnection('pl1', 'negator1', output_port_name='vTrain')
+		self.addConnection('pl1', 'V_TRAIN', output_port_name='vTrain')
+		self.addConnection('pl1', 'X_PASSENGER', output_port_name='xPassenger')
+		self.addConnection('ttb1', 'OUT_DELTA', output_port_name='OUT_DELTA')
+		self.addConnection('KD', 'VedtGfHMBqIz2XoiqKa8-12', input_port_name='Kd')
+		self.addConnection('KP', 'VedtGfHMBqIz2XoiqKa8-12', input_port_name='Kp')
+		self.addConnection('KI', 'VedtGfHMBqIz2XoiqKa8-12', input_port_name='Ki')
 
 
 class TrainTimeBlock(CBD):
@@ -114,7 +122,7 @@ class TrainTimeBlock(CBD):
 		self.addConnection('delay1', 'OUT1')
 
 
-class PlantBlock(CBD):
+class TrainBlock(CBD):
 	def __init__(self, block_name):
 		CBD.__init__(self, block_name, input_ports=['F_Traction', 'delta_t'], output_ports=['OUT_vtrain'])
 		
@@ -165,9 +173,93 @@ class PlantBlock(CBD):
 		self.addConnection('integral1', 'OUT_vtrain')
 
 
+class PassengerBlock(CBD):
+	def __init__(self, block_name):
+		CBD.__init__(self, block_name, input_ports=['F_Traction', 'delta_t'], output_ports=['OUT_xPassenger'])
+		
+		# Create the blocks
+		self.addBlock(ConstantBlock(block_name='mTrain', value=(5555)))
+		self.addBlock(ConstantBlock(block_name='mPassenger', value=(73)))
+		self.addBlock(AdderBlock(block_name='sum1'))
+		self.addBlock(InverterBlock(block_name='inverter1'))
+		self.addBlock(ProductBlock(block_name='product1'))
+		self.addBlock(ProductBlock(block_name='product4'))
+		self.addBlock(NegatorBlock(block_name='negator1'))
+		self.addBlock(NegatorBlock(block_name='negator2'))
+		self.addBlock(ConstantBlock(block_name='k', value=(300)))
+		self.addBlock(ConstantBlock(block_name='c', value=(150)))
+		self.addBlock(ProductBlock(block_name='product2'))
+		self.addBlock(ProductBlock(block_name='product3'))
+		self.addBlock(AdderBlock(block_name='sum2'))
+		self.addBlock(AdderBlock(block_name='sum3'))
+		self.addBlock(IntegratorBlock(block_name='integral1'))
+		self.addBlock(ConstantBlock(block_name='IC', value=(0)))
+		self.addBlock(IntegratorBlock(block_name='integral2'))
+		self.addBlock(NegatorBlock(block_name='negator3'))
+		
+		# Connect the blocks
+		self.addConnection('mTrain', 'sum1')
+		self.addConnection('mPassenger', 'sum1')
+		self.addConnection('sum1', 'inverter1')
+		self.addConnection('F_Traction', 'product1')
+		self.addConnection('inverter1', 'product1')
+		self.addConnection('product1', 'product4')
+		self.addConnection('mPassenger', 'product4')
+		self.addConnection('product4', 'negator1')
+		self.addConnection('negator2', 'product2')
+		self.addConnection('k', 'product2')
+		self.addConnection('c', 'product3')
+		self.addConnection('product2', 'sum2')
+		self.addConnection('product3', 'sum2')
+		self.addConnection('negator1', 'sum3')
+		self.addConnection('sum2', 'sum3')
+		self.addConnection('sum3', 'integral1')
+		self.addConnection('IC', 'integral1', input_port_name='IC')
+		self.addConnection('integral1', 'negator3')
+		self.addConnection('IC', 'integral2', input_port_name='IC')
+		self.addConnection('integral2', 'negator2')
+		self.addConnection('integral1', 'integral2')
+		self.addConnection('integral2', 'OUT_xPassenger')
+		self.addConnection('delta_t', 'integral1', input_port_name='delta_t')
+		self.addConnection('delta_t', 'integral2', input_port_name='delta_t')
+		self.addConnection('negator3', 'product3')
+
+
+class PlantBlock(CBD):
+	def __init__(self, block_name):
+		CBD.__init__(self, block_name, input_ports=['F_Traction', 'delta_t'], output_ports=['xPassenger', 'vTrain'])
+		
+		# Create the blocks
+		self.addBlock(PassengerBlock(block_name='pa'))
+		self.addBlock(TrainBlock(block_name='tr'))
+		
+		# Connect the blocks
+		self.addConnection('F_Traction', 'tr', input_port_name='F_Traction')
+		self.addConnection('F_Traction', 'pa', input_port_name='F_Traction')
+		self.addConnection('delta_t', 'tr', input_port_name='delta_t')
+		self.addConnection('delta_t', 'pa', input_port_name='delta_t')
+		self.addConnection('tr', 'vTrain', output_port_name='OUT_vtrain')
+		self.addConnection('pa', 'xPassenger', output_port_name='OUT_xPassenger')
+
+
+class TrainTuningBlock(CBD):
+	def __init__(self, block_name, Kd=(0), Ki=(0), Kp=(200)):
+		CBD.__init__(self, block_name, input_ports=[], output_ports=['OUT_COST'])
+		
+		# Create the blocks
+		self.addBlock(CostFunctionBlock(block_name='cfb1'))
+		self.addBlock(TrainCBD(block_name='trc', Kd=Kd, Ki=Ki, Kp=Kp))
+		
+		# Connect the blocks
+		self.addConnection('trc', 'cfb1', input_port_name='InVTrain', output_port_name='V_TRAIN')
+		self.addConnection('trc', 'cfb1', input_port_name='InXPerson', output_port_name='X_PASSENGER')
+		self.addConnection('trc', 'cfb1', input_port_name='InDelta', output_port_name='OUT_DELTA')
+		self.addConnection('trc', 'cfb1', input_port_name='InVi', output_port_name='OUT_CB')
+		self.addConnection('cfb1', 'OUT_COST', output_port_name='OutCost')
+
+
 if __name__ == '__main__':
 	cbd = TrainCBD("TrainCBD")
-
 
 	# Run the simulation
 	cbd.run(350)
