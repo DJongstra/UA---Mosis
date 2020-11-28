@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-28T15:53:57.031Z" agent="5.0 (Windows)" etag="mEdmH0IfMjn9KT4ri-rb" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-28T16:14:47.895Z" agent="5.0 (Windows)" etag="HKVZS0pSgTR2rElgGyug" version="13.10.4" type="github">
   <diagram id="EyM4HRSLaoKD3MypqkAT" name="Page-1">
     <mxGraphModel dx="1278" dy="1721" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -238,7 +238,14 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cr9wBLP2Q1uKWm_SEYvH-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="cr9wBLP2Q1uKWm_SEYvH-3" source="cr9wBLP2Q1uKWm_SEYvH-8" target="cr9wBLP2Q1uKWm_SEYvH-39">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="353" />
+              <mxPoint x="30" y="95" />
+              <mxPoint x="320" y="95" />
+              <mxPoint x="320" y="45" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <object label="%name%" placeholders="1" name="delta_t" class_name="InputPortBlock" id="cr9wBLP2Q1uKWm_SEYvH-8">
           <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="cr9wBLP2Q1uKWm_SEYvH-3">
@@ -248,7 +255,12 @@
           </mxCell>
         </object>
         <mxCell id="cr9wBLP2Q1uKWm_SEYvH-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="cr9wBLP2Q1uKWm_SEYvH-3" source="cr9wBLP2Q1uKWm_SEYvH-10" target="cr9wBLP2Q1uKWm_SEYvH-37">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="45" />
+              <mxPoint x="260" y="78" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <object label="%name%" placeholders="1" name="IC" class_name="InputPortBlock" id="cr9wBLP2Q1uKWm_SEYvH-10">
           <mxCell style="triangle;fontSize=14;points=[[0,0.5]];allowArrows=0;verticalAlign=middle;horizontal=1;spacingTop=0;align=right;spacingLeft=0;spacingRight=8;html=1;comic=0;treeFolding=0;treeMoving=0;resizable=0;movableLabel=1;spacing=2;aspect=fixed;fillColor=#000000;" vertex="1" parent="cr9wBLP2Q1uKWm_SEYvH-3">
