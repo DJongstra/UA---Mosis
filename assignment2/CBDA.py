@@ -86,11 +86,11 @@ class SinFunc(CBD):
 
 
 if __name__ == '__main__':
-	cbd = CBDA("CBDA")
+	cbd = CBDA("CBDA", deltaT=0.001)
 
 
 	# Run the simulation
-	cbd.run(200)
+	cbd.run(20000)
 
 	# process simulation results
 	plot_signal(cbd, ['OUT1'], 'Harmonic A')

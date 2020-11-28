@@ -1,10 +1,6 @@
 from CBDMultipleOutput.Source.CBD import BaseBlock
 
 class ComputerBlock(BaseBlock):
-    """
-    The negator block will output the value of the input multiplied with -1
-    """
-
     def __init__(self, block_name):
         BaseBlock.__init__(self, block_name, ["IN1"], ["OUT1"])
 
