@@ -89,7 +89,7 @@ class BaseBlock:
         input_port = "IN1" if input_port is None else input_port
         curIteration = -1 if curIteration is None else curIteration
 
-        print(self.getBlockName())
+        # print(self.getBlockName())
         (incoming_block, out_port_name) = self._linksIn[input_port]
         return incoming_block.getSignal(out_port_name)[curIteration]
 
