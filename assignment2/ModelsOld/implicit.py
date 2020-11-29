@@ -7,7 +7,7 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Dark2_5 as palette
 import itertools
 
-from LaTeXGenerator import LaTeXGenerator
+from ModelsOld.LaTeXGenerator import LaTeXGenerator
 
 
 def plot_signal(block, signals, title):

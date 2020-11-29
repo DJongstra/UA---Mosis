@@ -1,5 +1,5 @@
-from TrainCBD import TrainTuningBlock
-from TrainCostModelBlock import StopSimulationException
+from trainModel.TrainCBD import TrainTuningBlock
+from trainModel.TrainCostModelBlock import StopSimulationException
 
 
 def tune():

@@ -3,12 +3,12 @@
 #   drawio2cbd.py -e TrainCBD TrainCBD.drawio TrainCBD.py
 
 from CBDMultipleOutput.Source.CBD import *
-from ComputerBlock import ComputerBlock
+from trainModel.ComputerBlock import ComputerBlock
 from bokeh.plotting import figure, output_file, show
 from bokeh.palettes import Dark2_5 as palette
 import itertools
 
-from TrainCostModelBlock import CostFunctionBlock
+from trainModel.TrainCostModelBlock import CostFunctionBlock
 
 
 def plot_signal(block, signals, title):

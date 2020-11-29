@@ -31,7 +31,7 @@
 
      <p>
 	 In the file <a href="./CBDMultipleOutput/Source/CBD.py"><tt>CBD.py</tt></a> the implementation of both the IntegratorBlock and the DerivatorBlock can be found. This code is generated using the drawio CBD tool.
-	 The CBD itself is in fig. 1. This is an implementation of the approximating backward formula ( x(t)-x(t-deltaT) ) / deltaT with deltaT expected to be close to 0 for derivatives. This formula can be recognized in the CBD (fig. 1) by keeping in mind
+	 The CBD itself is in fig. 1. This is an implementation of the approximating formula ( x(t)-x(t-deltaT) ) / deltaT with deltaT expected to be close to 0 for derivatives. This formula can be recognized in the CBD (fig. 1) by keeping in mind
 	 that IN1 is the value of x(t) (x at time t). The delay block its output is x(t-deltaT), which will be negated and added to x(t) (IN1) to get the part x(t)-x(t-deltaT) of the formula.
 	 Then the input deltaT will be inverted and multiplied with the previous part we have gotten to obtain the full formula. The IC to the delay block in this CBD is not the inputted IC value, but the outcome of a special IC block.
 	 The reason behind this block is that the IC is for the value of the derivative at time zero and not the IC of the value x(0).
@@ -74,14 +74,14 @@
 	In fig. 6 both the CBD modeling the oscillator as the blocks used to determine the error are shown. The top part is the actual model. In this, two DerivatorBlocks are connected.
 	The second block is negated, which is the output of x. This x then becomes the input to the first DerivatorBlock for the next time step. x(0) is given to be 0, so the IC to the the second DerivatorBlock is 0.
 	Technically speaking you would have to negate the given x(0), as the output of the DerivatorBlock is negated before it is outputted. The value dx/dt for time 0 is given as 1, this is the IC to the first DerivatorBlock.
-	The simulation can be found in <a href="./CBDB.py"><tt>CBDB.py</tt></a>.
+	The simulation can be found in <a href="harmonicOscillator/CBDB.py"><tt>CBDB.py</tt></a>.
 	<br><br>
 	The CBD using IntegratorBlocks can be derived from CBDB. Generally speaking, integration is the inverse of the derivation. So, we should take the output of the DerivatorBlock as input to the IntegratorBlock to get the input to the DerivatorBlock.
 	In our case, it is mostly a simple replacement of the DerivatorBlocks in CBDB with IntegratorBlocks to get CBDA like in fig. 5. However, this time it is important to keep in mind the the value of x is negated before it is outputted.
 	Therefore, the IC to the first IntegratorBlock should be -1 instead of 1. When failing to do this, CBDA is half a period behind on CBDB.
 	<br><br>
 	The results of the simulation of CBDA and CBDB can be found in fig. 7 respectively fig. 8. This simulation uses 200 steps and is for a deltaT of 0.1 in this case. From these plots, we are expecting CBDA to diverge to unlimited, while CBDB converges to 0 when time is infinite.
-	The simulation can be found in <a href="./CBDA.py"><tt>CBDA.py</tt></a>.
+	The simulation can be found in <a href="harmonicOscillator/CBDA.py"><tt>CBDA.py</tt></a>.
     <figure>
 		<img src="./img/CBDA.png">
 		<figcaption>Figure 5: The CBD for the harmonic oscillator using IntegratorBlocks </figcaption>
@@ -147,8 +147,8 @@
  	<h2>Solution 2.6.2: Build and simulate the Driver-less train CBD Model - Joanna</h2>
 	<p>
 		Our implementation of the Driver-less CBD model features separate causal block diagrams that we merge into a causal block diagram that represents the complete Driver-less CBD model.
-		The blocks are implemented according to the equations included in the Assignment PDF and the full implementation is in the files <a href="./TrainCBD.drawio"><tt>TrainCBD.drawio</tt></a>
-		and <a href="./TrainCBD.py"><tt>TrainCBD.py</tt></a>
+		The blocks are implemented according to the equations included in the Assignment PDF and the full implementation is in the files <a href="trainModel/TrainCBD.drawio"><tt>TrainCBD.drawio</tt></a>
+		and <a href="trainModel/TrainCBD.py"><tt>TrainCBD.py</tt></a>
 		<br>
 		The blocks that make up the Driver-less train CBD are displayed in figures 15 to 20.
 	</p>
@@ -208,9 +208,9 @@
 
  	<h2>Solution 2.6.3:  Tune the PID controller - Together</h2>
 	<p>
-		We decided to tune our PID controller automatically by creating an extra block, <b>TrainTuningBlock</b> in <a href="./TrainCBD.drawio"><tt>TrainCBD.drawio</tt></a> that
+		We decided to tune our PID controller automatically by creating an extra block, <b>TrainTuningBlock</b> in <a href="trainModel/TrainCBD.drawio"><tt>TrainCBD.drawio</tt></a> that
 		features the CostFunctionBlock getting the output of TrainCBD as input and producing the cost. This allowed us to create a CBD that we could use in the tuning function in
-		<a href="./TrainTuning.py"><tt>TrainTuning.py</tt></a>, which tuning function produced the results in figure 24.
+		<a href="trainModel/TrainTuning.py"><tt>TrainTuning.py</tt></a>, which tuning function produced the results in figure 24.
 	</p>
 
 	<figure>
@@ -222,7 +222,7 @@
 		<figcaption>Figure 24: Tuning Results</figcaption>
 	</figure>
 	<p>
-		From the results, we can surmise that, within the limit, 9 is the most optimal value for Ki, with Kd in the range of 180 to 182 and Kp in the range of 565 to 570.
+		From the results, we can surmise that within the limits given in the assignment, 9 is the most optimal value for Ki, with Kd in the range of 180 to 182 and Kp in the range of 565 to 570.
 		We also see that Kp is further dependent on the value of Kd, as Kd increases by 1 the range of values of Kp for which we get an optimal result reduces by two.
 		The output of our simulation of the costs is in <a href="./pycharm_console.log"><tt>pycharm_console.log</tt></a>.
 	</p>
