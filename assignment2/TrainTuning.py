@@ -20,7 +20,6 @@ def tune():
 					cummulativeCost = cost.getSignal("OUT_COST")[-1].value
 					costs.append(cummulativeCost)
 					combinations[key] = cummulativeCost
-					# print(cummulativeCost)
 					print("Successful combination {} : [ Kd = {}, Ki = {}, Kp = {} ] COST : {}".format(i, Kd, Ki, Kp, cummulativeCost))
 				except StopSimulationException:
 					print("Not good")

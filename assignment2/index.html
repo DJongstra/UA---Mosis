@@ -104,12 +104,12 @@
      
     <h2>Solution 1.1.3: Measure Error - Daniëlle</h2>
 	 <p>
-	 For measuring the error of both CBDA and CBDB for different time steps, we first plot both simulations for a different deltaT. In fig. 9 and fig. 10 it can be seen that the resulting plots are much more like a graph of a sinus. The amount of simulation steps are set to 20000 to have a graph on the same time interval als with deltaT equal to 0.1.
+	 For measuring the error of both CBDA and CBDB for different time steps, we first plot both simulations for a different deltaT. In fig. 9 and fig. 10 it can be seen that the resulting plots are much more like a graph of a sinus. The amount of simulation steps are set to 20000 to have a graph on the same time interval with deltaT equal to 0.1.
 	 The accumulated error is decided using the blocks on the bottom of the model in both fig. 5 and fig. 6. The result of this error is for both models for deltaT equal to 0.1 can be found in fig. 11 and fig. 12.
 	 In these figures, it can be seen that the shape of both graphs is approximately the same. However, the accumulated error for CBDA is about 2 times larger than the error in CBDB. 
 	 The accumulated error for deltaT equal to 0.001 can be found in fig. 13 and fig. 14. The first thing to notice is that the shapes of the lines are still pretty much the same as the previous plots for deltaT=0.1.
 	 However, the error is much smaller for both CBDA and CBDB with deltaT 0.001. The error is now a little over 0.06 instead of being over 8 for CBDA and over 4 for CBDB. The difference between CBDA and CBDB is not as clear for deltaT 0.001 as it was for deltaT 0.1. 
-	 However, the error for still smaller in CBDB at the end of the simulation, even though the difference can hardly be noticed. Concluding, in case of a long running simulation it is better to use CBDB with a deltaT of 0.001.
+	 That said, the error is still smaller in CBDB at the end of the simulation, even though the difference can hardly be noticed. Concluding, in the case of a long running simulation it is better to use CBDB with a deltaT of 0.001.
 	 <figure>
 		<img src="./img/CBDA2.png">
 		<figcaption>Figure 9: Simulation of CBDA with time step deltaT=0.001 </figcaption>
@@ -133,7 +133,7 @@
 	<figure>
 		<img src="./img/CBDBerror2.png">
 		<figcaption>Figure 14: Accumulated error in CBDB with deltaT = 0.001 </figcaption>
-	</figure> 
+	</figure>
 	
 	 </p>
 	 
@@ -143,6 +143,90 @@
 	This is possible, because the input to this block is the current time. The output will be the ideal speed that was specified in the assignment for the current time. 
 	The implementation can be found in <a href="./CBDMultipleOutput\Source\ComputerBlock.py"><tt>ComputerBlock.py</tt></a>.
 	</p>
+
+ 	<h2>Solution 2.6.2: Build and simulate the Driver-less train CBD Model - Joanna</h2>
+	<p>
+		Our implementation of the Driver-less CBD model features separate causal block diagrams that we merge into a causal block diagram that represents the complete Driver-less CBD model.
+		The blocks are implemented according to the equations included in the Assignment PDF and the full implementation is in the files <a href="./TrainCBD.drawio"><tt>TrainCBD.drawio</tt></a>
+		and <a href="./TrainCBD.py"><tt>TrainCBD.py</tt></a>
+		<br>
+		The blocks that make up the Driver-less train CBD are displayed in figures 15 to 20.
+	</p>
+	<figure>
+		<img src="./img/PID.png">
+		<figcaption>Figure 15: PID Controller Block</figcaption>
+	</figure>
+
+ 	<p>
+		The Train Time Block has an extra property h, the time interval between two simulation steps, which we decided to initialise as 0.1.
+	</p>
+	<figure>
+		<img src="./img/Train Time.png">
+		<figcaption>Figure 16: Train Time Block</figcaption>
+	</figure>
+
+ 	<p>
+		In the case of the equations for the train and the passenger, we chose to implement the equations in two separate CBDs for clarity.
+	</p>
+	<figure>
+		<img src="./img/Train Block.png">
+		<figcaption>Figure 17: Train Block which outputs the velocity and acceleration of the train</figcaption>
+	</figure>
+	<figure>
+		<img src="./img/Passenger Block.png">
+		<figcaption>Figure 18: Passenger Block which outputs the displacement and acceleration fo the passenger</figcaption>
+	</figure>
+
+ 	<p>
+		After the blocks created in the former figures 17 and 18, the plant block is just a block that amalgamates the two and produces all their outputs.
+	</p>
+	<figure>
+		<img src="./img/Plant Block.png">
+		<figcaption>Figure 19: Plant Block</figcaption>
+	</figure>
+
+ 	<p>
+		The Train CBD has extra properties, Kd, Ki and Kp which are used later during the Tuning process.
+	</p>
+	<figure>
+		<img src="./img/Train CBD.png">
+		<figcaption>Figure 20: Train CBD</figcaption>
+	</figure>
+
+ 	<p>
+		After creating our CBD, we were able to generate the graphs in figures 21 and 22 in using the step size of 3500.
+	</p>
+
+	<figure>
+		<img src="./img/ideal vs actual.png">
+		<figcaption>Figure 21: Ideal and Actual velocity of train (200,0,0)</figcaption>
+	</figure>
+	<figure>
+		<img src="./img/train acceleration vs person displacement.png">
+		<figcaption>Figure 22: Person Displacement and Train acceleration (200,0,0)</figcaption>
+	</figure>
+
+ 	<h2>Solution 2.6.3:  Tune the PID controller - Together</h2>
+	<p>
+		We decided to tune our PID controller automatically by creating an extra block, <b>TrainTuningBlock</b> in <a href="./TrainCBD.drawio"><tt>TrainCBD.drawio</tt></a> that
+		features the CostFunctionBlock getting the output of TrainCBD as input and producing the cost. This allowed us to create a CBD that we could use in the tuning function in
+		<a href="./TrainTuning.py"><tt>TrainTuning.py</tt></a>, which tuning function produced the results in figure 24.
+	</p>
+
+	<figure>
+		<img src="./img/Train Tuning Block.png">
+		<figcaption>Figure 23: Train Tuning Block</figcaption>
+	</figure>
+	<figure>
+		<img src="./img/Tuning Results.png">
+		<figcaption>Figure 24: Tuning Results</figcaption>
+	</figure>
+	<p>
+		From the results, we can surmise that, within the limit, 9 is the most optimal value for Ki, with Kd in the range of 180 to 182 and Kp in the range of 565 to 570.
+		We also see that Kp is further dependent on the value of Kd, as Kd increases by 1 the range of values of Kp for which we get an optimal result reduces by two.
+		The output of our simulation of the costs is in <a href="./pycharm_console.log"><tt>pycharm_console.log</tt></a>.
+	</p>
+
 
  <hr noshade>
 
