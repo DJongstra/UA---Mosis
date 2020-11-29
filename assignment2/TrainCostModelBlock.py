@@ -61,7 +61,7 @@ class StopSimulationBlock(BaseBlock):
 
 	def compute(self, curIteration):
 		inSignalValue = self.getInputSignal(curIteration).value
-		print(inSignalValue)
+		# print(inSignalValue)
 		if inSignalValue > 0.0:
 			raise StopSimulationException()
 
