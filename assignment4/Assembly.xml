@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<place id="Accepted">
+<graphics>
+<position x="1185.0" y="300.0"/>
+</graphics>
+<name>
+<value>Accepted</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="AssemblerQ">
+<graphics>
+<position x="315.0" y="225.0"/>
+</graphics>
+<name>
+<value>AssemblerQ</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Assembling">
+<graphics>
+<position x="570.0" y="225.0"/>
+</graphics>
+<name>
+<value>Assembling</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>1</value>
+</capacity>
+</place>
+<place id="CubesInQ">
+<graphics>
+<position x="255.0" y="135.0"/>
+</graphics>
+<name>
+<value>CubesInQ</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="CylindersInQ">
+<graphics>
+<position x="270.0" y="315.0"/>
+</graphics>
+<name>
+<value>CylindersInQ</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Inspected">
+<graphics>
+<position x="1125.0" y="225.0"/>
+</graphics>
+<name>
+<value>Inspected</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Inspecting">
+<graphics>
+<position x="960.0" y="225.0"/>
+</graphics>
+<name>
+<value>Inspecting</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>1</value>
+</capacity>
+</place>
+<place id="InspQ">
+<graphics>
+<position x="765.0" y="225.0"/>
+</graphics>
+<name>
+<value>InspQ</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>10</value>
+</capacity>
+</place>
+<place id="Remake">
+<graphics>
+<position x="870.0" y="420.0"/>
+</graphics>
+<name>
+<value>Remake</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="RemakeQ">
+<graphics>
+<position x="555.0" y="345.0"/>
+</graphics>
+<name>
+<value>RemakeQ</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Thrashed">
+<graphics>
+<position x="1110.0" y="75.0"/>
+</graphics>
+<name>
+<value>Thrashed</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="Accept">
+<graphics>
+<position x="1185.0" y="240.0"/>
+</graphics>
+<name>
+<value>Accept</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Assembly">
+<graphics>
+<position x="420.0" y="225.0"/>
+</graphics>
+<name>
+<value>Assembly</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="CubeArrives">
+<graphics>
+<position x="150.0" y="150.0"/>
+</graphics>
+<name>
+<value>CubeArrives</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="CylinderArrives">
+<graphics>
+<position x="150.0" y="285.0"/>
+</graphics>
+<name>
+<value>CylinderArrives</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Insp">
+<graphics>
+<position x="825.0" y="225.0"/>
+</graphics>
+<name>
+<value>Insp</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="InspLeave">
+<graphics>
+<position x="1050.0" y="225.0"/>
+</graphics>
+<name>
+<value>InspLeave</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Remake">
+<graphics>
+<position x="870.0" y="330.0"/>
+</graphics>
+<name>
+<value>Remake</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Thrash">
+<graphics>
+<position x="1125.0" y="150.0"/>
+</graphics>
+<name>
+<value>Thrash</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="toInsp">
+<graphics>
+<position x="660.0" y="225.0"/>
+</graphics>
+<name>
+<value>toInsp</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Accept to Accepted" source="Accept" target="Accepted">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1197" y="267" curvePoint="false"/>
+<arcpath id="001" x="1197" y="297" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="AssemblerQ to Assembly" source="AssemblerQ" target="Assembly">
+<graphics/>
+<inscription>
+<value>Default,3</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="341" y="237" curvePoint="false"/>
+<arcpath id="001" x="426" y="238" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Assembling to toInsp" source="Assembling" target="toInsp">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="596" y="237" curvePoint="false"/>
+<arcpath id="001" x="666" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Assembly to Assembling" source="Assembly" target="Assembling">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="437" y="232" curvePoint="false"/>
+<arcpath id="001" x="567" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="CubeArrives to AssemblerQ" source="CubeArrives" target="AssemblerQ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="166" y="167" curvePoint="false"/>
+<arcpath id="001" x="313" y="231" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="CubeArrives to CubesInQ" source="CubeArrives" target="CubesInQ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="167" y="157" curvePoint="false"/>
+<arcpath id="001" x="252" y="148" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="CubesInQ to Assembly" source="CubesInQ" target="Assembly">
+<graphics/>
+<inscription>
+<value>Default,2</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="280" y="154" curvePoint="false"/>
+<arcpath id="001" x="427" y="231" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="CylinderArrives to AssemblerQ" source="CylinderArrives" target="AssemblerQ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="167" y="292" curvePoint="false"/>
+<arcpath id="001" x="312" y="241" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="CylinderArrives to CylindersInQ" source="CylinderArrives" target="CylindersInQ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="166" y="302" curvePoint="false"/>
+<arcpath id="001" x="267" y="323" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="CylindersInQ to Assembly" source="CylindersInQ" target="Assembly">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="295" y="319" curvePoint="false"/>
+<arcpath id="001" x="426" y="245" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Inspected to Accept" source="Inspected" target="Accept">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1151" y="241" curvePoint="false"/>
+<arcpath id="001" x="1191" y="252" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Inspected to Remake" source="Inspected" target="Remake">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1123" y="242" curvePoint="false"/>
+<arcpath id="001" x="886" y="342" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Inspected to Thrash" source="Inspected" target="Thrash">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1137" y="222" curvePoint="false"/>
+<arcpath id="001" x="1137" y="177" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Inspecting to InspLeave" source="Inspecting" target="InspLeave">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="986" y="237" curvePoint="false"/>
+<arcpath id="001" x="1056" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="InspLeave to Inspected" source="InspLeave" target="Inspected">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1066" y="237" curvePoint="false"/>
+<arcpath id="001" x="1122" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="InspQ to Insp" source="InspQ" target="Insp">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="791" y="237" curvePoint="false"/>
+<arcpath id="001" x="831" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Insp to Inspecting" source="Insp" target="Inspecting">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="841" y="237" curvePoint="false"/>
+<arcpath id="001" x="957" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="RemakeQ to Assembly" source="RemakeQ" target="Assembly">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="555" y="347" curvePoint="false"/>
+<arcpath id="001" x="436" y="242" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Remake to Remake" source="Remake" target="Remake">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="882" y="357" curvePoint="false"/>
+<arcpath id="001" x="882" y="417" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Remake to RemakeQ" source="Remake" target="RemakeQ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="876" y="342" curvePoint="false"/>
+<arcpath id="001" x="581" y="356" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Thrash to Thrashed" source="Thrash" target="Thrashed">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1137" y="147" curvePoint="false"/>
+<arcpath id="001" x="1125" y="101" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="toInsp to InspQ" source="toInsp" target="InspQ">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="676" y="237" curvePoint="false"/>
+<arcpath id="001" x="762" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
