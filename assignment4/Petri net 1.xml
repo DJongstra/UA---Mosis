@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="P_Activate_Accept">
+            <graphics>
+                <position x="1050.0" y="900.0"/>
+            </graphics>
+            <name>
+                <value>P_Activate_Accept</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Activate_Fix">
+            <graphics>
+                <position x="795.0" y="900.0"/>
+            </graphics>
+            <name>
+                <value>P_Activate_Fix</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Activate_Inspection">
+            <graphics>
+                <position x="906.4285714285716" y="401.4285714285714"/>
+            </graphics>
+            <name>
+                <value>P_Activate_Inspection</value>
+                <graphics>
+                    <offset x="35.71428571428571" y="-1.4285714285714284"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Activate_Inspection_Result">
+            <graphics>
+                <position x="1170.0" y="20.0"/>
+            </graphics>
+            <name>
+                <value>P_Activate_Inspection_Result</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Activate_Trash">
+            <graphics>
+                <position x="1275.0" y="900.0"/>
+            </graphics>
+            <name>
+                <value>P_Activate_Trash</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Assembly_Busy">
+            <graphics>
+                <position x="795.0" y="202.5"/>
+            </graphics>
+            <name>
+                <value>P_Assembly_Busy</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Assembly_Not_Busy">
+            <graphics>
+                <position x="800.7142857142858" y="311.25"/>
+            </graphics>
+            <name>
+                <value>P_Assembly_Not_Busy</value>
+                <graphics>
+                    <offset x="57.142857142857146" y="-2.857142857142858"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Count_Accepted">
+            <graphics>
+                <position x="1215.0" y="1275.0"/>
+            </graphics>
+            <name>
+                <value>P_Count_Accepted</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Count_Fixed">
+            <graphics>
+                <position x="960.0" y="1275.0"/>
+            </graphics>
+            <name>
+                <value>P_Count_Fixed</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Count_Rejected">
+            <graphics>
+                <position x="1455.0" y="1275.0"/>
+            </graphics>
+            <name>
+                <value>P_Count_Rejected</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Count_Steps">
+            <graphics>
+                <position x="155.0" y="915.0"/>
+            </graphics>
+            <name>
+                <value>P_Count_Steps</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Cube_Assembly_Buffer">
+            <graphics>
+                <position x="577.5" y="97.5"/>
+            </graphics>
+            <name>
+                <value>P_Cube_Assembly_Buffer</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Cylinder_Assembly_Buffer">
+            <graphics>
+                <position x="601.875" y="337.5"/>
+            </graphics>
+            <name>
+                <value>P_Cylinder_Assembly_Buffer</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_End_Time_Step">
+            <graphics>
+                <position x="360.0" y="771.4285714285713"/>
+            </graphics>
+            <name>
+                <value>P_End_Time_Step</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Inspector_Busy">
+            <graphics>
+                <position x="1125.0" y="202.5"/>
+            </graphics>
+            <name>
+                <value>P_Inspector_Busy</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Inspector_Not_Busy">
+            <graphics>
+                <position x="1350.0" y="200.625"/>
+            </graphics>
+            <name>
+                <value>P_Inspector_Not_Busy</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Schedule_At_Assembly">
+            <graphics>
+                <position x="535.7142857142858" y="484.2857142857142"/>
+            </graphics>
+            <name>
+                <value>P_Schedule_At_Assembly</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Start_Inspection">
+            <graphics>
+                <position x="1071.4285714285716" y="567.8571428571429"/>
+            </graphics>
+            <name>
+                <value>P_Start_Inspection</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Start_Operation">
+            <graphics>
+                <position x="165.0" y="450.0"/>
+            </graphics>
+            <name>
+                <value>P_Start_Operation</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Time_Arrival">
+            <graphics>
+                <position x="290.71428571428567" y="559.2857142857143"/>
+            </graphics>
+            <name>
+                <value>P_Time_Arrival</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Time_At_Assembly">
+            <graphics>
+                <position x="671.4285714285713" y="565.7142857142858"/>
+            </graphics>
+            <name>
+                <value>P_Time_At_Assembly</value>
+                <graphics>
+                    <offset x="42.857142857142854" y="-5.7142857142857135"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Time_At_Inspection">
+            <graphics>
+                <position x="795.0" y="675.0"/>
+            </graphics>
+            <name>
+                <value>P_Time_At_Inspection</value>
+                <graphics>
+                    <offset x="108.57142857142857" y="54.28571428571426"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P_Trigger_Arrival">
+            <graphics>
+                <position x="318.75" y="206.25"/>
+            </graphics>
+            <name>
+                <value>P_Trigger_Arrival</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="P22">
+            <graphics>
+                <position x="638.5714285714286" y="372.85714285714283"/>
+            </graphics>
+            <name>
+                <value>P22</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="T_Activate_Inspection_Results">
+            <graphics>
+                <position x="1170.0" y="640.0"/>
+            </graphics>
+            <name>
+                <value>T_Activate_Inspection_Results</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Assembly_To_Inspector">
+            <graphics>
+                <position x="975.0" y="202.5"/>
+            </graphics>
+            <name>
+                <value>T_Assembly_To_Inspector</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Buffers_To_Assembly">
+            <graphics>
+                <position x="660.0" y="202.5"/>
+            </graphics>
+            <name>
+                <value>T_Buffers_To_Assembly</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Cube_Arrival_To_Assembly">
+            <graphics>
+                <position x="405.0" y="97.5"/>
+            </graphics>
+            <name>
+                <value>T_Cube_Arrival_To_Assembly</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Cylinder_Arrival_To_Assembly">
+            <graphics>
+                <position x="405.0" y="337.5"/>
+            </graphics>
+            <name>
+                <value>T_Cylinder_Arrival_To_Assembly</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Go_Back_To_Beginning">
+            <graphics>
+                <position x="162.85714285714286" y="784.2857142857142"/>
+            </graphics>
+            <name>
+                <value>T_Go_Back_To_Beginning</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Move_To_Assembly">
+            <graphics>
+                <position x="390.4545454545454" y="562.9220779220778"/>
+            </graphics>
+            <name>
+                <value>T_Move_To_Assembly</value>
+                <graphics>
+                    <offset x="111.73160173160176" y="61.5151515151515"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Move_To_Inspection">
+            <graphics>
+                <position x="865.0000000000001" y="560.0"/>
+            </graphics>
+            <name>
+                <value>T_Move_To_Inspection</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Move_To_Inspection_Result">
+            <graphics>
+                <position x="590.0" y="770.0"/>
+            </graphics>
+            <name>
+                <value>T_Move_To_Inspection_Result</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Start">
+            <graphics>
+                <position x="165.0" y="208.125"/>
+            </graphics>
+            <name>
+                <value>T_Start</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_Start_Assembling">
+            <graphics>
+                <position x="682.9870129870129" y="408.7012987012987"/>
+            </graphics>
+            <name>
+                <value>T_Start_Assembling</value>
+                <graphics>
+                    <offset x="133.57142857142858" y="47.857142857142854"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_To_Accept">
+            <graphics>
+                <position x="1110.0" y="952.5"/>
+            </graphics>
+            <name>
+                <value>T_To_Accept</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_To_Fix">
+            <graphics>
+                <position x="855.0" y="952.5"/>
+            </graphics>
+            <name>
+                <value>T_To_Fix</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T_To_Trash">
+            <graphics>
+                <position x="1335.0" y="952.5"/>
+            </graphics>
+            <name>
+                <value>T_To_Trash</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>270</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="P_Activate_Accept to T_To_Accept" source="P_Activate_Accept" target="T_To_Accept">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1070" y="919" curvePoint="false"/>
+            <arcpath id="001" x="1110" y="955" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Activate_Fix to T_To_Fix" source="P_Activate_Fix" target="T_To_Fix">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="815" y="919" curvePoint="false"/>
+            <arcpath id="001" x="855" y="955" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Activate_Inspection_Result to T_Activate_Inspection_Results" source="P_Activate_Inspection_Result" target="T_Activate_Inspection_Results">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1180" y="44" curvePoint="false"/>
+            <arcpath id="001" x="1182" y="644" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Activate_Inspection to T_Assembly_To_Inspector" source="P_Activate_Inspection" target="T_Assembly_To_Inspector">
+            <graphics/>
+            <inscription>
+                <value>Default,4</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="921" y="397" curvePoint="false"/>
+            <arcpath id="001" x="984" y="227" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Activate_Trash to T_To_Trash" source="P_Activate_Trash" target="T_To_Trash">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1295" y="919" curvePoint="false"/>
+            <arcpath id="001" x="1337" y="955" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Assembly_Busy to T_Assembly_To_Inspector" source="P_Assembly_Busy" target="T_Assembly_To_Inspector">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="819" y="211" curvePoint="false"/>
+            <arcpath id="001" x="978" y="212" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Assembly_Not_Busy to T_Buffers_To_Assembly" source="P_Assembly_Not_Busy" target="T_Buffers_To_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="795" y="319" curvePoint="false"/>
+            <arcpath id="001" x="675" y="312" curvePoint="false"/>
+            <arcpath id="002" x="669" y="227" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Cube_Assembly_Buffer to T_Buffers_To_Assembly" source="P_Cube_Assembly_Buffer" target="T_Buffers_To_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="595" y="118" curvePoint="false"/>
+            <arcpath id="001" x="664" y="212" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Cylinder_Assembly_Buffer to T_Buffers_To_Assembly" source="P_Cylinder_Assembly_Buffer" target="T_Buffers_To_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="617" y="332" curvePoint="false"/>
+            <arcpath id="001" x="669" y="227" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_End_Time_Step to T_Go_Back_To_Beginning" source="P_End_Time_Step" target="T_Go_Back_To_Beginning">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="354" y="781" curvePoint="false"/>
+            <arcpath id="001" x="177" y="794" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Inspector_Busy to T_To_Accept" source="P_Inspector_Busy" target="T_To_Accept">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1134" y="227" curvePoint="false"/>
+            <arcpath id="001" x="1117" y="957" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Inspector_Busy to T_To_Fix" source="P_Inspector_Busy" target="T_To_Fix">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1128" y="225" curvePoint="false"/>
+            <arcpath id="001" x="862" y="957" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Inspector_Busy to T_To_Trash" source="P_Inspector_Busy" target="T_To_Trash">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1138" y="225" curvePoint="false"/>
+            <arcpath id="001" x="1342" y="957" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Inspector_Not_Busy to T_Assembly_To_Inspector" source="P_Inspector_Not_Busy" target="T_Assembly_To_Inspector">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1351" y="197" curvePoint="false"/>
+            <arcpath id="001" x="1285" y="98" curvePoint="false"/>
+            <arcpath id="002" x="1019" y="99" curvePoint="false"/>
+            <arcpath id="003" x="985" y="197" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Schedule_At_Assembly to T_Start_Assembling" source="P_Schedule_At_Assembly" target="T_Start_Assembling">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="558" y="487" curvePoint="false"/>
+            <arcpath id="001" x="687" y="424" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Start_Inspection to T_Activate_Inspection_Results" source="P_Start_Inspection" target="T_Activate_Inspection_Results">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1092" y="585" curvePoint="false"/>
+            <arcpath id="001" x="1172" y="644" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Start_Operation to T_Start" source="P_Start_Operation" target="T_Start">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="174" y="444" curvePoint="false"/>
+            <arcpath id="001" x="174" y="232" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Time_Arrival to T_Move_To_Assembly" source="P_Time_Arrival" target="T_Move_To_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="314" y="568" curvePoint="false"/>
+            <arcpath id="001" x="394" y="572" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Time_At_Assembly to T_Move_To_Inspection" source="P_Time_At_Assembly" target="T_Move_To_Inspection">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="695" y="574" curvePoint="false"/>
+            <arcpath id="001" x="869" y="565" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Time_At_Inspection to T_Move_To_Inspection_Result" source="P_Time_At_Inspection" target="T_Move_To_Inspection_Result">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="791" y="689" curvePoint="false"/>
+            <arcpath id="001" x="604" y="779" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Trigger_Arrival to T_Cube_Arrival_To_Assembly" source="P_Trigger_Arrival" target="T_Cube_Arrival_To_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="337" y="202" curvePoint="false"/>
+            <arcpath id="001" x="408" y="107" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P_Trigger_Arrival to T_Cylinder_Arrival_To_Assembly" source="P_Trigger_Arrival" target="T_Cylinder_Arrival_To_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="335" y="228" curvePoint="false"/>
+            <arcpath id="001" x="408" y="347" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P22 to T_Start_Assembling" source="P22" target="T_Start_Assembling">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="659" y="391" curvePoint="false"/>
+            <arcpath id="001" x="687" y="414" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Activate_Inspection_Results to P_Activate_Accept" source="T_Activate_Inspection_Results" target="P_Activate_Accept">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1180" y="654" curvePoint="false"/>
+            <arcpath id="001" x="1065" y="895" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Activate_Inspection_Results to P_Activate_Fix" source="T_Activate_Inspection_Results" target="P_Activate_Fix">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1172" y="654" curvePoint="false"/>
+            <arcpath id="001" x="817" y="901" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Activate_Inspection_Results to P_Activate_Trash" source="T_Activate_Inspection_Results" target="P_Activate_Trash">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1187" y="654" curvePoint="false"/>
+            <arcpath id="001" x="1278" y="895" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Assembly_To_Inspector to P_Assembly_Not_Busy" source="T_Assembly_To_Inspector" target="P_Assembly_Not_Busy">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="984" y="227" curvePoint="false"/>
+            <arcpath id="001" x="979" y="317" curvePoint="false"/>
+            <arcpath id="002" x="824" y="319" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Assembly_To_Inspector to P_Inspector_Busy" source="T_Assembly_To_Inspector" target="P_Inspector_Busy">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="988" y="211" curvePoint="false"/>
+            <arcpath id="001" x="1120" y="211" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Buffers_To_Assembly to P_Assembly_Busy" source="T_Buffers_To_Assembly" target="P_Assembly_Busy">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="674" y="211" curvePoint="false"/>
+            <arcpath id="001" x="789" y="211" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Buffers_To_Assembly to P22" source="T_Buffers_To_Assembly" target="P22">
+            <graphics/>
+            <inscription>
+                <value>Default,4</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="669" y="227" curvePoint="false"/>
+            <arcpath id="001" x="649" y="367" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Cube_Arrival_To_Assembly to P_Cube_Assembly_Buffer" source="T_Cube_Arrival_To_Assembly" target="P_Cube_Assembly_Buffer">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="418" y="107" curvePoint="false"/>
+            <arcpath id="001" x="571" y="107" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Cylinder_Arrival_To_Assembly to P_Cylinder_Assembly_Buffer" source="T_Cylinder_Arrival_To_Assembly" target="P_Cylinder_Assembly_Buffer">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="418" y="347" curvePoint="false"/>
+            <arcpath id="001" x="595" y="347" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Go_Back_To_Beginning to P_Count_Steps" source="T_Go_Back_To_Beginning" target="P_Count_Steps">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="172" y="808" curvePoint="false"/>
+            <arcpath id="001" x="165" y="909" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Go_Back_To_Beginning to P_Start_Operation" source="T_Go_Back_To_Beginning" target="P_Start_Operation">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="172" y="778" curvePoint="false"/>
+            <arcpath id="001" x="174" y="474" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Move_To_Assembly to P_Schedule_At_Assembly" source="T_Move_To_Assembly" target="P_Schedule_At_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="405" y="567" curvePoint="false"/>
+            <arcpath id="001" x="531" y="499" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Move_To_Assembly to P_Time_At_Assembly" source="T_Move_To_Assembly" target="P_Time_At_Assembly">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="404" y="577" curvePoint="false"/>
+            <arcpath id="001" x="665" y="575" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Move_To_Inspection_Result to P_End_Time_Step" source="T_Move_To_Inspection_Result" target="P_End_Time_Step">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="594" y="779" curvePoint="false"/>
+            <arcpath id="001" x="384" y="779" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Move_To_Inspection to P_Activate_Inspection_Result" source="T_Move_To_Inspection" target="P_Activate_Inspection_Result">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="875" y="554" curvePoint="false"/>
+            <arcpath id="001" x="1171" y="42" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Move_To_Inspection to P_Start_Inspection" source="T_Move_To_Inspection" target="P_Start_Inspection">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="878" y="570" curvePoint="false"/>
+            <arcpath id="001" x="1065" y="577" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Move_To_Inspection to P_Time_At_Inspection" source="T_Move_To_Inspection" target="P_Time_At_Inspection">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="868" y="575" curvePoint="false"/>
+            <arcpath id="001" x="811" y="671" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Start_Assembling to P_Activate_Inspection" source="T_Start_Assembling" target="P_Activate_Inspection">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="697" y="412" curvePoint="false"/>
+            <arcpath id="001" x="901" y="411" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Start to P_Time_Arrival" source="T_Start" target="P_Time_Arrival">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="174" y="232" curvePoint="false"/>
+            <arcpath id="001" x="294" y="554" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_Start to P_Trigger_Arrival" source="T_Start" target="P_Trigger_Arrival">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="178" y="217" curvePoint="false"/>
+            <arcpath id="001" x="312" y="215" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_To_Accept to P_Count_Accepted" source="T_To_Accept" target="P_Count_Accepted">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1118" y="967" curvePoint="false"/>
+            <arcpath id="001" x="1219" y="1269" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_To_Accept to P_Inspector_Not_Busy" source="T_To_Accept" target="P_Inspector_Not_Busy">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1124" y="957" curvePoint="false"/>
+            <arcpath id="001" x="1354" y="224" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_To_Fix to P_Count_Fixed" source="T_To_Fix" target="P_Count_Fixed">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="864" y="967" curvePoint="false"/>
+            <arcpath id="001" x="964" y="1269" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_To_Fix to P_Inspector_Not_Busy" source="T_To_Fix" target="P_Inspector_Not_Busy">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="869" y="957" curvePoint="false"/>
+            <arcpath id="001" x="1351" y="222" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_To_Trash to P_Count_Rejected" source="T_To_Trash" target="P_Count_Rejected">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1345" y="967" curvePoint="false"/>
+            <arcpath id="001" x="1458" y="1269" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T_To_Trash to P_Inspector_Not_Busy" source="T_To_Trash" target="P_Inspector_Not_Busy">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="1349" y="957" curvePoint="false"/>
+            <arcpath id="001" x="1358" y="224" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
