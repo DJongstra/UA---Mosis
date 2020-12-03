@@ -1,0 +1,1344 @@
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { font-family: Arial,Helvetica,sans-serif; text-align: center; background-color: #ffffff; background-repeat: repeat; background-attachment: scroll }
+        td.colhead { font-weight: bold; text-align: center; background-color: #ffffff; background-repeat: repeat; background-attachment: scroll }
+        td.rowhead { font-weight: bold; background-color: #ffffff; background-repeat: repeat; background-attachment: scroll }
+        td.cell { text-align: center; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0 }
+        tr.even { background-color: #a0a0d0; background-repeat: repeat; background-attachment: scroll }
+        tr.odd { background-color: #c0c0f0; background-repeat: repeat; background-attachment: scroll }
+        td.empty { background-color: #ffffff; background-repeat: repeat; background-attachment: scroll }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <h2>
+      Petri net invariant analysis results
+    </h2>
+    <h3>
+      T-Invariants
+    </h3>
+    <table border="0" cellspacing="2">
+      <tr class="odd">
+        <td class="colhead">
+          Accept
+        </td>
+        <td class="colhead">
+          Assembly
+        </td>
+        <td class="colhead">
+          AssemblyRemake
+        </td>
+        <td class="colhead">
+          AssemblyTryFail
+        </td>
+        <td class="colhead">
+          AssemTimeAdd
+        </td>
+        <td class="colhead">
+          CubeArrives
+        </td>
+        <td class="colhead">
+          CylinderArrives
+        </td>
+        <td class="colhead">
+          DoAssembly
+        </td>
+        <td class="colhead">
+          DoInspect
+        </td>
+        <td class="colhead">
+          DoNextStep
+        </td>
+        <td class="colhead">
+          Insp
+        </td>
+        <td class="colhead">
+          InspectTryFail
+        </td>
+        <td class="colhead">
+          InspLeave
+        </td>
+        <td class="colhead">
+          InspTimeAdd
+        </td>
+        <td class="colhead">
+          NextStepAvailable
+        </td>
+        <td class="colhead">
+          QueueFull
+        </td>
+        <td class="colhead">
+          Remake
+        </td>
+        <td class="colhead">
+          Thrash
+        </td>
+        <td class="colhead">
+          toInsp
+        </td>
+      </tr>
+    </table>
+    The net is not covered by positive T-Invariants, therefore we do not know 
+    if it is bounded and live.<br><br>
+
+    <h3>
+      P-Invariants
+    </h3>
+    <table border="0" cellspacing="2">
+      <tr class="odd">
+        <td class="colhead">
+          AcceptedAmount
+        </td>
+        <td class="colhead">
+          AmountOfTimeSteps
+        </td>
+        <td class="colhead">
+          AssemAble
+        </td>
+        <td class="colhead">
+          AssemblerQ
+        </td>
+        <td class="colhead">
+          AssemblyActive
+        </td>
+        <td class="colhead">
+          AssemblyAvailable
+        </td>
+        <td class="colhead">
+          AssemUnable
+        </td>
+        <td class="colhead">
+          CubesInQ
+        </td>
+        <td class="colhead">
+          CylindersInQ
+        </td>
+        <td class="colhead">
+          InspAble
+        </td>
+        <td class="colhead">
+          Inspected
+        </td>
+        <td class="colhead">
+          InspectinAvailable
+        </td>
+        <td class="colhead">
+          Inspecting
+        </td>
+        <td class="colhead">
+          InspQ
+        </td>
+        <td class="colhead">
+          InspQAvailable
+        </td>
+        <td class="colhead">
+          InspUnable
+        </td>
+        <td class="colhead">
+          RemakeAmount
+        </td>
+        <td class="colhead">
+          RemakeNotQueued
+        </td>
+        <td class="colhead">
+          RemakeQ
+        </td>
+        <td class="colhead">
+          ThrashedAmount
+        </td>
+        <td class="colhead">
+          Time_Assembly
+        </td>
+        <td class="colhead">
+          Time_AssemblyExecuted
+        </td>
+        <td class="colhead">
+          Time_InspectingExecuted
+        </td>
+        <td class="colhead">
+          Time_Inspection
+        </td>
+        <td class="colhead">
+          Time_NextAvailable
+        </td>
+        <td class="colhead">
+          Time_Shape
+        </td>
+        <td class="colhead">
+          Time_ShapeExecuted
+        </td>
+        <td class="colhead">
+          TimeInAssembly
+        </td>
+        <td class="colhead">
+          TimeInInsp
+        </td>
+        <td class="colhead">
+          TotalInQAssem
+        </td>
+        <td class="colhead">
+          InvarChanger
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          0
+        </td>
+        <td class="cell">
+          1
+        </td>
+      </tr>
+    </table>
+    The net is not covered by positive P-Invariants, therefore we do not know 
+    if it is bounded.<br>
+
+    <h3>
+      P-Invariant equations
+    </h3>
+    M(AssemAble) + M(AssemblyActive) + M(AssemblyAvailable) = 1<br>M(AssemAble) 
+    + M(AssemblyActive) + M(AssemUnable) = 1<br>M(AssemblerQ) + M(CubesInQ) + 
+    M(CylindersInQ) = 10<br>M(InspAble) + M(InspectinAvailable) + 
+    M(Inspecting) = 1<br>M(InspQ) + M(InspQAvailable) = 10<br>M(InspAble) + 
+    M(Inspecting) + M(InspUnable) = 1<br>M(RemakeNotQueued) + M(RemakeQ) = 10<br>M(Time_Assembly) 
+    + M(Time_AssemblyExecuted) + M(Time_NextAvailable) = 1<br>M(Time_InspectingExecuted) 
+    + M(Time_Inspection) + M(Time_NextAvailable) = 1<br>M(Time_NextAvailable) 
+    + M(Time_Shape) + M(Time_ShapeExecuted) = 1<br>M(AssemblerQ) + 
+    M(TotalInQAssem) = 10<br>M(CylindersInQ) + M(InvarChanger) = 200<br><br><br>Analysis 
+    time: 0.003s
+  </body>
+</html>
