@@ -3,7 +3,7 @@
 <token id="Default" enabled="true" red="0" green="0" blue="0"/>
 <place id="AcceptedAmount">
 <graphics>
-<position x="1185.0" y="300.0"/>
+<position x="1651.6666666666665" y="216.66666666666669"/>
 </graphics>
 <name>
 <value>AcceptedAmount</value>
@@ -23,7 +23,7 @@
 </place>
 <place id="AmountOfTimeSteps">
 <graphics>
-<position x="960.0" y="795.0"/>
+<position x="1660.0" y="778.3333333333333"/>
 </graphics>
 <name>
 <value>AmountOfTimeSteps</value>
@@ -43,7 +43,7 @@
 </place>
 <place id="AssemAble">
 <graphics>
-<position x="525.0" y="210.0"/>
+<position x="508.3333333333333" y="193.33333333333331"/>
 </graphics>
 <name>
 <value>AssemAble</value>
@@ -63,7 +63,7 @@
 </place>
 <place id="AssemblerQ">
 <graphics>
-<position x="315.0" y="225.0"/>
+<position x="298.3333333333333" y="158.33333333333334"/>
 </graphics>
 <name>
 <value>AssemblerQ</value>
@@ -83,7 +83,7 @@
 </place>
 <place id="AssemblyActive">
 <graphics>
-<position x="630.0" y="300.0"/>
+<position x="680.0" y="366.6666666666667"/>
 </graphics>
 <name>
 <value>AssemblyActive</value>
@@ -103,7 +103,7 @@
 </place>
 <place id="AssemblyAvailable">
 <graphics>
-<position x="540.0" y="45.0"/>
+<position x="540.0" y="61.66666666666676"/>
 </graphics>
 <name>
 <value>AssemblyAvailable</value>
@@ -123,7 +123,7 @@
 </place>
 <place id="AssemUnable">
 <graphics>
-<position x="465.0" y="300.0"/>
+<position x="498.3333333333333" y="283.33333333333337"/>
 </graphics>
 <name>
 <value>AssemUnable</value>
@@ -143,7 +143,7 @@
 </place>
 <place id="CubesInQ">
 <graphics>
-<position x="255.0" y="135.0"/>
+<position x="305.0" y="68.33333333333333"/>
 </graphics>
 <name>
 <value>CubesInQ</value>
@@ -163,7 +163,7 @@
 </place>
 <place id="CylindersInQ">
 <graphics>
-<position x="270.0" y="315.0"/>
+<position x="303.3333333333333" y="215.0"/>
 </graphics>
 <name>
 <value>CylindersInQ</value>
@@ -183,7 +183,7 @@
 </place>
 <place id="InspAble">
 <graphics>
-<position x="900.0" y="210.0"/>
+<position x="1033.3333333333333" y="226.66666666666666"/>
 </graphics>
 <name>
 <value>InspAble</value>
@@ -203,7 +203,7 @@
 </place>
 <place id="Inspected">
 <graphics>
-<position x="1110.0" y="225.0"/>
+<position x="1393.3333333333333" y="225.0"/>
 </graphics>
 <name>
 <value>Inspected</value>
@@ -223,7 +223,7 @@
 </place>
 <place id="InspectinAvailable">
 <graphics>
-<position x="930.0" y="105.0"/>
+<position x="1046.6666666666667" y="88.33333333333333"/>
 </graphics>
 <name>
 <value>InspectinAvailable</value>
@@ -243,7 +243,7 @@
 </place>
 <place id="Inspecting">
 <graphics>
-<position x="1005.0" y="210.0"/>
+<position x="1155.0" y="226.66666666666666"/>
 </graphics>
 <name>
 <value>Inspecting</value>
@@ -263,7 +263,7 @@
 </place>
 <place id="InspQ">
 <graphics>
-<position x="765.0" y="225.0"/>
+<position x="848.3333333333333" y="158.33333333333334"/>
 </graphics>
 <name>
 <value>InspQ</value>
@@ -283,7 +283,7 @@
 </place>
 <place id="InspQAvailable">
 <graphics>
-<position x="750.0" y="105.0"/>
+<position x="866.6666666666666" y="88.33333333333333"/>
 </graphics>
 <name>
 <value>InspQAvailable</value>
@@ -303,7 +303,7 @@
 </place>
 <place id="InspUnable">
 <graphics>
-<position x="915.0" y="300.0"/>
+<position x="1031.6666666666667" y="283.3333333333333"/>
 </graphics>
 <name>
 <value>InspUnable</value>
@@ -323,7 +323,7 @@
 </place>
 <place id="RemakeAmount">
 <graphics>
-<position x="1245.0" y="390.0"/>
+<position x="1648.3333333333333" y="450.0"/>
 </graphics>
 <name>
 <value>RemakeAmount</value>
@@ -363,7 +363,7 @@
 </place>
 <place id="RemakeQ">
 <graphics>
-<position x="630.0" y="360.0"/>
+<position x="630.0" y="443.3333333333333"/>
 </graphics>
 <name>
 <value>RemakeQ</value>
@@ -383,7 +383,7 @@
 </place>
 <place id="ThrashedAmount">
 <graphics>
-<position x="1110.0" y="75.0"/>
+<position x="1643.3333333333333" y="125.0"/>
 </graphics>
 <name>
 <value>ThrashedAmount</value>
@@ -423,7 +423,7 @@
 </place>
 <place id="Time_AssemblyExecuted">
 <graphics>
-<position x="540.0" y="615.0"/>
+<position x="673.3333333333334" y="598.3333333333334"/>
 </graphics>
 <name>
 <value>Time_AssemblyExecuted</value>
@@ -443,7 +443,7 @@
 </place>
 <place id="Time_InspectingExecuted">
 <graphics>
-<position x="870.0" y="630.0"/>
+<position x="1020.0000000000001" y="646.6666666666666"/>
 </graphics>
 <name>
 <value>Time_InspectingExecuted</value>
@@ -463,7 +463,7 @@
 </place>
 <place id="Time_Inspection">
 <graphics>
-<position x="1125.0" y="570.0"/>
+<position x="1375.0" y="603.3333333333334"/>
 </graphics>
 <name>
 <value>Time_Inspection</value>
@@ -503,7 +503,7 @@
 </place>
 <place id="Time_Shape">
 <graphics>
-<position x="165.0" y="615.0"/>
+<position x="165.0" y="715.0"/>
 </graphics>
 <name>
 <value>Time_Shape</value>
@@ -523,7 +523,7 @@
 </place>
 <place id="Time_ShapeExecuted">
 <graphics>
-<position x="240.0" y="555.0"/>
+<position x="290.0" y="555.0"/>
 </graphics>
 <name>
 <value>Time_ShapeExecuted</value>
@@ -543,7 +543,7 @@
 </place>
 <place id="TimeInAssembly">
 <graphics>
-<position x="795.0" y="285.0"/>
+<position x="778.3333333333333" y="285.0"/>
 </graphics>
 <name>
 <value>TimeInAssembly</value>
@@ -563,7 +563,7 @@
 </place>
 <place id="TimeInInsp">
 <graphics>
-<position x="1050.0" y="315.0"/>
+<position x="1316.6666666666667" y="348.3333333333333"/>
 </graphics>
 <name>
 <value>TimeInInsp</value>
@@ -583,7 +583,7 @@
 </place>
 <place id="TotalInQAssem">
 <graphics>
-<position x="270.0" y="390.0"/>
+<position x="303.3333333333333" y="340.0"/>
 </graphics>
 <name>
 <value>TotalInQAssem</value>
@@ -603,7 +603,7 @@
 </place>
 <transition id="Accept">
 <graphics>
-<position x="1185.0" y="240.0"/>
+<position x="1518.3333333333333" y="223.33333333333337"/>
 </graphics>
 <name>
 <value>Accept</value>
@@ -655,7 +655,7 @@
 </transition>
 <transition id="AssemblyRemake">
 <graphics>
-<position x="510.0" y="330.0"/>
+<position x="543.3333333333334" y="396.66666666666663"/>
 </graphics>
 <name>
 <value>AssemblyRemake</value>
@@ -707,7 +707,7 @@
 </transition>
 <transition id="AssemTimeAdd">
 <graphics>
-<position x="720.0" y="330.0"/>
+<position x="886.6666666666666" y="363.3333333333333"/>
 </graphics>
 <name>
 <value>AssemTimeAdd</value>
@@ -785,7 +785,7 @@
 </transition>
 <transition id="DoAssembly">
 <graphics>
-<position x="585.0" y="240.0"/>
+<position x="618.3333333333334" y="156.66666666666666"/>
 </graphics>
 <name>
 <value>DoAssembly</value>
@@ -811,7 +811,7 @@
 </transition>
 <transition id="DoInspect">
 <graphics>
-<position x="960.0" y="195.0"/>
+<position x="1076.6666666666667" y="145.0"/>
 </graphics>
 <name>
 <value>DoInspect</value>
@@ -863,7 +863,7 @@
 </transition>
 <transition id="Insp">
 <graphics>
-<position x="825.0" y="225.0"/>
+<position x="941.6666666666666" y="225.0"/>
 </graphics>
 <name>
 <value>Insp</value>
@@ -889,7 +889,7 @@
 </transition>
 <transition id="InspectTryFail">
 <graphics>
-<position x="690.0" y="615.0"/>
+<position x="840.0" y="598.3333333333334"/>
 </graphics>
 <name>
 <value>InspectTryFail</value>
@@ -915,7 +915,7 @@
 </transition>
 <transition id="InspLeave">
 <graphics>
-<position x="1050.0" y="225.0"/>
+<position x="1316.6666666666667" y="241.66666666666666"/>
 </graphics>
 <name>
 <value>InspLeave</value>
@@ -941,10 +941,62 @@
 </transition>
 <transition id="InspTimeAdd">
 <graphics>
-<position x="990.0" y="375.0"/>
+<position x="1190.0" y="341.6666666666667"/>
 </graphics>
 <name>
 <value>InspTimeAdd</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="LongerInAssem">
+<graphics>
+<position x="933.3333333333333" y="286.6666666666667"/>
+</graphics>
+<name>
+<value>LongerInAssem</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="LongerInInsp">
+<graphics>
+<position x="1368.3333333333333" y="376.6666666666667"/>
+</graphics>
+<name>
+<value>LongerInInsp</value>
 <graphics>
 <offset x="-5.0" y="35.0"/>
 </graphics>
@@ -993,7 +1045,7 @@
 </transition>
 <transition id="QueueFull">
 <graphics>
-<position x="270.0" y="465.0"/>
+<position x="286.6666666666667" y="431.66666666666663"/>
 </graphics>
 <name>
 <value>QueueFull</value>
@@ -1019,7 +1071,7 @@
 </transition>
 <transition id="Remake">
 <graphics>
-<position x="1065.0" y="450.0"/>
+<position x="1398.3333333333333" y="450.0"/>
 </graphics>
 <name>
 <value>Remake</value>
@@ -1045,7 +1097,7 @@
 </transition>
 <transition id="Thrash">
 <graphics>
-<position x="1125.0" y="150.0"/>
+<position x="1391.6666666666667" y="133.33333333333334"/>
 </graphics>
 <name>
 <value>Thrash</value>
@@ -1071,7 +1123,7 @@
 </transition>
 <transition id="toInsp">
 <graphics>
-<position x="660.0" y="225.0"/>
+<position x="710.0" y="158.33333333333334"/>
 </graphics>
 <name>
 <value>toInsp</value>
@@ -1104,8 +1156,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1197" y="267" curvePoint="false"/>
-<arcpath id="001" x="1197" y="297" curvePoint="false"/>
+<arcpath id="000" x="1533" y="234" curvePoint="false"/>
+<arcpath id="001" x="1647" y="227" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemAble to DoAssembly" source="AssemAble" target="DoAssembly">
@@ -1117,8 +1169,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="550" y="229" curvePoint="false"/>
-<arcpath id="001" x="591" y="252" curvePoint="false"/>
+<arcpath id="000" x="533" y="198" curvePoint="false"/>
+<arcpath id="001" x="623" y="167" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblerQ to CubeArrives" source="AssemblerQ" target="CubeArrives">
@@ -1130,8 +1182,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="313" y="231" curvePoint="false"/>
-<arcpath id="001" x="166" y="167" curvePoint="false"/>
+<arcpath id="000" x="294" y="167" curvePoint="false"/>
+<arcpath id="001" x="165" y="160" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblerQ to CylinderArrives" source="AssemblerQ" target="CylinderArrives">
@@ -1143,8 +1195,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="312" y="241" curvePoint="false"/>
-<arcpath id="001" x="167" y="289" curvePoint="false"/>
+<arcpath id="000" x="297" y="178" curvePoint="false"/>
+<arcpath id="001" x="165" y="287" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyActive to AssemTimeAdd" source="AssemblyActive" target="AssemTimeAdd">
@@ -1156,8 +1208,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="656" y="317" curvePoint="false"/>
-<arcpath id="001" x="726" y="343" curvePoint="false"/>
+<arcpath id="000" x="705" y="376" curvePoint="false"/>
+<arcpath id="001" x="892" y="374" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyActive to toInsp" source="AssemblyActive" target="toInsp">
@@ -1169,8 +1221,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="648" y="298" curvePoint="false"/>
-<arcpath id="001" x="672" y="252" curvePoint="false"/>
+<arcpath id="000" x="693" y="362" curvePoint="false"/>
+<arcpath id="001" x="721" y="184" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyAvailable to Assembly" source="AssemblyAvailable" target="Assembly">
@@ -1182,8 +1234,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="543" y="69" curvePoint="false"/>
-<arcpath id="001" x="437" y="229" curvePoint="false"/>
+<arcpath id="000" x="541" y="84" curvePoint="false"/>
+<arcpath id="001" x="435" y="227" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyAvailable to AssemblyRemake" source="AssemblyAvailable" target="AssemblyRemake">
@@ -1195,9 +1247,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="552" y="71" curvePoint="false"/>
-<arcpath id="001" x="567" y="312" curvePoint="false"/>
-<arcpath id="002" x="527" y="337" curvePoint="false"/>
+<arcpath id="000" x="550" y="86" curvePoint="false"/>
+<arcpath id="001" x="550" y="312" curvePoint="false"/>
+<arcpath id="002" x="554" y="392" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyRemake to AssemAble" source="AssemblyRemake" target="AssemAble">
@@ -1209,8 +1261,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="522" y="327" curvePoint="false"/>
-<arcpath id="001" x="534" y="236" curvePoint="false"/>
+<arcpath id="000" x="554" y="392" curvePoint="false"/>
+<arcpath id="001" x="521" y="218" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyRemake to RemakeNotQueued" source="AssemblyRemake" target="RemakeNotQueued">
@@ -1222,8 +1274,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="516" y="347" curvePoint="false"/>
-<arcpath id="001" x="440" y="464" curvePoint="false"/>
+<arcpath id="000" x="548" y="407" curvePoint="false"/>
+<arcpath id="001" x="443" y="467" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Assembly to AssemblerQ" source="Assembly" target="AssemblerQ">
@@ -1235,8 +1287,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="427" y="234" curvePoint="false"/>
-<arcpath id="001" x="341" y="236" curvePoint="false"/>
+<arcpath id="000" x="425" y="233" curvePoint="false"/>
+<arcpath id="001" x="322" y="175" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Assembly to Assembling" source="Assembly" target="AssemAble">
@@ -1248,8 +1300,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="437" y="236" curvePoint="false"/>
-<arcpath id="001" x="522" y="224" curvePoint="false"/>
+<arcpath id="000" x="435" y="234" curvePoint="false"/>
+<arcpath id="001" x="504" y="208" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Assembly to RemakeNotQueued" source="Assembly" target="RemakeNotQueued">
@@ -1261,9 +1313,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="432" y="252" curvePoint="false"/>
-<arcpath id="001" x="387" y="372" curvePoint="false"/>
-<arcpath id="002" x="426" y="463" curvePoint="false"/>
+<arcpath id="000" x="431" y="251" curvePoint="false"/>
+<arcpath id="001" x="386" y="372" curvePoint="false"/>
+<arcpath id="002" x="424" y="462" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyTryFail to AssemUnable" source="AssemblyTryFail" target="AssemUnable">
@@ -1275,9 +1327,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="507" y="537" curvePoint="false"/>
-<arcpath id="001" x="477" y="372" curvePoint="false"/>
-<arcpath id="002" x="477" y="327" curvePoint="false"/>
+<arcpath id="000" x="506" y="535" curvePoint="false"/>
+<arcpath id="001" x="493" y="372" curvePoint="false"/>
+<arcpath id="002" x="505" y="308" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyTryFail to Time_AssemblyExecuted" source="AssemblyTryFail" target="Time_AssemblyExecuted">
@@ -1289,8 +1341,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="511" y="557" curvePoint="false"/>
-<arcpath id="001" x="544" y="614" curvePoint="false"/>
+<arcpath id="000" x="510" y="555" curvePoint="false"/>
+<arcpath id="001" x="670" y="604" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemblyTryFail to Time_ShapeExecuted" source="AssemblyTryFail" target="Time_ShapeExecuted">
@@ -1302,9 +1354,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="502" y="547" curvePoint="false"/>
-<arcpath id="001" x="387" y="537" curvePoint="false"/>
-<arcpath id="002" x="266" y="563" curvePoint="false"/>
+<arcpath id="000" x="501" y="546" curvePoint="false"/>
+<arcpath id="001" x="436" y="536" curvePoint="false"/>
+<arcpath id="002" x="315" y="562" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemTimeAdd to AssemblyActive" source="AssemTimeAdd" target="AssemblyActive">
@@ -1316,9 +1368,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="727" y="336" curvePoint="false"/>
-<arcpath id="001" x="702" y="312" curvePoint="false"/>
-<arcpath id="002" x="657" y="312" curvePoint="false"/>
+<arcpath id="000" x="892" y="370" curvePoint="false"/>
+<arcpath id="001" x="752" y="362" curvePoint="false"/>
+<arcpath id="002" x="705" y="373" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemTimeAdd to Time_AssemblyExecuted" source="AssemTimeAdd" target="Time_AssemblyExecuted">
@@ -1330,8 +1382,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="726" y="350" curvePoint="false"/>
-<arcpath id="001" x="560" y="614" curvePoint="false"/>
+<arcpath id="000" x="891" y="384" curvePoint="false"/>
+<arcpath id="001" x="694" y="597" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemTimeAdd to TimeInAssembly" source="AssemTimeAdd" target="TimeInAssembly">
@@ -1343,8 +1395,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="736" y="342" curvePoint="false"/>
-<arcpath id="001" x="794" y="305" curvePoint="false"/>
+<arcpath id="000" x="892" y="364" curvePoint="false"/>
+<arcpath id="001" x="801" y="303" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemUnable to Assembly" source="AssemUnable" target="Assembly">
@@ -1356,8 +1408,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="469" y="299" curvePoint="false"/>
-<arcpath id="001" x="436" y="243" curvePoint="false"/>
+<arcpath id="000" x="496" y="285" curvePoint="false"/>
+<arcpath id="001" x="435" y="242" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemUnable to AssemblyRemake" source="AssemUnable" target="AssemblyRemake">
@@ -1369,8 +1421,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="489" y="320" curvePoint="false"/>
-<arcpath id="001" x="517" y="337" curvePoint="false"/>
+<arcpath id="000" x="515" y="307" curvePoint="false"/>
+<arcpath id="001" x="554" y="392" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="AssemUnable to AssemblyTryFail" source="AssemUnable" target="AssemblyTryFail">
@@ -1382,8 +1434,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="479" y="326" curvePoint="false"/>
-<arcpath id="001" x="507" y="537" curvePoint="false"/>
+<arcpath id="000" x="508" y="308" curvePoint="false"/>
+<arcpath id="001" x="506" y="535" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CubeArrives to CubesInQ" source="CubeArrives" target="CubesInQ">
@@ -1395,8 +1447,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="167" y="157" curvePoint="false"/>
-<arcpath id="001" x="252" y="148" curvePoint="false"/>
+<arcpath id="000" x="165" y="153" curvePoint="false"/>
+<arcpath id="001" x="302" y="85" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CubeArrives to Time_ShapeExecuted" source="CubeArrives" target="Time_ShapeExecuted">
@@ -1408,10 +1460,10 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="156" y="167" curvePoint="false"/>
-<arcpath id="001" x="72" y="252" curvePoint="false"/>
-<arcpath id="002" x="147" y="492" curvePoint="false"/>
-<arcpath id="003" x="239" y="558" curvePoint="false"/>
+<arcpath id="000" x="161" y="175" curvePoint="false"/>
+<arcpath id="001" x="122" y="268" curvePoint="false"/>
+<arcpath id="002" x="146" y="358" curvePoint="false"/>
+<arcpath id="003" x="291" y="553" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CubeArrives to TotalInQAssem" source="CubeArrives" target="TotalInQAssem">
@@ -1423,8 +1475,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="162" y="177" curvePoint="false"/>
-<arcpath id="001" x="274" y="388" curvePoint="false"/>
+<arcpath id="000" x="165" y="166" curvePoint="false"/>
+<arcpath id="001" x="304" y="338" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CubesInQ to Assembly" source="CubesInQ" target="Assembly">
@@ -1436,8 +1488,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="280" y="153" curvePoint="false"/>
-<arcpath id="001" x="427" y="228" curvePoint="false"/>
+<arcpath id="000" x="324" y="91" curvePoint="false"/>
+<arcpath id="001" x="425" y="227" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CylinderArrives to CylindersInQ" source="CylinderArrives" target="CylindersInQ">
@@ -1449,8 +1501,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="167" y="296" curvePoint="false"/>
-<arcpath id="001" x="267" y="323" curvePoint="false"/>
+<arcpath id="000" x="165" y="294" curvePoint="false"/>
+<arcpath id="001" x="300" y="232" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CylinderArrives to Time_ShapeExecuted" source="CylinderArrives" target="Time_ShapeExecuted">
@@ -1462,8 +1514,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="162" y="312" curvePoint="false"/>
-<arcpath id="001" x="247" y="552" curvePoint="false"/>
+<arcpath id="000" x="161" y="311" curvePoint="false"/>
+<arcpath id="001" x="293" y="552" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CylinderArrives to TotalInQAssem" source="CylinderArrives" target="TotalInQAssem">
@@ -1475,8 +1527,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="166" y="303" curvePoint="false"/>
-<arcpath id="001" x="270" y="392" curvePoint="false"/>
+<arcpath id="000" x="165" y="302" curvePoint="false"/>
+<arcpath id="001" x="300" y="345" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="CylindersInQ to Assembly" source="CylindersInQ" target="Assembly">
@@ -1488,8 +1540,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="294" y="319" curvePoint="false"/>
-<arcpath id="001" x="426" y="240" curvePoint="false"/>
+<arcpath id="000" x="328" y="227" curvePoint="false"/>
+<arcpath id="001" x="425" y="238" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="DoAssembly to AssemblyActive" source="DoAssembly" target="AssemblyActive">
@@ -1501,8 +1553,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="601" y="257" curvePoint="false"/>
-<arcpath id="001" x="633" y="299" curvePoint="false"/>
+<arcpath id="000" x="628" y="182" curvePoint="false"/>
+<arcpath id="001" x="685" y="363" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="DoAssembly to TimeInAssembly" source="DoAssembly" target="TimeInAssembly">
@@ -1514,8 +1566,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="602" y="247" curvePoint="false"/>
-<arcpath id="001" x="792" y="293" curvePoint="false"/>
+<arcpath id="000" x="633" y="167" curvePoint="false"/>
+<arcpath id="001" x="777" y="285" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="DoInspect to Inspecting" source="DoInspect" target="Inspecting">
@@ -1527,8 +1579,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="976" y="207" curvePoint="false"/>
-<arcpath id="001" x="1002" y="216" curvePoint="false"/>
+<arcpath id="000" x="1092" y="155" curvePoint="false"/>
+<arcpath id="001" x="1155" y="225" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="DoNextStep to AmountOfTimeSteps" source="DoNextStep" target="AmountOfTimeSteps">
@@ -1540,8 +1592,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="541" y="797" curvePoint="false"/>
-<arcpath id="001" x="957" y="806" curvePoint="false"/>
+<arcpath id="000" x="540" y="795" curvePoint="false"/>
+<arcpath id="001" x="1655" y="788" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="DoNextStep to Time_Assembly" source="DoNextStep" target="Time_Assembly">
@@ -1553,8 +1605,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="537" y="777" curvePoint="false"/>
-<arcpath id="001" x="607" y="566" curvePoint="false"/>
+<arcpath id="000" x="536" y="775" curvePoint="false"/>
+<arcpath id="001" x="605" y="564" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="DoNextStep to Time_Inspection" source="DoNextStep" target="Time_Inspection">
@@ -1566,8 +1618,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="542" y="787" curvePoint="false"/>
-<arcpath id="001" x="1122" y="586" curvePoint="false"/>
+<arcpath id="000" x="541" y="785" curvePoint="false"/>
+<arcpath id="001" x="1371" y="616" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="DoNextStep to Time_Shape" source="DoNextStep" target="Time_Shape">
@@ -1579,10 +1631,10 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="537" y="807" curvePoint="false"/>
+<arcpath id="000" x="535" y="805" curvePoint="false"/>
 <arcpath id="001" x="522" y="852" curvePoint="false"/>
-<arcpath id="002" x="177" y="837" curvePoint="false"/>
-<arcpath id="003" x="177" y="642" curvePoint="false"/>
+<arcpath id="002" x="176" y="836" curvePoint="false"/>
+<arcpath id="003" x="175" y="740" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspAble to DoInspect" source="InspAble" target="DoInspect">
@@ -1594,8 +1646,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="926" y="218" curvePoint="false"/>
-<arcpath id="001" x="966" y="207" curvePoint="false"/>
+<arcpath id="000" x="1052" y="224" curvePoint="false"/>
+<arcpath id="001" x="1087" y="171" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Inspected to Accept" source="Inspected" target="Accept">
@@ -1607,8 +1659,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1136" y="240" curvePoint="false"/>
-<arcpath id="001" x="1191" y="252" curvePoint="false"/>
+<arcpath id="000" x="1418" y="235" curvePoint="false"/>
+<arcpath id="001" x="1523" y="234" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Inspected to Remake" source="Inspected" target="Remake">
@@ -1620,8 +1672,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1118" y="251" curvePoint="false"/>
-<arcpath id="001" x="1077" y="447" curvePoint="false"/>
+<arcpath id="000" x="1404" y="250" curvePoint="false"/>
+<arcpath id="001" x="1410" y="445" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Inspected to Thrash" source="Inspected" target="Thrash">
@@ -1633,8 +1685,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1125" y="222" curvePoint="false"/>
-<arcpath id="001" x="1137" y="177" curvePoint="false"/>
+<arcpath id="000" x="1403" y="221" curvePoint="false"/>
+<arcpath id="001" x="1402" y="158" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspectinAvailable to Insp" source="InspectinAvailable" target="Insp">
@@ -1646,8 +1698,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="932" y="128" curvePoint="false"/>
-<arcpath id="001" x="842" y="229" curvePoint="false"/>
+<arcpath id="000" x="1047" y="111" curvePoint="false"/>
+<arcpath id="001" x="957" y="227" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Inspecting to InspLeave" source="Inspecting" target="InspLeave">
@@ -1659,8 +1711,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1030" y="227" curvePoint="false"/>
-<arcpath id="001" x="1056" y="238" curvePoint="false"/>
+<arcpath id="000" x="1180" y="238" curvePoint="false"/>
+<arcpath id="001" x="1322" y="254" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Inspecting to InspTimeAdd" source="Inspecting" target="InspTimeAdd">
@@ -1672,8 +1724,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1015" y="236" curvePoint="false"/>
-<arcpath id="001" x="1002" y="372" curvePoint="false"/>
+<arcpath id="000" x="1171" y="251" curvePoint="false"/>
+<arcpath id="001" x="1201" y="337" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspectTryFail to InspUnable" source="InspectTryFail" target="InspUnable">
@@ -1685,9 +1737,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="702" y="612" curvePoint="false"/>
-<arcpath id="001" x="807" y="432" curvePoint="false"/>
-<arcpath id="002" x="916" y="322" curvePoint="false"/>
+<arcpath id="000" x="851" y="594" curvePoint="false"/>
+<arcpath id="001" x="923" y="465" curvePoint="false"/>
+<arcpath id="002" x="1033" y="306" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspectTryFail to Time_AssemblyExecuted" source="InspectTryFail" target="Time_AssemblyExecuted">
@@ -1699,9 +1751,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="696" y="632" curvePoint="false"/>
-<arcpath id="001" x="627" y="657" curvePoint="false"/>
-<arcpath id="002" x="565" y="632" curvePoint="false"/>
+<arcpath id="000" x="845" y="614" curvePoint="false"/>
+<arcpath id="001" x="710" y="623" curvePoint="false"/>
+<arcpath id="002" x="696" y="616" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspectTryFail to Time_InspectingExecuted" source="InspectTryFail" target="Time_InspectingExecuted">
@@ -1713,8 +1765,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="706" y="633" curvePoint="false"/>
-<arcpath id="001" x="867" y="640" curvePoint="false"/>
+<arcpath id="000" x="855" y="615" curvePoint="false"/>
+<arcpath id="001" x="1015" y="653" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspLeave to Inspected" source="InspLeave" target="Inspected">
@@ -1726,8 +1778,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1066" y="237" curvePoint="false"/>
-<arcpath id="001" x="1107" y="237" curvePoint="false"/>
+<arcpath id="000" x="1332" y="252" curvePoint="false"/>
+<arcpath id="001" x="1388" y="238" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspLeave to InspectinAvailable" source="InspLeave" target="InspectinAvailable">
@@ -1739,8 +1791,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1057" y="231" curvePoint="false"/>
-<arcpath id="001" x="952" y="127" curvePoint="false"/>
+<arcpath id="000" x="1322" y="246" curvePoint="false"/>
+<arcpath id="001" x="1070" y="106" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspLeave to InspUnable" source="InspLeave" target="InspUnable">
@@ -1752,8 +1804,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1056" y="245" curvePoint="false"/>
-<arcpath id="001" x="940" y="305" curvePoint="false"/>
+<arcpath id="000" x="1322" y="261" curvePoint="false"/>
+<arcpath id="001" x="1056" y="292" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspQAvailable to toInsp" source="InspQAvailable" target="toInsp">
@@ -1765,8 +1817,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="752" y="128" curvePoint="false"/>
-<arcpath id="001" x="677" y="229" curvePoint="false"/>
+<arcpath id="000" x="863" y="104" curvePoint="false"/>
+<arcpath id="001" x="725" y="164" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspQ to Insp" source="InspQ" target="Insp">
@@ -1778,8 +1830,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="791" y="238" curvePoint="false"/>
-<arcpath id="001" x="831" y="242" curvePoint="false"/>
+<arcpath id="000" x="871" y="177" curvePoint="false"/>
+<arcpath id="001" x="946" y="236" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspTimeAdd to Inspecting" source="InspTimeAdd" target="Inspecting">
@@ -1791,9 +1843,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1002" y="372" curvePoint="false"/>
-<arcpath id="001" x="987" y="252" curvePoint="false"/>
-<arcpath id="002" x="1006" y="232" curvePoint="false"/>
+<arcpath id="000" x="1195" y="353" curvePoint="false"/>
+<arcpath id="001" x="1170" y="302" curvePoint="false"/>
+<arcpath id="002" x="1166" y="252" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspTimeAdd to Time_InspectingExecuted" source="InspTimeAdd" target="Time_InspectingExecuted">
@@ -1805,8 +1857,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1002" y="402" curvePoint="false"/>
-<arcpath id="001" x="888" y="628" curvePoint="false"/>
+<arcpath id="000" x="1201" y="367" curvePoint="false"/>
+<arcpath id="001" x="1037" y="644" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspTimeAdd to TimeInInsp" source="InspTimeAdd" target="TimeInInsp">
@@ -1818,8 +1870,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1006" y="387" curvePoint="false"/>
-<arcpath id="001" x="1051" y="338" curvePoint="false"/>
+<arcpath id="000" x="1205" y="347" curvePoint="false"/>
+<arcpath id="001" x="1312" y="357" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Insp to InspAble" source="Insp" target="InspAble">
@@ -1831,8 +1883,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="842" y="236" curvePoint="false"/>
-<arcpath id="001" x="897" y="224" curvePoint="false"/>
+<arcpath id="000" x="957" y="234" curvePoint="false"/>
+<arcpath id="001" x="1028" y="236" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Insp to InspQAvailable" source="Insp" target="InspQAvailable">
@@ -1844,8 +1896,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="832" y="232" curvePoint="false"/>
-<arcpath id="001" x="769" y="129" curvePoint="false"/>
+<arcpath id="000" x="953" y="221" curvePoint="false"/>
+<arcpath id="001" x="885" y="111" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspUnable to Insp" source="InspUnable" target="Insp">
@@ -1857,8 +1909,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="915" y="302" curvePoint="false"/>
-<arcpath id="001" x="841" y="243" curvePoint="false"/>
+<arcpath id="000" x="1028" y="285" curvePoint="false"/>
+<arcpath id="001" x="956" y="242" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="InspUnable to InspectTryFail" source="InspUnable" target="InspectTryFail">
@@ -1870,8 +1922,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="918" y="324" curvePoint="false"/>
-<arcpath id="001" x="707" y="619" curvePoint="false"/>
+<arcpath id="000" x="1034" y="306" curvePoint="false"/>
+<arcpath id="001" x="855" y="601" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="NextStepAvailable to Time_NextAvailable" source="NextStepAvailable" target="Time_NextAvailable">
@@ -1883,8 +1935,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="387" y="702" curvePoint="false"/>
-<arcpath id="001" x="374" y="777" curvePoint="false"/>
+<arcpath id="000" x="385" y="701" curvePoint="false"/>
+<arcpath id="001" x="373" y="775" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="QueueFull to Time_ShapeExecuted" source="QueueFull" target="Time_ShapeExecuted">
@@ -1896,8 +1948,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="282" y="492" curvePoint="false"/>
-<arcpath id="001" x="257" y="553" curvePoint="false"/>
+<arcpath id="000" x="297" y="457" curvePoint="false"/>
+<arcpath id="001" x="300" y="551" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="QueueFull to TotalInQAssem" source="QueueFull" target="TotalInQAssem">
@@ -1909,9 +1961,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="286" y="477" curvePoint="false"/>
-<arcpath id="001" x="312" y="432" curvePoint="false"/>
-<arcpath id="002" x="292" y="412" curvePoint="false"/>
+<arcpath id="000" x="302" y="442" curvePoint="false"/>
+<arcpath id="001" x="328" y="398" curvePoint="false"/>
+<arcpath id="002" x="317" y="364" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="RemakeNotQueued to Assembly" source="RemakeNotQueued" target="Assembly">
@@ -1923,8 +1975,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="432" y="462" curvePoint="false"/>
-<arcpath id="001" x="432" y="252" curvePoint="false"/>
+<arcpath id="000" x="430" y="461" curvePoint="false"/>
+<arcpath id="001" x="431" y="251" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="RemakeNotQueued to Remake" source="RemakeNotQueued" target="Remake">
@@ -1936,8 +1988,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="446" y="476" curvePoint="false"/>
-<arcpath id="001" x="1071" y="470" curvePoint="false"/>
+<arcpath id="000" x="445" y="475" curvePoint="false"/>
+<arcpath id="001" x="1403" y="466" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="RemakeQ to AssemblyRemake" source="RemakeQ" target="AssemblyRemake">
@@ -1949,8 +2001,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="627" y="368" curvePoint="false"/>
-<arcpath id="001" x="526" y="347" curvePoint="false"/>
+<arcpath id="000" x="627" y="446" curvePoint="false"/>
+<arcpath id="001" x="558" y="407" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Remake to RemakeAmount" source="Remake" target="RemakeAmount">
@@ -1962,8 +2014,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1081" y="462" curvePoint="false"/>
-<arcpath id="001" x="1242" y="406" curvePoint="false"/>
+<arcpath id="000" x="1413" y="461" curvePoint="false"/>
+<arcpath id="001" x="1644" y="460" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Remake to RemakeQ" source="Remake" target="RemakeQ">
@@ -1975,8 +2027,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1071" y="463" curvePoint="false"/>
-<arcpath id="001" x="656" y="375" curvePoint="false"/>
+<arcpath id="000" x="1404" y="456" curvePoint="false"/>
+<arcpath id="001" x="655" y="454" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Thrash to Thrashed" source="Thrash" target="ThrashedAmount">
@@ -1988,8 +2040,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1137" y="147" curvePoint="false"/>
-<arcpath id="001" x="1125" y="101" curvePoint="false"/>
+<arcpath id="000" x="1406" y="144" curvePoint="false"/>
+<arcpath id="001" x="1638" y="135" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_AssemblyExecuted to InspectTryFail" source="Time_AssemblyExecuted" target="InspectTryFail">
@@ -2001,8 +2053,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="566" y="626" curvePoint="false"/>
-<arcpath id="001" x="697" y="622" curvePoint="false"/>
+<arcpath id="000" x="698" y="608" curvePoint="false"/>
+<arcpath id="001" x="845" y="604" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_AssemblyExecuted to NextStepAvailable" source="Time_AssemblyExecuted" target="NextStepAvailable">
@@ -2014,8 +2066,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="537" y="631" curvePoint="false"/>
-<arcpath id="001" x="392" y="682" curvePoint="false"/>
+<arcpath id="000" x="668" y="612" curvePoint="false"/>
+<arcpath id="001" x="391" y="681" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_Assembly to AssemblyTryFail" source="Time_Assembly" target="AssemblyTryFail">
@@ -2027,8 +2079,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="597" y="551" curvePoint="false"/>
-<arcpath id="001" x="512" y="547" curvePoint="false"/>
+<arcpath id="000" x="595" y="550" curvePoint="false"/>
+<arcpath id="001" x="511" y="545" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_Assembly to AssemTimeAdd" source="Time_Assembly" target="AssemTimeAdd">
@@ -2040,8 +2092,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="619" y="539" curvePoint="false"/>
-<arcpath id="001" x="732" y="357" curvePoint="false"/>
+<arcpath id="000" x="623" y="542" curvePoint="false"/>
+<arcpath id="001" x="892" y="380" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_InspectingExecuted to NextStepAvailable" source="Time_InspectingExecuted" target="NextStepAvailable">
@@ -2053,8 +2105,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="867" y="643" curvePoint="false"/>
-<arcpath id="001" x="391" y="692" curvePoint="false"/>
+<arcpath id="000" x="1015" y="657" curvePoint="false"/>
+<arcpath id="001" x="390" y="691" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_Inspection to InspectTryFail" source="Time_Inspection" target="InspectTryFail">
@@ -2066,8 +2118,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1122" y="583" curvePoint="false"/>
-<arcpath id="001" x="707" y="626" curvePoint="false"/>
+<arcpath id="000" x="1371" y="613" curvePoint="false"/>
+<arcpath id="001" x="855" y="607" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_Inspection to InspTimeAdd" source="Time_Inspection" target="InspTimeAdd">
@@ -2079,9 +2131,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1123" y="575" curvePoint="false"/>
-<arcpath id="001" x="1077" y="552" curvePoint="false"/>
-<arcpath id="002" x="1002" y="402" curvePoint="false"/>
+<arcpath id="000" x="1376" y="601" curvePoint="false"/>
+<arcpath id="001" x="1310" y="502" curvePoint="false"/>
+<arcpath id="002" x="1205" y="357" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_NextAvailable to DoNextStep" source="Time_NextAvailable" target="DoNextStep">
@@ -2093,8 +2145,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="386" y="792" curvePoint="false"/>
-<arcpath id="001" x="531" y="792" curvePoint="false"/>
+<arcpath id="000" x="385" y="791" curvePoint="false"/>
+<arcpath id="001" x="530" y="791" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_ShapeExecuted to AssemblyTryFail" source="Time_ShapeExecuted" target="AssemblyTryFail">
@@ -2106,8 +2158,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="266" y="566" curvePoint="false"/>
-<arcpath id="001" x="501" y="557" curvePoint="false"/>
+<arcpath id="000" x="315" y="564" curvePoint="false"/>
+<arcpath id="001" x="500" y="556" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_ShapeExecuted to NextStepAvailable" source="Time_ShapeExecuted" target="NextStepAvailable">
@@ -2119,8 +2171,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="262" y="577" curvePoint="false"/>
-<arcpath id="001" x="381" y="687" curvePoint="false"/>
+<arcpath id="000" x="308" y="577" curvePoint="false"/>
+<arcpath id="001" x="380" y="686" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_Shape to CubeArrives" source="Time_Shape" target="CubeArrives">
@@ -2132,9 +2184,9 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="171" y="612" curvePoint="false"/>
-<arcpath id="001" x="27" y="222" curvePoint="false"/>
-<arcpath id="002" x="157" y="157" curvePoint="false"/>
+<arcpath id="000" x="171" y="711" curvePoint="false"/>
+<arcpath id="001" x="26" y="222" curvePoint="false"/>
+<arcpath id="002" x="155" y="161" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_Shape to CylinderArrives" source="Time_Shape" target="CylinderArrives">
@@ -2146,8 +2198,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="176" y="612" curvePoint="false"/>
-<arcpath id="001" x="162" y="312" curvePoint="false"/>
+<arcpath id="000" x="175" y="711" curvePoint="false"/>
+<arcpath id="001" x="161" y="311" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="Time_Shape to QueueFull" source="Time_Shape" target="QueueFull">
@@ -2159,8 +2211,21 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="185" y="614" curvePoint="false"/>
-<arcpath id="001" x="276" y="477" curvePoint="false"/>
+<arcpath id="000" x="182" y="712" curvePoint="false"/>
+<arcpath id="001" x="297" y="457" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TimeInAssembly to LongerInAssem" source="TimeInAssembly" target="LongerInAssem">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="803" y="295" curvePoint="false"/>
+<arcpath id="001" x="938" y="297" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="TimeInAssembly to toInsp" source="TimeInAssembly" target="toInsp">
@@ -2172,8 +2237,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="793" y="291" curvePoint="false"/>
-<arcpath id="001" x="676" y="243" curvePoint="false"/>
+<arcpath id="000" x="781" y="282" curvePoint="false"/>
+<arcpath id="001" x="721" y="184" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="TimeInInsp to InspLeave" source="TimeInInsp" target="InspLeave">
@@ -2185,8 +2250,21 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="1062" y="312" curvePoint="false"/>
-<arcpath id="001" x="1062" y="252" curvePoint="false"/>
+<arcpath id="000" x="1326" y="344" curvePoint="false"/>
+<arcpath id="001" x="1327" y="267" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TimeInInsp to LongerInInsp" source="TimeInInsp" target="LongerInInsp">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1340" y="366" curvePoint="false"/>
+<arcpath id="001" x="1373" y="387" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="toInsp to AssemblyAvailable" source="toInsp" target="AssemblyAvailable">
@@ -2198,8 +2276,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="667" y="232" curvePoint="false"/>
-<arcpath id="001" x="560" y="69" curvePoint="false"/>
+<arcpath id="000" x="715" y="164" curvePoint="false"/>
+<arcpath id="001" x="563" y="80" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="toInsp to AssemUnable" source="toInsp" target="AssemUnable">
@@ -2211,8 +2289,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="666" y="242" curvePoint="false"/>
-<arcpath id="001" x="490" y="306" curvePoint="false"/>
+<arcpath id="000" x="715" y="174" curvePoint="false"/>
+<arcpath id="001" x="522" y="286" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="toInsp to InspQ" source="toInsp" target="InspQ">
@@ -2224,8 +2302,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="677" y="236" curvePoint="false"/>
-<arcpath id="001" x="762" y="236" curvePoint="false"/>
+<arcpath id="000" x="725" y="174" curvePoint="false"/>
+<arcpath id="001" x="844" y="168" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="TotalInQAssem to Assembly" source="TotalInQAssem" target="Assembly">
@@ -2237,8 +2315,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="292" y="391" curvePoint="false"/>
-<arcpath id="001" x="426" y="246" curvePoint="false"/>
+<arcpath id="000" x="324" y="340" curvePoint="false"/>
+<arcpath id="001" x="425" y="245" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 <arc id="TotalInQAssem to QueueFull" source="TotalInQAssem" target="QueueFull">
@@ -2250,8 +2328,8 @@
 <tagged>
 <value>false</value>
 </tagged>
-<arcpath id="000" x="282" y="416" curvePoint="false"/>
-<arcpath id="001" x="282" y="462" curvePoint="false"/>
+<arcpath id="000" x="311" y="365" curvePoint="false"/>
+<arcpath id="001" x="297" y="427" curvePoint="false"/>
 <type value="normal"/>
 </arc>
 </net>
