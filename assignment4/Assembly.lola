@@ -1,0 +1,217 @@
+PLACE
+	AcceptedAmount,
+	AmountOfTimeSteps,
+	AssemAble,
+	AssemblerQ,
+	AssemblyActive,
+	AssemblyAvailable,
+	AssemUnable,
+	CubesInQ,
+	CylindersInQ,
+	InspAble,
+	Inspected,
+	InspectinAvailable,
+	Inspecting,
+	InspQ,
+	InspQAvailable,
+	InspUnable,
+	RemakeAmount,
+	RemakeNotQueued,
+	RemakeQ,
+	ThrashedAmount,
+	Time_Assembly,
+	Time_AssemblyExecuted,
+	Time_InspectingExecuted,
+	Time_Inspection,
+	Time_NextAvailable,
+	Time_Shape,
+	Time_ShapeExecuted,
+	TimeInAssembly,
+	TimeInInsp,
+	TotalInQAssem;
+
+MARKING
+	AssemblerQ : 10,
+	AssemblyAvailable : 1,
+	AssemUnable : 1,
+	InspectinAvailable : 1,
+	InspQAvailable : 10,
+	InspUnable : 1,
+	RemakeNotQueued : 10,
+	Time_NextAvailable : 1;
+
+TRANSITION Accept
+	CONSUME
+		Inspected : 1;
+	PRODUCE
+		AcceptedAmount : 1;
+
+TRANSITION Assembly
+	CONSUME
+		AssemblyAvailable : 1,
+		AssemUnable : 1,
+		CubesInQ : 2,
+		CylindersInQ : 1,
+		RemakeNotQueued : 10,
+		TotalInQAssem : 3;
+	PRODUCE
+		AssemblerQ : 3,
+		AssemAble : 1,
+		RemakeNotQueued : 10;
+
+TRANSITION AssemblyRemake
+	CONSUME
+		AssemblyAvailable : 1,
+		AssemUnable : 1,
+		RemakeQ : 1;
+	PRODUCE
+		AssemAble : 1,
+		RemakeNotQueued : 1;
+
+TRANSITION AssemblyTryFail
+	CONSUME
+		AssemUnable : 1,
+		Time_Assembly : 1,
+		Time_ShapeExecuted : 1;
+	PRODUCE
+		AssemUnable : 1,
+		Time_AssemblyExecuted : 1,
+		Time_ShapeExecuted : 1;
+
+TRANSITION AssemTimeAdd
+	CONSUME
+		AssemblyActive : 1,
+		Time_Assembly : 1;
+	PRODUCE
+		AssemblyActive : 1,
+		Time_AssemblyExecuted : 1,
+		TimeInAssembly : 1;
+
+TRANSITION CubeArrives
+	CONSUME
+		AssemblerQ : 1,
+		Time_Shape : 1;
+	PRODUCE
+		CubesInQ : 1,
+		Time_ShapeExecuted : 1,
+		TotalInQAssem : 1;
+
+TRANSITION CylinderArrives
+	CONSUME
+		AssemblerQ : 1,
+		Time_Shape : 1;
+	PRODUCE
+		CylindersInQ : 1,
+		Time_ShapeExecuted : 1,
+		TotalInQAssem : 1;
+
+TRANSITION DoAssembly
+	CONSUME
+		AssemAble : 1;
+	PRODUCE
+		AssemblyActive : 1,
+		TimeInAssembly : 1;
+
+TRANSITION DoInspect
+	CONSUME
+		InspAble : 1;
+	PRODUCE
+		Inspecting : 1;
+
+TRANSITION DoNextStep
+	CONSUME
+		Time_NextAvailable : 1;
+	PRODUCE
+		AmountOfTimeSteps : 1,
+		Time_Assembly : 1,
+		Time_Inspection : 1,
+		Time_Shape : 1;
+
+TRANSITION Insp
+	CONSUME
+		InspectinAvailable : 1,
+		InspQ : 1,
+		InspUnable : 1;
+	PRODUCE
+		InspAble : 1,
+		InspQAvailable : 1;
+
+TRANSITION InspectTryFail
+	CONSUME
+		InspUnable : 1,
+		Time_AssemblyExecuted : 1,
+		Time_Inspection : 1;
+	PRODUCE
+		InspUnable : 1,
+		Time_AssemblyExecuted : 1,
+		Time_InspectingExecuted : 1;
+
+TRANSITION InspLeave
+	CONSUME
+		Inspecting : 1,
+		TimeInInsp : 2;
+	PRODUCE
+		Inspected : 1,
+		InspectinAvailable : 1,
+		InspUnable : 1;
+
+TRANSITION InspTimeAdd
+	CONSUME
+		Inspecting : 1,
+		Time_Inspection : 1;
+	PRODUCE
+		Inspecting : 1,
+		Time_InspectingExecuted : 1,
+		TimeInInsp : 1;
+
+TRANSITION LongerInAssem
+	CONSUME
+		TimeInAssembly : 1;
+	PRODUCE
+;
+
+TRANSITION LongerInInsp
+	CONSUME
+		TimeInInsp : 1;
+	PRODUCE
+;
+
+TRANSITION NextStepAvailable
+	CONSUME
+		Time_AssemblyExecuted : 1,
+		Time_InspectingExecuted : 1,
+		Time_ShapeExecuted : 1;
+	PRODUCE
+		Time_NextAvailable : 1;
+
+TRANSITION QueueFull
+	CONSUME
+		Time_Shape : 1,
+		TotalInQAssem : 10;
+	PRODUCE
+		Time_ShapeExecuted : 1,
+		TotalInQAssem : 10;
+
+TRANSITION Remake
+	CONSUME
+		Inspected : 1,
+		RemakeNotQueued : 1;
+	PRODUCE
+		RemakeAmount : 1,
+		RemakeQ : 1;
+
+TRANSITION Thrash
+	CONSUME
+		Inspected : 1;
+	PRODUCE
+		ThrashedAmount : 1;
+
+TRANSITION toInsp
+	CONSUME
+		AssemblyActive : 1,
+		InspQAvailable : 1,
+		TimeInAssembly : 4;
+	PRODUCE
+		AssemblyAvailable : 1,
+		AssemUnable : 1,
+		InspQ : 1;
