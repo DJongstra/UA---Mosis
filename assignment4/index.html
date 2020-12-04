@@ -131,6 +131,25 @@ The blue circle shows that the transition for the remake is enabled.
 <h2>Invariants</h2>
 <p>
 
+ <ul>
+  <li><b>M(AssemAble) + M(AssemblyActive) + M(AssemblyAvailable) = 1</b>: This invariant was not expected, but does make sense.
+  AssemblyAvailable denotes that no object has tried to enter the assemble procedure. When an object does try, the single token is taken from AssemblyAvailable and moved to AssemAble.
+  This means that the object is trying to get in the assembler. If this happens, the token is taken from AssemAble and moved to AssemblyActive.
+  When the assembler is done, the token is taken from AssemblyActive and moved to AssemblyAvailable. This means that there is never a token in all three places at the same time.</li>
+  <li><b>M(AssemAble) + M(AssemblyActive) + M(AssemUnable) = 1</b>: This was definitely an unexpected invariant. The expected invariant consisted of AssemAble and AssemUnable being 1, as the assemble procedure is either available or not. 
+  That AssemblyActive is included in this, is because the token does not move immediately from AssemUnable to AssemAble. It first goes to AssemblyActive to be transferred back to AssemAble when the assembler frees up.</li>
+  <li><b>M(AssemblerQ) + M(CubesInQ) + M(CylindersInQ) = 10</b>: This invariant was expected. That the available assembly queue and the amount of the cubes in the queue and the amount of cylinders queued are a total of 10.</li>
+  <li><b>M(InspAble) + M(InspectinAvailable) + M(Inspecting) = 1</b>: the same reasoning goes for this as for the the equal assembly invariant (first on the list).</li>
+  <li><b>M(InspQ) + M(InspQAvailable) = 10</b>: This invariant was expected, as the token moves from the available queue to the actual queue every time an object arrives. </li>
+  <li><b>M(InspAble) + M(Inspecting) + M(InspUnable) = 1</b>: For this invariant, the same goes as for the related assembler invariant (bullet-point 2)</li>
+  <li><b>M(RemakeNotQueued) + M(RemakeQ) = 10</b>: same goes as for the inspector queue.</li>
+  <li><b>M(Time_Assembly) + M(Time_AssemblyExecuted) + M(Time_NextAvailable) = 1</b>: This invariant was expected, because the Time_Assembly denotes that the assembler can still do a step in that time slice, while Time_AssemblyExecuted has a token when the assembler has executed in that time slice.
+  Time_NextAvailable contains a token if all processes had a token which can be taken away, so Time_AssemblyExecuted does not have the token anymore as soon as Time_NextAvailable has one. It would be bad if there were multiple tokens in these three places combined.</li>
+  <li><b>M(Time_InspectingExecuted) + M(Time_Inspection) + M(Time_NextAvailable) = 1</b>: same goes as for the Time_Assembly equation above</li>
+  <li><b>M(Time_NextAvailable) + M(Time_Shape) + M(Time_ShapeExecuted) = 1</b>: same goes as for the Time_Assembly equation above</li>
+  <li><b>M(AssemblerQ) + M(TotalInQAssem) = 10</b>: same goes as for the inspector queue.</li>
+</ul> 
+
 </p>
 
 
