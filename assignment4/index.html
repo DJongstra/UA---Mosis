@@ -1,0 +1,141 @@
+<html>
+ <!-- MoSIS Assignments template -->
+
+ <title>MoSIS Assignment 4</title>
+
+ <body bgcolor="#ffffff">
+
+ <hr noshade>
+
+   <h1>MoSIS Assignment 4</h1>
+
+    <h2>Team</h2>
+     <pre>
+      Name       :	Daniëlle Jongstra
+      Student ID :	20172260
+      e-mail     :	Danielle.jongstra@student.uantwerpen.be
+
+      Name       :	Joanna Kisaakye
+      Student ID :	20205490
+      e-mail     :	joanna.kisaakye@student.uantwerpen.be
+
+      Time spent on this assignment (in hours): --------
+     </pre>
+
+    <h2>The assignment</h2>
+     <p>
+     </p>
+ 
+    <h2>Petri Net</h2>
+
+     <p>
+	 The petri net is modelled in <a href="./Assembly.xml"><tt>Assembly.xml</tt></a>. The entire net is also shown in fig. 1. There is a simplified petri net in fig. 2,
+	 which does not have the time requirements modeled. In this simplified form the general flow of tokens is easier to see, and therefore we'll describe this petri net first.
+	 <br><br>
+	 In the petri net, we start on the left side. We can see the transitions CubeArrives and CylinderArrives that places a new shape of either of them in the queue if the queue is not completely filled yet.
+	 The amount of places left in the queue is the amount of tokens in AssemblerQ.
+	 As soon as there are at least 2 Cubes and 1 Cylinder in the queue, the transition Assembly becomes enabled, under the extra condition that the assembler is not used already and that there are no remakes queued. The remakes are discussed a little further in the petri net description.
+	 If the transition is taken, the token denoting the assembler to be available is taken away, so that another object is not able to enter the assembler. During assembly, there is a token in Assembling denoting that the assembler is in use.
+	 After the assembly is done, the transition ToInsp is used. This transition transfers a token back to AssemblyAvailable, as the assembler is no longer in use by taking this transition.
+	 The object is then in a queue to enter the inspector. The amount of objects in this queue is kept the same way the queue of the assembler was kept.
+	 Transition Insp is taken to move the object from the queue to the inspector. Availability of the inspector is checked the same way it was in the assembler.
+	 After this the inspector is left using InspLeave and the object will be in the flagging zone: Inspected. The object can be flagged as either thrashed, accept or remake. If it is flagged as thrashed or accept, there is a token added to respectively ThrashedAmount and AcceptedAmount. These state are counters used for keeping track of the performance.
+	 If the object is flagged as a remake, there is a token added to the counter RemakeAmount which is also used for tracking the performance.
+	 Another thing that is done when an object is flagged as remake is that is takes a token from RemakeNotQueued. This place has 10 tokens if there are no remakes waiting for the assembler. For each remake waiting a token is taken away.
+	 There is also a token in RemakeQ, which is the object to remake being in the queue.
+	 The remake can enter the assembler by taking the transition AssemblyRemake. After this transition is taken, the object will follow the same route as described before.
+	 If there is a remake, the assembler can not make a new object from 2 Cubes and a Cylinder. The transition that would transfer a new object to the assembler requires 10 tokens in RemakeNotQueued. 
+	 Because a token is taken away every time a new remake is flagged, the transitions Assembly and AssemblyRemake can not be enabled at the same time.
+	 <br><br>
+	 The complexity in fig. 1 comes from adding the time and the necessary checks that came with that. Most of the places related to the time are on the bottom half of the petri net.
+	 The time works by having a token available in Time_NextAvailable to go to the next time step. DoNextStep then distributes a token to each of the 3 main processes (shapes, assembler and inspector) to denote that they can still do something during that time slice.
+	 If a process is unable to do something, chooses to skip acting the time slice or does an action, the token denoting an action is available is transferred to a place denoting the process has been executed during the time slice.
+	 Extra logic is added to check so that a process can only skip processing if the process before it already attempted to process. This way, a process that was not able to become active without another process already having executed is still able to execute after this process did their step.
+	 The assembler and inspector have some new places to check if they are able to execute during the time slice. They can only skip if these places denote that they are not able to execute.
+	 As soon as all the processes have either skipped or executed, the transition NextStepAvailable becomes available. This takes the tokens from the executed places and transfers one to the Time_NextAvailable place.
+	 This means the time logic can start from the beginning.
+
+	 
+	 
+	 <figure>
+		<img src="./img/Monstrosity.png">
+		<figcaption>Figure 1: The complete petri net</figcaption>
+	</figure> 
+	
+	<figure>
+		<img src="./img/p1.png">
+		<figcaption>Figure 2: A simplified petri net, not keeping time into account</figcaption>
+	</figure> 
+	
+</p>
+
+<h2>Simulation 1</h2>
+<p>
+Simulation 1 is the case of "The Assembler finished an assembly at the exact same timestep the Inspector marks an assembly for reassembly".
+The simulation is shown in fig. 3 till fig. 7.
+In the first step, it can be seen that both the inspector and the assembler can finish.
+	<figure>
+		<img src="./img/Sim1-1.png">
+		<figcaption>Figure 3: Step 1 in simulating case 1</figcaption>
+	</figure> 
+	Step 2 shows that within the same time step the object leaves the inspector, it can be flagged as a remake.
+	<figure>
+		<img src="./img/Sim1-2.png">
+		<figcaption>Figure 4: Step 2 in simulating case 1</figcaption>
+	</figure> 
+	Step 3 shows that an object leaves the assembler. The other object is in the remake queue.
+	<figure>
+		<img src="./img/Sim1-3.png">
+		<figcaption>Figure 5: Step 3 in simulating case 1</figcaption>
+	</figure> 
+	Step 4 shows that when the assembly object is moved to the inspector queue, the transition for the remake object to the assembly procedure becomes enabled.
+	<figure>
+		<img src="./img/Sim1-4.png">
+		<figcaption>Figure 6: Step 4 in simulating case 1</figcaption>
+	</figure> 
+	Step 5 shows that after entering the assemble procedure, the object can move into the actual assembly.
+	It is possible that the object is in the assembler for the first time step during the same time slice. This however depends on the leaving object.
+	If the leaving object used the assembler during the time slice, the new object will only gain being in the assembler for 1 time unit in the next time slice.
+	Else it is possible for the new object to be in the assembler for one time unit during the current time slice.
+	<figure>
+		<img src="./img/Sim1-5.png">
+		<figcaption>Figure 7: Step 5 in simulating case 1</figcaption>
+	</figure> 
+</p>
+
+<h2>Simulation 2</h2>
+<p>
+Simulation 2 is the case of "There is an assembly waiting for reassembly (i.e., it is to be fixed) and at that exact time the third component of an assembly arrives".
+This can be seen in fig. 8 and fig. 9.
+The first step its blue circles show that there is an assembly for remake in the remake queue and that it is not yet possible to assemble a new object.
+The pink circle shows shows that in this time step, the last needed shape can arrive.
+<figure>
+		<img src="./img/Sim2-1.png">
+		<figcaption>Figure 8: Step 1 in simulating case 2</figcaption>
+	</figure> 
+The pink circle in the second step shows that the last shape has arrived, but that the transition to the assembler for the new object is not enabled.
+The blue circle shows that the transition for the remake is enabled.
+	
+	<figure>
+		<img src="./img/Sim2-2.png">
+		<figcaption>Figure 9: Step 2 in simulating case 2</figcaption>
+	</figure> 
+
+</p>
+
+<h2>Reachability</h2>
+<p>
+
+</p>
+
+<h2>Invariants</h2>
+<p>
+
+</p>
+
+
+
+ <hr noshade>
+
+ </body>
+</html>
