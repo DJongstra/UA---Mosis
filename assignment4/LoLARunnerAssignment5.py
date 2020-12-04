@@ -18,7 +18,8 @@ class LoLARunner:
 
             #change this command as needed
             # place arguments as entries in the list
-            cmd = ['lola', '--quiet', '--check=none', filename]
+
+            cmd = ['lola', '--quiet', '--json=output_boundedness.json', '--search=cover', '--encoder=full', '--formula="AG ' + p +' < oo"', filename]
 
             # for debugging
             # print("Running cmd: " + str(cmd))
@@ -27,7 +28,7 @@ class LoLARunner:
             subprocess.run(" ".join(cmd), shell=True)
 
             # open the JSON file and check the result
-            with open("output.json") as f:
+            with open("output_boundedness.json") as f:
                 j = json.load(f)
                 result = j['analysis']['result']
                 print("Result for " + p + ": " + str(result))
@@ -36,10 +37,37 @@ if __name__ == "__main__":
 
     # CHANGE THESE VARIABLES FOR YOUR SOLUTION
     # YOU CAN COPY THE PLACE NAMES FROM THE LOLA FILE
-    places = """PLACE_ONE,
-    PLACE_TWO,
-    PLACE_THREE"""
-    filename = "solution.lola"
+    places = """AcceptedAmount,
+	AmountOfTimeSteps,
+	AssemAble,
+	AssemblerQ,
+	AssemblyActive,
+	AssemblyAvailable,
+	AssemUnable,
+	CubesInQ,
+	CylindersInQ,
+	InspAble,
+	Inspected,
+	InspectinAvailable,
+	Inspecting,
+	InspQ,
+	InspQAvailable,
+	InspUnable,
+	RemakeAmount,
+	RemakeNotQueued,
+	RemakeQ,
+	ThrashedAmount,
+	Time_Assembly,
+	Time_AssemblyExecuted,
+	Time_InspectingExecuted,
+	Time_Inspection,
+	Time_NextAvailable,
+	Time_Shape,
+	Time_ShapeExecuted,
+	TimeInAssembly,
+	TimeInInsp,
+	TotalInQAssem;"""
+    filename = "Assembly.lola"
 
     lr = LoLARunner()
     lr.load_places(places)
