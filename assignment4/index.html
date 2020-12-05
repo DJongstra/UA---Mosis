@@ -125,7 +125,20 @@ The blue circle shows that the transition for the remake is enabled.
 
 <h2>Reachability</h2>
 <p>
+	The reachability graph for arriving cubes and cylinders is in fig. 10. This graph does not cover the cubes and cylinders leaving the queue. 
+	Therefore, it can be seen in the graph that a shape arrives till the queue is full, which are the red states. Every state can be reached by multiple paths, except for the stats that denote the queue being filled by either just cubes or just cylinders.
+	
+	<figure>
+		<img src="./img/reachability.png">
+		<figcaption>Figure 10: The reachability graph of the arriving of cylinders an cubes</figcaption>
+	</figure> 
 
+	<br><br>
+	The full petri net would produce an infinite reachability graph, as it is possible that an infinite amount of objects are accepted/thrashed/remade in an infinite amount of time steps.
+	All those are kept track of in the petri net. Even if the petri net has a limited stock, the reachability graph would still be infinite. 
+	This is because the time will go on even if there is nothing that can be done, which would be the case if the stock was empty.
+	Not taking the time into account, the reachability graph would still be infinite. The inspector could flagging the same object as a remake over and over again. This means that the remake counter could get infinitely big.
+	
 </p>
 
 <h2>Invariants</h2>
@@ -149,6 +162,12 @@ The blue circle shows that the transition for the remake is enabled.
   <li><b>M(Time_NextAvailable) + M(Time_Shape) + M(Time_ShapeExecuted) = 1</b>: same goes as for the Time_Assembly equation above</li>
   <li><b>M(AssemblerQ) + M(TotalInQAssem) = 10</b>: same goes as for the inspector queue.</li>
 </ul> 
+
+	<br><br>
+	The analysis of these invariants is in <a href="./invariant1.html"><tt>invariants.html</tt></a>. The invariants do no change by adding a stock.
+	The invariants can be changed by adding a single place. In the example that generated <a href="./invariantChange.html"><tt>invariantChange.html</tt></a> a place InvarChange was added.
+	It has 200 tokens at the start of a simulation. Every time a cylinder arrives, a token is taken, and every time a cylinder an two cubes are moved to the assembler, a token is added. 
+	This makes that the cylinder queue and the InvarChange always have 200 tokens cumulative. This adds the last invariant on the list, <b>M(CylindersInQ) + M(InvarChanger) = 200</b>.
 
 </p>
 
