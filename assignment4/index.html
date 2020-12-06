@@ -171,6 +171,22 @@ The blue circle shows that the transition for the remake is enabled.
 
 </p>
 
+<h2>Boundedness</h2>
+<p>A petri net is (k-)bounded if the amount of tokens in each place never exceeds a certain value of k. This would also mean that the reachability graph would have to be finite, which is not the case for our graph.
+Therefore, we can conclude that our petri net is not bounded. In LoLa the option to use for a boundedness check is ‘--formula="AG p < oo" with p being every place by iterating over every place.
+If the place was bounded, the k-boundedness could be discovered by using the option --formula="AG p <= k". The boundedness check can be found in script <a href="./LoLARunner_Boundedness_AssemblySimStock.py"><tt>LoLARunner_Boundedness_AssemblySimStock.py</tt></a>.
+This uses the stock version of the net, because if that version is not bounded, then the non-stock version is certainly not bounded. Other used options are --search=cover and --markinglimit=1000, this is to prevent the analysis to run forever in the case that the net is not bounded.
+When using these options, we get an segmentation error. Else, the analysis runs for long and the result of this can be seen in <a href="./output_boundedness_asimstock.json"><tt>output_boundedness_asimstock.json</tt></a>.
+As LoLa seems to run out of space, we should try to reduce the state space to analyze. This can be done by using the --cycle option, which stores only a subset of the markings.
+</p>
+
+
+<h2>Deadlock</h2>
+<p> 
+For discovering deadlock using LoLa, the option --formula="EF DEADLOCK" can be used. Just as with the boundedness, there is a segmentation fault. 
+However, a deadlock means that no transition can fire. Because of how the time has been designed to work in our petri net, the next time step can be achieved by every process either running or skipping, a deadlock should not be possible.
+The script for the deadlock is in <a href="./LoLARunner_Deadlock_AssemblySimStock.py"><tt>LoLARunner_Deadlock_AssemblySimStock.py</tt></a> and the output after a long run is in <a href="./output_deadlock_asimstock.json"><tt>output_deadlock_asimstock.json</tt></a>
+</p>
 
 
  <hr noshade>
