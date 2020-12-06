@@ -185,7 +185,32 @@ As LoLa seems to run out of space, we should try to reduce the state space to an
 <p> 
 For discovering deadlock using LoLa, the option --formula="EF DEADLOCK" can be used. Just as with the boundedness, there is a segmentation fault. 
 However, a deadlock means that no transition can fire. Because of how the time has been designed to work in our petri net, the next time step can be achieved by every process either running or skipping, a deadlock should not be possible.
-The script for the deadlock is in <a href="./LoLARunner_Deadlock_AssemblySimStock.py"><tt>LoLARunner_Deadlock_AssemblySimStock.py</tt></a> and the output after a long run is in <a href="./output_deadlock_asimstock.json"><tt>output_deadlock_asimstock.json</tt></a>
+The script for the deadlock is in <a href="./LoLARunner_Deadlock_AssemblySimStock.py"><tt>LoLARunner_Deadlock_AssemblySimStock.py</tt></a> and the output after a long run is in <a href="./output_deadlock_asimstock.json"><tt>output_deadlock_asimstock.json</tt></a>.
+Using the --search='cover' flag, the analysis returns a segmentation fault. Without this flag, the analysis for a long time.
+</p>
+
+<h2>Queue overflow</h2>
+<p>
+	The queue overflow can be checked by seeing if the states that queue objects for the assembler/inspector have a boundedness of 10. This can be checked by using the option
+	--formula="AG TotalInQAssem + RemakeQ < 11" in Lola, with TotalInQAssem the amount of cubes and cylinders, and RemakeQ the amount of objects queued for remake for the assembler.
+	Lola returns that these states are not 10-bounded, so a queue overflow for is possible for the assembler. For this analysis the  --search='cover' flag was used.
+	<br><br>
+	For the inspector, the queue limit was set in the petri net by having an amount of available places of the queue in a place. Therefore, it should not exceed the queue limit.
+	This can be tested by running the option --formula="AG InspQ < 11" instead of the previous formula. This runs longer than the boundedness check of the assembler.
+	The computer started getting a hard time after 20 minutes, so the analysis didn't come to an end. However, it is safe to assume the queue of the inspector does not overflow, as the invaraints also include M(InspQ) + M(InspQAvailable) = 10.
+	
+</p>
+
+<h2>Liveness</h2>
+<p> 
+The liveness of entering the assembler prcedure was checked by using --formula="AGEF FIREABLE(Assembly)". This makes the computer crash within a minute. Using the --cycle option does not change a thing about this.
+It is assumed that the chosen transition is live, as otherwise the assembler can not be entered.
+</p>
+
+<h2>Fairness</h2>
+<p> 
+Fairness is assumed if all the procedures can run at the start of a time step. This is checked by using --formula="AG Time_Shape + Time_Assembly + Time_Inspection < 3".
+This returns that the 3 places enabling the 3 procedures are not 2-bounded, so at least can all procedures run during a time step.
 </p>
 
 
