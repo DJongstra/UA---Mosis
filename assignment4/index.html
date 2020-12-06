@@ -29,12 +29,12 @@
     <h2>Petri Net</h2>
 
      <p>
-	 The petri net is modelled in <a href="./Assembly.xml"><tt>Assembly.xml</tt></a>. The entire net is also shown in fig. 1. There is a simplified petri net in fig. 2,
-	 which does not have the time requirements modeled. In this simplified form the general flow of tokens is easier to see, and therefore we'll describe this petri net first.
+	 The Petri net is modelled in <a href="./Assembly.xml"><tt>Assembly.xml</tt></a>. The entire net is also shown in fig. 1. There is a simplified Petri net in fig. 2,
+	 which does not have the time requirements modeled. In this simplified form the general flow of tokens is easier to see, and therefore we'll describe this Petri net first.
 	 <br><br>
-	 In the petri net, we start on the left side. We can see the transitions CubeArrives and CylinderArrives that places a new shape of either of them in the queue if the queue is not completely filled yet.
+	 In the Petri net, we start on the left side. We can see the transitions CubeArrives and CylinderArrives that places a new shape of either of them in the queue if the queue is not completely filled yet.
 	 The amount of places left in the queue is the amount of tokens in AssemblerQ.
-	 As soon as there are at least 2 Cubes and 1 Cylinder in the queue, the transition Assembly becomes enabled, under the extra condition that the assembler is not used already and that there are no remakes queued. The remakes are discussed a little further in the petri net description.
+	 As soon as there are at least 2 Cubes and 1 Cylinder in the queue, the transition Assembly becomes enabled, under the extra condition that the assembler is not used already and that there are no remakes queued. The remakes are discussed a little further in the Petri net description.
 	 If the transition is taken, the token denoting the assembler to be available is taken away, so that another object is not able to enter the assembler. During assembly, there is a token in Assembling denoting that the assembler is in use.
 	 After the assembly is done, the transition ToInsp is used. This transition transfers a token back to AssemblyAvailable, as the assembler is no longer in use by taking this transition.
 	 The object is then in a queue to enter the inspector. The amount of objects in this queue is kept the same way the queue of the assembler was kept.
@@ -47,7 +47,7 @@
 	 If there is a remake, the assembler can not make a new object from 2 Cubes and a Cylinder. The transition that would transfer a new object to the assembler requires 10 tokens in RemakeNotQueued. 
 	 Because a token is taken away every time a new remake is flagged, the transitions Assembly and AssemblyRemake can not be enabled at the same time.
 	 <br><br>
-	 The complexity in fig. 1 comes from adding the time and the necessary checks that came with that. Most of the places related to the time are on the bottom half of the petri net.
+	 The complexity in fig. 1 comes from adding the time and the necessary checks that came with that. Most of the places related to the time are on the bottom half of the Petri net.
 	 The time works by having a token available in Time_NextAvailable to go to the next time step. DoNextStep then distributes a token to each of the 3 main processes (shapes, assembler and inspector) to denote that they can still do something during that time slice.
 	 If a process is unable to do something, chooses to skip acting the time slice or does an action, the token denoting an action is available is transferred to a place denoting the process has been executed during the time slice.
 	 Extra logic is added to check so that a process can only skip processing if the process before it already attempted to process. This way, a process that was not able to become active without another process already having executed is still able to execute after this process did their step.
@@ -59,12 +59,12 @@
 	 
 	 <figure>
 		<img src="./img/Monstrosity.png">
-		<figcaption>Figure 1: The complete petri net</figcaption>
+		<figcaption>Figure 1: The complete Petri net</figcaption>
 	</figure> 
 	
 	<figure>
 		<img src="./img/p1.png">
-		<figcaption>Figure 2: A simplified petri net, not keeping time into account</figcaption>
+		<figcaption>Figure 2: A simplified Petri net, not keeping time into account</figcaption>
 	</figure> 
 	
 </p>
@@ -134,8 +134,8 @@ The blue circle shows that the transition for the remake is enabled.
 	</figure> 
 
 	<br><br>
-	The full petri net would produce an infinite reachability graph, as it is possible that an infinite amount of objects are accepted/thrashed/remade in an infinite amount of time steps.
-	All those are kept track of in the petri net. Even if the petri net has a limited stock, the reachability graph would still be infinite. 
+	The full Petri net would produce an infinite reachability graph, as it is possible that an infinite amount of objects are accepted/thrashed/remade in an infinite amount of time steps.
+	All those are kept track of in the Petri net. Even if the Petri net has a limited stock, the reachability graph would still be infinite. 
 	This is because the time will go on even if there is nothing that can be done, which would be the case if the stock was empty.
 	Not taking the time into account, the reachability graph would still be infinite. The inspector could flagging the same object as a remake over and over again. This means that the remake counter could get infinitely big.
 	
@@ -172,8 +172,8 @@ The blue circle shows that the transition for the remake is enabled.
 </p>
 
 <h2>Boundedness</h2>
-<p>A petri net is (k-)bounded if the amount of tokens in each place never exceeds a certain value of k. This would also mean that the reachability graph would have to be finite, which is not the case for our graph.
-Therefore, we can conclude that our petri net is not bounded. In LoLa the option to use for a boundedness check is ‘--formula="AG p < oo" with p being every place by iterating over every place.
+<p>A Petri net is (k-)bounded if the amount of tokens in each place never exceeds a certain value of k. This would also mean that the reachability graph would have to be finite, which is not the case for our graph.
+Therefore, we can conclude that our Petri net is not bounded. In LoLa the option to use for a boundedness check is ‘--formula="AG p < oo" with p being every place by iterating over every place.
 If the place was bounded, the k-boundedness could be discovered by using the option --formula="AG p <= k". The boundedness check can be found in script <a href="./LoLARunner_Boundedness_AssemblySimStock.py"><tt>LoLARunner_Boundedness_AssemblySimStock.py</tt></a>.
 This uses the stock version of the net, because if that version is not bounded, then the non-stock version is certainly not bounded. Other used options are --search=cover and --markinglimit=1000, this is to prevent the analysis to run forever in the case that the net is not bounded.
 When using these options, we get an segmentation error. Else, the analysis runs for long and the result of this can be seen in <a href="./output_boundedness_asimstock.json"><tt>output_boundedness_asimstock.json</tt></a>.
@@ -184,7 +184,7 @@ As LoLa seems to run out of space, we should try to reduce the state space to an
 <h2>Deadlock</h2>
 <p> 
 For discovering deadlock using LoLa, the option --formula="EF DEADLOCK" can be used. Just as with the boundedness, there is a segmentation fault. 
-However, a deadlock means that no transition can fire. Because of how the time has been designed to work in our petri net, the next time step can be achieved by every process either running or skipping, a deadlock should not be possible.
+However, a deadlock means that no transition can fire. Because of how the time has been designed to work in our Petri net, the next time step can be achieved by every process either running or skipping, a deadlock should not be possible.
 The script for the deadlock is in <a href="./LoLARunner_Deadlock_AssemblySimStock.py"><tt>LoLARunner_Deadlock_AssemblySimStock.py</tt></a> and the output after a long run is in <a href="./output_deadlock_asimstock.json"><tt>output_deadlock_asimstock.json</tt></a>.
 Using the --search='cover' flag, the analysis returns a segmentation fault. Without this flag, the analysis for a long time.
 </p>
@@ -192,10 +192,13 @@ Using the --search='cover' flag, the analysis returns a segmentation fault. With
 <h2>Queue overflow</h2>
 <p>
 	The queue overflow can be checked by seeing if the states that queue objects for the assembler/inspector have a boundedness of 10. This can be checked by using the option
-	--formula="AG TotalInQAssem + RemakeQ < 11" in Lola, with TotalInQAssem the amount of cubes and cylinders, and RemakeQ the amount of objects queued for remake for the assembler.
-	Lola returns that these states are not 10-bounded, so a queue overflow for is possible for the assembler. For this analysis the  --search='cover' flag was used.
+	--formula="AG TotalInQAssem + RemakeQ < 11" in LoLA, with TotalInQAssem the amount of cubes and cylinders, and RemakeQ the amount of objects queued for remake for the assembler.
+	LoLA returns that these states are not 10-bounded, so a queue overflow for is possible for the assembler. For this analysis the  --search='cover' flag was used.
+	This can be seen in the execution log, <a href="./AssemblySimStock_Queue_Overflow.log"><tt>AssemblySimStock_Queue_Overflow.log</tt></a> generated by this script,
+	 <a href="./LoLARunner_Queue_Overflow_AssemblySimStock.py"><tt>LoLARunner_Queue_Overflow_AssemblySimStock.py</tt></a> which returns the output in
+	<a href="./output_queue_overflow_asimstock.json"><tt>output_queue_overflow_asimstock.json</tt></a>.
 	<br><br>
-	For the inspector, the queue limit was set in the petri net by having an amount of available places of the queue in a place. Therefore, it should not exceed the queue limit.
+	For the inspector, the queue limit was set in the Petri net by having an amount of available places of the queue in a place. Therefore, it should not exceed the queue limit.
 	This can be tested by running the option --formula="AG InspQ < 11" instead of the previous formula. This runs longer than the boundedness check of the assembler.
 	The computer started getting a hard time after 20 minutes, so the analysis didn't come to an end. However, it is safe to assume the queue of the inspector does not overflow, as the invaraints also include M(InspQ) + M(InspQAvailable) = 10.
 	
@@ -203,14 +206,21 @@ Using the --search='cover' flag, the analysis returns a segmentation fault. With
 
 <h2>Liveness</h2>
 <p> 
-The liveness of entering the assembler prcedure was checked by using --formula="AGEF FIREABLE(Assembly)". This makes the computer crash within a minute. Using the --cycle option does not change a thing about this.
-It is assumed that the chosen transition is live, as otherwise the assembler can not be entered.
+	The liveness of entering the assembler procedure was checked by using --formula="AGEF FIREABLE(Assembly)". This makes the computer crash within a minute. Using the --cycle option does not change a thing about this.
+	It is assumed that the chosen transition is live, as otherwise the assembler can not be entered.
+	<br><br>
+	In addition, performing the same analysis with the <i>markinglimit=602207402</i> on another machine, using the script <a href="./LoLARunner_Liveness_AssemblySimStock.py"><tt>LoLARunner_Liveness_AssemblySimStock.py</tt></a> produced the output in <a href="./output_liveness_asimstock.json"><tt>output_liveness_asimstock.json</tt></a>.
+	As can be seen in the execution log, <a href="./AssemblySimStock_Liveness.log"><tt>AssemblySimStock_Liveness.log</tt></a>, LoLA had yet to find a state in which this transition was not live by the time the marking limit was hit.
 </p>
 
 <h2>Fairness</h2>
 <p> 
-Fairness is assumed if all the procedures can run at the start of a time step. This is checked by using --formula="AG Time_Shape + Time_Assembly + Time_Inspection < 3".
-This returns that the 3 places enabling the 3 procedures are not 2-bounded, so at least can all procedures run during a time step.
+	Fairness is assumed if all the procedures can run at the start of a time step. This is checked by using --formula="AG Time_Shape + Time_Assembly + Time_Inspection < 3".
+	This returns that the 3 places enabling the 3 procedures are not 2-bounded, so at least can all procedures run during a time step.
+<br><br>
+	This can be seen in the execution log, <a href="./AssemblySimStock_Fairness.log"><tt>AssemblySimStock_Fairness.log</tt></a> generated by this script,
+	 <a href="./LoLARunner_Fairness_AssemblySimStock.py"><tt>LoLARunner_Fairness_AssemblySimStock.py</tt></a> which returns the output in
+	<a href="./output_fairness_asimstock.json"><tt>output_fairness_asimstock.json</tt></a>.
 </p>
 
 
