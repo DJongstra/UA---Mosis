@@ -11,7 +11,7 @@ class LoLARunner:
         #change this command as needed
         # place arguments as entries in the list
 
-        cmd = ['lola', '--json=output_queue_overflow_asimstock.json', '--formula="AG TotalInQAssem + RemakeQ < 11"', filename, '&> AssemblySimStock_Queue_Overflow.log']
+        cmd = ['lola', '--json=output_fairness_asimstock.json', '--formula="AG Time_Shape + Time_Assembly + Time_Inspection < 3"', filename, '&> AssemblySimStock_Fairness.log']
 
         # for debugging
         # print("Running cmd: " + str(cmd))
@@ -20,7 +20,7 @@ class LoLARunner:
         subprocess.run(" ".join(cmd), shell=True)
 
         # open the JSON file and check the result
-        with open("output_queue_overflow_asimstock.json") as f:
+        with open("output_fairness_asimstock.json") as f:
             j = json.load(f)
             result = j['analysis']['result']
             print("Result : " + str(result))

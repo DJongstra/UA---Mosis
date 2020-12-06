@@ -10,8 +10,8 @@ lola:   computing forward-conflicting sets
 lola:   computing back-conflicting sets
 lola:   30 transition conflict sets
 lola: TASK
-lola:   read: AG (TotalInQAssem + RemakeQ < 11)
-lola:   formula length: 33
+lola:   read: AG (Time_Shape + Time_Assembly + Time_Inspection < 3)
+lola:   formula length: 53
 lola:   checking invariance
 lola:   Planning: workflow for reachability check: search (--findpath=off)
 lola: STORE
@@ -25,7 +25,7 @@ lola: RUNNING
 lola: RESULT
 lola:   result: no
 lola:   The predicate is not invariant.
-lola:   76 markings, 75 edges
+lola:   2 markings, 1 edges
 lola:   print data as JSON (--json)
-lola:   writing JSON to output_queue_overflow_asimstock.json
-lola:   closed JSON file output_queue_overflow_asimstock.json
+lola:   writing JSON to output_fairness_asimstock.json
+lola:   closed JSON file output_fairness_asimstock.json
