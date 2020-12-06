@@ -1,0 +1,136 @@
+lola: NET
+lola:   reading net from AssemblySimStock.lola
+lola:   finished parsing
+lola:   closed net file AssemblySimStock.lola
+lola:   51/65536 symbol table entries, 0 collisions
+lola:   preprocessing... 
+lola:   finding significant places
+lola:   32 places, 19 transitions, 19 significant places
+lola:   computing forward-conflicting sets
+lola:   computing back-conflicting sets
+lola:   30 transition conflict sets
+lola: TASK
+lola:   read: AG (EF (FIREABLE(Assembly)))
+lola:   formula length: 28
+lola:   checking liveness
+lola:   liveness not yet implemented, converting to CTL...
+lola:   processed formula: !(E(TRUE U !(E(TRUE U FIREABLE(Assembly)))))
+lola:   processed formula length: 44
+lola:   2 rewrites
+lola:   formula mentions 0 of 32 places; total mentions: 0
+lola: STORE
+lola:   using a bit-perfect encoder (--encoder=bit)
+lola:   using 76 bytes per marking, with 0 unused bits
+lola:   using a prefix tree store (--store=prefix)
+lola: RUNNING
+lola:   CTL formula contains 2 significant temporal operators and needs 9 bytes of payload
+lola:      6460068 markings,    6460069 edges,  1292014 markings/sec,     0 secs
+lola:     12895056 markings,   12895057 edges,  1286998 markings/sec,     5 secs
+lola:     19260366 markings,   19260367 edges,  1273062 markings/sec,    10 secs
+lola:     25655737 markings,   25655738 edges,  1279074 markings/sec,    15 secs
+lola:     31939699 markings,   31939700 edges,  1256792 markings/sec,    20 secs
+lola:     38159492 markings,   38159492 edges,  1243959 markings/sec,    25 secs
+lola:     44374394 markings,   44374394 edges,  1242980 markings/sec,    30 secs
+lola:     50704738 markings,   50704739 edges,  1266069 markings/sec,    35 secs
+lola:     56951801 markings,   56951801 edges,  1249413 markings/sec,    40 secs
+lola:     62780226 markings,   62780226 edges,  1165685 markings/sec,    45 secs
+lola:     68746223 markings,   68746224 edges,  1193199 markings/sec,    50 secs
+lola:     74670445 markings,   74670445 edges,  1184844 markings/sec,    55 secs
+lola:     80582075 markings,   80582076 edges,  1182326 markings/sec,    60 secs
+lola:     86457537 markings,   86457537 edges,  1175092 markings/sec,    65 secs
+lola:     92379735 markings,   92379736 edges,  1184440 markings/sec,    70 secs
+lola:     98287295 markings,   98287295 edges,  1181512 markings/sec,    75 secs
+lola:    104075394 markings,  104075394 edges,  1157620 markings/sec,    80 secs
+lola:    109902784 markings,  109902785 edges,  1165478 markings/sec,    85 secs
+lola:    115699240 markings,  115699241 edges,  1159291 markings/sec,    90 secs
+lola:    121455228 markings,  121455229 edges,  1151198 markings/sec,    95 secs
+lola:    127238911 markings,  127238912 edges,  1156737 markings/sec,   100 secs
+lola:    133070304 markings,  133070305 edges,  1166279 markings/sec,   105 secs
+lola:    138910950 markings,  138910951 edges,  1168129 markings/sec,   110 secs
+lola:    144597300 markings,  144597300 edges,  1137270 markings/sec,   115 secs
+lola:    151071059 markings,  151071059 edges,  1294752 markings/sec,   120 secs
+lola:    157380363 markings,  157380364 edges,  1261861 markings/sec,   125 secs
+lola:    163310325 markings,  163310326 edges,  1185992 markings/sec,   130 secs
+lola:    169104273 markings,  169104274 edges,  1158790 markings/sec,   135 secs
+lola:    175114417 markings,  175114417 edges,  1202029 markings/sec,   140 secs
+lola:    181004728 markings,  181004729 edges,  1178062 markings/sec,   145 secs
+lola:    186920575 markings,  186920575 edges,  1183169 markings/sec,   150 secs
+lola:    192709477 markings,  192709477 edges,  1157780 markings/sec,   155 secs
+lola:    198487710 markings,  198487710 edges,  1155647 markings/sec,   160 secs
+lola:    204217151 markings,  204217152 edges,  1145888 markings/sec,   165 secs
+lola:    209853107 markings,  209853107 edges,  1127191 markings/sec,   170 secs
+lola:    215723515 markings,  215723516 edges,  1174082 markings/sec,   175 secs
+lola:    221622789 markings,  221622790 edges,  1179855 markings/sec,   180 secs
+lola:    227368578 markings,  227368578 edges,  1149158 markings/sec,   185 secs
+lola:    233087874 markings,  233087874 edges,  1143859 markings/sec,   190 secs
+lola:    238770264 markings,  238770265 edges,  1136478 markings/sec,   195 secs
+lola:    244565174 markings,  244565175 edges,  1158982 markings/sec,   200 secs
+lola:    249594646 markings,  249594647 edges,  1005894 markings/sec,   205 secs
+lola:    254788900 markings,  254788901 edges,  1038851 markings/sec,   210 secs
+lola:    260558690 markings,  260558691 edges,  1153958 markings/sec,   215 secs
+lola:    266306148 markings,  266306149 edges,  1149492 markings/sec,   220 secs
+lola:    271925682 markings,  271925683 edges,  1123907 markings/sec,   225 secs
+lola:    277544771 markings,  277544772 edges,  1123818 markings/sec,   230 secs
+lola:    283118292 markings,  283118293 edges,  1114704 markings/sec,   235 secs
+lola:    288513274 markings,  288513274 edges,  1078996 markings/sec,   240 secs
+lola:    293879205 markings,  293879206 edges,  1073186 markings/sec,   245 secs
+lola:    299660031 markings,  299660032 edges,  1156165 markings/sec,   250 secs
+lola:    305292566 markings,  305292566 edges,  1126507 markings/sec,   255 secs
+lola:    310997774 markings,  310997775 edges,  1141042 markings/sec,   260 secs
+lola:    316539934 markings,  316539935 edges,  1108432 markings/sec,   265 secs
+lola:    322172272 markings,  322172272 edges,  1126468 markings/sec,   270 secs
+lola:    327754395 markings,  327754396 edges,  1116425 markings/sec,   275 secs
+lola:    333433913 markings,  333433913 edges,  1135904 markings/sec,   280 secs
+lola:    339157400 markings,  339157401 edges,  1144697 markings/sec,   285 secs
+lola:    344958424 markings,  344958425 edges,  1160205 markings/sec,   290 secs
+lola:    350816971 markings,  350816972 edges,  1171709 markings/sec,   295 secs
+lola:    356520409 markings,  356520409 edges,  1140688 markings/sec,   300 secs
+lola:    362501767 markings,  362501768 edges,  1196272 markings/sec,   305 secs
+lola:    368194190 markings,  368194191 edges,  1138485 markings/sec,   310 secs
+lola:    373956889 markings,  373956890 edges,  1152540 markings/sec,   315 secs
+lola:    379833867 markings,  379833867 edges,  1175396 markings/sec,   320 secs
+lola:    385409036 markings,  385409037 edges,  1115034 markings/sec,   325 secs
+lola:    391209488 markings,  391209489 edges,  1160090 markings/sec,   330 secs
+lola:    396894482 markings,  396894483 edges,  1136999 markings/sec,   335 secs
+lola:    402594830 markings,  402594831 edges,  1140070 markings/sec,   340 secs
+lola:    408344490 markings,  408344491 edges,  1149932 markings/sec,   345 secs
+lola:    413938396 markings,  413938397 edges,  1118781 markings/sec,   350 secs
+lola:    419497223 markings,  419497224 edges,  1111765 markings/sec,   355 secs
+lola:    425517973 markings,  425517974 edges,  1204150 markings/sec,   360 secs
+lola:    431243531 markings,  431243532 edges,  1145112 markings/sec,   365 secs
+lola:    436923274 markings,  436923275 edges,  1135949 markings/sec,   370 secs
+lola:    442695559 markings,  442695560 edges,  1154457 markings/sec,   375 secs
+lola:    448409822 markings,  448409822 edges,  1142853 markings/sec,   380 secs
+lola:    454064541 markings,  454064542 edges,  1130944 markings/sec,   385 secs
+lola:    459410974 markings,  459410975 edges,  1069287 markings/sec,   390 secs
+lola:    465247919 markings,  465247919 edges,  1167389 markings/sec,   395 secs
+lola:    471030568 markings,  471030569 edges,  1156530 markings/sec,   400 secs
+lola:    476420440 markings,  476420441 edges,  1077974 markings/sec,   405 secs
+lola:    481814817 markings,  481814818 edges,  1078875 markings/sec,   410 secs
+lola:    487530144 markings,  487530145 edges,  1143065 markings/sec,   415 secs
+lola:    493060844 markings,  493060845 edges,  1106140 markings/sec,   420 secs
+lola:    498748136 markings,  498748136 edges,  1137458 markings/sec,   425 secs
+lola:    504236044 markings,  504236045 edges,  1097582 markings/sec,   430 secs
+lola:    509990394 markings,  509990395 edges,  1150870 markings/sec,   435 secs
+lola:    515813866 markings,  515813867 edges,  1164694 markings/sec,   440 secs
+lola:    521435037 markings,  521435038 edges,  1124234 markings/sec,   445 secs
+lola:    527064784 markings,  527064785 edges,  1125949 markings/sec,   450 secs
+lola:    532662486 markings,  532662487 edges,  1119540 markings/sec,   455 secs
+lola:    538321354 markings,  538321355 edges,  1131774 markings/sec,   460 secs
+lola:    543838350 markings,  543838350 edges,  1103399 markings/sec,   465 secs
+lola:    549494979 markings,  549494979 edges,  1131326 markings/sec,   470 secs
+lola:    555151943 markings,  555151944 edges,  1131393 markings/sec,   475 secs
+lola:    560797923 markings,  560797923 edges,  1129196 markings/sec,   480 secs
+lola:    566408657 markings,  566408657 edges,  1122147 markings/sec,   485 secs
+lola:    571997288 markings,  571997289 edges,  1117726 markings/sec,   490 secs
+lola:    576991670 markings,  576991671 edges,   998876 markings/sec,   495 secs
+lola:    582636196 markings,  582636197 edges,  1128905 markings/sec,   500 secs
+lola:    588178636 markings,  588178637 edges,  1108488 markings/sec,   505 secs
+lola:    593868458 markings,  593868459 edges,  1137964 markings/sec,   510 secs
+lola:    599544670 markings,  599544671 edges,  1135242 markings/sec,   515 secs
+lola:    605174592 markings,  605174593 edges,  1125984 markings/sec,   520 secs
+lola:   marking limit reached - aborting
+lola: caught signal User defined signal 2: 31 - aborting LoLA
+lola:   print data as JSON (--json)
+lola:   writing JSON to output_liveness_asimstock.json
+lola:   closed JSON file output_liveness_asimstock.json
