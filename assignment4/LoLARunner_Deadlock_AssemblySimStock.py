@@ -14,7 +14,7 @@ class LoLARunner:
         # cmd = ['lola', '--quiet', '--json=output_deadlock_asimstock.json', '--formula="EF DEADLOCK"', '--search=sweep', filename]
         # cmd = ['lola', '--quiet', '--json=output_deadlock_asimstock.json', '--formula="EF DEADLOCK"', '--search=sweep', '--markinglimit=1000000', filename]
         # cmd = ['lola', '--json=output_deadlock_asimstock.json', '--formula="EF DEADLOCK"', '--search=sweep', '--cycle', '--markinglimit=10013607',filename]
-        cmd = ['lola', '--json=output_deadlock_asimstock.json', '--formula="EF DEADLOCK"', '--search=cover', '--cycle',filename]
+        cmd = ['lola', '--json=output_deadlock_asimstock.json', '--formula="EF DEADLOCK"', '--search=sweep', '--timelimit=600', filename, '&> AssemblySimStock_Deadlock.log']
 
 
         # for debugging

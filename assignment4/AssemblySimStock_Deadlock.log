@@ -1,0 +1,148 @@
+lola: LoLA will run for 600 seconds at most (--timelimit)
+lola: NET
+lola:   reading net from AssemblySimStock.lola
+lola:   finished parsing
+lola:   closed net file AssemblySimStock.lola
+lola:   51/65536 symbol table entries, 0 collisions
+lola:   preprocessing... 
+lola:   finding significant places
+lola:   32 places, 19 transitions, 19 significant places
+lola:   computing forward-conflicting sets
+lola:   computing back-conflicting sets
+lola:   30 transition conflict sets
+lola:   calculating the progress measure
+lola: TASK
+lola:   read: EF (DEADLOCK)
+lola:   formula length: 13
+lola:   checking reachability of deadlocks
+lola:   Planning: workflow for deadlock check: search (--findpath=off,--siphontrap=off)
+lola: SEARCH
+lola:   using sweep-line method (--search=sweep)
+lola:   using deadlock preserving stubborn set method with insertion algorithm(--stubborn=tarjan)
+lola: RUNNING
+lola:   transition progress range [0,1], transients in [0,1]
+lola:   using 128 bytes per marking, including 0 wasted bytes
+lola:   using 76 bytes per marking, with 0 unused bits
+lola:   395917 peak markings (0 persistent), 3213209 transitions fired     0 secs
+lola:   717594 peak markings (0 persistent), 6256896 transitions fired     5 secs
+lola:   991467 peak markings (0 persistent), 9231431 transitions fired    10 secs
+lola:   1291254 peak markings (0 persistent), 12225496 transitions fired    15 secs
+lola:   1601549 peak markings (0 persistent), 15258868 transitions fired    20 secs
+lola:   1862078 peak markings (0 persistent), 18182844 transitions fired    25 secs
+lola:   1994625 peak markings (0 persistent), 21026496 transitions fired    30 secs
+lola:   2260613 peak markings (0 persistent), 23410134 transitions fired    35 secs
+lola:   2431921 peak markings (0 persistent), 26289107 transitions fired    40 secs
+lola:   2593226 peak markings (0 persistent), 29126652 transitions fired    45 secs
+lola:   2939750 peak markings (0 persistent), 31897468 transitions fired    50 secs
+lola:   3106460 peak markings (0 persistent), 34369334 transitions fired    55 secs
+lola:   3316820 peak markings (0 persistent), 37033826 transitions fired    60 secs
+lola:   3534027 peak markings (0 persistent), 39916798 transitions fired    65 secs
+lola:   3567576 peak markings (0 persistent), 42616299 transitions fired    70 secs
+lola:   3776040 peak markings (0 persistent), 45153759 transitions fired    75 secs
+lola:   3971436 peak markings (0 persistent), 47591792 transitions fired    80 secs
+lola:   4169685 peak markings (0 persistent), 49988235 transitions fired    85 secs
+lola:   4434877 peak markings (0 persistent), 53074385 transitions fired    90 secs
+lola:   4434877 peak markings (0 persistent), 55706335 transitions fired    95 secs
+lola:   4720480 peak markings (0 persistent), 58059693 transitions fired   100 secs
+lola:   5014474 peak markings (0 persistent), 60965538 transitions fired   105 secs
+lola:   5014474 peak markings (0 persistent), 63749998 transitions fired   110 secs
+lola:   5237767 peak markings (0 persistent), 66304474 transitions fired   115 secs
+lola:   5492266 peak markings (0 persistent), 69684100 transitions fired   120 secs
+lola:   5496429 peak markings (0 persistent), 72021627 transitions fired   125 secs
+lola:   5846401 peak markings (0 persistent), 74435246 transitions fired   130 secs
+lola:   5846401 peak markings (0 persistent), 77746596 transitions fired   135 secs
+lola:   6196796 peak markings (0 persistent), 80071954 transitions fired   140 secs
+lola:   6196796 peak markings (0 persistent), 83276691 transitions fired   145 secs
+lola:   6544752 peak markings (0 persistent), 85526016 transitions fired   150 secs
+lola:   6544752 peak markings (0 persistent), 88612686 transitions fired   155 secs
+lola:   6843168 peak markings (0 persistent), 90657998 transitions fired   160 secs
+lola:   6843168 peak markings (0 persistent), 93647279 transitions fired   165 secs
+lola:   7213172 peak markings (0 persistent), 96240430 transitions fired   170 secs
+lola:   7213172 peak markings (0 persistent), 98663470 transitions fired   175 secs
+lola:   7298757 peak markings (0 persistent), 101837594 transitions fired   180 secs
+lola:   7669363 peak markings (0 persistent), 103752572 transitions fired   185 secs
+lola:   7669363 peak markings (0 persistent), 106927263 transitions fired   190 secs
+lola:   8110970 peak markings (0 persistent), 109069711 transitions fired   195 secs
+lola:   8110970 peak markings (0 persistent), 112062049 transitions fired   200 secs
+lola:   8110970 peak markings (0 persistent), 115259158 transitions fired   205 secs
+lola:   8555199 peak markings (0 persistent), 117127938 transitions fired   210 secs
+lola:   8555199 peak markings (0 persistent), 120168226 transitions fired   215 secs
+lola:   8926800 peak markings (0 persistent), 123366750 transitions fired   220 secs
+lola:   8960932 peak markings (0 persistent), 125034610 transitions fired   225 secs
+lola:   8960932 peak markings (0 persistent), 128071973 transitions fired   230 secs
+lola:   9452510 peak markings (0 persistent), 131106938 transitions fired   235 secs
+lola:   9452510 peak markings (0 persistent), 132528200 transitions fired   240 secs
+lola:   9452510 peak markings (0 persistent), 135456861 transitions fired   245 secs
+lola:   9623210 peak markings (0 persistent), 138610088 transitions fired   250 secs
+lola:   10013607 peak markings (0 persistent), 140114053 transitions fired   255 secs
+lola:   10013607 peak markings (0 persistent), 143316751 transitions fired   260 secs
+lola:   10013607 peak markings (0 persistent), 146568651 transitions fired   265 secs
+lola:   10543185 peak markings (0 persistent), 148169426 transitions fired   270 secs
+lola:   10543185 peak markings (0 persistent), 151382429 transitions fired   275 secs
+lola:   10543185 peak markings (0 persistent), 154541560 transitions fired   280 secs
+lola:   11068478 peak markings (0 persistent), 156946034 transitions fired   285 secs
+lola:   11068478 peak markings (0 persistent), 159143597 transitions fired   290 secs
+lola:   11068478 peak markings (0 persistent), 162233834 transitions fired   295 secs
+lola:   11068478 peak markings (0 persistent), 165281882 transitions fired   300 secs
+lola:   11559751 peak markings (0 persistent), 166477845 transitions fired   305 secs
+lola:   11559751 peak markings (0 persistent), 169422864 transitions fired   310 secs
+lola:   11559751 peak markings (0 persistent), 172617062 transitions fired   315 secs
+lola:   11815298 peak markings (0 persistent), 175829817 transitions fired   320 secs
+lola:   12159324 peak markings (0 persistent), 177038255 transitions fired   325 secs
+lola:   12159324 peak markings (0 persistent), 180171608 transitions fired   330 secs
+lola:   12159324 peak markings (0 persistent), 183350257 transitions fired   335 secs
+lola:   12674888 peak markings (0 persistent), 186664812 transitions fired   340 secs
+lola:   12805270 peak markings (0 persistent), 187742471 transitions fired   345 secs
+lola:   12805270 peak markings (0 persistent), 190883892 transitions fired   350 secs
+lola:   12805270 peak markings (0 persistent), 194005334 transitions fired   355 secs
+lola:   13008105 peak markings (0 persistent), 197222843 transitions fired   360 secs
+lola:   13405410 peak markings (0 persistent), 198090702 transitions fired   365 secs
+lola:   13405410 peak markings (0 persistent), 201004000 transitions fired   370 secs
+lola:   13405410 peak markings (0 persistent), 204164572 transitions fired   375 secs
+lola:   13405410 peak markings (0 persistent), 207322361 transitions fired   380 secs
+lola:   14016912 peak markings (0 persistent), 209387720 transitions fired   385 secs
+lola:   14016912 peak markings (0 persistent), 211529825 transitions fired   390 secs
+lola:   14016912 peak markings (0 persistent), 214787079 transitions fired   395 secs
+lola:   14016912 peak markings (0 persistent), 218032949 transitions fired   400 secs
+lola:   14512990 peak markings (0 persistent), 221261668 transitions fired   405 secs
+lola:   14622313 peak markings (0 persistent), 221916377 transitions fired   410 secs
+lola:   14622313 peak markings (0 persistent), 225052348 transitions fired   415 secs
+lola:   14622313 peak markings (0 persistent), 228066179 transitions fired   420 secs
+lola:   14622313 peak markings (0 persistent), 230906059 transitions fired   425 secs
+lola:   15336026 peak markings (0 persistent), 234000640 transitions fired   430 secs
+lola:   15336026 peak markings (0 persistent), 234741600 transitions fired   435 secs
+lola:   15336026 peak markings (0 persistent), 237938601 transitions fired   440 secs
+lola:   15336026 peak markings (0 persistent), 241178801 transitions fired   445 secs
+lola:   15336026 peak markings (0 persistent), 244289319 transitions fired   450 secs
+lola:   16050515 peak markings (0 persistent), 247219102 transitions fired   455 secs
+lola:   16050515 peak markings (0 persistent), 247963500 transitions fired   460 secs
+lola:   16050515 peak markings (0 persistent), 250994684 transitions fired   465 secs
+lola:   16050515 peak markings (0 persistent), 253922970 transitions fired   470 secs
+lola:   16050515 peak markings (0 persistent), 256776953 transitions fired   475 secs
+lola:   16096489 peak markings (0 persistent), 259959025 transitions fired   480 secs
+lola:   16734288 peak markings (0 persistent), 260998900 transitions fired   485 secs
+lola:   16734288 peak markings (0 persistent), 263571271 transitions fired   490 secs
+lola:   16734288 peak markings (0 persistent), 266801276 transitions fired   495 secs
+lola:   16734288 peak markings (0 persistent), 269954397 transitions fired   500 secs
+lola:   16734288 peak markings (0 persistent), 273064970 transitions fired   505 secs
+lola:   17471975 peak markings (0 persistent), 275377658 transitions fired   510 secs
+lola:   17471975 peak markings (0 persistent), 276464734 transitions fired   515 secs
+lola:   17471975 peak markings (0 persistent), 279630388 transitions fired   520 secs
+lola:   17471975 peak markings (0 persistent), 282851685 transitions fired   525 secs
+lola:   17471975 peak markings (0 persistent), 286004336 transitions fired   530 secs
+lola:   17547110 peak markings (0 persistent), 289283384 transitions fired   535 secs
+lola:   18206937 peak markings (0 persistent), 290379818 transitions fired   540 secs
+lola:   18206937 peak markings (0 persistent), 292837522 transitions fired   545 secs
+lola:   18206937 peak markings (0 persistent), 296007908 transitions fired   550 secs
+lola:   18206937 peak markings (0 persistent), 299251492 transitions fired   555 secs
+lola:   18206937 peak markings (0 persistent), 302418439 transitions fired   560 secs
+lola:   18873717 peak markings (0 persistent), 305745941 transitions fired   565 secs
+lola:   19031816 peak markings (0 persistent), 306001664 transitions fired   570 secs
+lola:   19031816 peak markings (0 persistent), 309188117 transitions fired   575 secs
+lola:   19031816 peak markings (0 persistent), 312439169 transitions fired   580 secs
+lola:   19031816 peak markings (0 persistent), 315635086 transitions fired   585 secs
+lola:   19031816 peak markings (0 persistent), 318808918 transitions fired   590 secs
+lola:   time limit reached - aborting
+lola:   print data as JSON (--json)
+lola:   writing JSON to output_deadlock_asimstock.json
+lola:   closed JSON file output_deadlock_asimstock.json

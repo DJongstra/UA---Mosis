@@ -19,7 +19,7 @@ class LoLARunner:
             #change this command as needed
             # place arguments as entries in the list
 
-            cmd = ['lola', '--quiet', '--json=output_boundedness_asimstock.json', '--search=cover', '--encoder=full', '--formula="AG ' + p +' < oo"', '--markinglimit=1000', filename]
+            cmd = ['lola', '--json=output_boundedness_asimstock.json', '--search=cover', '--encoder=full', '--formula="AG ' + p +' < oo"', '--timelimit=1800', filename, '&> AssemblySimStock_Boundedness.log']
 
             # for debugging
             # print("Running cmd: " + str(cmd))
