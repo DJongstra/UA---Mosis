@@ -32,35 +32,47 @@
 	 The Petri net is modelled in <a href="./Assembly.xml"><tt>Assembly.xml</tt></a>. The entire net is also shown in fig. 1. There is a simplified Petri net in fig. 2,
 	 which does not have the time requirements modeled. In this simplified form the general flow of tokens is easier to see, and therefore we'll describe this Petri net first.
 	 <br><br>
-	 In the Petri net, we start on the left side. We can see the transitions CubeArrives and CylinderArrives that places a new shape of either of them in the queue if the queue is not completely filled yet.
+		 <h3>Petri Net Base</h3>
+ <h4>Shapes</h4>
+	 In the Petri net, we start on the left side. We can see the transitions CubeArrives and CylinderArrives that produce a new shape of either Cube or Cylinder respectively and add them to the queue if the queue is not completely filled yet.
 	 The amount of places left in the queue is the amount of tokens in AssemblerQ.
+ <br><br>
+ <h4>Assembly</h4>
 	 As soon as there are at least 2 Cubes and 1 Cylinder in the queue, the transition Assembly becomes enabled, under the extra condition that the assembler is not used already and that there are no remakes queued. The remakes are discussed a little further in the Petri net description.
-	 If the transition is taken, the token denoting the assembler to be available is taken away, so that another object is not able to enter the assembler. During assembly, there is a token in Assembling denoting that the assembler is in use.
-	 After the assembly is done, the transition ToInsp is used. This transition transfers a token back to AssemblyAvailable, as the assembler is no longer in use by taking this transition.
+	 If the transition is taken, the token denoting that the assembler is available is taken away so that another object is not able to enter the assembler.
+ <br><br>
+ During assembly, there is a token in Assembling place denoting that the assembler is in use.
+ <br><br>
+	 After the assembly is done, the transition ToInsp is used. This transition transfers a token back to AssemblyAvailable, as the assembler is no longer in use when this transition is taken.
 	 The object is then in a queue to enter the inspector. The amount of objects in this queue is kept the same way the queue of the assembler was kept.
-	 Transition Insp is taken to move the object from the queue to the inspector. Availability of the inspector is checked the same way it was in the assembler.
-	 After this the inspector is left using InspLeave and the object will be in the flagging zone: Inspected. The object can be flagged as either thrashed, accept or remake. If it is flagged as thrashed or accept, there is a token added to respectively ThrashedAmount and AcceptedAmount. These state are counters used for keeping track of the performance.
+ <br><br>
+ <h4>Inspection</h4>
+	 Transition Insp is taken to move the object from the queue to the inspector. Availability of the inspector is checked the same way it is in the assembler.
+	 After this, the inspector is vacated using InspLeave transition and the object will be in the flagging zone: Inspected. The object can be flagged as either thrashed, accept or remake. If it is flagged as thrashed or accept, there is a token added to ThrashedAmount and AcceptedAmount respectively.
+ These states are counters used for keeping track of the performance.
+ <h5>Remake</h5>
 	 If the object is flagged as a remake, there is a token added to the counter RemakeAmount which is also used for tracking the performance.
 	 Another thing that is done when an object is flagged as remake is that is takes a token from RemakeNotQueued. This place has 10 tokens if there are no remakes waiting for the assembler. For each remake waiting a token is taken away.
 	 There is also a token in RemakeQ, which is the object to remake being in the queue.
 	 The remake can enter the assembler by taking the transition AssemblyRemake. After this transition is taken, the object will follow the same route as described before.
 	 If there is a remake, the assembler can not make a new object from 2 Cubes and a Cylinder. The transition that would transfer a new object to the assembler requires 10 tokens in RemakeNotQueued. 
-	 Because a token is taken away every time a new remake is flagged, the transitions Assembly and AssemblyRemake can not be enabled at the same time.
+	 Because a token is taken away every time a new remake is flagged, the transitions Assembly and AssemblyRemake are mutually exclusive.
 	 <br><br>
-	 The complexity in fig. 1 comes from adding the time and the necessary checks that came with that. Most of the places related to the time are on the bottom half of the Petri net.
-	 The time works by having a token available in Time_NextAvailable to go to the next time step. DoNextStep then distributes a token to each of the 3 main processes (shapes, assembler and inspector) to denote that they can still do something during that time slice.
-	 If a process is unable to do something, chooses to skip acting the time slice or does an action, the token denoting an action is available is transferred to a place denoting the process has been executed during the time slice.
-	 Extra logic is added to check so that a process can only skip processing if the process before it already attempted to process. This way, a process that was not able to become active without another process already having executed is still able to execute after this process did their step.
+ 		<h3>Petri Net With Time</h3>
+	 The complexity in fig. 1 comes from adding the time and the necessary checks that attributed to that. Most of the places related to the time are on the bottom half of the Petri net.
+	 The time works by having a token available in Time_NextAvailable place which starts the next time step. DoNextStep then distributes a token to each of the 3 main processes (shapes, assembler and inspector) to denote that they can still do something during that time slice.
+	 If a process is unable to do something, chooses to skip acting during the time slice or does an action, the token denoting that an action is available is transferred to a place denoting the process has been executed during the time slice.
+ <br><br>
+	 Extra logic is added to check that a process can only skip processing if the process before it already attempted to process. This way, a process that was not able to become active without another process already having executed is still able to execute after this process did their step.
+ <br><br>
 	 The assembler and inspector have some new places to check if they are able to execute during the time slice. They can only skip if these places denote that they are not able to execute.
 	 As soon as all the processes have either skipped or executed, the transition NextStepAvailable becomes available. This takes the tokens from the executed places and transfers one to the Time_NextAvailable place.
 	 This means the time logic can start from the beginning.
 
-	 
-	 
 	 <figure>
 		<img src="./img/Monstrosity.png">
 		<figcaption>Figure 1: The complete Petri net</figcaption>
-	</figure> 
+	 </figure>
 	
 	<figure>
 		<img src="./img/p1.png">
@@ -73,60 +85,72 @@
 <p>
 Simulation 1 is the case of "The Assembler finished an assembly at the exact same timestep the Inspector marks an assembly for reassembly".
 The simulation is shown in fig. 3 till fig. 7.
-In the first step, it can be seen that both the inspector and the assembler can finish.
+	<br><br>
+	<ol>
+	<li>In the first step, it can be seen that both the inspector and the assembler can finish.
 	<figure>
 		<img src="./img/Sim1-1.png">
 		<figcaption>Figure 3: Step 1 in simulating case 1</figcaption>
-	</figure> 
-	Step 2 shows that within the same time step the object leaves the inspector, it can be flagged as a remake.
+	</figure>
+	</li>
+	<li>Step 2 shows that within the same time step the object leaves the inspector, it can be flagged as a remake.
 	<figure>
 		<img src="./img/Sim1-2.png">
 		<figcaption>Figure 4: Step 2 in simulating case 1</figcaption>
-	</figure> 
-	Step 3 shows that an object leaves the assembler. The other object is in the remake queue.
+	</figure>
+	</li>
+	<li>Step 3 shows that an object leaves the assembler. The other object is in the remake queue.
 	<figure>
 		<img src="./img/Sim1-3.png">
 		<figcaption>Figure 5: Step 3 in simulating case 1</figcaption>
-	</figure> 
-	Step 4 shows that when the assembly object is moved to the inspector queue, the transition for the remake object to the assembly procedure becomes enabled.
+	</figure>
+	</li>
+	<li>Step 4 shows that when the assembly object is moved to the inspector queue, the transition for the remake object to the assembly procedure becomes enabled.
 	<figure>
 		<img src="./img/Sim1-4.png">
 		<figcaption>Figure 6: Step 4 in simulating case 1</figcaption>
-	</figure> 
-	Step 5 shows that after entering the assemble procedure, the object can move into the actual assembly.
+	</figure>
+	</li>
+	<li>Step 5 shows that after entering the assemble procedure, the object can move into the actual assembly.
 	It is possible that the object is in the assembler for the first time step during the same time slice. This however depends on the leaving object.
 	If the leaving object used the assembler during the time slice, the new object will only gain being in the assembler for 1 time unit in the next time slice.
-	Else it is possible for the new object to be in the assembler for one time unit during the current time slice.
+	Otherwise it is possible for the new object to be in the assembler for one time unit during the current time slice.
 	<figure>
 		<img src="./img/Sim1-5.png">
 		<figcaption>Figure 7: Step 5 in simulating case 1</figcaption>
-	</figure> 
+	</figure>
+	</li>
+ </ol>
 </p>
 
 <h2>Simulation 2</h2>
 <p>
 Simulation 2 is the case of "There is an assembly waiting for reassembly (i.e., it is to be fixed) and at that exact time the third component of an assembly arrives".
 This can be seen in fig. 8 and fig. 9.
-The first step its blue circles show that there is an assembly for remake in the remake queue and that it is not yet possible to assemble a new object.
+	<br><<br>
+	<ol>
+<li>The first step its blue circles show that there is an assembly for remake in the remake queue and that it is not yet possible to assemble a new object.
 The pink circle shows shows that in this time step, the last needed shape can arrive.
 <figure>
 		<img src="./img/Sim2-1.png">
 		<figcaption>Figure 8: Step 1 in simulating case 2</figcaption>
-	</figure> 
-The pink circle in the second step shows that the last shape has arrived, but that the transition to the assembler for the new object is not enabled.
+	</figure>
+</li>
+<li>The pink circle in the second step shows that the last shape has arrived, but that the transition to the assembler for the new object is not enabled.
 The blue circle shows that the transition for the remake is enabled.
 	
 	<figure>
 		<img src="./img/Sim2-2.png">
 		<figcaption>Figure 9: Step 2 in simulating case 2</figcaption>
-	</figure> 
-
+	</figure>
+</li>
+ </ol>
 </p>
 
 <h2>Reachability</h2>
 <p>
 	The reachability graph for arriving cubes and cylinders is in fig. 10. This graph does not cover the cubes and cylinders leaving the queue. 
-	Therefore, it can be seen in the graph that a shape arrives till the queue is full, which are the red states. Every state can be reached by multiple paths, except for the stats that denote the queue being filled by either just cubes or just cylinders.
+	It can be seen in the graph that a shape arrives till the queue is full, which are the red states. Every state can be reached by multiple paths, except for the states that denote the queue being filled by either just cubes or just cylinders.
 	
 	<figure>
 		<img src="./img/reachability.png">
@@ -137,7 +161,7 @@ The blue circle shows that the transition for the remake is enabled.
 	The full Petri net would produce an infinite reachability graph, as it is possible that an infinite amount of objects are accepted/thrashed/remade in an infinite amount of time steps.
 	All those are kept track of in the Petri net. Even if the Petri net has a limited stock, the reachability graph would still be infinite. 
 	This is because the time will go on even if there is nothing that can be done, which would be the case if the stock was empty.
-	Not taking the time into account, the reachability graph would still be infinite. The inspector could flagging the same object as a remake over and over again. This means that the remake counter could get infinitely big.
+	Not taking the time into account, the reachability graph would still be infinite. The inspector could keep flagging the same object as a remake over and over again. This means that the remake counter could get infinitely big.
 	
 </p>
 
@@ -164,29 +188,29 @@ The blue circle shows that the transition for the remake is enabled.
 </ul> 
 
 	<br><br>
-	The analysis of these invariants is in <a href="./invariant1.html"><tt>invariants.html</tt></a>. The invariants do no change by adding a stock.
+	The analysis of these invariants is in <a href="./invariant1.html"><tt>invariants.html</tt></a>. The invariants do not change by adding a stock value.
 	The invariants can be changed by adding a single place. In the example that generated <a href="./invariantChange.html"><tt>invariantChange.html</tt></a> a place InvarChange was added.
 	It has 200 tokens at the start of a simulation. Every time a cylinder arrives, a token is taken, and every time a cylinder an two cubes are moved to the assembler, a token is added. 
-	This makes that the cylinder queue and the InvarChange always have 200 tokens cumulative. This adds the last invariant on the list, <b>M(CylindersInQ) + M(InvarChanger) = 200</b>.
+	This means that the sum of tokens in the cylinder queue and the InvarChange places is always 200. This adds the last invariant on the list, <b>M(CylindersInQ) + M(InvarChanger) = 200</b>.
 
 </p>
 
 <h2>Boundedness</h2>
 <p>A Petri net is (k-)bounded if the amount of tokens in each place never exceeds a certain value of k. This would also mean that the reachability graph would have to be finite, which is not the case for our graph.
-Therefore, we can conclude that our Petri net is not bounded. In LoLa the option to use for a boundedness check is ‘--formula="AG p < oo" with p being every place by iterating over every place.
+Therefore, we can conclude that our Petri net is not bounded. In LoLA, the option to use for a boundedness check is ‘--formula="AG p < oo" with p being the place of interest. To get the boundedness for the whole net, you have iterate over every place.
 If the place was bounded, the k-boundedness could be discovered by using the option --formula="AG p <= k". The boundedness check can be found in script <a href="./LoLARunner_Boundedness_AssemblySimStock.py"><tt>LoLARunner_Boundedness_AssemblySimStock.py</tt></a>.
-This uses the stock version of the net, because if that version is not bounded, then the non-stock version is certainly not bounded. Other used options are --search=cover and --markinglimit=1000, this is to prevent the analysis to run forever in the case that the net is not bounded.
-When using these options, we get an segmentation error. Else, the analysis runs for long and the result of this can be seen in <a href="./output_boundedness_asimstock.json"><tt>output_boundedness_asimstock.json</tt></a>.
-As LoLa seems to run out of space, we should try to reduce the state space to analyze. This can be done by using the --cycle option, which stores only a subset of the markings.
+This uses the stock version of the net, because if that version is not bounded, then the non-stock version is certainly not bounded. Other used options are --search=cover and --markinglimit=1000, this is to prevent the analysis running forever in the case that the net is not bounded.
+When using these options, we get a segmentation error. Else, the analysis runs for a long time and the result of this can be seen in <a href="./output_boundedness_asimstock.json"><tt>output_boundedness_asimstock.json</tt></a>.
+As LoLA seems to run out of space, we should try to reduce the state space to analyze. This can be done by using the --cycle option, which stores only a subset of the markings.
 </p>
 
 
 <h2>Deadlock</h2>
 <p> 
-For discovering deadlock using LoLa, the option --formula="EF DEADLOCK" can be used. Just as with the boundedness, there is a segmentation fault. 
+For discovering a deadlock using LoLA, the option --formula="EF DEADLOCK" can be used. Just as with the boundedness, there is a segmentation fault.
 However, a deadlock means that no transition can fire. Because of how the time has been designed to work in our Petri net, the next time step can be achieved by every process either running or skipping, a deadlock should not be possible.
 The script for the deadlock is in <a href="./LoLARunner_Deadlock_AssemblySimStock.py"><tt>LoLARunner_Deadlock_AssemblySimStock.py</tt></a> and the output after a long run is in <a href="./output_deadlock_asimstock.json"><tt>output_deadlock_asimstock.json</tt></a>.
-Using the --search='cover' flag, the analysis returns a segmentation fault. Without this flag, the analysis for a long time.
+Using the --search='cover' flag, the analysis returns a segmentation fault. Without this flag, the analysis runs for a long time.
 </p>
 
 <h2>Queue overflow</h2>
@@ -200,7 +224,11 @@ Using the --search='cover' flag, the analysis returns a segmentation fault. With
 	<br><br>
 	For the inspector, the queue limit was set in the Petri net by having an amount of available places of the queue in a place. Therefore, it should not exceed the queue limit.
 	This can be tested by running the option --formula="AG InspQ < 11" instead of the previous formula. This runs longer than the boundedness check of the assembler.
-	The computer started getting a hard time after 20 minutes, so the analysis didn't come to an end. However, it is safe to assume the queue of the inspector does not overflow, as the invaraints also include M(InspQ) + M(InspQAvailable) = 10.
+	The computer started getting a hard time after 20 minutes, so the analysis didn't come to an end. However, it is safe to assume the queue of the inspector does not overflow, as the invariants also include M(InspQ) + M(InspQAvailable) = 10.
+	<br><br>
+	The same result was observed when the query was run in a different machine which produced this execution log, <a href="./AssemblySimStock_Queue_Overflow_2.log"><tt>AssemblySimStock_Queue_Overflow_2.log</tt></a>, by running this script,
+	<a href="./LoLARunner_Queue_Overflow_AssemblySimStock_2.py"><tt>LoLARunner_Queue_Overflow_AssemblySimStock_2.py</tt></a>,
+	and we obtained the output in this file, <a href="./output_queue_overflow_asimstock_2.json"><tt>output_queue_overflow_asimstock_2.json</tt></a>. The process was killed by the machine before it reached it's time limit.
 	
 </p>
 
