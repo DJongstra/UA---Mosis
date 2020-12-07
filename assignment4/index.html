@@ -127,10 +127,10 @@ The simulation is shown in fig. 3 till fig. 7.
 <p>
 Simulation 2 is the case of "There is an assembly waiting for reassembly (i.e., it is to be fixed) and at that exact time the third component of an assembly arrives".
 This can be seen in fig. 8 and fig. 9.
-	<br><<br>
+	<br><br>
 	<ol>
 <li>The first step its blue circles show that there is an assembly for remake in the remake queue and that it is not yet possible to assemble a new object.
-The pink circle shows shows that in this time step, the last needed shape can arrive.
+The pink circle shows that in this time step, the last needed shape can arrive.
 <figure>
 		<img src="./img/Sim2-1.png">
 		<figcaption>Figure 8: Step 1 in simulating case 2</figcaption>
@@ -201,7 +201,7 @@ Therefore, we can conclude that our Petri net is not bounded. In LoLA, the optio
 If the place was bounded, the k-boundedness could be discovered by using the option --formula="AG p <= k". The boundedness check can be found in script <a href="./LoLARunner_Boundedness_AssemblySimStock.py"><tt>LoLARunner_Boundedness_AssemblySimStock.py</tt></a>.
 This uses the stock version of the net, because if that version is not bounded, then the non-stock version is certainly not bounded. Other used options are --search=cover and --markinglimit=1000, this is to prevent the analysis running forever in the case that the net is not bounded.
 When using these options, we get a segmentation error. Else, the analysis runs for a long time and the result of this can be seen in <a href="./output_boundedness_asimstock.json"><tt>output_boundedness_asimstock.json</tt></a>.
-As LoLA seems to run out of space, we should try to reduce the state space to analyze. This can be done by using the --cycle option, which stores only a subset of the markings.
+As LoLA seems to run out of space, we should try to reduce the state space to analyze. This can be done by using the --cycle option, which stores only a subset of the markings. However, that does not do anything for our petri net.
 </p>
 
 
