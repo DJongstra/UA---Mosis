@@ -1,0 +1,8 @@
+<testsuite name="StatechartTest" time="">
+  <testcase name="testEmployeeGoToWork" classname="platform:/resource/mosis2020/StatechartTest.sctunit#StatechartTest.testEmployeeGoToWork" time="">
+  </testcase>
+  <testcase name="testGracePeriod" classname="platform:/resource/mosis2020/StatechartTest.sctunit#StatechartTest.testGracePeriod" time="">
+  </testcase>
+  <testcase name="testUnloading" classname="platform:/resource/mosis2020/StatechartTest.sctunit#StatechartTest.testUnloading" time="">
+  </testcase>
+</testsuite>

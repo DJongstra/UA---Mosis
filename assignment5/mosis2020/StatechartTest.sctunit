@@ -1,0 +1,38 @@
+testclass StatechartTest for statechart Statechart {
+	
+	@Test
+	operation testEmployeeGoToWork() {
+		enter
+		assert(active(main_region.At_Home))
+		raise employee.goToWork
+		assert(active(main_region.At_Work))
+		exit
+	}
+	
+	@Test
+	operation testGracePeriod() {
+		enter
+		raise employee.goToWork
+		assert(active(main_region.At_Work.working.Grace_Period))
+		proceed 4 s
+		assert(active(main_region.At_Work.working.At_Shift))
+		exit
+	}
+	
+	@Test
+	operation testUnloading() {
+		enter
+		raise employee.goToWork
+		mock util.getRandomInteger(3) returns (0)
+		proceed 4 s
+		assert(active(main_region.At_Work.working.At_Shift.shift.Unloading))
+		assert(active(main_region.At_Work.working.At_Shift.button.buttonReleased))
+		assert(active(main_region.At_Work.working.At_Shift.shift.Unloading.main.AtStock))
+		raise ui.actionPressed:"walk"
+		assert(active(main_region.At_Work.working.At_Shift.button.buttonPressed))
+		proceed 500ms
+		assert(active(main_region.At_Work.working.At_Shift.shift.Unloading.main.AtTruck))
+
+		
+	}
+}
