@@ -30,14 +30,15 @@ class Statechart:
 			main_region_at__work_working_at__shift_shift_loading_r1_at_truck_carrying,
 			main_region_at__work_working_at__shift_shift_loading_r1_at_stock_carrying,
 			main_region_at__work_working_at__shift_energy_tiring,
+			main_region_at__work_working_at__shift_energy_tired,
 			main_region_at__work_working_at__shift_button_button_released,
 			main_region_at__work_working_at__shift_button_button_pressed,
 			main_region_at__work_working_grace__period,
-			main_region_at__work_working_grace__period_r1_choosing__alternative,
+			main_region_at__work_working_grace__period_r1_alternative__chosen,
 			main_region_at__work_working_grace__period_r1_leave__day,
 			main_region_at__work_working_toilet__break,
 			null_state
-		) = range(23)
+		) = range(24)
 	
 
 
@@ -218,6 +219,8 @@ class Statechart:
 			return self.__state_vector[0] == self.__State.main_region_at__work_working_at__shift_shift_loading_r1_at_stock_carrying
 		if s == self.__State.main_region_at__work_working_at__shift_energy_tiring:
 			return self.__state_vector[1] == self.__State.main_region_at__work_working_at__shift_energy_tiring
+		if s == self.__State.main_region_at__work_working_at__shift_energy_tired:
+			return self.__state_vector[1] == self.__State.main_region_at__work_working_at__shift_energy_tired
 		if s == self.__State.main_region_at__work_working_at__shift_button_button_released:
 			return self.__state_vector[2] == self.__State.main_region_at__work_working_at__shift_button_button_released
 		if s == self.__State.main_region_at__work_working_at__shift_button_button_pressed:
@@ -225,8 +228,8 @@ class Statechart:
 		if s == self.__State.main_region_at__work_working_grace__period:
 			return (self.__state_vector[0] >= self.__State.main_region_at__work_working_grace__period)\
 				and (self.__state_vector[0] <= self.__State.main_region_at__work_working_grace__period_r1_leave__day)
-		if s == self.__State.main_region_at__work_working_grace__period_r1_choosing__alternative:
-			return self.__state_vector[0] == self.__State.main_region_at__work_working_grace__period_r1_choosing__alternative
+		if s == self.__State.main_region_at__work_working_grace__period_r1_alternative__chosen:
+			return self.__state_vector[0] == self.__State.main_region_at__work_working_grace__period_r1_alternative__chosen
 		if s == self.__State.main_region_at__work_working_grace__period_r1_leave__day:
 			return self.__state_vector[0] == self.__State.main_region_at__work_working_grace__period_r1_leave__day
 		if s == self.__State.main_region_at__work_working_toilet__break:
@@ -271,13 +274,12 @@ class Statechart:
 		self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_default()
 		
 	def __effect_main_region__at__work_working__grace__period_r1__choice_0_tr0(self):
-		self.__enter_sequence_main_region__at__work_working__grace__period_r1__choosing__alternative_default()
+		self.__enter_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen_default()
 		
 	def __effect_main_region__at__work_working__grace__period_r1__choice_0_tr1(self):
 		self.__enter_sequence_main_region__at__work_working__grace__period_r1__leave__day_default()
 		
 	def __entry_action_main_region__at__home(self):
-		self.employee.operation_callback.increase_energy(50)
 		self.ui.operation_callback.shifts_hide()
 		
 	def __entry_action_main_region__at__work(self):
@@ -289,6 +291,9 @@ class Statechart:
 		self.ui.operation_callback.shifts_hide()
 		self.ui.operation_callback.shift_highlight_clear()
 		self.ui.operation_callback.shift_highlight_active(self.__assigned_shift)
+		
+	def __entry_action_main_region__at__work_working__at__shift_shift__unloading(self):
+		self.ui.operation_callback.set_msg("Unloading Shift")
 		
 	def __entry_action_main_region__at__work_working__at__shift_shift__unloading_main__at_stock(self):
 		self.ui.operation_callback.set_actions("Walk, Toilet Break")
@@ -306,16 +311,22 @@ class Statechart:
 		self.ui.operation_callback.set_actions("Walk")
 		self.ui.operation_callback.set_msg("At truck.")
 		
+	def __entry_action_main_region__at__work_working__at__shift_shift__assembly(self):
+		self.ui.operation_callback.set_msg("Assembly Shift")
+		
 	def __entry_action_main_region__at__work_working__at__shift_shift__assembly_r1__at_stock(self):
 		self.ui.operation_callback.set_actions("Assemble")
 		self.ui.operation_callback.set_msg("At Assembly.")
 		
+	def __entry_action_main_region__at__work_working__at__shift_shift__loading(self):
+		self.ui.operation_callback.set_msg("Loading Shift")
+		
 	def __entry_action_main_region__at__work_working__at__shift_shift__loading_r1__at_truck(self):
-		self.ui.operation_callback.set_actions("Walk, Toilet Break")
+		self.ui.operation_callback.set_actions("Walk")
 		self.ui.operation_callback.set_msg("At truck.")
 		
 	def __entry_action_main_region__at__work_working__at__shift_shift__loading_r1__at_stock(self):
-		self.ui.operation_callback.set_actions("Walk, Pick Up")
+		self.ui.operation_callback.set_actions("Walk, Pick Up, Toilet Break")
 		self.ui.operation_callback.set_msg("In stock.")
 		
 	def __entry_action_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_carrying(self):
@@ -329,6 +340,9 @@ class Statechart:
 	def __entry_action_main_region__at__work_working__at__shift_energy__tiring(self):
 		self.timer_service.set_timer(self, 1, (2 * 1000), False)
 		
+	def __entry_action_main_region__at__work_working__at__shift_energy__tired(self):
+		self.ui.operation_callback.set_msg("I\'m too tired!!!!")
+		
 	def __entry_action_main_region__at__work_working__at__shift_button_button_pressed(self):
 		self.timer_service.set_timer(self, 2, 500, False)
 		
@@ -336,6 +350,10 @@ class Statechart:
 		self.timer_service.set_timer(self, 3, (4 * 1000), False)
 		self.ui.operation_callback.set_msg("Grace period...")
 		self.ui.operation_callback.shifts_show()
+		
+	def __entry_action_main_region__at__work_working__grace__period_r1__alternative__chosen(self):
+		self.__assigned_shift = self.employee.shift_clicked_value
+		self.ui.operation_callback.set_msg("Chose another shift")
 		
 	def __entry_action_main_region__at__work_working__grace__period_r1__leave__day(self):
 		self.ui.operation_callback.set_msg("Going Home")
@@ -357,7 +375,7 @@ class Statechart:
 	def __exit_action_main_region__at__work_working__grace__period(self):
 		self.timer_service.unset_timer(self, 3)
 		
-	def __exit_action_main_region__at__work_working__grace__period_r1__choosing__alternative(self):
+	def __exit_action_main_region__at__work_working__grace__period_r1__alternative__chosen(self):
 		self.ui.operation_callback.shift_highlight_assigned(self.__assigned_shift)
 		
 	def __enter_sequence_main_region__at__home_default(self):
@@ -377,6 +395,7 @@ class Statechart:
 		self.__enter_sequence_main_region__at__work_working__at__shift_button_default()
 		
 	def __enter_sequence_main_region__at__work_working__at__shift_shift__unloading_default(self):
+		self.__entry_action_main_region__at__work_working__at__shift_shift__unloading()
 		self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_main_default()
 		self.__history_vector[0] = self.__state_vector[0]
 		
@@ -405,6 +424,7 @@ class Statechart:
 		self.__state_conf_vector_changed = True
 		
 	def __enter_sequence_main_region__at__work_working__at__shift_shift__assembly_default(self):
+		self.__entry_action_main_region__at__work_working__at__shift_shift__assembly()
 		self.__enter_sequence_main_region__at__work_working__at__shift_shift__assembly_r1_default()
 		self.__history_vector[0] = self.__state_vector[0]
 		
@@ -415,6 +435,7 @@ class Statechart:
 		self.__state_conf_vector_changed = True
 		
 	def __enter_sequence_main_region__at__work_working__at__shift_shift__loading_default(self):
+		self.__entry_action_main_region__at__work_working__at__shift_shift__loading()
 		self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1_default()
 		self.__history_vector[0] = self.__state_vector[0]
 		
@@ -448,6 +469,12 @@ class Statechart:
 		self.__state_vector[1] = self.State.main_region_at__work_working_at__shift_energy_tiring
 		self.__state_conf_vector_changed = True
 		
+	def __enter_sequence_main_region__at__work_working__at__shift_energy__tired_default(self):
+		self.__entry_action_main_region__at__work_working__at__shift_energy__tired()
+		self.__next_state_index = 1
+		self.__state_vector[1] = self.State.main_region_at__work_working_at__shift_energy_tired
+		self.__state_conf_vector_changed = True
+		
 	def __enter_sequence_main_region__at__work_working__at__shift_button_button_released_default(self):
 		self.__next_state_index = 2
 		self.__state_vector[2] = self.State.main_region_at__work_working_at__shift_button_button_released
@@ -463,9 +490,10 @@ class Statechart:
 		self.__entry_action_main_region__at__work_working__grace__period()
 		self.__enter_sequence_main_region__at__work_working__grace__period_r1_default()
 		
-	def __enter_sequence_main_region__at__work_working__grace__period_r1__choosing__alternative_default(self):
+	def __enter_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen_default(self):
+		self.__entry_action_main_region__at__work_working__grace__period_r1__alternative__chosen()
 		self.__next_state_index = 0
-		self.__state_vector[0] = self.State.main_region_at__work_working_grace__period_r1_choosing__alternative
+		self.__state_vector[0] = self.State.main_region_at__work_working_grace__period_r1_alternative__chosen
 		self.__state_conf_vector_changed = True
 		
 	def __enter_sequence_main_region__at__work_working__grace__period_r1__leave__day_default(self):
@@ -582,6 +610,10 @@ class Statechart:
 		self.__state_vector[1] = self.State.null_state
 		self.__exit_action_main_region__at__work_working__at__shift_energy__tiring()
 		
+	def __exit_sequence_main_region__at__work_working__at__shift_energy__tired(self):
+		self.__next_state_index = 1
+		self.__state_vector[1] = self.State.null_state
+		
 	def __exit_sequence_main_region__at__work_working__at__shift_button_button_released(self):
 		self.__next_state_index = 2
 		self.__state_vector[2] = self.State.null_state
@@ -595,10 +627,10 @@ class Statechart:
 		self.__exit_sequence_main_region__at__work_working__grace__period_r1()
 		self.__exit_action_main_region__at__work_working__grace__period()
 		
-	def __exit_sequence_main_region__at__work_working__grace__period_r1__choosing__alternative(self):
+	def __exit_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen(self):
 		self.__next_state_index = 0
 		self.__state_vector[0] = self.State.null_state
-		self.__exit_action_main_region__at__work_working__grace__period_r1__choosing__alternative()
+		self.__exit_action_main_region__at__work_working__grace__period_r1__alternative__chosen()
 		
 	def __exit_sequence_main_region__at__work_working__grace__period_r1__leave__day(self):
 		self.__next_state_index = 0
@@ -630,8 +662,8 @@ class Statechart:
 			self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_carrying()
 		elif state == self.State.main_region_at__work_working_at__shift_shift_loading_r1_at_stock_carrying:
 			self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock_carrying()
-		elif state == self.State.main_region_at__work_working_grace__period_r1_choosing__alternative:
-			self.__exit_sequence_main_region__at__work_working__grace__period_r1__choosing__alternative()
+		elif state == self.State.main_region_at__work_working_grace__period_r1_alternative__chosen:
+			self.__exit_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen()
 			self.__exit_action_main_region__at__work_working__grace__period()
 		elif state == self.State.main_region_at__work_working_grace__period_r1_leave__day:
 			self.__exit_sequence_main_region__at__work_working__grace__period_r1__leave__day()
@@ -641,6 +673,8 @@ class Statechart:
 		state = self.__state_vector[1]
 		if state == self.State.main_region_at__work_working_at__shift_energy_tiring:
 			self.__exit_sequence_main_region__at__work_working__at__shift_energy__tiring()
+		elif state == self.State.main_region_at__work_working_at__shift_energy_tired:
+			self.__exit_sequence_main_region__at__work_working__at__shift_energy__tired()
 		state = self.__state_vector[2]
 		if state == self.State.main_region_at__work_working_at__shift_button_button_released:
 			self.__exit_sequence_main_region__at__work_working__at__shift_button_button_released()
@@ -669,8 +703,8 @@ class Statechart:
 			self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_carrying()
 		elif state == self.State.main_region_at__work_working_at__shift_shift_loading_r1_at_stock_carrying:
 			self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock_carrying()
-		elif state == self.State.main_region_at__work_working_grace__period_r1_choosing__alternative:
-			self.__exit_sequence_main_region__at__work_working__grace__period_r1__choosing__alternative()
+		elif state == self.State.main_region_at__work_working_grace__period_r1_alternative__chosen:
+			self.__exit_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen()
 			self.__exit_action_main_region__at__work_working__grace__period()
 		elif state == self.State.main_region_at__work_working_grace__period_r1_leave__day:
 			self.__exit_sequence_main_region__at__work_working__grace__period_r1__leave__day()
@@ -680,6 +714,8 @@ class Statechart:
 		state = self.__state_vector[1]
 		if state == self.State.main_region_at__work_working_at__shift_energy_tiring:
 			self.__exit_sequence_main_region__at__work_working__at__shift_energy__tiring()
+		elif state == self.State.main_region_at__work_working_at__shift_energy_tired:
+			self.__exit_sequence_main_region__at__work_working__at__shift_energy__tired()
 		state = self.__state_vector[2]
 		if state == self.State.main_region_at__work_working_at__shift_button_button_released:
 			self.__exit_sequence_main_region__at__work_working__at__shift_button_button_released()
@@ -713,6 +749,8 @@ class Statechart:
 		state = self.__state_vector[1]
 		if state == self.State.main_region_at__work_working_at__shift_energy_tiring:
 			self.__exit_sequence_main_region__at__work_working__at__shift_energy__tiring()
+		elif state == self.State.main_region_at__work_working_at__shift_energy_tired:
+			self.__exit_sequence_main_region__at__work_working__at__shift_energy__tired()
 		
 	def __exit_sequence_main_region__at__work_working__at__shift_button(self):
 		state = self.__state_vector[2]
@@ -723,8 +761,8 @@ class Statechart:
 		
 	def __exit_sequence_main_region__at__work_working__grace__period_r1(self):
 		state = self.__state_vector[0]
-		if state == self.State.main_region_at__work_working_grace__period_r1_choosing__alternative:
-			self.__exit_sequence_main_region__at__work_working__grace__period_r1__choosing__alternative()
+		if state == self.State.main_region_at__work_working_grace__period_r1_alternative__chosen:
+			self.__exit_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen()
 		elif state == self.State.main_region_at__work_working_grace__period_r1_leave__day:
 			self.__exit_sequence_main_region__at__work_working__grace__period_r1__leave__day()
 		
@@ -755,7 +793,7 @@ class Statechart:
 		self.__enter_sequence_main_region__at__work_working__at__shift_shift__assembly_r1__at_stock_default()
 		
 	def __react_main_region__at__work_working__at__shift_shift__loading_r1__entry__default(self):
-		self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_default()
+		self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock_default()
 		
 	def __react_main_region__at__work_working__at__shift_shift_hist(self):
 		"""
@@ -806,7 +844,7 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_react(try_transition) == False:
-				if self.__time_events[0]:
+				if (self.__time_events[0]) and (self.employee.operation_callback.get_energy() > 25):
 					self.__exit_sequence_main_region__at__work_working__at__shift()
 					self.__enter_sequence_main_region__at__work_working__at__shift_default()
 				else:
@@ -826,10 +864,10 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__unloading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				if (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_stock()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_truck_default()
-				elif (self.ui.action_pressed) and (("toilet break" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "toilet break")):
+				elif (self.ui.action_pressed) and (("Toilet Break" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Toilet Break")):
 					self.__exit_sequence_main_region__at__work_working__at__shift()
 					self.__enter_sequence_main_region__at__work_working__toilet__break_default()
 				else:
@@ -841,10 +879,10 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__unloading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("pickup" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "pickup")):
+				if (self.ui.action_pressed) and (("Pick Up" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Pick Up")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_truck()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_truck_carrying_default()
-				elif (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				elif (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_truck()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_stock_default()
 				else:
@@ -856,10 +894,10 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__unloading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				if (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_stock_carrying()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_truck_carrying_default()
-				elif (self.ui.action_pressed) and (("drop" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "drop")):
+				elif (self.ui.action_pressed) and (("Drop" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Drop")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_stock_carrying()
 					self.factory.operation_callback.increase_material(1)
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_stock_default()
@@ -872,7 +910,7 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__unloading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				if (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_truck_carrying()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__unloading_main__at_stock_carrying_default()
 				else:
@@ -892,7 +930,7 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__assembly_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("assemble" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "assemble")):
+				if (self.ui.action_pressed) and (("Assemble" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Assemble") and self.factory.operation_callback.get_material() > 0):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__assembly_r1__at_stock()
 					self.factory.operation_callback.increase_finished(1)
 					self.factory.operation_callback.increase_material(-1)
@@ -914,12 +952,9 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__loading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				if (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock_default()
-				elif (self.ui.action_pressed) and (("toilet break" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "toilet break")):
-					self.__exit_sequence_main_region__at__work_working__at__shift()
-					self.__enter_sequence_main_region__at__work_working__toilet__break_default()
 				else:
 					did_transition = False
 		return did_transition
@@ -929,13 +964,16 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__loading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("pickup" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "pickup")):
+				if (self.ui.action_pressed) and (("Pick Up" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Pick Up") and self.factory.operation_callback.get_finished() > 0):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock()
 					self.factory.operation_callback.increase_finished(-1)
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock_carrying_default()
-				elif (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				elif (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_default()
+				elif (self.ui.action_pressed) and (("Toilet Break" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Toilet Break")):
+					self.__exit_sequence_main_region__at__work_working__at__shift()
+					self.__enter_sequence_main_region__at__work_working__toilet__break_default()
 				else:
 					did_transition = False
 		return did_transition
@@ -945,10 +983,10 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__loading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				if (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_carrying()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock_carrying_default()
-				elif (self.ui.action_pressed) and (("drop" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "drop")):
+				elif (self.ui.action_pressed) and (("Drop" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Drop")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_carrying()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_default()
 				else:
@@ -960,7 +998,7 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__at__shift_shift__loading_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "walk")):
+				if (self.ui.action_pressed) and (("Walk" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Walk")):
 					self.__exit_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_stock_carrying()
 					self.__enter_sequence_main_region__at__work_working__at__shift_shift__loading_r1__at_truck_carrying_default()
 				else:
@@ -975,6 +1013,21 @@ class Statechart:
 				self.__exit_sequence_main_region__at__work_working__at__shift_energy__tiring()
 				self.employee.operation_callback.increase_energy(-2)
 				self.__enter_sequence_main_region__at__work_working__at__shift_energy__tiring_default()
+			elif self.employee.operation_callback.get_energy() <= 25:
+				self.__exit_sequence_main_region__at__work_working__at__shift_energy__tiring()
+				self.__enter_sequence_main_region__at__work_working__at__shift_energy__tired_default()
+			else:
+				did_transition = False
+		return did_transition
+	
+	
+	def __main_region__at__work_working__at__shift_energy__tired_react(self, try_transition):
+		did_transition = try_transition
+		if try_transition:
+			if ((self.employee.operation_callback.get_energy() + 50)) < 100:
+				self.__exit_sequence_main_region__at__work()
+				self.employee.operation_callback.increase_energy(50)
+				self.__enter_sequence_main_region__at__home_default()
 			else:
 				did_transition = False
 		return did_transition
@@ -1018,7 +1071,7 @@ class Statechart:
 		return did_transition
 	
 	
-	def __main_region__at__work_working__grace__period_r1__choosing__alternative_react(self, try_transition):
+	def __main_region__at__work_working__grace__period_r1__alternative__chosen_react(self, try_transition):
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_working__grace__period_react(try_transition) == False:
@@ -1042,7 +1095,7 @@ class Statechart:
 		did_transition = try_transition
 		if try_transition:
 			if self.__main_region__at__work_react(try_transition) == False:
-				if (self.ui.action_pressed) and (("done" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "done")):
+				if (self.ui.action_pressed) and (("Done" is None) if (self.ui.action_pressed_value is None) else (self.ui.action_pressed_value == "Done")):
 					self.__exit_sequence_main_region__at__work_working__toilet__break()
 					self.__entry_action_main_region__at__work_working__at__shift()
 					self.__react_main_region__at__work_working__at__shift_shift_hist()
@@ -1144,12 +1197,14 @@ class Statechart:
 					self.__main_region__at__work_working__at__shift_shift__loading_r1__at_stock_carrying_react(True)
 				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_at__shift_energy_tiring:
 					self.__main_region__at__work_working__at__shift_energy__tiring_react(True)
+				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_at__shift_energy_tired:
+					self.__main_region__at__work_working__at__shift_energy__tired_react(True)
 				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_at__shift_button_button_released:
 					self.__main_region__at__work_working__at__shift_button_button_released_react(True)
 				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_at__shift_button_button_pressed:
 					self.__main_region__at__work_working__at__shift_button_button_pressed_react(True)
-				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_grace__period_r1_choosing__alternative:
-					self.__main_region__at__work_working__grace__period_r1__choosing__alternative_react(True)
+				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_grace__period_r1_alternative__chosen:
+					self.__main_region__at__work_working__grace__period_r1__alternative__chosen_react(True)
 				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_grace__period_r1_leave__day:
 					self.__main_region__at__work_working__grace__period_r1__leave__day_react(True)
 				elif self.__state_vector[self.__next_state_index] == self.State.main_region_at__work_working_toilet__break:
