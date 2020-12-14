@@ -1,0 +1,15 @@
+GeneratorModel for yakindu::python {
+
+	const PROJECT : string = "mosis2020"
+
+	const FOLDER : string = "srcgen"
+
+	statechart Statechart {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+			libraryTargetFolder = "src"
+		}
+	}
+}
