@@ -5,7 +5,7 @@
       <vertices xsi:type="sgraph:Entry" xmi:id="_P3-CaD5XEeudebRGaa-5og">
         <outgoingTransitions xmi:id="_P3-pYz5XEeudebRGaa-5og" specification="" target="_P36_FT5XEeudebRGaa-5og"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_P36_FT5XEeudebRGaa-5og" specification="entry /&#xA;&#x9;ui.shiftsHide();&#xA;&#x9;ui.setMsg('At home')&#xA;&#xA;entry/ employee.increaseEnergy(50)&#xA;" name="At Home" incomingTransitions="_P3-pYz5XEeudebRGaa-5og _P36YAT5XEeudebRGaa-5og _ZQisgD5dEeudebRGaa-5og">
+      <vertices xsi:type="sgraph:State" xmi:id="_P36_FT5XEeudebRGaa-5og" specification="entry /&#xA;&#x9;ui.shiftsHide();&#xA;&#x9;ui.setMsg('At home')&#xA;&#xA;exit/ employee.increaseEnergy(50)&#xA;" name="At Home" incomingTransitions="_P3-pYz5XEeudebRGaa-5og _P36YAT5XEeudebRGaa-5og _ZQisgD5dEeudebRGaa-5og">
         <outgoingTransitions xmi:id="_P380Nj5XEeudebRGaa-5og" specification="employee.goToWork" target="_P3YMfz5XEeudebRGaa-5og"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_P3YMfz5XEeudebRGaa-5og" specification="" name="At Work" incomingTransitions="_P380Nj5XEeudebRGaa-5og _O2tnYD5cEeudebRGaa-5og">
@@ -110,22 +110,21 @@
           <vertices xsi:type="sgraph:State" xmi:id="_P3YMlz5XEeudebRGaa-5og" specification="entry /&#xA;ui.setActions(&quot;Done&quot;);&#xA;ui.setMsg(&quot;In toilet.&quot;)" name="Toilet Break" incomingTransitions="_P3oEED5XEeudebRGaa-5og _P337uT5XEeudebRGaa-5og">
             <outgoingTransitions xmi:id="_P3gvVj5XEeudebRGaa-5og" specification="ui.actionPressed [valueof(ui.actionPressed) == &quot;Done&quot;]" target="_P3hWcj5XEeudebRGaa-5og"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_P3Ss7D5XEeudebRGaa-5og" specification="entry / ui.setMsg(&quot;Going Home&quot;);&#xD;&#xA;ui.shiftHighlightClear()" name="Leave Day" incomingTransitions="_P3UiGT5XEeudebRGaa-5og _P3W-ZT5XEeudebRGaa-5og">
+          <vertices xsi:type="sgraph:State" xmi:id="_P3Ss7D5XEeudebRGaa-5og" specification="entry / ui.setMsg(&quot;Going Home&quot;);&#xD;&#xA;ui.shiftHighlightClear()" name="Leave Day" incomingTransitions="_P3UiGT5XEeudebRGaa-5og">
             <outgoingTransitions xmi:id="_P36YAT5XEeudebRGaa-5og" specification="after 2 s" target="_P36_FT5XEeudebRGaa-5og"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_P3TUAT5XEeudebRGaa-5og" specification="entry /&#xA;&#x9;ui.setMsg(&quot;Grace period...&quot;);&#xA;&#x9;ui.shiftsShow()" name="Grace Period" incomingTransitions="_TzD-4D5XEeudebRGaa-5og">
+          <vertices xsi:type="sgraph:State" xmi:id="_P3TUAT5XEeudebRGaa-5og" specification="entry /&#xA;&#x9;ui.setMsg(&quot;Grace period...\n Start a shift or go home&quot;);&#xA;&#x9;ui.shiftsShow()" name="Grace Period" incomingTransitions="_TzD-4D5XEeudebRGaa-5og">
             <outgoingTransitions xmi:id="_P3Zapj5XEeudebRGaa-5og" specification="after 4 s" target="_P3aBpD5XEeudebRGaa-5og"/>
+            <outgoingTransitions xmi:id="_P3UiGT5XEeudebRGaa-5og" specification="employee.goHome" target="_P3Ss7D5XEeudebRGaa-5og"/>
             <regions xmi:id="_P3TUIj5XEeudebRGaa-5og" name="r1">
               <vertices xsi:type="sgraph:Entry" xmi:id="_P3Xldz5XEeudebRGaa-5og">
                 <outgoingTransitions xmi:id="_P3XlgD5XEeudebRGaa-5og" specification="" target="_P3T7DD5XEeudebRGaa-5og"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_P3VwOT5XEeudebRGaa-5og" specification="entry /&#xA;&#x9;assignedShift = valueof(employee.shiftClicked);&#xA;&#x9;ui.setMsg(&quot;Chose another shift&quot;);&#xA;&#x9;ui.shiftHighlightClear();&#xA;&#x9;ui.shiftHighlightAssigned(assignedShift)" name="Alternative Chosen" incomingTransitions="_P3VJLD5XEeudebRGaa-5og _P3WXXj5XEeudebRGaa-5og">
-                <outgoingTransitions xmi:id="_P3W-ZT5XEeudebRGaa-5og" specification="employee.goHome" target="_P3Ss7D5XEeudebRGaa-5og"/>
                 <outgoingTransitions xmi:id="_P3WXXj5XEeudebRGaa-5og" specification="employee.shiftClicked" target="_P3VwOT5XEeudebRGaa-5og"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_P3T7DD5XEeudebRGaa-5og" specification="entry /&#xD;&#xA;&#x9;assignedShift = util.getRandomInteger(3);&#xD;&#xA;&#x9;ui.shiftHighlightAssigned(assignedShift)" name="inGrace" incomingTransitions="_P3XlgD5XEeudebRGaa-5og">
                 <outgoingTransitions xmi:id="_P3VJLD5XEeudebRGaa-5og" specification="employee.shiftClicked" target="_P3VwOT5XEeudebRGaa-5og"/>
-                <outgoingTransitions xmi:id="_P3UiGT5XEeudebRGaa-5og" specification="employee.goHome" target="_P3Ss7D5XEeudebRGaa-5og"/>
               </vertices>
             </regions>
           </vertices>
@@ -1121,7 +1120,7 @@
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_P3VwNz5XEeudebRGaa-5og" id="(0.9624413145539906,0.16129032258064516)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_P3VwOD5XEeudebRGaa-5og" id="(0.32677165354330706,0.19148936170212766)"/>
     </edges>
-    <edges xmi:id="_P3UiED5XEeudebRGaa-5og" type="Transition" element="_P3UiGT5XEeudebRGaa-5og" source="_P3T7AD5XEeudebRGaa-5og" target="_P3Ss4D5XEeudebRGaa-5og">
+    <edges xmi:id="_P3UiED5XEeudebRGaa-5og" type="Transition" element="_P3UiGT5XEeudebRGaa-5og" source="_P3TT9T5XEeudebRGaa-5og" target="_P3Ss4D5XEeudebRGaa-5og">
       <children xsi:type="notation:DecorationNode" xmi:id="_P3UiFj5XEeudebRGaa-5og" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_P3UiGD5XEeudebRGaa-5og"/>
         <layoutConstraint xsi:type="notation:Location" xmi:id="_P3UiFz5XEeudebRGaa-5og" x="-52" y="10"/>
@@ -1129,19 +1128,8 @@
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_P3UiFT5XEeudebRGaa-5og" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_P3UiFD5XEeudebRGaa-5og" fontName="Verdana"/>
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_P3UiEz5XEeudebRGaa-5og" points="[-74, -12, 387, -21]$[-446, -12, 15, -21]"/>
-      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_P3UiEj5XEeudebRGaa-5og" id="(0.3474178403755869,0.8064516129032258)"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_P3UiEj5XEeudebRGaa-5og" id="(0.0014992503748125937,0.5964912280701754)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_P3UiET5XEeudebRGaa-5og" id="(0.9344978165938864,0.8867924528301887)"/>
-    </edges>
-    <edges xmi:id="_P3W-XD5XEeudebRGaa-5og" type="Transition" element="_P3W-ZT5XEeudebRGaa-5og" source="_P3VJNT5XEeudebRGaa-5og" target="_P3Ss4D5XEeudebRGaa-5og">
-      <children xsi:type="notation:DecorationNode" xmi:id="_P3W-Yj5XEeudebRGaa-5og" type="TransitionExpression">
-        <styles xsi:type="notation:ShapeStyle" xmi:id="_P3W-ZD5XEeudebRGaa-5og"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_P3W-Yz5XEeudebRGaa-5og" x="-53" y="34"/>
-      </children>
-      <styles xsi:type="notation:ConnectorStyle" xmi:id="_P3W-YT5XEeudebRGaa-5og" routing="Rectilinear" lineColor="4210752"/>
-      <styles xsi:type="notation:FontStyle" xmi:id="_P3W-YD5XEeudebRGaa-5og" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_P3W-Xz5XEeudebRGaa-5og" points="[-5, -1, 663, 46]$[-301, -1, 367, 46]$[-301, 4, 367, 51]$[-627, 4, 41, 51]$[-627, -44, 41, 3]"/>
-      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_P3W-Xj5XEeudebRGaa-5og" id="(0.01968503937007874,0.925531914893617)"/>
-      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_P3W-XT5XEeudebRGaa-5og" id="(0.7292576419213974,0.9433962264150944)"/>
     </edges>
     <edges xmi:id="_P3WXVT5XEeudebRGaa-5og" type="Transition" element="_P3WXXj5XEeudebRGaa-5og" source="_P3VJNT5XEeudebRGaa-5og" target="_P3VJNT5XEeudebRGaa-5og">
       <children xsi:type="notation:DecorationNode" xmi:id="_P3WXWz5XEeudebRGaa-5og" type="TransitionExpression">
@@ -1157,7 +1145,7 @@
     <edges xmi:id="_P3Zauz5XEeudebRGaa-5og" type="Transition" element="_P3Zapj5XEeudebRGaa-5og" source="_P3TT9T5XEeudebRGaa-5og" target="_P3Zarz5XEeudebRGaa-5og">
       <children xsi:type="notation:DecorationNode" xmi:id="_P3ZavD5XEeudebRGaa-5og" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_P3ZavT5XEeudebRGaa-5og"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_P3Zavj5XEeudebRGaa-5og" x="53" y="22"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_P3Zavj5XEeudebRGaa-5og" x="7" y="-39"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_P3Zavz5XEeudebRGaa-5og" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_P3aBoD5XEeudebRGaa-5og" fontName="Verdana"/>

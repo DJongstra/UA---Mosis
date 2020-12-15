@@ -313,7 +313,6 @@ class Statechart:
 		"""
 		self.ui.operation_callback.shifts_hide()
 		self.ui.operation_callback.set_msg("At home")
-		self.employee.operation_callback.increase_energy(50)
 		
 	def __entry_action_main_region__at__work(self):
 		"""Entry action for state 'At Work'..
@@ -329,8 +328,6 @@ class Statechart:
 	def __entry_action_main_region__at__work_working__at__shift_shift__unloading(self):
 		"""Entry action for state 'Unloading'..
 		"""
-		self.ui.operation_callback.set_msg("Unloading Shift")
-		self.ui.operation_callback.set_msg("Unloading Shift")
 		self.ui.operation_callback.set_msg("Unloading Shift")
 		
 	def __entry_action_main_region__at__work_working__at__shift_shift__unloading_main__at_stock(self):
@@ -353,22 +350,10 @@ class Statechart:
 		self.ui.operation_callback.set_actions("Walk,Drop")
 		self.ui.operation_callback.set_msg("In stock.\n Carrying material")
 		self.__current_action = ""
-		self.ui.operation_callback.set_actions("Walk,Drop")
-		self.ui.operation_callback.set_msg("In stock.\n Carrying material")
-		self.__current_action = ""
-		self.ui.operation_callback.set_actions("Walk,Drop")
-		self.ui.operation_callback.set_msg("In stock.\n Carrying material")
-		self.__current_action = ""
 		
 	def __entry_action_main_region__at__work_working__at__shift_shift__unloading_main__at_truck_carrying(self):
 		"""Entry action for state 'AtTruckCarrying'..
 		"""
-		self.ui.operation_callback.set_actions("Walk")
-		self.ui.operation_callback.set_msg("At truck.\n Carrying material")
-		self.__current_action = ""
-		self.ui.operation_callback.set_actions("Walk")
-		self.ui.operation_callback.set_msg("At truck.\n Carrying material")
-		self.__current_action = ""
 		self.ui.operation_callback.set_actions("Walk")
 		self.ui.operation_callback.set_msg("At truck.\n Carrying material")
 		self.__current_action = ""
@@ -377,16 +362,10 @@ class Statechart:
 		"""Entry action for state 'Assembly'..
 		"""
 		self.ui.operation_callback.set_msg("Assembly Shift")
-		self.ui.operation_callback.set_msg("Assembly Shift")
-		self.ui.operation_callback.set_msg("Assembly Shift")
 		
 	def __entry_action_main_region__at__work_working__at__shift_shift__assembly_r1__at_stock(self):
 		"""Entry action for state 'AtStock'..
 		"""
-		self.ui.operation_callback.set_actions("Assemble")
-		self.ui.operation_callback.set_msg("At Assembly.")
-		self.ui.operation_callback.set_actions("Assemble")
-		self.ui.operation_callback.set_msg("At Assembly.")
 		self.ui.operation_callback.set_actions("Assemble")
 		self.ui.operation_callback.set_msg("At Assembly.")
 		
@@ -402,8 +381,6 @@ class Statechart:
 	def __entry_action_main_region__at__work_working__at__shift_shift__loading(self):
 		"""Entry action for state 'Loading'..
 		"""
-		self.ui.operation_callback.set_msg("Loading Shift")
-		self.ui.operation_callback.set_msg("Loading Shift")
 		self.ui.operation_callback.set_msg("Loading Shift")
 		
 	def __entry_action_main_region__at__work_working__at__shift_shift__loading_r1__at_truck(self):
@@ -448,13 +425,10 @@ class Statechart:
 		"""Entry action for state 'buttonActivated'..
 		"""
 		self.__current_action = self.ui.action_pressed_value
-		self.__current_action = self.ui.action_pressed_value
 		
 	def __entry_action_main_region__at__work_working__toilet__break(self):
 		"""Entry action for state 'Toilet Break'..
 		"""
-		self.ui.operation_callback.set_actions("Done")
-		self.ui.operation_callback.set_msg("In toilet.")
 		self.ui.operation_callback.set_actions("Done")
 		self.ui.operation_callback.set_msg("In toilet.")
 		
@@ -464,16 +438,12 @@ class Statechart:
 		self.timer_service.set_timer(self, 4, (2 * 1000), False)
 		self.ui.operation_callback.set_msg("Going Home")
 		self.ui.operation_callback.shift_highlight_clear()
-		self.ui.operation_callback.set_msg("Going Home")
-		self.ui.operation_callback.shift_highlight_clear()
 		
 	def __entry_action_main_region__at__work_working__grace__period(self):
 		"""Entry action for state 'Grace Period'..
 		"""
 		self.timer_service.set_timer(self, 5, (4 * 1000), False)
-		self.ui.operation_callback.set_msg("Grace period...")
-		self.ui.operation_callback.shifts_show()
-		self.ui.operation_callback.set_msg("Grace period...")
+		self.ui.operation_callback.set_msg("Grace period...\n Start a shift or go home")
 		self.ui.operation_callback.shifts_show()
 		
 	def __entry_action_main_region__at__work_working__grace__period_r1__alternative__chosen(self):
@@ -483,16 +453,10 @@ class Statechart:
 		self.ui.operation_callback.set_msg("Chose another shift")
 		self.ui.operation_callback.shift_highlight_clear()
 		self.ui.operation_callback.shift_highlight_assigned(self.__assigned_shift)
-		self.__assigned_shift = self.employee.shift_clicked_value
-		self.ui.operation_callback.set_msg("Chose another shift")
-		self.ui.operation_callback.shift_highlight_clear()
-		self.ui.operation_callback.shift_highlight_assigned(self.__assigned_shift)
 		
 	def __entry_action_main_region__at__work_working__grace__period_r1_in_grace(self):
 		"""Entry action for state 'inGrace'..
 		"""
-		self.__assigned_shift = self.util.operation_callback.get_random_integer(3)
-		self.ui.operation_callback.shift_highlight_assigned(self.__assigned_shift)
 		self.__assigned_shift = self.util.operation_callback.get_random_integer(3)
 		self.ui.operation_callback.shift_highlight_assigned(self.__assigned_shift)
 		
@@ -510,6 +474,11 @@ class Statechart:
 		self.timer_service.set_timer(self, 7, (2 * 1000), False)
 		self.ui.operation_callback.set_msg("Going Home, I\'m too tired")
 		self.ui.operation_callback.shift_highlight_clear()
+		
+	def __exit_action_main_region__at__home(self):
+		"""Exit action for state 'At Home'..
+		"""
+		self.employee.operation_callback.increase_energy(50)
 		
 	def __exit_action_main_region__at__work(self):
 		"""Exit action for state 'At Work'..
@@ -834,6 +803,7 @@ class Statechart:
 		"""
 		self.__next_state_index = 0
 		self.__state_vector[0] = self.State.null_state
+		self.__exit_action_main_region__at__home()
 		
 	def __exit_sequence_main_region__at__work(self):
 		"""Default exit sequence for state At Work.
@@ -1571,6 +1541,10 @@ class Statechart:
 				self.__exit_sequence_main_region__at__work_working__grace__period()
 				self.__enter_sequence_main_region__at__work_working__at__shift_default()
 				self.__main_region__at__work_react(False)
+			elif self.employee.go_home:
+				self.__exit_sequence_main_region__at__work_working__grace__period()
+				self.__enter_sequence_main_region__at__work_working__leave__day_default()
+				self.__main_region__at__work_react(False)
 			else:
 				did_transition = False
 		if not did_transition:
@@ -1583,11 +1557,7 @@ class Statechart:
 		"""
 		did_transition = try_transition
 		if try_transition:
-			if self.employee.go_home:
-				self.__exit_sequence_main_region__at__work_working__grace__period()
-				self.__enter_sequence_main_region__at__work_working__leave__day_default()
-				self.__main_region__at__work_react(False)
-			elif self.employee.shift_clicked:
+			if self.employee.shift_clicked:
 				self.__exit_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen()
 				self.__enter_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen_default()
 				self.__main_region__at__work_working__grace__period_react(False)
@@ -1607,10 +1577,6 @@ class Statechart:
 				self.__exit_sequence_main_region__at__work_working__grace__period_r1_in_grace()
 				self.__enter_sequence_main_region__at__work_working__grace__period_r1__alternative__chosen_default()
 				self.__main_region__at__work_working__grace__period_react(False)
-			elif self.employee.go_home:
-				self.__exit_sequence_main_region__at__work_working__grace__period()
-				self.__enter_sequence_main_region__at__work_working__leave__day_default()
-				self.__main_region__at__work_react(False)
 			else:
 				did_transition = False
 		if not did_transition:
