@@ -31,8 +31,8 @@ testclass StatechartTest for statechart Statechart {
 		raise ui.actionPressed:"walk"
 		assert(active(main_region.At_Work.working.At_Shift.button.buttonPressed))
 		proceed 500ms
-		assert(active(main_region.At_Work.working.At_Shift.shift.Unloading.main.AtTruck))
-
+		assert(active(main_region.At_Work.working.At_Shift.button.buttonActivated))
+		assert(active(main_region.At_Work.working.At_Shift.shift.Unloading.main.AtStock))
 		
 	}
 }

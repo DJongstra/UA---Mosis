@@ -19,7 +19,7 @@
       Student ID :	20205490
       e-mail     :	joanna.kisaakye@student.uantwerpen.be
 
-      Time spent on this assignment (in hours): 12
+      Time spent on this assignment (in hours): 24
      </pre>
 
  
@@ -34,11 +34,11 @@
 		The grace period is automatically ended after 4 seconds, after which a transition into actually working is made.
 		The initial state in the grace period is "inGrace", which randomly chooses one of the three shift and highlights this shift blue. The employee can now wait to start the shift, or choose another shift.
 		By choosing another shift, the transition to "Alternative Chosen" is taken. This highlights the chosen shift blue and also sets this shift internally as the shift that is going to be done. There is a transition to itself in this state, because the employee can keep changing his shift while in the grace period.
-		When in the grace period the employee can still decide to go home, whether he has chosen a shift or it was only randomly assigned. Therefore, there is a transition from the composite grace period to the state "leave day".
+		When in the grace period, the employee can still decide to go home, whether he has chosen a shift or it was only randomly assigned. Therefore, there is a transition from the composite grace period to the state "leave day".
 		This state indicates that the employee is going home, and after 2 seconds the transition to being home is made.
 		<br><br>
-		The employee can also be forced to go home. This happens if at the end of the shift the employee has less than 25% energy left. The states corresponding to this are in the bottom-left corner.
-		In the state "shiftEnd", we can see that the employee is payed and that the actions that can be done during the shift are hidden from the ui. From this state, the transition to the at home state is immediately taken if the energy-levels are below 25%.
+		The employee can also be forced to go home. This happens if, at the end of the shift, the employee has less than 25% energy left. The states corresponding to this are in the bottom-left corner.
+		In the state "shiftEnd", we can see that the employee is paid and that the actions that can be done during the shift are hidden from the ui. From this state, the transition to the at home state is immediately taken if the energy-levels are below 25%.
 		Otherwise, the transition to the composite state "at work" is taken, where the employee will enter the grace period again. In this grace period, the employee can again decide if he is going to work or if he is going home.
 		
 		
@@ -53,14 +53,14 @@
     <h2>Statechart: doing shifts</h2>
 	<p>
 	In fig. 2 are the parts in the statechart that have to do with doing shifts. As previously mentioned, we get in the composite state "At shift" by taking the transition from the grace period after 4 seconds.
-	When the at shift state is entered, the shift that the employee is going to work is highlighted green as active. In the composite state, the initial transition is taken to the assigned or chosen shift.
+	When the "At Shift" state is entered, the shift that the employee is going to work is highlighted green as active. In the composite state, the initial transition is taken to the assigned or chosen shift.
 	If the shift is unloading, the transition will be taken to the composite state "unloading". This state starts at the truck without the employee carrying anything. By holding the actions buttons for at least half a second,
 	the employee can do one of the actions specified in the state he is in. By doing an entire sequence of walk, pickup, walk, drop, one piece of material is added to the stock.
 	<br><br>
 	The assembly state takes away material and adds a finished product every time the assembly button is held. A transition to the state Assembly is taken in this case. 
 	It stays for a second in this state, so that it is clear from the message that the assembling action succeeded.
 	<br><br>
-	The unloading state is similar to loading. However, now finished product is picked up at the stock and dropped at the truck. A finished product can only be picked up if there is at least 1 finished product in stock.
+	The loading state is similar to unloading. However, now a finished product is picked up at the stock and dropped at the truck. A finished product can only be picked up if there is at least 1 finished product in stock.
 	When it is picked up, the stock is reduced by 1.
 	<br><br>
 	On the left side of fig. 2, a transition to the previously discussed state "endShift" can be found. This transition is taken 14 seconds after entering the composite state "at work".
@@ -91,7 +91,7 @@
 	<h2>Statechart: tiring & buttons</h2>
 	<p>
 	Orthogonal states to the shift states, are the button and tiring state(s) in fig. 4. Both have to happen independently of what is happening in the shift states and at the same time.
-	The time part is exists of a single state. After every second in the composite state "atShift", the energy levels of the employee is lowered by 2. 
+	The time part is comprised of a single state. After every second in the composite state "atShift", the energy levels of the employee is lowered by 2.
 	This is also the reason why the toilet break is not part of the composite state "atShift", because the energy should not be lowered while on the toilet.
 	Another orthogonal state is for pressing and holding the buttons. It starts in the state where the button is released. As soon as the button is pressed, it goes to the state denoting this.
 	After half a second of holding, the button becomes activated and the variable currentAction is set to the pressed button. The activated state can only be left by releasing the button.
@@ -118,7 +118,9 @@
 	
 	
 	<h2>Workflow and tasks: Joanna</h2>
-	
+ 	I begun the statechart with just the two states representing being at home and at work. Then I proceeded to build it up incrementally by adding statechart components to model the requirements.
+ 	Initially, I relied on white box unit tests because the UI does not display correctly on my machine. When the general structure was more or less done, I handed it over to Daniëlle.
+
 	
 	<h2>Workflow and tasks: Daniëlle</h2>
 	<p>
