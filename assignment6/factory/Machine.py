@@ -2,7 +2,7 @@ import numpy as np
 from pypdevs.DEVS import AtomicDEVS
 from pypdevs.infinity import INFINITY
 
-from assignment.Item import Product
+from factory.Item import Product
 
 
 class MachineState:

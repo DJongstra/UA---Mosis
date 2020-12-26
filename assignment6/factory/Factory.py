@@ -1,9 +1,9 @@
 from pypdevs.DEVS import CoupledDEVS
 from pypdevs.simulator import Simulator
 
-from assignment.Collector import Accept, Trash
-from assignment.Machine import Preassembler, Assembler, Inspector, Fix
-from assignment.Source import CylinderSource, CubeSource
+from factory.Collector import Accept, Trash
+from factory.Machine import Preassembler, Assembler, Inspector, Fix
+from factory.Source import CylinderSource, CubeSource
 
 
 class Factory(CoupledDEVS):

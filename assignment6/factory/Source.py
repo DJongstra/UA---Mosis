@@ -1,7 +1,7 @@
 from pypdevs.DEVS import AtomicDEVS
 from pypdevs.infinity import INFINITY
 
-from assignment.Item import Cube, Cylinder, Item
+from factory.Item import Cube, Cylinder, Item
 
 class SourceState:
     def __init__(self, seed, processing_time):
