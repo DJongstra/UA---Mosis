@@ -31,7 +31,7 @@ class Factory(CoupledDEVS):
 if __name__ == '__main__':
     model = Factory()
     sim = Simulator(model)
-    sim.setVerbose(None)
+    # sim.setVerbose(None)
     sim.setVerbose("myOutputFile")
     # Required to set Classic DEVS, as we simulate in Parallel DEVS otherwise
     sim.setClassicDEVS()

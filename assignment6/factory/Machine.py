@@ -22,6 +22,10 @@ class Machine(AtomicDEVS):
         return self.state.processing_time
 
     def outputFnc(self):
+        print(self.__class__.__name__+" => output Fired")
+        # print("====OUTPUT====")
+        print(self.state.product)
+        # print("====OUTPUT====")
         return {self.outport: self.state.product}
 
     def extTransition(self, inputs):
@@ -29,7 +33,9 @@ class Machine(AtomicDEVS):
         return self.state
 
     def intTransition(self):
+        print(self.__class__.__name__+" => internal transition Fired")
         self.state.product = None
+        self.state.processing_time = INFINITY
         return self.state
 
 
@@ -45,11 +51,6 @@ class Preassembler(Machine):
         Machine.__init__(self, "Preassembler")
         self.inport2 = self.addInPort("input2")
         self.state = PreassemblerState()
-
-    # def intTransition(self):
-    #     print(len(self.state.cubes_in_queue))
-    #     print(len(self.state.cylinders_in_queue))
-    #     return self.state
 
     def extTransition(self, inputs):
         if self.inport in inputs:
@@ -93,13 +94,16 @@ class Assembler(Processor):
         self.state = ProcessorState(processing_mu=4.0)
 
     def intTransition(self):
+        print(self.__class__.__name__+" => internal transition Fired")
+
+
         # If we have an item in the queue
         # Pop it and work on it
         if len(self.state.products_in_queue) > 0:
             #  get product
             self.state.product = self.state.products_in_queue.pop()
+            print(self.state.product)
             #  add time
-            self.calculate_processing_time()
             self.state.current_time += self.timeAdvance()
             self.state.product.creation_time = self.state.current_time
             # add correctness
@@ -110,7 +114,19 @@ class Assembler(Processor):
         return self.state
 
     def extTransition(self, inputs):
-        self.state.products_in_queue.append(inputs[self.inport])
+        print(self.__class__.__name__+" => external transition Fired")
+        if self.state.product:
+            self.state.products_in_queue.append(inputs[self.inport])
+        else:
+            self.state.product = inputs[self.inport]
+            self.calculate_processing_time()
+            #  add time
+            self.state.current_time += self.timeAdvance()
+            self.state.product.creation_time = self.state.current_time
+            # add correctness
+            self.state.product.correctness = self.calculate_correctness()
+        # print(self.state.products_in_queue)
+        # self.state.processing_time = 0.0
         return self.state
 
     def calculate_correctness(self):
@@ -148,7 +164,13 @@ class Inspector(Processor):
         return self.state
 
     def extTransition(self, inputs):
-        self.state.products_in_queue.append(inputs[self.inport])
+        if self.state.product:
+            self.state.products_in_queue.append(inputs[self.inport])
+        else:
+            self.state.product = inputs[self.inport]
+            # add time
+            self.calculate_processing_time()
+            self.state.product.processing_time += self.timeAdvance()
         return self.state
 
     def outputFnc(self):
@@ -175,10 +197,5 @@ class Fix(Machine):
 
     def extTransition(self, inputs):
         self.state.product = inputs[self.inport]
-        # If we have an item in the queue
-        # Pop it and work on it
-        if self.state.product:
-            self.state.processing_time = 0.0
-        else:
-            self.state.processing_time = INFINITY
+        self.state.processing_time = 0.0
         return self.state
