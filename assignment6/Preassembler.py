@@ -14,7 +14,7 @@ class Preassembler(AtomicDEVS):
         AtomicDEVS.__init__(self, "Preassembler")
         self.state = PreassemblerState()
 
-        self.in_object = self.addInPort("in_object")
+        self.in_object = self.addInPort("in_product")
         self.out_product = self.addOutPort("out_product")
 
     def intTransition(self):

@@ -2,14 +2,12 @@ from pypdevs.simulator import Simulator
 
 from System import Factory
 
-model = Factory()
+model = Factory(fixPart=0.20, trashPart=0.10)
 simulator = Simulator(model)
 
-simulator.setVerbose()
+simulator.setVerbose("SimulationOutput.txt")
 simulator.setClassicDEVS()
-simulator.setTerminationTime(32.0)
+simulator.setTerminationTime(2000.0)
 simulator.simulate()
 
-print(model.stats.get_amount_product())
-print(model.stats.get_time())
-print(model.stats.printEntryProducts())
+simulator.model.printStatistics("./statsOtherInspector.txt")
