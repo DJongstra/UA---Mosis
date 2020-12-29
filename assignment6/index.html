@@ -1,0 +1,155 @@
+<html>
+ <!-- MoSIS Assignments template -->
+
+ <title>MoSIS Assignment 5</title>
+
+ <body bgcolor="#ffffff">
+
+ <hr noshade>
+
+   <h1>MoSIS Assignment 5</h1>
+
+    <h2>Team</h2>
+     <pre>
+      Name       :	Daniëlle Jongstra
+      Student ID :	20172260
+      e-mail     :	Danielle.jongstra@student.uantwerpen.be
+
+      Name       :	Joanna Kisaakye
+      Student ID :	20205490
+      e-mail     :	joanna.kisaakye@student.uantwerpen.be
+
+      Time spent on this assignment (in hours): hours
+     </pre>
+
+ 
+ <h2>Requirements : </h2>
+ <p>
+ On top of the requirements listed as part of the assignment description, we had the following requirements:
+ <ol>
+	 <li>
+		 Each machine maintains state that describes the current situation within the machine.
+	 </li>
+	 <li>
+		 There are 4 hierarchical types of machines:
+		 <ol>
+			 <li> the type that produces raw materials such as the Cube and the Cylinder</li>
+			 <li> the type that processes inputs one at a time and has a queue</li>
+			 <li> the type that assembles raw materials into a new output</li>
+			 <li> the type that collects items, which may either pass them onto the next machine or not.</li>
+		 </ol>
+	 </li>
+	 <li>
+		 There are two types of raw materials, the Cube and the Cylinder.
+	 </li>
+	 <li>
+		 The state of a product is stored within the product, and is updated during processing. It includes:
+		 <ol>
+			 <li>
+				 The creation time.
+			 </li>
+			 <li>
+				 The time spent in the queue.
+			 </li>
+			 <li>
+				 The start time of a process on the product.
+			 </li>
+			 <li>
+				 The correctness of the product.
+			 </li>
+			 <li>
+				 The number of times the product has been reassembled.
+			 </li>
+		 </ol>
+	 </li>
+	 <li>
+		 There is a separate object required to collect statistical data about the whole model.
+	 </li>
+ </ol>
+ </p>
+ <h2>Assumptions : </h2>
+ <p>
+ The assumption made in our models include:
+ <ol>
+	 <li>
+		 Machines never power on or off, they are either in an idle state or processing state.
+	 </li>
+ </ol>
+ </p>
+ <h2>Design and Implementation: </h2>
+ <figure>
+	 <img src="./img/DEVS Model Design.jpg">
+	 <figcaption>Figure 1: Class Diagram Summarising DEVS model design</figcaption>
+ </figure>
+ <h4>DEVS models</h4>
+ <p>
+ Our design consists of 5 atomic DEVS models that include:
+ <ol>
+	 <li>
+		 The <b>ObjectSource</b> model:
+		 <br>
+		 This model produces the <i>"Cube"</i> and <i>"Cylinder"</i> raw materials required to assemble a product. This port only has an output port.
+	 </li>
+	 <li>
+		 The <b>Operator</b> model:
+		 <br>
+		 This model processes a Product at a time, it has a queue, mean standard deviation, and a seed . It has two sub models:
+		 <ol>
+			 <li>
+				 The <b>Assembler</b>:
+				 Has one output port for assembled products.
+			 </li>
+			 <li>
+				 The <b>Inspector</b>:
+				 Has 3 different output ports that for accepted products, rejected products and products that will have to be fixed/reassembled.<br>
+				 To determine these, the assembler also has 3 "part" attributes that hold the ratios to be used to determine where to send products.
+			 </li>
+		 </ol>
+	 </li>
+	 <li>
+		 The <b>Preassembler</b> model:
+		 <br>
+		 This model produces a product after it has acquired enough <i>"Cubes"</i> and <i>"Cylinders"</i>. The Preassembler has one input port <i>"in_object"</i> to which both object sources are connected.
+	 </li>
+	 <li>
+		 The <b>FATmachine</b> model:
+		 <br>
+		 This model collects assembled products and keeps the count of total products collected and total products collected that were reassembled as part of its state. This model has 3 sub models:
+		 <ol>
+			 <li>
+				 The <b>Fix</b>:
+				 Has one output port so that it can pass on assembled products to be reassembled.
+			 </li>
+			 <li>
+				 The <b>Accept</b>:
+				 Collects assembled items and keeps track of reassembled items that have been accepted as well as all accepted items.
+			 </li>
+			 <li>
+				 The <b>Trash</b>:
+				 Collects assembled items and keeps track of all rejected items.
+			 </li>
+		 </ol>
+	 </li>
+	 <li>
+		 The <b>Statistics</b> model:
+		 <br>
+		 This model keeps track of the global state of the System coupled DEVS model. It has two input ports <i>"in_queuetimes"</i> and <i>"in_product"</i>. The <i>"waitingTimes"</i> attribute collects the times spent by products in the queues of the inspector and assembler.<br>
+		 The <i>"totalTimes"</i> array keeps track of the total time each product has spent in the system from the point of assembly.
+		 <br>
+		 The <i>"getAverageTotalTime"</i> function returns the mean of the total times. The <i>"getAverageWaitingTime"</i> function returns the mean of the waiting times.
+	 </li>
+ </ol>
+ Each of the models is composed of a separate <i>"State"</i> object that contains data about the current situation within the machine, such as the current time, the remaining time, the current product, the number of items in the queue, the queue, waiting times and so on. This allows us to separate the current state of the model from it's behaviour and it also allows us to easily collect analytical data.
+ <br>
+ Each of the models above, apart from the ObjectSource model, also interacts with a <b>Product</b> object in one way or the other.
+
+ <h4>Product</h4>
+ The product class represents the actual products assembled by the system. Each product also tracks it's creation time, it's arrival time at a process, time it has spent in a queue, the number of times it has been reassembled and it's correctness measure.
+ </p>
+ <h2>Modelling and Simulation Results : </h2>
+     
+
+ <hr noshade>
+
+ </body>
+</html>
