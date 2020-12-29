@@ -3,7 +3,7 @@
 
  <title>MoSIS Assignment 6</title>
 
- <body bgcolor="#ffffff">
+ <p bgcolor="#ffffff">
 
  <hr noshade>
 
@@ -49,7 +49,7 @@
 				 The creation time.
 			 </li>
 			 <li>
-				 The time spent in the queue.
+				 The time it enters a queue.
 			 </li>
 			 <li>
 				 The start time of a process on the product.
@@ -76,14 +76,14 @@
 	 </li>
  </ol>
  </p>
- <h2>Design and Implementation: </h2>
+ <h2>Design : </h2>
  <figure>
 	 <img src="./img/DEVS Model Design.jpg">
 	 <figcaption>Figure 1: Class Diagram Summarising DEVS model design</figcaption>
  </figure>
  <h4>DEVS models</h4>
  <p>
- Our design consists of 5 atomic DEVS models that include:
+ Our design consists of 5 atomic DEVS models and one Coupled DEVS model that include:
  <ol>
 	 <li>
 		 The <b>ObjectSource</b> model:
@@ -134,9 +134,14 @@
 		 The <b>Statistics</b> model:
 		 <br>
 		 This model keeps track of the global state of the System coupled DEVS model. It has two input ports <i>"in_queuetimes"</i> and <i>"in_product"</i>. The <i>"waitingTimes"</i> attribute collects the times spent by products in the queues of the inspector and assembler.<br>
-		 The <i>"totalTimes"</i> array keeps track of the total time each product has spent in the system from the point of assembly.
+		 The <i>"totalTimes"</i> list keeps track of the total time each product has spent in the system from the point of assembly.
 		 <br>
 		 The <i>"getAverageTotalTime"</i> function returns the mean of the total times. The <i>"getAverageWaitingTime"</i> function returns the mean of the waiting times.
+	 </li>
+	 <li>
+		 The <b>Factory</b> model:
+		 <br>
+		 This is the CoupledDEVS model that brings all the atomic models together.
 	 </li>
  </ol>
  Each of the models is composed of a separate <i>"State"</i> object that contains data about the current situation within the machine, such as the current time, the remaining time, the current product, the number of items in the queue, the queue, waiting times and so on. This allows us to separate the current state of the model from it's behaviour and it also allows us to easily collect analytical data.
@@ -144,10 +149,285 @@
  Each of the models above, apart from the ObjectSource model, also interacts with a <b>Product</b> object in one way or the other.
 
  <h4>Product</h4>
- The product class represents the actual products assembled by the system. Each product also tracks it's creation time, it's arrival time at a process, time it has spent in a queue, the number of times it has been reassembled and it's correctness measure.
+ 	The product class represents the actual products assembled by the system. Each product also tracks it's creation time, it's arrival time at a process, time it has spent in a queue, the number of times it has been reassembled and it's correctness measure.
  </p>
+ <h2>Implementation : </h2>
+ <p>Our solution is implemented in PythonPDEVS, the detailed description of the model files is below:</p>
+ <h4><a href="./FATMachines.py">FATMachines.py</a></h4>
+ <p>
+	 This file contains the definition of the FATmachines atomic DEVS model, its 3 sub models, <b>Accept</b>, <b>Fix</b> and <b>Trash</b> as well as the definition of its <b>State</b>.
+	 <br>
+	 The attributes of the <b>State</b> include:
+	 <ol>
+		 <li>
+			 active : a boolean specifying whether this machine is working at the moment. The time advance function uses this boolean to determine the time to return.
+		 </li>
+		 <li>
+			 current: the current product being worked on
+		 </li>
+		 <li>
+			 total: the total number of products received by this machine
+		 </li>
+		 <li>
+			 reassembled: the total number of products received by this machine that were reassembled.
+		 </li>
+	 </ol>
+	 <br>
+	 The internal transition function marks the FATmachine model as inactive. The external transition function marks the model as active and makes the incoming product the current product.
+	 <br>The output function simply returns the current product.
+ </p>
+
+
+ <h4><a href="./ObjectSource.py">ObjectSource.py</a></h4>
+ <p>
+	 This file contains the definition of the ObjectSource atomic DEVS model. It is a very simple model which has one output port and one other attribute which is the time.
+	 <br>
+	 <ol>
+		 <li>
+			 time: This is a Float that indicates how long this source takes to produce a raw material item. It is the time returned by the time advance function.
+		 </li>
+	 </ol>
+	 <br>The output function simply returns the model name.
+ </p>
+
+ <h4><a href="./Operator.py">Operator.py</a></h4>
+ <p>
+	 This file contains the definition of the Operator atomic DEVS model, its 2 sub models, <b>Assembler</b> and <b>Inspector</b> as well as the definition of its <b>State</b>.
+	 <br>
+	 The attributes of the <b>OperatorState</b> include:
+	 <ol>
+		 <li>
+			 queue : an list that holds received products.
+		 </li>
+		 <li>
+			 currentTime: the current simulated time of this model.
+		 </li>
+		 <li>
+			 remainingTime: the time before the next transition.
+		 </li>
+		 <li>
+			 productProcessing: the current product being worked on.
+		 </li>
+	 </ol>
+	 <br>
+	 In addition to the state, the other attributes of the <b>Operator</b> include:
+	 <ol>
+		 <li>
+			 mean : the mean to be used when generating ransom numbers.
+		 </li>
+		 <li>
+			 standardDeviation: the standard Deviation to be used when generating random numbers.
+		 </li>
+		 <li>
+			 seed: the seed for the random number generators.
+		 </li>
+		 <li>
+			 in_product: the input port.
+		 </li>
+		 <li>
+			 out_stats: the output port for the statistics.
+		 </li>
+	 </ol>
+     <br>
+	 The Operator model essentially overrides the following functions of the AtomicDEVS model:
+	 <ol>
+		 <li>
+			 extTransition : Upon receipt of an item, the external transition function updates the currentTime with the elapsed time. This value is then set in the product as its queue time and the product is appended to the queue.
+			 <br>If the remaining time is INFINITY i.e. the machine is idle, the product is allowed to enter the machine for processing via the enterOperator() function.
+			 <br>Otherwise, the remaining time is reduced by the elapsed time.
+		 </li>
+		 <li>
+			 intTransition: This function removes an item from the queue, if there are no more items in the queue, then the machine is marked as idle.
+			 <br>If that is not the case, another product is allowed in for processing.
+		 </li>
+		 <li>
+			 timeAdvance: returns the remaining time, if the remaining time is less than 0, it returns zero.
+		 </li>
+	 </ol>
+ <br>
+ The <b>enterOperator</b> function is responsible for setting the time that this machine is going to take to process an item, based on the mean and standard deviation provided at the point of instantiation.
+ <br>It also sets the entry time of the product as the the machines current simulated time and sets the product as the current product processing.
+ </p>
+
+ <h5>The Assembler</h5>
+ <p>
+	 The main feature of the Assembler is that it has one extra output port for the products assembled and the following functions are overridden:
+     <ol>
+		 <li>
+			 outputFnc : Both the time spent in the queue of the product and the product itself are outputs, albeit to different destinations.
+		 </li>
+		 <li>
+			 extTransition: Upon receipt of a product, the assembler sets its correctness before letting its parent function proceed.
+		 </li>
+	 </ol>
+ </p>
+
+ <h5>The Inspector</h5>
+ <p>
+	 The main feature of the Inspector is that it has 3 additional attributes that specify the cutoff ratios of correctness and three outputs. The trashPart and the fixPart are inputs to the constructor but the fixPart is calculated as the difference of the sum of these from 1.
+	 <br>The following functions are also overridden:
+     <ol>
+		 <li>
+			 outputFnc : Both the time spent in the queue of the product and the product itself are outputs, albeit to different destinations. The timeInQueue is sent to the <b>Statistics</b> model but the product is sent to it's next destination according to it's correctness.
+			 <br>the products destination depends on where the correctness lies in the range of the trashPart, fixPart and acceptPart.
+		 </li>
+	 </ol>
+ </p>
+
+ <h4><a href="./Preassembler.py">Preassembler.py</a></h4>
+ <p>
+	 This file contains the definition of the Preassembler atomic DEVS model and the definition of its <b>State</b>.
+	 <br>
+	 The attributes of the <b>PreassemblerState</b> include:
+	 <ol>
+		 <li>
+			 cylinders : a counter for cylinders received.
+		 </li>
+		 <li>
+			 cubes: a counter for cubes received.
+		 </li>
+		 <li>
+			 time: the time before the next transition.
+		 </li>
+	 </ol>
+	 <br>
+	 In addition to the state, the other attributes of the <b>Preassembler</b> include:
+	 <ol>
+		 <li>
+			 in_object : the input port.
+		 </li>
+		 <li>
+			 out_product: the output port.
+		 </li>
+	 </ol>
+     <br>
+	 The Operator model overrides the following functions of the AtomicDEVS model:
+	 <ol>
+		 <li>
+			 extTransition : Updates the current simulated time of the machine to the elapsed time and increments the counters according to the type of the input.
+		 </li>
+		 <li>
+			 intTransition: Reduces the cube and cylinder counters.
+		 </li>
+		 <li>
+			 timeAdvance: marks the machine as idle unless the required number of cubes and cylinders have been received at which point the time advance returns 0(an immediate transition).
+		 </li>
+		 <li>
+			 outputFnc: returns an assembled product.
+		 </li>
+	 </ol>
+
+ <h4><a href="./Statistics.py">Statistics.py</a></h4>
+ <p>
+	 This file contains the definition of the Statistics atomic DEVS model and the definition of its <b>State</b>.
+	 <br>
+	 The attributes of the <b>StatisticState</b> include:
+	 <ol>
+		 <li>
+			 currentTime : the current simulated time of the entire system.
+		 </li>
+		 <li>
+			 waitingTimes: an list of waiting times spent in the system by each product.
+		 </li>
+		 <li>
+			 totalProducts: the product counter.
+		 </li>
+		 <li>
+			 amountReassembled: the dictionary of reassembled products.
+		 </li>
+		 <li>
+			 totalTimes: the list of total times spent in the system by each product.
+		 </li>
+	 </ol>
+	 <br>
+	 In addition to the state, the other attributes of the <b>Statistics</b> include:
+	 <ol>
+		 <li>
+			 in_queueTimes : the input port for product queue times.
+		 </li>
+		 <li>
+			 in_product: the input port for products.
+		 </li>
+	 </ol>
+     <br>
+	 The Statistics model overrides the following functions of the AtomicDEVS model:
+	 <ol>
+		 <li>
+			 extTransition : Upon receipt of inputs, the current time is updated with the elapsed time.
+			 <br>A received queue time is added to the list of waiting times.
+			 <br>When a product is received, the total number of products is incremented, the total time spent by the product in the system is calculated and added to the total times list.
+			 <br>The amount of times this product has been retrieved is retrieved and if the that digit is already part of the dictionary, it's number is incremented otherwise a new entry is added for that digit with a value of 1.
+		 </li>
+	 </ol>
+     <br>
+	 The Statistics model provides the following helper functions, for use mainly for reporting:
+	 <ol>
+		 <li>
+			 getTime: Return the current simulated time.
+		 </li>
+		 <li>
+			 getAverageWaitingTime: Returns the average waiting time.
+		 </li>
+		 <li>
+			 getTotalProducts: Returns the total number of products assembled.
+		 </li>
+		 <li>
+			 getReassemblies: Returns the total number of reassemblies observed in the form <i>{ number_of_reassemblies:number_of_products }</i>.
+		 </li>
+		 <li>
+			 getAverageTotalTime: Returns the average time spent in the system by a product.
+		 </li>
+	 </ol>
+
+ <h4><a href="./System.py">System.py</a></h4>
+ <p>
+	 This file contains the definition of the Factory coupled DEVS model.
+     <br>
+	 The Factory model provides the following helper functions, for use mainly for reporting:
+	 <ol>
+		 <li>
+			 printStatistics: Writes out the statitics collected by the Statistics atomic model to a file.
+		 </li>
+	 </ol>
+
+ <h4><a href="./Product.py">Product.py</a></h4>
+ <p>
+	 This file contains the definition of the Product object processed by the system.
+     <br>
+	 The Product model provides the following helper functions, for use mainly for tracking its state:
+	 <ol>
+		 <li>
+			 getCreationTime: Returns the time when it was created.
+		 </li>
+		 <li>
+			 setEntryTime: Sets the time that it is admitted into a machine for processing.
+		 </li>
+		 <li>
+			 setQueueTime: Sets the time spent in a queue.
+		 </li>
+		 <li>
+			 getTimeInQueue: Returns the time spent in a queue.
+		 </li>
+		 <li>
+			 getCorrectness: Returns the correctness measure.
+		 </li>
+		 <li>
+			 setNewCorrectness: Calculates the new correctness measure based on the previous measure.
+		 </li>
+		 <li>
+			 getAmountReas: Returns the count of reassemblies performed on this product.
+		 </li>
+		 <li>
+			 increaseReas: Increases the count of reassemblies performed on this product by one.
+		 </li>
+	 </ol>
+
+  <h4><a href="./Simulator.py">Simulator.py</a></h4>
+ <p>
+	 This file contains the simulation of the Factory coupled DEVS model.
+ <br>
+
  <h2>Modelling and Simulation Results : </h2>
-     
 
  <hr noshade>
 
