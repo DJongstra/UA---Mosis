@@ -19,7 +19,7 @@
       Student ID :	20205490
       e-mail     :	joanna.kisaakye@student.uantwerpen.be
 
-      Time spent on this assignment (in hours): hours
+      Time spent on this assignment (in hours): 16 hours
      </pre>
 
  
@@ -464,6 +464,15 @@
         <li>
             <a href="AAAtemp/statsDeterministic.txt">statsDeterministic</a>
         </li>
+        <li>
+            <a href="./deterministicDEV/statsDeterministic1.txt">statsDeterministic1</a>
+        </li>
+        <li>
+            <a href="./deterministicDEV/statsDeterministic2.txt">statsDeterministic2</a>
+        </li>
+        <li>
+            <a href="./deterministicDEV/statsDeterministic3.txt">statsDeterministic3</a>
+        </li>
     </ol>
 </p>
 <p>
@@ -508,10 +517,41 @@
     There are far fewer edge cases when a product had to be reassembled 3 or more times, only 3% of the reassemblies.
     <br>
     In conclusion, this configuration exhibited much better performance overall than the last two.
+</p>
 
 <h4><a href="AAAtemp/statsDeterministic.txt">Deterministic configuration(statsDeterministic)</a></h4>
 <p>
+    The files below prove that the Deterministic DEV model is truly deterministic:
+ 	<ol>
+        <li>
+            <a href="./deterministicDEV/statsDeterministic1.txt">statsDeterministic1</a>
+        </li>
+        <li>
+            <a href="./deterministicDEV/statsDeterministic2.txt">statsDeterministic2</a>
+        </li>
+        <li>
+            <a href="./deterministicDEV/statsDeterministic3.txt">statsDeterministic3</a>
+        </li>
+    </ol>
+    In 2000ms, the standard number of products produced is 349, 78.5% of which are accepted while 21.48% were rejected.
+    <br>
+    Approximately 21.5% of them required reassembly.
+    <br>
+    The average queue time increased to about 2 hours, and the average time spent by products in the system was 4.7 hours.
+    <br>This performance could be improved by tuning the Inspector as shown above.
+    <br>
+    There are no edge cases when a product had to be reassembled more than 3 times, and only 2 require reassembly 3 times.
+ 	<br>
+ 	So we can conclude that the probability that a product will be reassembled 3 or more times is 0.57%, which is good.
+    <br>
+    In conclusion, a deterministic DEVS model gives us better performance with regard to expected product production, however this could be further improved by a better tuned Inspector.
+ <br> Of course, the Inspector can only be tuned according to the standards of the client who shall own the system.
 </p>
+
+  <h2>Workflow and Task Distrbution : </h2>
+ <h3>Joanna</h3>
+ We both started working on our DEVS models individually and then agreed to go with Danielle's model because hers included the Statistics collector atomic DEVS model as well.
+ <br>I then proceeded to document the requirements,assumptions, design, implementation and modelling and simulation results which included checking the model for completeness.
 
  <hr noshade>
 
