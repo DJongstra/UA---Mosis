@@ -449,6 +449,70 @@
 
  <h2>Modelling and Simulation Results : </h2>
 
+ <p>
+    As can be seen from our simulation results in the following files, the percentage of items in the trash and the percentage of assembled items always add up to 100%:
+    <ol>
+        <li>
+            <a href="./statsOriginal.txt">statsOriginal</a>
+        </li>
+        <li>
+            <a href="./statsOtherInspector.txt">statsOtherInspector</a>
+        </li>
+        <li>
+            <a href="./statsOtherSeed.txt">statsOtherSeed</a>
+        </li>
+        <li>
+            <a href="./deterministicDEV/statsDeterministic.txt">statsDeterministic</a>
+        </li>
+    </ol>
+</p>
+<p>
+    Our simulation cuts off at 2000ms, this can be observed in the two output files:
+    <ol>
+        <li>
+            <a href="./SimulationOutput.txt">SimulationOutput.txt</a>
+        </li>
+        <li>
+            <a href="./deterministicDEV/SimulationOutput.txt">deterministicDEV/SimulationOutput.txt</a>
+        </li>
+    </ol>
+
+<h4><a href="./statsOriginal.txt">The original configuration(statsOriginal)</a></h4>
+<p>
+    In this simulation, 325 products were created. Most of them were accepted the first time and approximately 19.7% of them required reassembly.
+    <br>
+    The average queue time was over an hour, 74.1 minutes, and the average time in the system was over 5.63 hours. This could be an indication that the system is too slow.
+    <br>
+    There are very few edge cases when a product had to be reassembled 3 or more times, only 10% of the reassemblies.
+</p>
+
+<h4><a href="./statsOtherSeed.txt">Change of Seed configuration(statsOtherSeed)</a></h4>
+<p>
+    When we changed the seed, roughly the same number of products was produced in the same amount of time(there was only a small increment). Most of them were accepted the first time and approximately 20.1% of them required reassembly.
+    <br>
+    The average queue time is approximately the same, 74.1 minutes, and the average time spent by products in the system was still over 5.7 hours.
+    <br>This was an considerable decrease in performance.
+    <br>
+    There are more edge cases when a product had to be reassembled 3 or more times, 15% of the reassemblies.
+</p>
+
+<h4><a href="./statsOtherInspector.txt">Inspector Change configuration(statsOtherInspector)</a></h4>
+<p>
+    When we changed the inspector, more products were produced in the same amount of time(there was a more considerable increment). More of them were accepted the first time, 89.6%, only in 10.35% in the trash.
+    <br>
+    Approximately 13% of them required reassembly.
+    <br>
+    The average queue time greatly reduced, 48.7 minutes, and the average time spent by products in the system dropped to just 3.5 hours.
+    <br>This showed much better performance.
+    <br>
+    There are far fewer edge cases when a product had to be reassembled 3 or more times, only 3% of the reassemblies.
+    <br>
+    In conclusion, this configuration exhibited much better performance overall than the last two.
+
+<h4><a href="./deterministicDEV/statsDeterministic.txt">Deterministic configuration(statsDeterministic)</a></h4>
+<p>
+</p>
+
  <hr noshade>
 
  </body>
