@@ -41,6 +41,7 @@ class Operator(AtomicDEVS):
         return self.state
 
     def intTransition(self):
+        self.state.currentTime += self.timeAdvance()
         self.state.queue.pop(0)
 
         if len(self.state.queue) == 0:
