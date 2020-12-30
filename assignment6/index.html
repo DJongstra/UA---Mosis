@@ -7,7 +7,7 @@
 
  <hr noshade>
 
-   <h1>MoSIS Assignment 5</h1>
+   <h1>MoSIS Assignment 6</h1>
 
     <h2>Team</h2>
      <pre>
@@ -74,6 +74,9 @@
 	 <li>
 		 Machines never power on or off, they are either in an idle state or processing state.
 	 </li>
+	 <li>
+		The correctness value of a product determines whether the product is accepted, trashed or sent to be fixed.
+	 </li>
  </ol>
  </p>
  <h2>Design : </h2>
@@ -88,7 +91,7 @@
 	 <li>
 		 The <b>ObjectSource</b> model:
 		 <br>
-		 This model produces the <i>"Cube"</i> and <i>"Cylinder"</i> raw materials required to assemble a product. This port only has an output port.
+		 This model produces the <i>"Cube"</i> and <i>"Cylinder"</i> raw materials required to assemble a product, it only has one output port.
 	 </li>
 	 <li>
 		 The <b>Operator</b> model:
@@ -166,15 +169,29 @@
 			 current: the current product being worked on
 		 </li>
 		 <li>
-			 total: the total number of products received by this machine
+			 total: the total number of products received by this machine, not set for fix.
 		 </li>
 		 <li>
-			 reassembled: the total number of products received by this machine that were reassembled.
+			 reassembled: the total number of products received by this machine that were reassembled, only used for accept.
 		 </li>
 	 </ol>
 	 <br>
 	 The internal transition function marks the FATmachine model as inactive. The external transition function marks the model as active and makes the incoming product the current product.
-	 <br>The output function simply returns the current product.
+	 <br>The output function simply returns the current product, so that the product can be used by the next DEVS.
+	 <br> <br>
+	 The three sub models each have their own external transition function that call the superclass its external transition function. In this sub function the class specific parameters that do not have to do with sending the product to output are set.
+	 <ul>
+		<li>
+		Fix: Increase the amount of times the product has been reassembled with 1.
+		</li>
+		<li>
+		Accept: add 1 to the the total amount of products that have been accepted. Also check if it has been reassembled and add 1 to total amount of products reassembled for this class.
+		</li>
+		<li>
+		Trash: add 1 to the the total amount of products that have been trashed.
+		</li>
+	 
+	 </ul>
  </p>
 
 
@@ -187,7 +204,8 @@
 			 time: This is a Float that indicates how long this source takes to produce a raw material item. It is the time returned by the time advance function.
 		 </li>
 	 </ol>
-	 <br>The output function simply returns the model name.
+	 <br>The output function simply returns the model name, which represents the raw material being produced by the machine. The initialization function set the appropriate name and time for different sources.
+	 These values are given in the coupled DEVS "system".
  </p>
 
  <h4><a href="./Operator.py">Operator.py</a></h4>
@@ -203,7 +221,7 @@
 			 currentTime: the current simulated time of this model.
 		 </li>
 		 <li>
-			 remainingTime: the time before the next transition.
+			 remainingTime: the time remaining for the operator to finish the current product.
 		 </li>
 		 <li>
 			 productProcessing: the current product being worked on.
@@ -225,7 +243,7 @@
 			 in_product: the input port.
 		 </li>
 		 <li>
-			 out_stats: the output port for the statistics.
+			 out_stats: the output port for the statistics, used to pass the time a product waited in the queue to the statistics DEVS.
 		 </li>
 	 </ol>
      <br>
@@ -238,7 +256,7 @@
 		 </li>
 		 <li>
 			 intTransition: This function removes an item from the queue, if there are no more items in the queue, then the machine is marked as idle.
-			 <br>If that is not the case, another product is allowed in for processing.
+			 <br>If that is not the case, another product is allowed in for processing by using the enterOperator() function.
 		 </li>
 		 <li>
 			 timeAdvance: returns the remaining time, if the remaining time is less than 0, it returns zero.
@@ -264,7 +282,7 @@
 
  <h5>The Inspector</h5>
  <p>
-	 The main feature of the Inspector is that it has 3 additional attributes that specify the cutoff ratios of correctness and three outputs. The trashPart and the fixPart are inputs to the constructor but the fixPart is calculated as the difference of the sum of these from 1.
+	 The main feature of the Inspector is that it has 3 additional attributes that specify the cutoff ratios of correctness and three outputs. The trashPart and the fixPart are inputs to the constructor. The acceptPart however is calculated using the other part to ensure the sums do not exceed 1.
 	 <br>The following functions are also overridden:
      <ol>
 		 <li>
@@ -287,7 +305,7 @@
 			 cubes: a counter for cubes received.
 		 </li>
 		 <li>
-			 time: the time before the next transition.
+			 time: the current time of the model used to set the creation time of a product.
 		 </li>
 	 </ol>
 	 <br>
@@ -307,13 +325,13 @@
 			 extTransition : Updates the current simulated time of the machine to the elapsed time and increments the counters according to the type of the input.
 		 </li>
 		 <li>
-			 intTransition: Reduces the cube and cylinder counters.
+			 intTransition: Reduces the cube and cylinder counters by the amount needed of each to create a product.
 		 </li>
 		 <li>
 			 timeAdvance: marks the machine as idle unless the required number of cubes and cylinders have been received at which point the time advance returns 0(an immediate transition).
 		 </li>
 		 <li>
-			 outputFnc: returns an assembled product.
+			 outputFnc: returns an assembled product with the creation time set to the current time.
 		 </li>
 	 </ol>
 
@@ -327,13 +345,13 @@
 			 currentTime : the current simulated time of the entire system.
 		 </li>
 		 <li>
-			 waitingTimes: an list of waiting times spent in the system by each product.
+			 waitingTimes: an list of waiting times spent in the system by any product.
 		 </li>
 		 <li>
 			 totalProducts: the product counter.
 		 </li>
 		 <li>
-			 amountReassembled: the dictionary of reassembled products.
+			 amountReassembled: the dictionary of reassembled products, keeping a counter of how many products have been reassembled a certain amount of times before being accepted or trashed.
 		 </li>
 		 <li>
 			 totalTimes: the list of total times spent in the system by each product.
@@ -356,11 +374,11 @@
 			 extTransition : Upon receipt of inputs, the current time is updated with the elapsed time.
 			 <br>A received queue time is added to the list of waiting times.
 			 <br>When a product is received, the total number of products is incremented, the total time spent by the product in the system is calculated and added to the total times list.
-			 <br>The amount of times this product has been retrieved is retrieved and if the that digit is already part of the dictionary, it's number is incremented otherwise a new entry is added for that digit with a value of 1.
+			 <br>The amount of times this product has been reassembled is retrieved and if the that digit is already part of the dictionary, it's number is incremented. Otherwise a new entry is added for that digit with a value of 1.
 		 </li>
 	 </ol>
      <br>
-	 The Statistics model provides the following helper functions, for use mainly for reporting:
+	 The Statistics model provides the following helper functions, which is used mainly for reporting:
 	 <ol>
 		 <li>
 			 getTime: Return the current simulated time.
@@ -389,6 +407,8 @@
 			 printStatistics: Writes out the statitics collected by the Statistics atomic model to a file.
 		 </li>
 	 </ol>
+	 <br> 
+	 The factory initializes the different models and connects the appropriate models.
 
  <h4><a href="./Product.py">Product.py</a></h4>
  <p>
