@@ -7,7 +7,7 @@ simulator = Simulator(model)
 
 simulator.setVerbose("SimulationOutput.txt")
 simulator.setClassicDEVS()
-simulator.setTerminationTime(2000.0)
+simulator.setTerminationTime(38.0)
 simulator.simulate()
 
 simulator.model.printStatistics("./statsDeterministic.txt")

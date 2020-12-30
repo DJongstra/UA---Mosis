@@ -34,7 +34,7 @@ class Operator(AtomicDEVS):
         inputs[self.in_product].setQueueTime(self.state.currentTime)     # set queue entry time to current time
         self.state.queue.append(inputs[self.in_product])  # append the product to products to be processed
         if self.state.remainingTime == INFINITY:        # no product currently processed
-            self.enterOperator(inputs[self.in_product])
+            self.enterOperator(self.state.queue[0])
         else:
             self.state.remainingTime -= self.elapsed
 
