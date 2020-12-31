@@ -467,12 +467,6 @@
         <li>
             <a href="./deterministicDEV/statsDeterministic1.txt">statsDeterministic1</a>
         </li>
-        <li>
-            <a href="./deterministicDEV/statsDeterministic2.txt">statsDeterministic2</a>
-        </li>
-        <li>
-            <a href="./deterministicDEV/statsDeterministic3.txt">statsDeterministic3</a>
-        </li>
     </ol>
 </p>
 <p>
@@ -519,7 +513,7 @@
     In conclusion, this configuration exhibited much better performance overall than the last two.
 </p>
 
-<h4><a href="deterministicDEV/statsDeterministic.txt">Deterministic configuration(statsDeterministic)</a></h4>
+<h4><a href="deterministicDEV/statsDeterministic1.txt">Deterministic configuration(statsDeterministic1)</a></h4>
 <p>
     The file <a href="./deterministicDEV/statsDeterministic1.txt">statsDeterministic1</a> shows a simulation with the deterministic DEVS.
     In 2000 simulated minutes, the number of products produced is 349, 78.5% of which are accepted while 21.48% were rejected.
@@ -555,7 +549,7 @@ From this we can conclude that a product can be made each 4 minutes from the raw
 <br><br>
 This means that the Assembler first becomes active at time 4 and a new product arrives each 4 minutes. As the delay of the assembler is exactly 4 minutes, there are no queuing times for the assembler if we just take the new products into account and not the ones sent to be fixed.
 The Inspector takes 2 minutes to handle a product, as a product can only arrive from the assembler every 4 minutes, there is never a queuing delay for this operator. 
-Without keeping fixing in mind, a product will either be accepted or rejected after 4 + 2 = 6 minutes after entering the system and has 2 * 0 minutes of queuing delay (once for the Assembler, and once for Inspector.
+Without keeping fixing in mind, a product will either be accepted or rejected after 4 + 2 = 6 minutes after entering the system and has 2 * 0 minutes of queuing delay (once for the Assembler, and once for Inspector).
 The i-th product would be finished after 4 + 4*i + 2. So, product 1 is finished at time 10, product 2 at time 14, etc. The time a product enters the assembler is 4*i. 
 <br><br>
 If we do take fixing into account, we can see fairly easily that every time a product is marked for fixing all products that arrive in the Assembler after this product have an extra 4 minute delay. The delay keeps adding up for each new product marked to be be fixed.
