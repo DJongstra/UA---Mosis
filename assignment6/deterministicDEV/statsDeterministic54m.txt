@@ -1,0 +1,14 @@
+Total number of created products: 9
+Amount of reassemblies for any product:
+  -> 0 reassemblies - 8 times
+  -> 1 reassemblies - 1 times
+Percentage in trash:
+   22.22222222222222 %
+Percentage accepted:
+   77.77777777777779 %
+Percentage of Accepted reassembled:
+   14.285714285714285 %
+Average queue time:
+   1.6666666666666667 minutes
+Average time in system:
+   10.0 minutes

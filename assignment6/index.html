@@ -19,7 +19,7 @@
       Student ID :	20205490
       e-mail     :	joanna.kisaakye@student.uantwerpen.be
 
-      Time spent on this assignment (in hours): 16 hours
+      Time spent on this assignment (in hours): 40 hours
      </pre>
 
  
@@ -462,7 +462,7 @@
             <a href="./statsOtherSeed.txt">statsOtherSeed</a>
         </li>
         <li>
-            <a href="AAAtemp/statsDeterministic.txt">statsDeterministic</a>
+            <a href="./deterministicDEV/statsDeterministic.txt">statsDeterministic</a>
         </li>
         <li>
             <a href="./deterministicDEV/statsDeterministic1.txt">statsDeterministic1</a>
@@ -476,13 +476,13 @@
     </ol>
 </p>
 <p>
-    Our simulation cuts off at 2000ms, this can be observed in the two output files:
+    Our simulation cuts off after 2000 minutes of simulation, this can be observed in the two output files:
     <ol>
         <li>
             <a href="./SimulationOutput.txt">SimulationOutput.txt</a>
         </li>
         <li>
-            <a href="AAAtemp/SimulationOutput.txt">deterministicDEV/SimulationOutput.txt</a>
+            <a href="./deterministicDEV/SimulationOutput.txt">deterministicDEVS/SimulationOutput.txt</a>
         </li>
     </ol>
 
@@ -507,7 +507,7 @@
 
 <h4><a href="./statsOtherInspector.txt">Inspector Change configuration(statsOtherInspector)</a></h4>
 <p>
-    When we changed the inspector, more products were produced in the same amount of time(there was a more considerable increment). More of them were accepted the first time, 89.6%, only in 10.35% in the trash.
+    When we changed the inspector to fixing 20% and trashing 10% (leaving 70% for accepting), more products were produced in the same amount of time(there was a more considerable increment). More of them were accepted the first time, 89.6%, only in 10.35% in the trash.
     <br>
     Approximately 13% of them required reassembly.
     <br>
@@ -519,21 +519,10 @@
     In conclusion, this configuration exhibited much better performance overall than the last two.
 </p>
 
-<h4><a href="AAAtemp/statsDeterministic.txt">Deterministic configuration(statsDeterministic)</a></h4>
+<h4><a href="deterministicDEV/statsDeterministic.txt">Deterministic configuration(statsDeterministic)</a></h4>
 <p>
-    The files below prove that the Deterministic DEV model is truly deterministic:
- 	<ol>
-        <li>
-            <a href="./deterministicDEV/statsDeterministic1.txt">statsDeterministic1</a>
-        </li>
-        <li>
-            <a href="./deterministicDEV/statsDeterministic2.txt">statsDeterministic2</a>
-        </li>
-        <li>
-            <a href="./deterministicDEV/statsDeterministic3.txt">statsDeterministic3</a>
-        </li>
-    </ol>
-    In 2000ms, the standard number of products produced is 349, 78.5% of which are accepted while 21.48% were rejected.
+    The file <a href="./deterministicDEV/statsDeterministic1.txt">statsDeterministic1</a> shows a simulation with the deterministic DEVS.
+    In 2000 simulated minutes, the number of products produced is 349, 78.5% of which are accepted while 21.48% were rejected.
     <br>
     Approximately 21.5% of them required reassembly.
     <br>
@@ -544,15 +533,126 @@
  	<br>
  	So we can conclude that the probability that a product will be reassembled 3 or more times is 0.57%, which is good.
     <br>
-    In conclusion, a deterministic DEVS model gives us better performance with regard to expected product production, however this could be further improved by a better tuned Inspector.
- <br> Of course, the Inspector can only be tuned according to the standards of the client who shall own the system.
+<!---   In conclusion, a deterministic DEVS model gives us better performance with regard to expected product production, however this could be further improved by a better tuned Inspector.
+ <br> Of course, the Inspector can only be tuned according to the standards of the client who shall own the system. --->
 </p>
 
-  <h2>Workflow and Task Distrbution : </h2>
+<h2>Deterministic DEVS</h2>
+<p>
+For the deterministic DEVS, the randomness is taken out of the original DEVS. This is done by taking the in the assignment given mean time of the operators as the running time. 
+For the Assembler, this is 4 minutes. For the Inspector it is 2 minutes. The correctness value of the products uses a list of values. For the i-th product that enters the assembler, the i-th value modulo 20 is taken from the list (because the list was initialized with only 20 values).
+This list uses values that ensure one of the three decisions of the inspector according to the original assignment. 0 is used for trashing, 0.4 for fixing and 1 for accepting. Using values instead of what it should be assigned as prevented changing the code more than necessary.
+It is important to note that this deterministic DEVS cannot be used for inspecting the influence of choosing different percentages for fixing, trashing and accepting due to this design.
+As 15% has to be trashed in the assignment, in the list of 20 values 3 are trash values. These 3 values are distributed over the list as well as possible to come as closely as possible to a realistic system. The same goes for the fix values, however as 30% should be fixed, there are 6 values spread across the list.
+The rest of the values are accept values.
+For calculating the appropriate output, we need to keep the list in mind, and it is therefore given here: <br>
+assigningList = [1, 1, 0.4, 1, 1, 0, 0.4, 1, 1, 0.4, 1, 0, 0.4, 1, 1, 0.4, 1, 0, 0.4, 1]
+<br> <br>
+The first thing to keep in mind is the arrival time of the cylinders and cubes.
+A cube arrives each 2 minutes and a cylinder each 3 minutes. 2 cubes and 1 cylinder are needed to form a product.
+That means we have enough cubes each 2*2= 4 minutes and enough cylinders each 3 minutes.
+From this we can conclude that a product can be made each 4 minutes from the raw materials.
+<br><br>
+This means that the Assembler first becomes active at time 4 and a new product arrives each 4 minutes. As the delay of the assembler is exactly 4 minutes, there are no queuing times for the assembler if we just take the new products into account and not the ones sent to be fixed.
+The Inspector takes 2 minutes to handle a product, as a product can only arrive from the assembler every 4 minutes, there is never a queuing delay for this operator. 
+Without keeping fixing in mind, a product will either be accepted or rejected after 4 + 2 = 6 minutes after entering the system and has 2 * 0 minutes of queuing delay (once for the Assembler, and once for Inspector.
+The i-th product would be finished after 4 + 4*i + 2. So, product 1 is finished at time 10, product 2 at time 14, etc. The time a product enters the assembler is 4*i. 
+<br><br>
+If we do take fixing into account, we can see fairly easily that every time a product is marked for fixing all products that arrive in the Assembler after this product have an extra 4 minute delay. The delay keeps adding up for each new product marked to be be fixed.
+For our calculations, we need to keep in mind that a queuing delay will not be taken into account until the product has left the operator it is queuing for, and not when it leaves the queue and enters the operator.
+The total time in the system will also only be taken into account when the product has either been accepted or rejected.
+<br><br>
+For the queuing delay of a product at the assembler, it starts at 0. For every fix this amount increases with 4. The fixed product leaves the inspector 2 minutes before the next assembler round starts and a new product arrives, so before the increase with 4, there is a delay of 2 minutes for the fixed product.
+Formulas are not easily defined for this system, mostly because of the used assigningList.
+<ul>
+<li>
+	F(t): the amount of products sent to be fixed at time t
+</li>
+<li>
+	A(t): the amount of accepted products at time t
+</li>
+<li>
+	T(t): the amount of trashed products at time t
+</li>
+<li>
+	F(i): the amount of times a product i is sent to be fixed
+</li>
+<li>
+	E(t): time a product enters the system
+</li>
+<li>
+	Ass(i): time a product enters the assembler
+</li>
+</ul>
+<br><br>
+From this, we get the formulas:
+<ul>
+<li>
+	time in system (non-fixed) (t) = (4+2) + 4 * T(t)
+</li>
+<li>
+	time in system (fixed) (t) = (4+2) * F(i) + 2 * F(i) + sum(E(t)-> t, F(t))*4<br>
+	standard delay * amount of times marked to be fixed + 2 minutes waiting for every fix + 4 minutes waiting every a product is marked to be fixed during its time in the system
+</li>
+	<li>
+	delay (non-fixed) = 4*F(t) + 0 <br>
+	amount of product marked to be fixed at time of queuing for assembler + delay for inspector
+</li>
+<li>
+	delay (fixed) = 4*(F(t)-1) + 2 <br>
+	4 minutes for every product marked for fixing, excluding the product itself that was just marked (as it causes 4 minutes delay for all subsequent product but not itself) + 2 minutes for waiting till the assembler starts a new round
+</li>
+<li>
+	amount of times queued (i) = 2 + 2(F(i))<br>
+	product is queued 2 times (1 time for both Assembler and Inspector) + 2 times for each time the product 
+</li>
+<li>
+	time marking(i) = Ass(i) + 6<br>
+	A product can enter the assembler multiple times because of fixing
+</li>
+</ul>
+
+<br><br> 
+Now we see in the assigningList that the first product to be fixed is the third product. This product enters the assembler at time 4*3 = 12. It is marked for fixing at 4*3 + 6 = 18.
+Before that marking, another product has entered the assembler at time 4*4 = 16, which is also to be accepted. This product finishes at 4*4 + 6 = 22 and does not have any delays.
+The fixable product enters the assembler again at time 5*4 = 20 and leaves the assembler at 20+4 = 24, at which point the queuing delay of 2 is registered. This means that at time 22 we should have 3 accepted products and no queuing delays.
+The average time in the system of the products is ((4+2) + (4*0)*3)/3 = 6. This is confirmed in <a href="./deterministicDEV/statsDeterministic22m.txt">statsDeterministic 22 minutes</a>.
+<br><br>
+Now, the fixed product entered the assembler at time 20. It will finish the inspector at time 20+6 = 26 where it will be accepted. There should be 4 accepted products, of which 1 has been reassembled once.
+The amount of times something has left the queue is 2*4 + 2*1 = 10 of which 9 have value 0 and 1 has value 2. The queuing delay should therefore be 2/10=0.2.
+The time the last fixed product was in the system is 6*2 + 2 = 14. The average time a product was in the system is therefore 6*3 + 14 / 4 = 8 at time 26. 1/4 =0.25 of these product has been reassembled.
+In <a href="./deterministicDEV/statsDeterministic26m.txt">statsDeterministic 26 minutes</a>, we can see this is correct.
+<br><br>
+At time 24 the next product arrives, which finished at 24+6=30. This is a product to be trashed. The delay at the assembler is 4 minutes because of the previously fixed product.
+This makes that there were 2*5 + 2*1 = 12 times a product was queued. The total queue time is 4+2=6, which makes the average queue time 6/12=0.5. The time the product was in the system is 6+4=10.
+which makes the average time in the system 6*3 + 14 + 10 / 5 = 42/5 = 8.4. There are 4 accepted products and 1 trashed, making 80% accepted and 20% trashed. This is confirmed by the file <a href="./deterministicDEV/statsDeterministic30m.txt">statsDeterministic 30 minutes</a>
+<br><br>
+At time 28, the next product to be fixed enters the assembler. This is marked at time 28+6=34 and delays the products arriving in the assembler after that time with a total of 8 minutes (4+4 from the previous product reassembled).
+This product has another product in front of it in the queue when it arrives at the assembler. The products that enter the assembler between the time the product enters the assembler for the first time and the second time are both accepted.
+At time 40 it can enter the assembler again, and is marked to be fixed again at time 46, making that products arriving after that time have to wait 8+4=12 minutes in the queue.
+The products arriving at time 44 and 48 both enter the assembler before the product to be fixed can do it. One is accepted and one trashed, the last one leaves the system at time 54.
+This gives an average time in the system of (3*6 + 14 + 3*10 + 2*14) / 9 = (18 + 14 + 20 + 28) / 9 = 90/9 = 10 minutes. 
+<br> Amount of times a product is queued = 9*2 + 3*2 = 24. Average queuing time is (2+4*4+6+2*8)/24 = 40/24 = 1.66... 
+With 2/9 products trashed, 7/9 accepted and 1/7 accepted products fixed. This matches <a href="./deterministicDEV/statsDeterministic54m.txt">statsDeterministic 54 minutes</a>.
+<br><br>
+At time 48 + 2*4 = 56, the product that has been fixed twice finally enters the assembler again. This time it is accepted at the inspector at time 56+6 = 62. This would mean that at this time there is a product that has had 2 reassemblies.
+This is correct in <a href="./deterministicDEV/statsDeterministic62m.txt">statsDeterministic 62 minutes</a>. This means the behavior of our DEVS is as expected.
+</p>
+
+
+
+  <h2>Workflow and Task Distribution : </h2>
  <h3>Joanna</h3>
  We both started working on our DEVS models individually and then agreed to go with Danielle's model because hers included the Statistics collector atomic DEVS model as well.
  <br>I then proceeded to document the requirements,assumptions, design, implementation and modelling and simulation results which included checking the model for completeness.
 
+ 
+ <h3>Daniëlle</h3>
+ <p>
+ I created the original DEVS model with randomness iteratively, always checking if the behavior was as expected after adding a new AtomicDEVS to the system, mostly using the statistics DEVS for catching anything that could not be connected to the right AtomicDEVS yet.
+ From this model, the deterministic model was made. I added the discussion about the correctness of the DEVS to the report and checked the rest of the report for completeness. To parts that were not discussed elaborate enough, extra information was added.
+ 
+ </p>
  <hr noshade>
 
  </body>

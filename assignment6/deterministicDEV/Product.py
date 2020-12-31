@@ -24,7 +24,7 @@ class Product:
         return self.correctness
 
     def setNewCorrectness(self, nrAssigning):
-        nrAssigning = nrAssigning % 20
+        nrAssigning = nrAssigning % len(assigningList)
         self.correctness = assigningList[nrAssigning]
 
     def getAmountReas(self):
